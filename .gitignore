@@ -1,0 +1,14 @@
+*.depend
+*.layout
+/build-linux
+/build-linux-debug
+/build-msw
+/build-msw-debug
+/depends-msw
+/lib
+/lib-msw
+/obj-linux
+/obj-msw
+/include/app/swcrypt.h
+/src/app/swcrypt.cpp
+/projects/swcrypt.cbp

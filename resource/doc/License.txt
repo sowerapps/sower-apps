@@ -1,0 +1,29 @@
+Sower Applications License
+
+NOTICE: CAREFULLY READ THE FOLLOWING LEGAL AGREEMENT.  REDISTRIBUTION, OR USE OF THE SOFTWARE PROVIDED WITH THIS AGREEMENT (THE "SOFTWARE") CONSTITUTES YOUR ACCEPTANCE OF THESE TERMS.  IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, DO NOT REDISTRIBUTE, INSTALL AND/OR USE THIS SOFTWARE.  USER'S USE OF THIS SOFTWARE AND PERMISSION TO REDISTRIBUTE THIS SOFTWARE IS CONDITIONED UPON COMPLIANCE BY USER WITH THE TERMS OF THIS AGREEMENT.
+
+1. LICENSE GRANT.  DNR (the "AUTHOR") grants you a license to use the software on as many systems as you need.  "You" means the company, entity or individual that is redistributing, and/or using the SOFTWARE.  "Use" means storing, loading, installing, executing or displaying the SOFTWARE.  You may not sell the SOFTWARE.
+
+2. OWNERSHIP.  The SOFTWARE is owned and copyrighted by the AUTHOR.  Your license confers no title or ownership in the SOFTWARE and should not be construed as a transfer of any right in the SOFTWARE.  
+
+3. COPYRIGHT.  The SOFTWARE is protected by United States copyright law and international treaty provisions.  You acknowledge that no title to the intellectual property in the SOFTWARE is transferred to you.  You further acknowledge that title and full ownership rights to the SOFTWARE will remain the exclusive property of the AUTHOR and you will not acquire any rights to the SOFTWARE except as expressly set forth in this license.  You agree that any copies of the SOFTWARE will contain the same proprietary notices which appear on and in the SOFTWARE.
+
+4. NO WARRANTIES.  THE AUTHOR DOES NOT WARRANT THAT THE SOFTWARE IS ERROR FREE.  THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RESPECT TO THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.   THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+
+5. SEVERABILITY.  In the event of invalidity of any provision of this license, the parties agree that such invalidity shall not affect the validity of the remaining portions of this license.  
+
+6. NO LIABILITY FOR CONSEQUENTIAL DAMAGES.  IN NO EVENT SHALL THE AUTHOR, OR ANY OTHER DISTRIBUTOR OF THE SOFTWARE, BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, SPECIAL, INCIDENTAL OR INDIRECT DAMAGES OF ANY KIND ARISING OUT OF THE DELIVERY, PERFORMANCE OR USE OF THE SOFTWARE, EVEN IF THE AUTHOR, OR THE DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7. GOVERNING LAW.  This license will be governed by the laws of the State of Tennessee as they are applied to agreements between Tennessee residents entered into and to be performed entirely within Tennessee.
+
+8. NOTICES.  You must ensure that anyone who receives a copy of any part of the software from you also gets a copy of this LICENSE.
+
+9. REDISTRIBUTION OF THE SOFTWARE.  YOU MAY NOT SELL THE SOFTWARE.  You may redistribute unlimited verbatim copies of the SOFTWARE for noncommercial purposes only.
+
+10. NEW WORKS. You may create new works based on the SOFTWARE for noncommercial purposes.  Any work based on, or including any part of the SOFTWARE must be released to the public under this LICENSE, and this LICENSE only. The source code for the new work must be made freely available to the public, and released under this LICENSE.
+
+11. VIOLATIONS.  Your license for the SOFTWARE is terminated once you have been notified that you have violated any term of this agreement.
+
+12. NO OTHER RIGHTS.  These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
+
+13. ENTIRE AGREEMENT.  This is the entire agreement between you and the AUTHOR which supersedes any prior agreement or understanding, whether written or oral, relating to the subject matter of this license.

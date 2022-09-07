@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="sowerbase.cbp" />
+		<Project filename="sower.cbp" />
+		<Project filename="swi_alpha.cbp" />
+		<Project filename="swi_beta.cbp" />
+		<Project filename="swi_gamma.cbp" />
+		<Project filename="thmlviewer.cbp" />
+		<Project filename="tvi_ alpha.cbp" />
+		<Project filename="tvi_beta.cbp" />
+		<Project filename="tvi_ gamma.cbp" />
+		<Project filename="sowerhelp.cbp" />
+		<Project filename="sowermodulewriter.cbp" />
+		<Project filename="sowerlibrarian.cbp" />
+		<Project filename="sowermoduleinspector.cbp" />
+		<Project filename="sowerkeygenerator.cbp" />
+		<Project filename="thmlbuilder.cbp" />
+		<Project filename="sowermapeditor.cbp" />
+		<Project filename="swdatafileeditor.cbp" />
+		<Project filename="swthemeeditor.cbp" />
+		<Project filename="swtranslationeditor.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

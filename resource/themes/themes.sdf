@@ -1,0 +1,449 @@
+<html>
+<head>
+<meta content="text/html; charset=utf8" http-equiv="content-type">
+</head>
+<body>
+<datalist id="String Identifiers">
+<option value="SID_ABOUT"/>
+<option value="SID_ALIGNCENTER"/>
+<option value="SID_ALIGNLEFT"/>
+<option value="SID_ALIGNRIGHT"/>
+<option value="SID_ALPHABETICLIST"/>
+<option value="SID_BACKGROUNDCOLOR"/>
+<option value="SID_BACKINHISTORY"/>
+<option value="SID_BIBLE"/>
+<option value="SID_BIBLEOPEN"/>
+<option value="SID_BIBLEPAGE"/>
+<option value="SID_BLUEBOOK"/>
+<option value="SID_BLUEBOOKOPEN"/>
+<option value="SID_BOLD"/>
+<option value="SID_BOOK"/>
+<option value="SID_BOOKMARK"/>
+<option value="SID_BOOKOPEN"/>
+<option value="SID_BOOKPAGE"/>
+<option value="SID_BOOKPAGE2"/>
+<option value="SID_BULLETEDLIST"/>
+<option value="SID_CLOSE"/>
+<option value="SID_COLOR"/>
+<option value="SID_CONTENTS"/>
+<option value="SID_COPY"/>
+<option value="SID_CROSS"/>
+<option value="SID_CUT"/>
+<option value="SID_DECIMALLIST"/>
+<option value="SID_DELETECOLUMN"/>
+<option value="SID_DELETEROW"/>
+<option value="SID_DOUBLESPACING"/>
+<option value="SID_EDITSTYLESHEET"/>
+<option value="SID_FASTFORWARD"/>
+<option value="SID_FIND"/>
+<option value="SID_FONT"/>
+<option value="SID_FORWARDINHISTORY"/>
+<option value="SID_HELP"/>
+<option value="SID_HELPCONTENTS"/>
+<option value="SID_HYMN"/>
+<option value="SID_IMAGEPAGE"/>
+<option value="SID_INDENTLESS"/>
+<option value="SID_INDENTMORE"/>
+<option value="SID_INFORMATION"/>
+<option value="SID_INSERTANCHOR"/>
+<option value="SID_INSERTCOLUMN"/>
+<option value="SID_INSERTHORIZONTALRULE"/>
+<option value="SID_INSERTIMAGE"/>
+<option value="SID_INSERTLINK"/>
+<option value="SID_INSERTROW"/>
+<option value="SID_INSERTTABLE"/>
+<option value="SID_ITALIC"/>
+<option value="SID_LIBRARY"/>
+<option value="SID_MAPPAGE"/>
+<option value="SID_MARGINS"/>
+<option value="SID_MISSINGIMAGE"/>
+<option value="SID_NEW"/>
+<option value="SID_NEWPANEL"/>
+<option value="SID_NEXT"/>
+<option value="SID_NEXTINCONTENTS"/>
+<option value="SID_OPEN"/>
+<option value="SID_PARALLELBIBLE"/>
+<option value="SID_PASTE"/>
+<option value="SID_PAUSE"/>
+<option value="SID_PLAY"/>
+<option value="SID_PREFERENCES"/>
+<option value="SID_PREVIOUS"/>
+<option value="SID_PREVIOUSINCONTENTS"/>
+<option value="SID_PRINT"/>
+<option value="SID_PROPERTIES"/>
+<option value="SID_REDO"/>
+<option value="SID_REPLACE"/>
+<option value="SID_REWIND"/>
+<option value="SID_ROMANNUMERALSLIST"/>
+<option value="SID_SAVE"/>
+<option value="SID_SEARCH"/>
+<option value="SID_SELECTALL"/>
+<option value="SID_SELECTINTERFACE"/>
+<option value="SID_SELECTLANGUAGE"/>
+<option value="SID_SINGLESPACING"/>
+<option value="SID_STOP"/>
+<option value="SID_STRIKETHROUGH"/>
+<option value="SID_SUBSCRIPT"/>
+<option value="SID_SUPERSCRIPT"/>
+<option value="SID_TOOLS"/>
+<option value="SID_UNDERLINE"/>
+<option value="SID_UNDO"/>
+<option value="SID_VIEWNORMAL"/>
+<option value="SID_ZOOMIN"/>
+<option value="SID_ZOOMOUT"/>
+</datalist>
+<table border="1" width="100%">
+<caption>Standard</caption>
+<tbody>
+<tr param1="" param2="">
+<td>SID_ABOUT</td>
+<td><img src="standard\information.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ALIGNCENTER</td>
+<td><img src="standard/alignc.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ALIGNLEFT</td>
+<td><img src="standard/alignl.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ALIGNRIGHT</td>
+<td><img src="standard/alignr.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INSERTANCHOR</td>
+<td><img src="standard/anchor.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_NEXTINCONTENTS</td>
+<td><img src="standard/down.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BACKINHISTORY</td>
+<td><img src="standard/left.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_FORWARDINHISTORY</td>
+<td><img src="standard/right.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PREVIOUSINCONTENTS</td>
+<td><img src="standard/up.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BIBLE</td>
+<td><img src="standard/bible.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BIBLEOPEN</td>
+<td><img src="standard/bibleopen.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BIBLEPAGE</td>
+<td><img src="standard/biblepage.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BOLD</td>
+<td><img src="standard/bold.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BOOK</td>
+<td><img src="standard/book.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BOOKMARK</td>
+<td><img src="standard/bookmark.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BOOKOPEN</td>
+<td><img src="standard/bookopen.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BOOKPAGE</td>
+<td><img src="standard/bookpage.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BOOKPAGE2</td>
+<td><img src="standard/bookpage2.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_CLOSE</td>
+<td><img src="standard/close.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_DELETECOLUMN</td>
+<td><img src="standard/delcol.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INSERTCOLUMN</td>
+<td><img src="standard/inscol.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_CONTENTS</td>
+<td><img src="standard/contents.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_COPY</td>
+<td><img src="standard/copy.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_CROSS</td>
+<td><img src="standard/cross.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_CUT</td>
+<td><img src="standard/cut.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_FIND</td>
+<td><img src="standard/find.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_REPLACE</td>
+<td><img src="standard/findreplace.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_FONT</td>
+<td><img src="standard/font.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_HYMN</td>
+<td><img src="standard/musicpage.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INSERTIMAGE</td>
+<td><img src="standard/image.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_IMAGEPAGE</td>
+<td><img src="standard/imagepage.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INDENTLESS</td>
+<td><img src="standard/indentless.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INDENTMORE</td>
+<td><img src="standard/indentmore.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ITALIC</td>
+<td><img src="standard/italic.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_LIBRARY</td>
+<td><img src="standard/library.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INSERTLINK</td>
+<td><img src="standard/link.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ALPHABETICLIST</td>
+<td><img src="standard/listalpha.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BULLETEDLIST</td>
+<td><img src="standard/listbullet.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_DECIMALLIST</td>
+<td><img src="standard/listdecimal.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ROMANNUMERALSLIST</td>
+<td><img src="standard/listroman.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_MAPPAGE</td>
+<td><img src="standard/mappage.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_MARGINS</td>
+<td><img src="standard/margins.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_NEW</td>
+<td><img src="standard/new.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_NEWPANEL</td>
+<td><img src="standard/newpane.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_OPEN</td>
+<td><img src="standard/open.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PARALLELBIBLE</td>
+<td><img src="standard/parallelbible.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PASTE</td>
+<td><img src="standard/paste.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PREFERENCES</td>
+<td><img src="standard/preferences.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PRINT</td>
+<td><img src="standard/print.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_REDO</td>
+<td><img src="standard/redo.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_DELETEROW</td>
+<td><img src="standard/delrow.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INSERTROW</td>
+<td><img src="standard/insrow.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SAVE</td>
+<td><img src="standard/save.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SEARCH</td>
+<td><img src="standard/search.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SELECTALL</td>
+<td><img src="standard/selectall.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_STRIKETHROUGH</td>
+<td><img src="standard/strike.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SUBSCRIPT</td>
+<td><img src="standard/sub.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SUPERSCRIPT</td>
+<td><img src="standard/super.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INSERTTABLE</td>
+<td><img src="standard/instable.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_UNDERLINE</td>
+<td><img src="standard/uline.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_UNDO</td>
+<td><img src="standard/undo.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_VIEWNORMAL</td>
+<td><img src="standard/viewnormal.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ZOOMIN</td>
+<td><img src="standard/zin.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_ZOOMOUT</td>
+<td><img src="standard/zout.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_MISSINGIMAGE</td>
+<td><img src="standard\missingimage.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BLUEBOOK</td>
+<td><img src="standard\bluebook.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BLUEBOOKOPEN</td>
+<td><img src="standard\bluebookopen.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_BACKGROUNDCOLOR</td>
+<td><img src="standard\backgroundcolor.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_HELP</td>
+<td><img src="standard\help.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_COLOR</td>
+<td><img src="standard\color.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_HELPCONTENTS</td>
+<td><img src="standard\helpbook.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PLAY</td>
+<td><img src="standard\play.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PAUSE</td>
+<td><img src="standard\pause.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_STOP</td>
+<td><img src="standard\stop.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_REWIND</td>
+<td><img src="standard\rewind.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_FASTFORWARD</td>
+<td><img src="standard\fastforward.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PREVIOUS</td>
+<td><img src="standard\previous.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_NEXT</td>
+<td><img src="standard\next.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SINGLESPACING</td>
+<td><img src="standard\ssp.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_DOUBLESPACING</td>
+<td><img src="standard\dsp.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_PROPERTIES</td>
+<td><img src="standard\properties.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SELECTLANGUAGE</td>
+<td><img src="standard\language.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_EDITSTYLESHEET</td>
+<td><img src="standard\editstyles.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_SELECTINTERFACE</td>
+<td><img src="standard\interface.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INSERTHORIZONTALRULE</td>
+<td><img src="standard\horizontalrule.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_TOOLS</td>
+<td><img src="standard\tools.png"/></td>
+</tr>
+<tr param1="" param2="">
+<td>SID_INFORMATION</td>
+<td><img src="standard\information.png"/></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
