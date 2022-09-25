@@ -18,6 +18,7 @@ IMPLEMENT_APP(SowerTranslationEditorApp);
 
 bool SowerTranslationEditorApp::OnInit()
 {
+
     bool wxsOK = true;
 
     SwApplicationInterface::InitBasic();

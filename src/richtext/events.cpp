@@ -21,7 +21,7 @@ void SwRichTextCtrl::OnThisRichTextLeftClick(wxRichTextEvent& event)
 
 void SwRichTextCtrl::OnThisRichTextRightClick(wxRichTextEvent& event)
 {
- //   event.Skip();
+   event.Skip();
 }
 
 void SwRichTextCtrl::OnThisRichTextMiddleClick(wxRichTextEvent& event)

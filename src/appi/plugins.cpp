@@ -78,7 +78,7 @@ void SwApplicationInterface::GetInterfaceList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetPlugInManager().GetCount(); i++)
+    for (swUI32 i = 0; i < GetPlugInManager().GetCount(); i++)
     {
         plugin = GetPlugInManager().GetAt(i);
 
@@ -121,7 +121,7 @@ void SwApplicationInterface::GetPlugInList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetPlugInManager().GetCount(); i++)
+    for (swUI32 i = 0; i < GetPlugInManager().GetCount(); i++)
     {
         plugin = GetPlugInManager().GetAt(i);
         if (!plugin)

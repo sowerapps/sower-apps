@@ -21,7 +21,7 @@ InterfacePlugIn::~InterfacePlugIn()
 {
 }
 
-wxUint8 InterfacePlugIn::GetVersion()
+swUI8 InterfacePlugIn::GetVersion()
 {
     return SOFTWAREVERSIONMAJOR;
 }
@@ -74,7 +74,6 @@ SWI_BetaPanel::SWI_BetaPanel(wxWindow *parent, wxWindowID id, const wxPoint &pos
     :SwGuiPanel(parent, id, pos, size, style, name)
 {
     swUI32 node;
-
     bool showBookmarks = true;
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("BookMarksList-Show");
     if (node != NODE_ID_INVALID)
@@ -113,27 +112,37 @@ SWI_BetaPanel::SWI_BetaPanel(wxWindow *parent, wxWindowID id, const wxPoint &pos
     SwApplicationInterface::GetModuleList(m_bookpanel->TocTreeCtrl);
 
     SwString path;
-
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
-    path += "sw_beta_uisession.gui";
+    path += "sw_beta_ses.gui";
 
-    SetFocus();
-
-    node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
-
-    if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+    if (!CheckStartUpFile("sw_beta"))
     {
-        SwGuiMlParser parser;
+        SetFocus();
 
-        parser.SetGuiPanel(this);
-        parser.OpenFile(path);
-        parser.Run();
+        swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetGuiPanel(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+
+        CreateStartUpFile("sw_beta");
+    }
+    else
+    {
+        unlink(path);
     }
 }
 
 SWI_BetaPanel::~SWI_BetaPanel()
 {
+    DeleteStartUpFile("sw_beta");
     m_bookpanel->TocTreeCtrl->CollapseAll();
 }
 
@@ -303,7 +312,7 @@ void SWI_BetaPanel::SaveUserData()
 
     title = SwApplicationInterface::GetUserDir();
     title += PATH_SEP;
-    title += "sw_beta_uisession.gui";
+    title += "sw_beta_ses.gui";
 
     FILE * f = SwFopen(title, FMD_WC);
     if (f)

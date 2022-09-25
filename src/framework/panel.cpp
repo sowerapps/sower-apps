@@ -1203,7 +1203,7 @@ SwPanelList::~SwPanelList()
     ReleasePanelArray();
 }
 
-wxUint32 SwPanelList::AssignPanelObject()
+swUI32 SwPanelList::AssignPanelObject()
 {
     if (m_panelarrayPos >= m_panelobjectsAllocated && !IncreasePanelArray())
         return NODE_ID_INVALID;
@@ -1244,10 +1244,9 @@ void SwPanelList::ReleasePanelArray()
     m_panelarrayPos = 0;
 }
 
-wxUint32 SwPanelList::AddPanel(SwPanel * panel)
+swUI32 SwPanelList::AddPanel(SwPanel * panel)
 {
-
-    wxUint32 position = AssignPanelObject();
+    swUI32 position = AssignPanelObject();
 
     if (position == NODE_ID_INVALID)
         return NODE_ID_INVALID;
@@ -1257,9 +1256,9 @@ wxUint32 SwPanelList::AddPanel(SwPanel * panel)
     return position;
 }
 
-void SwPanelList::DeletePanel(wxUint32 position)
+void SwPanelList::DeletePanel(swUI32 position)
 {
-    wxUint32 pos = position;
+    swUI32 pos = position;
     if (position >= m_panelarrayPos)
         return;
 
@@ -1281,7 +1280,7 @@ void SwPanelList::DeletePanel(wxUint32 position)
 
 void SwPanelList::Reset()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1295,9 +1294,9 @@ void SwPanelList::Reset()
     m_panelarrayPos = 0;
 }
 
-wxUint32 SwPanelList::SwFindPanel(SwPanel * panel)
+swUI32 SwPanelList::SwFindPanel(SwPanel * panel)
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     while (pos < m_panelarrayPos)
     {
@@ -1310,9 +1309,9 @@ wxUint32 SwPanelList::SwFindPanel(SwPanel * panel)
     return NODE_ID_INVALID;
 }
 
-wxUint32 SwPanelList::FindFocusPanel()
+swUI32 SwPanelList::FindFocusPanel()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     while (pos < m_panelarrayPos)
     {
@@ -1326,7 +1325,7 @@ wxUint32 SwPanelList::FindFocusPanel()
 }
 
 
-SwPanel * SwPanelList::GetPanel(wxUint32 position)
+SwPanel * SwPanelList::GetPanel(swUI32 position)
 {
     if (position >= m_panelarrayPos)
         return NULL;
@@ -1334,7 +1333,7 @@ SwPanel * SwPanelList::GetPanel(wxUint32 position)
     return m_panelArray[position];
 }
 
-void SwPanelList::SetPanel(wxUint32 position, SwPanel * panel)
+void SwPanelList::SetPanel(swUI32 position, SwPanel * panel)
 {
     if (position >= m_panelarrayPos)
         return;
@@ -1344,7 +1343,7 @@ void SwPanelList::SetPanel(wxUint32 position, SwPanel * panel)
 
 void SwPanelList::OnLanguageChangeBase()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1360,7 +1359,7 @@ void SwPanelList::OnLanguageChangeBase()
 
 void SwPanelList::OnThemeChangeBase()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1376,7 +1375,7 @@ void SwPanelList::OnThemeChangeBase()
 
 void SwPanelList::OnFontSizeChange()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1394,7 +1393,7 @@ void SwPanelList::OnFontSizeChange()
 
 void SwPanelList::OnModuleManagerReset()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1410,7 +1409,7 @@ void SwPanelList::OnModuleManagerReset()
 
 void SwPanelList::OnThMLFileManagerReset()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1426,7 +1425,7 @@ void SwPanelList::OnThMLFileManagerReset()
 
 void SwPanelList::OnModuleManagerLoaded()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1442,7 +1441,7 @@ void SwPanelList::OnModuleManagerLoaded()
 
 void SwPanelList::OnThMLFileManagerLoaded()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1458,7 +1457,7 @@ void SwPanelList::OnThMLFileManagerLoaded()
 
 void SwPanelList::OnModuleAdded(swUI16 mid)
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1474,7 +1473,7 @@ void SwPanelList::OnModuleAdded(swUI16 mid)
 
 void SwPanelList::OnModuleDeleted(swUI16 mid)
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1490,7 +1489,7 @@ void SwPanelList::OnModuleDeleted(swUI16 mid)
 
 void SwPanelList::OnThMLFileAdded(swUI16 mid)
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;
@@ -1506,7 +1505,7 @@ void SwPanelList::OnThMLFileAdded(swUI16 mid)
 
 void SwPanelList::OnThMLFileDeleted(swUI16 mid)
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_panelArray)
         return;

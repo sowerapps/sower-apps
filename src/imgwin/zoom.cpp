@@ -22,12 +22,12 @@ void SwImageWindow::OnViewNormal()
     SetZoom(1);
 }
 
-wxFloat32 SwImageWindow::GetZoom()
+swFloat SwImageWindow::GetZoom()
 {
     return m_czoom;
 }
 
-void SwImageWindow::SetZoom(wxFloat32 zoom)
+void SwImageWindow::SetZoom(swFloat zoom)
 {
     if (!m_image || !m_image->IsOk())
     {
@@ -36,8 +36,8 @@ void SwImageWindow::SetZoom(wxFloat32 zoom)
 
     int cy, cx;
 
-    wxUint32 zWidth = m_image->GetWidth() * m_zoom;
-    wxUint32 zHeight = m_image->GetHeight() * m_zoom;
+    swUI32 zWidth = m_image->GetWidth() * m_zoom;
+    swUI32 zHeight = m_image->GetHeight() * m_zoom;
     GetViewStart(&cx, &cy);
     Freeze();
 

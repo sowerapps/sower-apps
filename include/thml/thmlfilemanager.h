@@ -72,6 +72,7 @@ public:
     bool SearchEx(swUI16 managerId, SwStringCompareW & stringcomp, SwSearchCallBack & searchCallback);
     bool SearchEx(swUI8 category, SwStringCompareW & stringcomp, SwSearchCallBack & searchCallback);
     bool SearchEx(Swui16Array & idArray, SwStringCompareW & stringcomp, SwSearchCallBack & searchCallback);
+    const char * GetFirstPageId(const char * path);
     swUI16 GetFileCount();
 
 protected:

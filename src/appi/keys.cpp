@@ -41,7 +41,7 @@ void SwApplicationInterface::GetKeyList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetKeyManager().GetKeys(); i++)
+    for (swUI32 i = 0; i < GetKeyManager().GetKeys(); i++)
     {
         if (!GetKeyManager().GetKey(i)->header.IsMaster() && !GetKeyManager().GetKey(i)->header.IsUser())
             continue;
@@ -59,7 +59,7 @@ void SwApplicationInterface::GetMasterKeyList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetKeyManager().GetKeys(); i++)
+    for (swUI32 i = 0; i < GetKeyManager().GetKeys(); i++)
     {
         if (!GetKeyManager().GetKey(i)->header.IsMaster())
             continue;
@@ -78,7 +78,7 @@ void SwApplicationInterface::GetUserKeyList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetKeyManager().GetKeys(); i++)
+    for (swUI32 i = 0; i < GetKeyManager().GetKeys(); i++)
     {
         if (!GetKeyManager().GetKey(i)->header.IsUser())
             continue;

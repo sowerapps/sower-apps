@@ -86,9 +86,13 @@ wxPageSetupDialogData * SwApplicationInterface::sw_pagesetupData = NULL;
 SwFrame * SwApplicationInterface::sw_frame = NULL;
 
 swUI32 SwApplicationInterface::sw_ppi = 96;
+#if defined __OSX__
+swUI8 SwApplicationInterface::sw_InterfaceFontSize = 10;
+#else
 swUI8 SwApplicationInterface::sw_InterfaceFontSize = 9;
-swUI8 SwApplicationInterface::sw_ReaderFontSize = 9;
-swUI8 SwApplicationInterface::sw_AutodefFontSize = 7;
+#endif
+swUI8 SwApplicationInterface::sw_ReaderFontSize = 12;
+swUI8 SwApplicationInterface::sw_AutodefFontSize = 9;
 
 bool SwApplicationInterface::sw_wxInitialized = false;
 bool SwApplicationInterface::sw_basicInitialized = false;
@@ -625,6 +629,34 @@ void SwApplicationInterface::GetGroupList(wxChoice * choice)
         }
     }
 }
+
+void SwApplicationInterface::GetGroupList(wxComboBox * choice)
+{
+    if (!choice)
+        return;
+
+    SwModule * module;
+    SwStringW buffer;
+    SwClientData * data;
+
+    for (swUI32 i = 0; i < GetModuleManager().GetModules(); i++)
+    {
+        module = GetModuleManager().GetAt(i);
+        if (!module)
+            break;
+
+        //if (module->m_header.category == CATEGORY_MAP)
+        //    continue;
+
+        if (module->m_header.GetGroupLength() && (choice->FindString(module->m_header.GetGroup()) == wxNOT_FOUND))
+        {
+            data = new SwClientData(module->GetManagerId());
+            buffer.Copy(module->m_header.GetGroup());
+            choice->Append(buffer.GetArray(), data);
+        }
+    }
+}
+
 
 const char * SwApplicationInterface::GetSowerSiteC()
 {

@@ -17,6 +17,7 @@ IMPLEMENT_APP(SowerMapEditorApp);
 
 bool SowerMapEditorApp::OnInit()
 {
+
     bool wxsOK = true;
     SwApplicationInterface::SetAppName("Sower Map Editor");
     SwApplicationInterface::InitBasic();

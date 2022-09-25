@@ -27,7 +27,7 @@ InterfacePlugIn::~InterfacePlugIn()
 {
 }
 
-wxUint8 InterfacePlugIn::GetVersion()
+swUI8 InterfacePlugIn::GetVersion()
 {
     return 1;
 }
@@ -77,7 +77,7 @@ TVI_BetaPanel::TVI_BetaPanel(wxWindow *parent, wxWindowID id, const wxPoint &pos
     :SwGuiPanel(parent, id, pos, wxSize(0, 0), style, name)
 {
     swUI32 node;
-    m_silent = true;
+    m_startup = true;
     bool showBookmarks = true;
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("BookMarksList-Show");
     if (node != NODE_ID_INVALID)
@@ -113,24 +113,37 @@ TVI_BetaPanel::TVI_BetaPanel(wxWindow *parent, wxWindowID id, const wxPoint &pos
     SwString path;
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
-    path += "tv_beta_uisession.gui";
+    path += "tv_beta_ses.gui";
 
-    node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
-
-    if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+    if (!CheckStartUpFile("tvi_beta"))
     {
-        SwGuiMlParser parser;
+        SetFocus();
 
-        parser.SetGuiPanel(this);
-        parser.OpenFile(path);
-        parser.Run();
+        swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetGuiPanel(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+
+        CreateStartUpFile("tvi_beta");
+    }
+    else
+    {
+        unlink(path);
     }
 
-    m_silent = false;
+    m_startup = false;
 }
 
 TVI_BetaPanel::~TVI_BetaPanel()
 {
+    DeleteStartUpFile("tvi_beta");
     m_bookpanel->TocTreeCtrl->CollapseAll();
 }
 
@@ -151,7 +164,7 @@ bool TVI_BetaPanel::OpenFile(const char * path, bool addtorecent)
 {
     if (!path || !SwFile::DoesExist(path))
     {
-        if (!m_silent)
+        if (!m_startup)
             wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
         return false;
     }
@@ -165,7 +178,7 @@ bool TVI_BetaPanel::OpenFile(const char * path, bool addtorecent)
 
     if (!m_bookpanel->TocTreeCtrl->Open(path))
     {
-        if (!m_silent)
+        if (!m_startup)
             wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
         return false;
     }
@@ -380,7 +393,6 @@ void TVI_BetaPanel::SaveUserData()
     else
         SwApplicationInterface::GetPreferences().GetTable().UpdateNode("BookMarksList-Show", "false", "", "");
 
-
     SwApplicationInterface::WriteRecentFileslistToTable(SwApplicationInterface::GetFrameWindow()->m_fileList);
     SwApplicationInterface::WriteBookMarklistToTable(m_bookmarksList);
     SwApplicationInterface::SaveUserData();
@@ -409,7 +421,7 @@ void TVI_BetaPanel::SaveUserData()
 
     title = SwApplicationInterface::GetUserDir();
     title += PATH_SEP;
-    title += "tv_beta_uisession.gui";
+    title += "tv_beta_ses.gui";
 
     FILE * f = SwFopen(title, FMD_WC);
     if (f)

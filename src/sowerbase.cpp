@@ -94,7 +94,7 @@ SwClientData::SwClientData()
     m_data = 0;
 }
 
-SwClientData::SwClientData(wxUint32 data)
+SwClientData::SwClientData(swUI32 data)
 {
     m_data = data;
 }
@@ -103,43 +103,43 @@ SwClientData::~SwClientData()
 {
 }
 
-void SwClientData::SetData(wxUint32 data)
+void SwClientData::SetData(swUI32 data)
 {
     m_data = data;
 }
 
-wxUint32 SwClientData::GetData()
+swUI32 SwClientData::GetData()
 {
     return m_data;
 }
 
-wxUint16 SwClientData::GetHiWord()
+swUI16 SwClientData::GetHiWord()
 {
-    wxUint16 * p = (wxUint16 *) & m_data;
+    swUI16 * p = (swUI16 *) & m_data;
     return p[1];
 }
 
-void SwClientData::SetHiWord(wxUint16 data)
+void SwClientData::SetHiWord(swUI16 data)
 {
-    wxUint16 * p = (wxUint16 *) & m_data;
+    swUI16 * p = (swUI16 *) & m_data;
     p[1] = data;
 }
 
-wxUint16 SwClientData::GetLoWord()
+swUI16 SwClientData::GetLoWord()
 {
-    wxUint16 * p = (wxUint16 *) & m_data;
+    swUI16 * p = (swUI16 *) & m_data;
     return p[0];
 }
 
-void SwClientData::SetLoWord(wxUint16 data)
+void SwClientData::SetLoWord(swUI16 data)
 {
-    wxUint16 * p = (wxUint16 *) & m_data;
+    swUI16 * p = (swUI16 *) & m_data;
     p[0] = data;
 }
 
-wxUint8 SwClientData::GetHiByte(bool lowWord)
+swUI8 SwClientData::GetHiByte(bool lowWord)
 {
-    wxUint8 * p = (wxUint8 *) & m_data;
+    swUI8 * p = (swUI8 *) & m_data;
 
     if (lowWord)
         return p[1];
@@ -147,9 +147,9 @@ wxUint8 SwClientData::GetHiByte(bool lowWord)
     return p[3];
 }
 
-void SwClientData::SetHiByte(wxUint8 data, bool lowWord)
+void SwClientData::SetHiByte(swUI8 data, bool lowWord)
 {
-    wxUint8 * p = (wxUint8 *) & m_data;
+    swUI8 * p = (swUI8 *) & m_data;
 
     if (lowWord)
         p[1] = data;
@@ -157,9 +157,9 @@ void SwClientData::SetHiByte(wxUint8 data, bool lowWord)
     p[3] = data;
 }
 
-wxUint8 SwClientData::GetLoByte(bool lowWord)
+swUI8 SwClientData::GetLoByte(bool lowWord)
 {
-    wxUint8 * p = (wxUint8 *) & m_data;
+    swUI8 * p = (swUI8 *) & m_data;
 
     if (lowWord)
         return p[0];
@@ -167,9 +167,9 @@ wxUint8 SwClientData::GetLoByte(bool lowWord)
     return p[2];
 }
 
-void SwClientData::SetLoByte(wxUint8 data, bool lowWord)
+void SwClientData::SetLoByte(swUI8 data, bool lowWord)
 {
-    wxUint8 * p = (wxUint8 *) & m_data;
+    swUI8 * p = (swUI8 *) & m_data;
 
     if (lowWord)
         p[0] = data;

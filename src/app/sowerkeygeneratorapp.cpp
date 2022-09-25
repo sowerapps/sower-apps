@@ -12,6 +12,7 @@ IMPLEMENT_APP(SowerKeyGeneratorApp);
 
 bool SowerKeyGeneratorApp::OnInit()
 {
+
     bool wxsOK = true;
 
     SwApplicationInterface::InitBasic();

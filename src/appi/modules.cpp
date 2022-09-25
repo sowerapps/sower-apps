@@ -39,7 +39,7 @@ void SwApplicationInterface::GetModuleList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetModuleManager().GetModules(); i++)
+    for (swUI32 i = 0; i < GetModuleManager().GetModules(); i++)
     {
         module = GetModuleManager().GetAt(i);
         if (!module)
@@ -60,7 +60,7 @@ void SwApplicationInterface::GetModuleList(wxChoice * choice, swUI8 category)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetModuleManager().GetModules(); i++)
+    for (swUI32 i = 0; i < GetModuleManager().GetModules(); i++)
     {
         module = GetModuleManager().GetAt(i);
         if (!module || module->GetHeader().category != category)
@@ -83,7 +83,7 @@ void SwApplicationInterface::GetModuleList(wxCheckListBox * list)
     int item;
     swUI8 modType;
 
-    for (wxUint32 i = 0; i < GetModuleManager().GetModules(); i++)
+    for (swUI32 i = 0; i < GetModuleManager().GetModules(); i++)
     {
         module = GetModuleManager().GetAt(i);
         if (!module)
@@ -112,7 +112,7 @@ void SwApplicationInterface::UpdateModuleStates(wxCheckListBox * list)
     SwClientData * data;
     swUI32 node;
 
-    for (wxUint32 i = 0; i < list->GetCount(); i++)
+    for (swUI32 i = 0; i < list->GetCount(); i++)
     {
         data = (SwClientData *) list->GetClientObject(i);
         node = GetModuleManager().FindByMID(data->m_data);
@@ -140,7 +140,7 @@ void SwApplicationInterface::LoadModuleStates()
     SwStringW buffer;
     swUI32 item;
 
-    for (wxUint32 i = 0; i < GetModuleManager().GetModules(); i++)
+    for (swUI32 i = 0; i < GetModuleManager().GetModules(); i++)
     {
         module = GetModuleManager().GetAt(i);
 
@@ -169,7 +169,7 @@ void SwApplicationInterface::GetModuleList(wxListCtrl * listCtrl)
     {
         category = SwCategory::GetLoadOrder(count);
 
-        for (wxUint32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
+        for (swUI32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
         {
             module = SwApplicationInterface::GetModuleManager().GetAt(i);
 
@@ -200,7 +200,7 @@ void SwApplicationInterface::GetModuleList(wxListCtrl * listCtrl, swUI8 category
     wxListItem lItem;
     SwModule * module;
 
-    for (wxUint32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
+    for (swUI32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
     {
         module = SwApplicationInterface::GetModuleManager().GetAt(i);
 
@@ -230,7 +230,7 @@ void SwApplicationInterface::GetMasterKeyModuleList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetModuleManager().GetModules(); i++)
+    for (swUI32 i = 0; i < GetModuleManager().GetModules(); i++)
     {
         module = GetModuleManager().GetAt(i);
 
@@ -256,7 +256,7 @@ void SwApplicationInterface::GetMasterKeyModuleList(wxListCtrl * listCtrl)
 
     SwModule * module;
 
-    for (wxUint32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
+    for (swUI32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
     {
         module = SwApplicationInterface::GetModuleManager().GetAt(i);
 
@@ -289,7 +289,7 @@ void SwApplicationInterface::GetModuleList(SwModuleTreeCtrl * treeCtrl)
     {
         category = SwCategory::GetLoadOrder(count);
 
-        for (wxUint32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
+        for (swUI32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
         {
             module = SwApplicationInterface::GetModuleManager().GetAt(i);
 

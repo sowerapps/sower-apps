@@ -9,6 +9,7 @@
 #include "../../include/av_media/audiocontrol.h"
 #include "../../include/appi/appifa.h"
 
+#if !defined __OSX__
 SwAudioStream::SwAudioStream()
 {
     m_module = NULL;
@@ -200,3 +201,5 @@ void SwAudioCtrl::SetLoop(bool loop)
 {
     m_music.setLoop(loop);
 }
+
+#endif

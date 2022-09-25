@@ -14,8 +14,8 @@ IMPLEMENT_APP(SowerHelpApp);
 
 bool SowerHelpApp::OnInit()
 {
-    bool wxsOK = true;
 
+    bool wxsOK = true;
     SwApplicationInterface::SetAppName("Sower Help");
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadAllKeys();

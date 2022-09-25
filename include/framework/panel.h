@@ -315,13 +315,13 @@ public:
     SwPanelList();
     virtual ~SwPanelList();
 
-    wxUint32 AddPanel(SwPanel * panel);
-    void DeletePanel(wxUint32 position);
+    swUI32 AddPanel(SwPanel * panel);
+    void DeletePanel(swUI32 position);
     void Reset();
-    wxUint32 SwFindPanel(SwPanel * panel);
-    wxUint32 FindFocusPanel();
-    SwPanel * GetPanel(wxUint32 position);
-    void SetPanel(wxUint32 position, SwPanel * panel);
+    swUI32 SwFindPanel(SwPanel * panel);
+    swUI32 FindFocusPanel();
+    SwPanel * GetPanel(swUI32 position);
+    void SetPanel(swUI32 position, SwPanel * panel);
     void OnLanguageChangeBase();
     void OnThemeChangeBase();
     void OnFontSizeChange();
@@ -333,14 +333,15 @@ public:
     void OnModuleDeleted(swUI16 mid);
     void OnThMLFileAdded(swUI16 mid);
     void OnThMLFileDeleted(swUI16 mid);
+    swUI32 GetCount() { return m_panelarrayPos; }
 
 protected:
-    wxUint32 AssignPanelObject();
+    swUI32 AssignPanelObject();
     bool IncreasePanelArray();
     void ReleasePanelArray();
     SwPanel ** m_panelArray;
-    wxUint32 m_panelarrayPos;
-    wxUint32 m_panelobjectsAllocated;
+    swUI32 m_panelarrayPos;
+    swUI32 m_panelobjectsAllocated;
 };
 
 class SOWERBASEEXP SwStretchPanel : public SwPanel

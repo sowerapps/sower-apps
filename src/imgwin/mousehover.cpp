@@ -22,7 +22,7 @@ void SwImageWindow::OnMouseHover(wxPoint & clientPos)
     wxPoint scrollPos = GetViewStart();
 
     bool tiploaded = false;
-    wxUint32 nodeId;
+    swUI32 nodeId;
     SwMapItemData itemData;
     bool isGeo = false;
 

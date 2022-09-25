@@ -14,6 +14,7 @@ IMPLEMENT_APP(SowerModuleInspectorApp);
 
 bool SowerModuleInspectorApp::OnInit()
 {
+
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadPlugIns();
     SwApplicationInterface::LoadAllKeys();

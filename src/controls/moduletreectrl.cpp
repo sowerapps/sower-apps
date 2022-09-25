@@ -44,7 +44,7 @@ void SwModuleTreeCtrl::Reset()
 
 bool SwModuleTreeCtrl::BuildTree(SwTableOfContents & toc, wxTreeItemId parent, swUI8 category, swUI16 managerId)
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
     SwTreeAppendData appendData;
     SwString buffer;
     appendData.id = parent;

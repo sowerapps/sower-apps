@@ -18,6 +18,7 @@ IMPLEMENT_APP(SowerModuleWriterApp);
 
 bool SowerModuleWriterApp::OnInit()
 {
+
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadPlugIns();
     SwApplicationInterface::LoadAllKeys();

@@ -1171,7 +1171,7 @@ void SwGeo::FillCtrl(wxListCtrl * listCtrl)
     SwStringW buffer;
     wxListItem lItem;
 
-    for (wxUint32 i = 1; i < N_GEO_LOCATIONS; i++)
+    for (swUI32 i = 1; i < N_GEO_LOCATIONS; i++)
     {
         lItem.Clear();
         lItem.SetStateMask(wxLIST_MASK_TEXT|wxLIST_MASK_DATA);

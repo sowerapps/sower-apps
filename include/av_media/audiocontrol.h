@@ -12,10 +12,12 @@
 #include "../sowerbase.h"
 #include "../module/module.h"
 #include "../module/mediacontents.h"
-#include <SFML/System/InputStream.hpp>
-#include <SFML/Audio/Music.hpp>
 #include <wx/control.h>
 #include <wx/gbsizer.h>
+
+#if !defined __OSX__
+#include <SFML/System/InputStream.hpp>
+#include <SFML/Audio/Music.hpp>
 
 using namespace sf;
 
@@ -74,4 +76,5 @@ protected:
     SwAudioStream m_stream;
 };
 
+#endif // __OSX__
 #endif // AUDIOCONTROL_H

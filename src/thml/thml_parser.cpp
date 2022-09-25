@@ -14,9 +14,11 @@
 
 #if defined __MSWIN__
 #include <io.h>
-#else
+#elif defined __linux__
 #include <sys/io.h>
 #include <unistd.h>
+#elif defined __OSX__
+#include <sys/uio.h>
 #endif
 
 #include <stdio.h>

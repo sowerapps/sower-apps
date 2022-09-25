@@ -2671,8 +2671,6 @@ bool SwToolBook::WriteGuiData(FILE * file)
 
 swUI32 SwToolBook::FindFile(const char * filepath)
 {
-    const char * path;
-
     if (!filepath)
         return NODE_ID_INVALID;
 
@@ -2683,15 +2681,8 @@ swUI32 SwToolBook::FindFile(const char * filepath)
         if (!panel)
             continue;
 
-        path = panel->GetFilePath();
-
-        if (!path)
-            continue;
-
-        if (strcmp(filepath, path) == 0)
-        {
+        if (panel->HasFile(filepath))
             return i;
-        }
     }
 
     return NODE_ID_INVALID;
@@ -2699,8 +2690,6 @@ swUI32 SwToolBook::FindFile(const char * filepath)
 
 swUI32 SwToolBook::FindModule(const char * bookId)
 {
-    const char * id;
-
     if (!bookId)
         return NODE_ID_INVALID;
 
@@ -2711,15 +2700,8 @@ swUI32 SwToolBook::FindModule(const char * bookId)
         if (!panel)
             continue;
 
-        id = panel->GetBookId();
-
-        if (!id)
-            continue;
-
-        if (strcmp(bookId, id) == 0)
-        {
+        if (panel->HasModule(bookId))
             return i;
-        }
     }
 
     return NODE_ID_INVALID;

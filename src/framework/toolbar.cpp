@@ -788,3 +788,59 @@ void SwUtilityToolBar::EnableItems(bool state)
     EnableItem(SW_GUIID_CONTENTSDOWN, state);
     EnableItem(SW_GUIID_CONTENTSUP, state);
 }
+
+SwEditorToolBar::SwEditorToolBar()
+{
+}
+
+SwEditorToolBar::SwEditorToolBar(wxWindow *parent, wxWindowID id, const wxPoint &position, const wxSize &size, long style, bool primary, SwFrame * frame)
+    :SwToolBar(parent, id, position, size, style, true, frame)
+{
+    AddStockItem(SW_GUIID_OPEN, true, true);
+    AddStockItem(SW_GUIID_CLOSE, false, true);
+    AddStockItem(SW_GUIID_PRINT, false, true);
+
+    AddStockItem(SW_GUIID_CUT, true, true);
+    AddStockItem(SW_GUIID_COPY, false, true);
+    AddStockItem(SW_GUIID_PASTE, false, true);
+    AddStockItem(SW_GUIID_SELECTALL, false, true);
+    AddStockItem(SW_GUIID_UNDO, true, true);
+    AddStockItem(SW_GUIID_REDO, true, true);
+
+    AddStockItem(SW_GUIID_ZOOMIN, false, true);
+    AddStockItem(SW_GUIID_ZOOMOUT, true, true);
+    AddStockItem(SW_GUIID_VIEWNORMAL, true, true);
+
+    AddStockItem(SW_GUIID_FONT, false, true);
+    AddStockItem(SW_GUIID_BOLD, false, true);
+    AddStockItem(SW_GUIID_ITALIC, true, true);
+    AddStockItem(SW_GUIID_UNDERLINE, true, true);
+    AddStockItem(SW_GUIID_STRIKETHROUGH, false, true);
+    AddStockItem(SW_GUIID_SUPERSCRIPT, false, true);
+    AddStockItem(SW_GUIID_SUBSCRIPT, true, true);
+    AddStockItem(SW_GUIID_COLOR, true, true);
+    AddStockItem(SW_GUIID_BACKGROUNDCOLOR, false, true);
+    AddStockItem(SW_GUIID_STYLE, true, true);
+    AddStockItem(SW_GUIID_ALIGNLEFT, true, true);
+    AddStockItem(SW_GUIID_ALIGNCENTER, false, true);
+    AddStockItem(SW_GUIID_ALIGNRIGHT, false, true);
+    AddStockItem(SW_GUIID_ALPHABETICLIST, true, true);
+    AddStockItem(SW_GUIID_BULLETEDLIST, true, true);
+    AddStockItem(SW_GUIID_ROMANNUMERALSLIST, false, true);
+    AddStockItem(SW_GUIID_DECIMALLIST, false, true);
+    AddStockItem(SW_GUIID_INSERTTABLE, true, true);
+    AddStockItem(SW_GUIID_INSERTIMAGE, true, true);
+    AddStockItem(SW_GUIID_INSERTLINK, false, true);
+    AddStockItem(SW_GUIID_INSERTANCHOR, true, true);
+    AddStockItem(SW_GUIID_INSERTHORIZONTALRULE, false, true);
+    AddSpacer(10000);
+    Realize();
+}
+
+void SwEditorToolBar::EnableItems(bool state)
+{
+    EnableItem(SW_GUIID_CLOSE, state);
+    EnableItem(SW_GUIID_PRINT, state);
+}
+
+

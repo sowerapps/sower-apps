@@ -35,6 +35,7 @@ public:
     swUI16 FindByTitle(const char * title);
     swUI16 FindByCcelFileName(const char * name);
     void GetGroupList(wxChoice * choice);
+    void GetGroupList(wxComboBox * choice);
     void SetCount(swUI32 count);
     swUI32 GetCount();
     void IncrementCount(swUI32 inc = 1);

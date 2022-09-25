@@ -133,8 +133,8 @@ public:
     virtual void OnZoomIn();
     virtual void OnZoomOut();
     virtual void OnViewNormal();
-    wxFloat32 GetZoom();
-    virtual void SetZoom(wxFloat32 zoom);
+    swFloat GetZoom();
+    virtual void SetZoom(swFloat zoom);
     virtual void OnKillFocus(wxFocusEvent& event);
     virtual void OnLeftDown(wxMouseEvent& event);
     virtual void OnLeftUp(wxMouseEvent& event);
@@ -149,8 +149,8 @@ public:
     static wxBitmap * GetImage(const unsigned char *data, int len);
     static wxBitmap * GetImage(const wchar_t * path);
     void OnPaint(wxPaintEvent& event);
-    void DrawMapAreas(wxDC & dc, wxFloat32 zoom, wxUint32 cx, wxUint32 cy);
-    void DrawImageMap(SwHtmlImageMap & imageMap, wxPen & pen, wxBrush & brush, wxDC & dc, wxFloat32 zoom, wxUint32 originX, wxUint32 originY, bool drawAreas = false);
+    void DrawMapAreas(wxDC & dc, swFloat zoom, swUI32 cx, swUI32 cy);
+    void DrawImageMap(SwHtmlImageMap & imageMap, wxPen & pen, wxBrush & brush, wxDC & dc, swFloat zoom, swUI32 originX, swUI32 originY, bool drawAreas = false);
     virtual void OnMarkItem(wxCommandEvent& event);
     virtual void OnUnMarkItem(wxCommandEvent& event);
 
@@ -249,8 +249,8 @@ protected:
     SwPointArray              m_pt;
     SwPointArray              m_p2polyBuffer;
     SwStringW                 m_tipText;
-    wxFloat32                 m_zoom;
-    wxFloat32                 m_czoom;
+    swFloat                 m_zoom;
+    swFloat                 m_czoom;
     SwMapArea *               m_hotmapArea;
     SwHtmlImageMap *          m_hotMap;
     SwMapArea *               m_leftdownmapArea;
@@ -284,7 +284,7 @@ protected:
     bool                      m_isediting;
     bool                      m_painted;
     bool                      m_ishotspotdrawArea;
-    wxUint32                  m_modified;
+    swUI32                    m_modified;
     SwMapArea                 m_editmapData;
     SwString                  m_title;
     SwString                  m_basePath;

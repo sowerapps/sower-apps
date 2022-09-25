@@ -100,7 +100,7 @@ protected:
     SwMultiFileThMLBookPanel * m_bookpanel;
     SwMenu * m_listMenu;
     SwStandardViewMenu * m_viewMenu;
-    bool m_silent;
+    bool m_startup;
 };
 
 #endif // SWI_BETA_H

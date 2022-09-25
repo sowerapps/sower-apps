@@ -21,7 +21,7 @@ InterfacePlugIn::~InterfacePlugIn()
 {
 }
 
-wxUint8 InterfacePlugIn::GetVersion()
+swUI8 InterfacePlugIn::GetVersion()
 {
     return SOFTWAREVERSIONMAJOR;
 }
@@ -75,7 +75,7 @@ SWI_GammaPanel::SWI_GammaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     :SwGuiPanel(parent, id, pos, size, style, name)
 {
     swUI32 node;
-
+    m_startup = true;
     bool showBookmarks = true;
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("BookMarksList-Show");
     if (node != NODE_ID_INVALID)
@@ -110,27 +110,50 @@ SWI_GammaPanel::SWI_GammaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     Connect(SwGuiData::GetDataForItemSwId(SW_GUIID_DELETE)->wx_id, wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&SWI_GammaPanel::OnDelete);
 
     SwString path;
-
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
-    path += "sw_gamma_uisession.gui";
-
+    path += "sw_gamma_ses.gui";
     SetFocus();
-
-    node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
-
-    if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+    if (!CheckStartUpFile("sw_gamma"))
     {
-        SwGuiMlParser parser;
+        swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
 
-        parser.SetGuiPanel(this);
-        parser.OpenFile(path);
-        parser.Run();
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetGuiPanel(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+
+        for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
+        {
+            SwMultiModuleBookPanel * panel = (SwMultiModuleBookPanel *) m_librarybook->GetPage(i);
+            if (panel && !panel->TocTreeCtrl->GetIds().GetCount())
+                m_librarybook->DeletePage(i);
+        }
+
+        CreateStartUpFile("sw_gamma");
     }
+    else
+    {
+        unlink(path);
+    }
+
+    for(swUI32 i = 0; i < m_panelList.GetCount(); i ++)
+    {
+        SwMultiModuleBookPanel * panel = (SwMultiModuleBookPanel *) m_panelList.GetPanel(i);
+        m_librarybook->AddPage(panel, SwCategory::GetTranslatedString(panel->GetCategoryGroup()), true);
+    }
+
+    m_startup = false;
 }
 
 SWI_GammaPanel::~SWI_GammaPanel()
 {
+    DeleteStartUpFile("sw_gamma");
 }
 
 void SWI_GammaPanel::OnDelete(wxCommandEvent & event)
@@ -219,17 +242,29 @@ bool SWI_GammaPanel::ActivateBookMark(SwBookMarkClientData & data, const char * 
 {
     if (strcmp(ctrlid, LIBRARYBOOK_STR) == 0)
     {
-        swUI16 objpos= SwApplicationInterface::GetModuleManager().FindById(data.m_bookId);
+        swUI16 objpos = SwApplicationInterface::GetModuleManager().FindById(data.m_bookId);
 
         if (objpos == NODE_ID_INVALID_16)
+        {
+            if (m_startup)
+            {
+                SwMultiModuleBookPanel * panel = new SwMultiModuleBookPanel(m_librarybook);
+                m_librarybook->AddPage(panel, ".",true);
+            }
+
             return false;
+        }
 
-        swUI16 managerId = SwApplicationInterface::GetModuleManager().GetAt(objpos)->GetManagerId();
-
-        if (!LoadLibraryItem(managerId))
-            return false;
-
-        return m_librarybook->ActivateBookMark(data, ctrlid);
+        for(swUI32 i = 0; i < m_panelList.GetCount(); i ++)
+        {
+            SwMultiModuleBookPanel * panel = (SwMultiModuleBookPanel *) m_panelList.GetPanel(i);
+            if (panel->TocTreeCtrl->HasModule(data.m_bookId))
+            {
+                m_librarybook->AddPage(panel, SwCategory::GetTranslatedString(panel->GetCategoryGroup()), true);
+                m_panelList.DeletePanel(i);
+                return m_librarybook->ActivateBookMark(data, ctrlid);
+            }
+        }
     }
 
     return false;
@@ -239,7 +274,7 @@ void SWI_GammaPanel::OnBookmarkActivated(wxListEvent& event)
 {
     SwBookMarkClientData * data = (SwBookMarkClientData *) event.GetItem().GetData();
 
-    swUI16 objpos= SwApplicationInterface::GetModuleManager().FindById(data->m_bookId);
+    swUI16 objpos = SwApplicationInterface::GetModuleManager().FindById(data->m_bookId);
 
     if (objpos == NODE_ID_INVALID_16)
         return;
@@ -281,14 +316,7 @@ bool SWI_GammaPanel::LoadLibraryItem(swUI16 managerId)
         return true;
     }
 
-    SwStringW buffer;
-    buffer.Copy(module->m_header.GetTitle());
-    SwMultiModuleBookPanel * panel = new SwMultiModuleBookPanel(m_librarybook);
-    panel->SetPopUpMenu(m_viewMenu);
-    m_librarybook->AddPage(panel, buffer.GetArray(), true);
-    m_librarybook->SetFocus();
-
-    return panel->TocTreeCtrl->BuildTree(module->GetTableofContents(), panel->TocTreeCtrl->GetRootItem(), module->GetHeader().category, module->GetManagerId());
+    return false;
 }
 
 void SWI_GammaPanel::SaveUserData()
@@ -331,7 +359,8 @@ void SWI_GammaPanel::SaveUserData()
         for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
         {
             m_librarybook->SetSelection(i);
-            m_librarybook->GetBookMarkData(title, data);
+            if (!m_librarybook->GetBookMarkData(title, data))
+                continue;
 
             SwGuiMlParser::CreateBookTag(data, LIBRARYBOOK_STR, tag);
             buffer += tag;
@@ -350,7 +379,7 @@ void SWI_GammaPanel::SaveUserData()
 
     title = SwApplicationInterface::GetUserDir();
     title += PATH_SEP;
-    title += "sw_gamma_uisession.gui";
+    title += "sw_gamma_ses.gui";
 
     FILE * f = SwFopen(title, FMD_WC);
     if (f)
@@ -410,6 +439,7 @@ bool SWI_GammaPanel::LoadPerspective(const char * id, const char * perspective)
         bool status = m_manager->LoadPerspective(perspective);
         return status;
     }
+
     else if (strcmp(id, LIBRARYBOOK_STR) == 0)
     {
         bool status = m_librarybook->LoadPerspective(perspective);
@@ -442,7 +472,7 @@ void SWI_GammaPanel::BuildUI()
             panel->TocTreeCtrl->LoadBooksForGroup(groups.GetAt(group));
             panel->SetCategoryGroup(groups.GetAt(group));
             panel->SetPopUpMenu(m_viewMenu);
-            m_librarybook->AddPage(panel, SwCategory::GetTranslatedString(groups.GetAt(group)));
+            m_panelList.AddPanel(panel);
         }
     }
 }

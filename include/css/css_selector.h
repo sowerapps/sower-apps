@@ -10,7 +10,9 @@
 
 #include "../../include/html/html.h"
 #include <stdlib.h>
+#if !defined __OSX__
 #include <malloc.h>
+#endif
 
 struct SwSelectorNode
 {

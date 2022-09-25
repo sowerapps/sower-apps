@@ -28,7 +28,7 @@ InterfacePlugIn::~InterfacePlugIn()
 {
 }
 
-wxUint8 InterfacePlugIn::GetVersion()
+swUI8 InterfacePlugIn::GetVersion()
 {
     return 1;
 }
@@ -79,7 +79,7 @@ TVI_GammaPanel::TVI_GammaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     :SwGuiPanel(parent, id, pos, wxSize(0, 0), style, name)
 {
     swUI32 node;
-    m_silent = true;
+    m_startup = true;
     bool showBookmarks = true;
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("BookMarksList-Show");
     if (node != NODE_ID_INVALID)
@@ -110,25 +110,50 @@ TVI_GammaPanel::TVI_GammaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     SwString path;
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
-    path += "tv_gamma_uisession.gui";
+    path += "tv_gamma_ses.gui";
 
-    SetFocus();
-
-    node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
-
-    if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+    if (!CheckStartUpFile("tvi_gamma"))
     {
-        SwGuiMlParser parser;
+        SetFocus();
 
-        parser.SetGuiPanel(this);
-        parser.OpenFile(path);
-        parser.Run();
+        swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetGuiPanel(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+
+        for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
+        {
+            SwThMLBookPanel * panel = (SwThMLBookPanel *) m_librarybook->GetPage(i);
+            if (panel && !panel->TocTreeCtrl->GetIds().GetCount())
+                m_librarybook->DeletePage(i);
+        }
+
+        CreateStartUpFile("tvi_gamma");
     }
-    m_silent = false;
+    else
+    {
+        unlink(path);
+    }
+
+    for(swUI32 i = 0; i < m_panelList.GetCount(); i ++)
+    {
+        SwThMLBookPanel * panel = (SwThMLBookPanel *) m_panelList.GetPanel(i);
+        m_librarybook->AddPage(panel, SwCategory::GetTranslatedString(panel->GetCategoryGroup()), true);
+    }
+
+    m_startup = false;
 }
 
 TVI_GammaPanel::~TVI_GammaPanel()
 {
+    DeleteStartUpFile("tvi_gamma");
 }
 
 bool TVI_GammaPanel::OpenFile(const char * path, bool addtorecent)
@@ -138,7 +163,7 @@ bool TVI_GammaPanel::OpenFile(const char * path, bool addtorecent)
 
     if (!path || !SwFile::DoesExist(path))
     {
-        if (!m_silent)
+        if (!m_startup)
             wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
         return false;
     }
@@ -151,28 +176,31 @@ bool TVI_GammaPanel::OpenFile(const char * path, bool addtorecent)
         m_librarybook->SetSelection(id);
         return true;
     }
-    else if (id == NODE_ID_INVALID)
-    {
-        id = FindFile(SwApplicationInterface::GetFrameWindow()->GetToolBook(), path);
 
-        if (id != NODE_ID_INVALID)
-        {
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetFocus();
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetSelection(id);
-        }
-
-        return true;
-    }
 
     if (id == NODE_ID_INVALID && SwThMLUtility::IsFileThML(path) == 1)
     {
         status = LoadLibraryItem(path);
+
+        id = FindFile(m_librarybook, path);
+
+        if (id != NODE_ID_INVALID)
+        {
+            m_librarybook->SetFocus();
+            m_librarybook->SetSelection(id);
+            SwBookMarkClientData data;
+            data.m_bookId = path;
+            data.m_pageId = SwApplicationInterface::GetThMLFileManager().GetFirstPageId(path);
+            data.m_type = "ThML";
+            m_librarybook->ActivateBookMark(data, "");
+        }
     }
 
     if (!status && id == NODE_ID_INVALID)
     {
-        if (!m_silent)
+        if (!m_startup)
             wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
+        return false;
     }
 
     if (status && addtorecent && SwApplicationInterface::GetFrameWindow()->m_fileList.Find(path) == NODE_ID_INVALID)
@@ -286,26 +314,6 @@ void TVI_GammaPanel::OpenRecent(swUI8 pos)
     OpenFile(SwApplicationInterface::GetFrameWindow()->m_fileList.GetAt(pos), false);
 }
 
-bool TVI_GammaPanel::OnClose()
-{
-    if (!SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount())
-        return false;
-
-    SwApplicationInterface::GetFrameWindow()->GetToolBook()->DeletePage(SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetSelection());
-
-    return true;
-}
-
-bool TVI_GammaPanel::OnCloseAll()
-{
-    while (SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount())
-    {
-        SwApplicationInterface::GetFrameWindow()->GetToolBook()->DeletePage(0);
-    }
-
-    return true;
-}
-
 bool TVI_GammaPanel::OnBookmarksView()
 {
     if (m_manager->GetPane(m_bookmarksList).IsShown())
@@ -363,19 +371,21 @@ bool TVI_GammaPanel::ActivateBookMark(SwBookMarkClientData & data, const char * 
         m_librarybook->ActivateBookMark(data, ctrlid);
         return true;
     }
-    else
+
+    if (id == NODE_ID_INVALID && !LoadLibraryItem(data.m_bookId))
+        return false;
+
+    id = FindFile(m_librarybook, data.m_bookId);
+
+    if (id != NODE_ID_INVALID)
     {
-        id = FindFile(SwApplicationInterface::GetFrameWindow()->GetToolBook(), data.m_bookId);
-        if (id != NODE_ID_INVALID)
-        {
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetFocus();
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetSelection(id);
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->ActivateBookMark(data, ctrlid);
-            return true;
-        }
+        m_librarybook->SetFocus();
+        m_librarybook->SetSelection(id);
+        m_librarybook->ActivateBookMark(data, ctrlid);
+        return true;
     }
 
-    return LoadLibraryItem(data.m_bookId);
+    return false;
 }
 
 void TVI_GammaPanel::OnBookmarkActivated(wxListEvent& event)
@@ -384,27 +394,15 @@ void TVI_GammaPanel::OnBookmarkActivated(wxListEvent& event)
 
     swUI32 id = FindFile(m_librarybook, data->m_bookId);
 
+    if (id == NODE_ID_INVALID && !LoadLibraryItem(data->m_bookId))
+        return;
+
     if (id != NODE_ID_INVALID)
     {
         m_librarybook->SetFocus();
         m_librarybook->SetSelection(id);
         m_librarybook->ActivateBookMark(*data, "");
-        return;
     }
-    else
-    {
-        id = FindFile(SwApplicationInterface::GetFrameWindow()->GetToolBook(), data->m_bookId);
-        if (id != NODE_ID_INVALID)
-        {
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetFocus();
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetSelection(id);
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->ActivateBookMark(*data, "");
-            return;
-        }
-    }
-
-    if (!LoadLibraryItem(data->m_bookId))
-        return;
 }
 
 bool TVI_GammaPanel::LoadLibraryItem(const char * path)
@@ -446,15 +444,39 @@ bool TVI_GammaPanel::LoadLibraryItem(swUI16 managerId)
     if (!file)
         return false;
 
-    SwStringW buffer;
-    buffer.Copy(file->GetTitle());
-    SwThMLBookPanel * panel = new SwThMLBookPanel(SwApplicationInterface::GetFrameWindow()->GetToolBook());
-    panel->SetPopUpMenu(m_viewMenu);
-    SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetFocus();
-    SwApplicationInterface::GetFrameWindow()->GetToolBook()->AddPage(panel, buffer.GetArray(), true);
-    SwApplicationInterface::GetFrameWindow()->ToolAdded();
+    swUI32 id = FindFile(m_librarybook, file->GetPath());
 
-    return panel->TocTreeCtrl->BuildTree(file->GetTableofContents(), panel->TocTreeCtrl->GetRootItem(), file->GetCategory(), file->GetManagerId());
+    if (id != NODE_ID_INVALID)
+    {
+        m_librarybook->SetFocus();
+        m_librarybook->SetSelection(id);
+        return true;
+    }
+
+    SwThMLBookPanel * panel = FindPanelForCategory(m_librarybook, file->GetCategory());
+
+    if (panel)
+    {
+        panel->TocTreeCtrl->BuildTree(file->GetTableofContents(), panel->TocTreeCtrl->GetRootItem(), file->GetCategory(), file->GetManagerId());
+        m_librarybook->SetFocus();
+        m_librarybook->SetSelection(m_librarybook->GetPageIndex(panel));
+
+        return true;
+    }
+    else
+    {
+        swUI8 group = SwCategory::GetCategoryGroup(file->GetCategory());
+        panel = new SwThMLBookPanel(m_librarybook);
+        panel->TocTreeCtrl->LoadBooksForGroup(group);
+        panel->SetCategoryGroup(group);
+        panel->SetPopUpMenu(m_viewMenu);
+        m_librarybook->AddPage(panel, SwCategory::GetTranslatedString(group), true);
+        m_librarybook->SetFocus();
+        m_librarybook->SetSelection(m_librarybook->GetPageIndex(panel));
+        return true;
+    }
+
+    return false;
 }
 
 bool TVI_GammaPanel::SelectTab(const char * path)
@@ -513,7 +535,8 @@ void TVI_GammaPanel::SaveUserData()
         for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
         {
             m_librarybook->SetSelection(i);
-            m_librarybook->GetBookMarkData(title, data);
+            if (!m_librarybook->GetBookMarkData(title, data))
+                continue;
 
             SwGuiMlParser::CreateBookTag(data, LIBRARYBOOK_STR, tag);
             buffer += tag;
@@ -526,31 +549,13 @@ void TVI_GammaPanel::SaveUserData()
         buffer += "\">";
         buffer += m_librarybook->SavePerspective();
         buffer += "</perspective>\n";
-
-        sel = SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetSelection();
-        for (size_t i = 0; i < SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount(); i ++)
-        {
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetSelection(i);
-            SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetBookMarkData(title, data);
-
-            SwGuiMlParser::CreateBookTag(data, TOOLBOOK_STR, tag);
-            buffer += tag;
-            buffer += '\n';
-        }
-        sel = SwApplicationInterface::GetFrameWindow()->GetToolBook()->SetSelection(sel);
-
-        buffer += "<perspective id=\"";
-        buffer += TOOLBOOK_STR;
-        buffer += "\">";
-        buffer += SwApplicationInterface::GetFrameWindow()->GetToolBook()->SavePerspective();
-        buffer += "</perspective>\n";
     }
 
     buffer += "</swguiml>";
 
     title = SwApplicationInterface::GetUserDir();
     title += PATH_SEP;
-    title += "tv_gamma_uisession.gui";
+    title += "tv_gamma_ses.gui";
 
     FILE * f = SwFopen(title, FMD_WC);
     if (f)
@@ -610,14 +615,10 @@ bool TVI_GammaPanel::LoadPerspective(const char * id, const char * perspective)
         bool status = m_manager->LoadPerspective(perspective);
         return status;
     }
+
     else if (strcmp(id, LIBRARYBOOK_STR) == 0)
     {
         bool status = m_librarybook->LoadPerspective(perspective);
-        return status;
-    }
-    else if (strcmp(id, TOOLBOOK_STR) == 0)
-    {
-        bool status = SwApplicationInterface::GetFrameWindow()->GetToolBook()->LoadPerspective(perspective);
         return status;
     }
 
@@ -647,7 +648,7 @@ void TVI_GammaPanel::BuildUI()
             panel->TocTreeCtrl->LoadBooksForGroup(groups.GetAt(group));
             panel->SetCategoryGroup(groups.GetAt(group));
             panel->SetPopUpMenu(m_viewMenu);
-            m_librarybook->AddPage(panel, SwCategory::GetTranslatedString(groups.GetAt(group)));
+            m_panelList.AddPanel(panel);
         }
     }
 }
@@ -665,4 +666,43 @@ swUI32 TVI_GammaPanel::FindFile(SwToolBook * book, const char * path)
     }
 
     return NODE_ID_INVALID;
+}
+
+SwThMLBookPanel * TVI_GammaPanel::FindPanelForCategory(SwToolBook * book, swUI8 category)
+{
+    if (!book)
+        return NULL;
+
+    return FindPanelForGroup(book, SwCategory::GetCategoryGroup(category));
+}
+
+SwThMLBookPanel * TVI_GammaPanel::FindPanelForGroup(SwToolBook * book, swUI8 group)
+{
+    if (!book)
+        return NULL;
+
+    if (!m_startup)
+    {
+        for(swUI32 i = 0; i < book->GetPageCount(); i ++)
+        {
+            SwThMLBookPanel * panel = (SwThMLBookPanel *) book->GetPage(i);
+            if (panel->GetCategoryGroup() == group)
+                return panel;
+        }
+    }
+    else
+    {
+        for(swUI32 i = 0; i < m_panelList.GetCount(); i ++)
+        {
+            SwThMLBookPanel * panel = (SwThMLBookPanel *) m_panelList.GetPanel(i);
+            if (panel->GetCategoryGroup() == group)
+            {
+                m_librarybook->AddPage(panel, SwCategory::GetTranslatedString(group), true);
+                m_panelList.DeletePanel(i);
+                return panel;
+            }
+        }
+    }
+
+    return NULL;
 }

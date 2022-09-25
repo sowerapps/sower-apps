@@ -14,6 +14,7 @@ IMPLEMENT_APP(ThMLBuilderApp);
 
 bool ThMLBuilderApp::OnInit()
 {
+
     SwApplicationInterface::InitBasic();
 
     ThMLBuilderDlg Dlg(0);

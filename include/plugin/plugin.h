@@ -84,6 +84,7 @@ public:
     virtual size_t DecryptedRead(void * buffer, size_t size, size_t count, FILE *stream, const swUI8 k1, const swUI32 k2) { return 0; }
     virtual size_t EncryptedWrite(const void * buffer, size_t size, size_t count, FILE *stream, const swUI8 k1, const swUI32 k2) { return 0; }
 
+
     wxDynamicLibrary * m_dll;
 };
 

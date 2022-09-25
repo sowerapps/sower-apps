@@ -187,6 +187,7 @@ public:
     SwThMLTreeCtrl* TocTreeCtrl;
     void SetCategoryGroup(swUI8 category) { m_group = category; }
     swUI8 GetCategoryGroup() { return m_group; }
+    virtual bool HasFile(const char * path);
 
 protected:
     static const long ID_TOCTREECTRL;
@@ -342,6 +343,7 @@ public:
     virtual void OnThemeChange() {}
     void SetCategoryGroup(swUI8 category) { m_group = category; }
     swUI8 GetCategoryGroup() { return m_group; }
+    virtual bool HasModule(const char * bookId);
 
     wxNotebook*          ToolNotebook;
     SwFindPanel*         findPanel;
@@ -502,6 +504,7 @@ public:
     virtual void OnThemeChange() {}
     void SetCategoryGroup(swUI8 category) { m_group = category; }
     swUI8 GetCategoryGroup() { return m_group; }
+    virtual bool HasModule(const char * bookId);
 
     wxNotebook*               ToolNotebook;
     SwFindPanel*              findPanel;
@@ -662,6 +665,7 @@ public:
     virtual void OnThemeChange() {}
     void SetCategoryGroup(swUI8 category) { m_group = category; }
     swUI8 GetCategoryGroup() { return m_group; }
+    virtual bool HasFile(const char * path);
 
     wxNotebook*                 ToolNotebook;
     SwFindPanel*                findPanel;

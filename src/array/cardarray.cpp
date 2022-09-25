@@ -245,6 +245,26 @@ void SwCatalogCardArray::GetGroupList(wxChoice * choice)
     }
 }
 
+
+void SwCatalogCardArray::GetGroupList(wxComboBox * choice)
+{
+    if (!choice)
+        return;
+
+    SwStringW buffer;
+    SwClientData * data;
+
+    for (swUI32 i = 0; i < m_count; i++)
+    {
+        if (m_array[i].GetGroupLength() && (choice->FindString(m_array[i].GetGroup()) == wxNOT_FOUND))
+        {
+            data = new SwClientData(i);
+            buffer.Copy(m_array[i].GetGroup());
+            choice->Append(buffer.GetArray(), data);
+        }
+    }
+}
+
 void SwCatalogCardArray::SetCount(swUI32 count)
 {
     m_count = count;

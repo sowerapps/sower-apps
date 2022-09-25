@@ -240,6 +240,7 @@ public :
     static void GetMasterKeyModuleList(wxListCtrl * listCtrl);
     static void GetMapPathsList(wxCheckListBox * listBox);
     static void GetGroupList(wxChoice * choice);
+    static void GetGroupList(wxComboBox * choice);
     static void GetBookMarkList(wxListCtrl * listCtrl);
     static void GetHelpBookMarkList(wxListCtrl * listCtrl);
     static void WriteBookMarklistToTable(wxListCtrl * listCtrl);

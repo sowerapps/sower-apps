@@ -29,7 +29,7 @@ void SwApplicationInterface::GetThMLFileList(wxChoice * choice)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
+    for (swUI32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
     {
         thmlfile = GetThMLFileManager().GetAt(i);
         if (!thmlfile)
@@ -50,7 +50,7 @@ void SwApplicationInterface::GetThMLFileList(wxChoice * choice, swUI8 category)
     SwStringW buffer;
     SwClientData * data;
 
-    for (wxUint32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
+    for (swUI32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
     {
         thmlfile = GetThMLFileManager().GetAt(i);
         if (!thmlfile || thmlfile->m_category != category)
@@ -73,7 +73,7 @@ void SwApplicationInterface::GetThMLFileList(wxCheckListBox * list)
     int item;
     swUI8 category;
 
-    for (wxUint32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
+    for (swUI32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
     {
         thmlfile = GetThMLFileManager().GetAt(i);
         if (!thmlfile)
@@ -108,7 +108,7 @@ void SwApplicationInterface::GetThMLFileList(wxListCtrl * listCtrl)
     {
         category = SwCategory::GetLoadOrder(count);
 
-        for (wxUint32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
+        for (swUI32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
         {
             thmlfile = SwApplicationInterface::GetThMLFileManager().GetAt(i);
 
@@ -140,7 +140,7 @@ void SwApplicationInterface::GetThMLFileList(wxListCtrl * listCtrl, swUI8 catego
 
     SwThMLFile * thmlfile;
 
-    for (wxUint32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
+    for (swUI32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
     {
         thmlfile = SwApplicationInterface::GetThMLFileManager().GetAt(i);
 
@@ -173,7 +173,7 @@ void SwApplicationInterface::GetThMLFileList(SwThMLTreeCtrl * treeCtrl)
     {
         category = SwCategory::GetLoadOrder(count);
 
-        for (wxUint32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
+        for (swUI32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
         {
             thmlfile = SwApplicationInterface::GetThMLFileManager().GetAt(i);
 
@@ -197,7 +197,7 @@ void SwApplicationInterface::UpdateThMLFileStates(wxCheckListBox * list)
     SwClientData * data;
     swUI32 node;
 
-    for (wxUint32 i = 0; i < list->GetCount(); i++)
+    for (swUI32 i = 0; i < list->GetCount(); i++)
     {
         data = (SwClientData *) list->GetClientObject(i);
         node = GetThMLFileManager().FindByMID(data->m_data);
@@ -225,7 +225,7 @@ void SwApplicationInterface::LoadThMLFileStates()
     SwString buffer;
     swUI32 item;
 
-    for (wxUint32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
+    for (swUI32 i = 0; i < GetThMLFileManager().GetFileCount(); i++)
     {
         file = GetThMLFileManager().GetAt(i);
 

@@ -57,7 +57,7 @@ public:
 
 private:
     SwBasicViewMenu * m_basicviewMenu;
-    bool m_silent;
+    bool m_startup;
 };
 
 #endif // SOWERAPP_H

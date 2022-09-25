@@ -113,6 +113,13 @@ void SwCategory::GetGroups(Swui8Array & groups)
     groups += CATEGORY_FICTION;
 }
 
+swUI32 SwCategory::GetGroupCount()
+{
+    Swui8Array array;
+    GetGroups(array);
+    return array.GetCount();
+}
+
 void SwCategory::GetGroupList(swUI8 group, Swui8Array & grouplist)
 {
     grouplist.Reset();
@@ -178,6 +185,34 @@ void SwCategory::GetGroupList(swUI8 group, Swui8Array & grouplist)
         grouplist += CATEGORY_BIBLESTORY;
         break;
     }
+}
+
+bool SwCategory::IsCategoryInGroup(swUI8 group, swUI8 category)
+{
+    Swui8Array array;
+    GetGroupList(group, array);
+
+    for (swUI32 i = 0; i < array.GetCount(); i ++)
+    {
+        if (array.GetAt(i) == category)
+            return true;
+    }
+
+    return false;
+}
+
+swUI8 SwCategory::GetCategoryGroup(swUI8 category)
+{
+    Swui8Array groups;
+    GetGroups(groups);
+
+    for (swUI32 i = 0; i < groups.GetCount(); i ++)
+    {
+        if (IsCategoryInGroup(groups.GetAt(i), category))
+            return groups.GetAt(i);
+    }
+
+    return CATEGORY_GENERAL;
 }
 
 const char * SwCategory::GetId(swUI8 category)

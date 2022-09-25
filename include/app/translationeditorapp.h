@@ -25,7 +25,7 @@
 #include <wx/statusbr.h>
 #include <wx/textctrl.h>
 
-class SowerTranslationEditorApp : public wxApp
+class SowerTranslationEditorApp : public SwBaseApp
 {
     public:
         virtual bool OnInit();

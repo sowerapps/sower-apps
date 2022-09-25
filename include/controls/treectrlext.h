@@ -20,13 +20,13 @@ class SOWERBASEEXP SwTreeData : public wxTreeItemData
 {
 public:
     SwTreeData();
-    SwTreeData(wxUint32 data);
+    SwTreeData(swUI32 data);
     virtual ~SwTreeData();
 
-    void SetData(wxUint32 data);
+    void SetData(swUI32 data);
 
-    wxUint32 GetData();
-    wxUint32 m_data;
+    swUI32 GetData();
+    swUI32 m_data;
 };
 
 class SOWERBASEEXP SwTreeDataEx : public wxTreeItemData
@@ -38,7 +38,7 @@ public:
         m_pageId = NODE_ID_INVALID_16;
     }
 
-    SwTreeDataEx(wxUint16 managerId, wxUint16 pageId)
+    SwTreeDataEx(swUI16 managerId, swUI16 pageId)
     {
         m_managerId = managerId;
         m_pageId = pageId;
@@ -46,14 +46,14 @@ public:
 
     virtual ~SwTreeDataEx(){}
 
-    wxUint16 m_managerId;
-    wxUint16 m_pageId;
+    swUI16 m_managerId;
+    swUI16 m_pageId;
 };
 
 struct SwTreeAppendData
 {
     wxTreeItemId id;
-    wxUint8 depth;
+    swUI8 depth;
 };
 
 class SOWERBASEEXP SwTreeCtrl : public wxTreeCtrl
@@ -71,13 +71,13 @@ public:
     void SelectFirst();
     void SelectNext();
     void SelectPrevious();
-    wxTreeItemId Search(wxTreeItemId& start, wxUint32 data);
+    wxTreeItemId Search(wxTreeItemId& start, swUI32 data);
     wxTreeItemId Search(wxTreeItemId& start, const char * text, bool casesensitive = true);
     wxTreeItemId Search(wxTreeItemId& start, const wchar_t * text, bool casesensitive = true);
     wxTreeItemId GetNextItem(const wxTreeItemId& item, bool loop = true);
     wxTreeItemId GetNextItemInScope(const wxTreeItemId& parent, const wxTreeItemId& item);
     wxTreeItemId GetPrevItem(const wxTreeItemId& item);
-    wxTreeItemId  AppendItemEx(const char * text, SwTreeAppendData & appendData, int image=-1, int stateImage=-1, wxUint8 mode = 0, wxTreeItemData *data = NULL);
+    wxTreeItemId  AppendItemEx(const char * text, SwTreeAppendData & appendData, int image=-1, int stateImage=-1, swUI8 mode = 0, wxTreeItemData *data = NULL);
     SwHistoryList & GetHistory() { return m_history; }
 
     protected:

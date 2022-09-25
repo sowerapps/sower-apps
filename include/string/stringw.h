@@ -30,6 +30,7 @@ public:
     static void Despace(wchar_t * source);
     static bool BoolFromString(const wchar_t * value);
     static swUI32 ScanToDigit(const wchar_t * source);
+     static swUI32 CountRepetitions(const wchar_t * source, const wchar_t * str);
 
     SwStringW();
     SwStringW(const char * str);
@@ -44,6 +45,8 @@ public:
 
     operator wchar_t * ();
     bool operator += (wchar_t ch);
+    bool operator = (SwStringW & str);
+    bool operator = (SwStringW * str);
     bool operator = (const wchar_t * str);
     bool operator += (const wchar_t * str);
 

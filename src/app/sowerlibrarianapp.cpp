@@ -17,6 +17,7 @@ IMPLEMENT_APP(SowerLibrarianApp);
 
 bool SowerLibrarianApp::OnInit()
 {
+
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadPlugIns();
     SwApplicationInterface::LoadAllKeys();

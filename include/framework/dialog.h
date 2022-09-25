@@ -55,12 +55,12 @@ public:
     SwDialogList();
     virtual ~SwDialogList();
 
-    wxUint32 Add(SwDialog * dialog);
-    void Delete(wxUint32 position);
+    swUI32 Add(SwDialog * dialog);
+    void Delete(swUI32 position);
     void Reset();
-    wxUint32 Find(SwDialog * dialog);
-    SwDialog * GetDialog(wxUint32 position);
-    void SetDialog(wxUint32 position, SwDialog * dialog);
+    swUI32 Find(SwDialog * dialog);
+    SwDialog * GetDialog(swUI32 position);
+    void SetDialog(swUI32 position, SwDialog * dialog);
     void OnLanguageChangeBase();
     void OnThemeChangeBase();
     void OnFontSizeChange();
@@ -70,12 +70,12 @@ public:
     void OnThMLFileManagerLoaded();
 
 protected:
-    wxUint32 AssignDialogObject();
+    swUI32 AssignDialogObject();
     bool IncreaseDialogArray();
     void ReleaseDialogArray();
     SwDialog ** m_dialogArray;
-    wxUint32 m_dialogarrayPos;
-    wxUint32 m_dialogobjectsAllocated;
+    swUI32 m_dialogarrayPos;
+    swUI32 m_dialogobjectsAllocated;
 };
 
 #endif // SOWERDIALOG_H

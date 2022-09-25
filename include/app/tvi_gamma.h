@@ -60,11 +60,7 @@ public:
     virtual ~TVI_GammaPanel();
 
     virtual bool OnOpen();
-    virtual bool OnClose();
-    virtual bool OnCloseAll();
     bool OnCanDoOpen() { return true; }
-    bool OnCanDoClose() { return SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount(); }
-    bool OnCanDoCloseAll() { return SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount(); }
     virtual void SaveUserData();
 
     virtual bool OnFile1();
@@ -97,6 +93,9 @@ public:
     virtual bool LoadPerspective(const char * id, const char * perspective);
     virtual void BuildUI();
     swUI32 FindFile(SwToolBook * book, const char * path);
+    SwThMLBookPanel * FindPanelForCategory(SwToolBook * book, swUI8 category);
+    SwThMLBookPanel * FindPanelForGroup(SwToolBook * book, swUI8 group);
+
     static const long ID_NOTEBOOK;
     static const long ID_BOOKMARKSLIST;
     static const long ID_LIBRARYPANEL;
@@ -105,7 +104,8 @@ protected:
     SwBookmarksListCtrl * m_bookmarksList;
     SwMenu * m_listMenu;
     SwStandardViewMenu * m_viewMenu;
-    bool m_silent;
+    bool m_startup;
+    SwPanelList m_panelList;
 };
 
 #endif // TVI_GAMMA_H

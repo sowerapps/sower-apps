@@ -87,6 +87,7 @@ protected:
     SwModuleLibraryPanel * m_libraryPanel;
     SwMenu * m_listMenu;
     SwStandardViewMenu * m_viewMenu;
+    bool m_startup;
 };
 
 #endif // SWI_ALPHA_H

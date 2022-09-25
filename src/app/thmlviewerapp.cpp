@@ -15,6 +15,7 @@ IMPLEMENT_APP(ThMLViewerApp);
 
 bool ThMLViewerApp::OnInit()
 {
+
     wxBusyCursor cursor;
     SwApplicationInterface::SetAppName("ThML Viewer");
     SwApplicationInterface::InitBasic();

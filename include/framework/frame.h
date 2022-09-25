@@ -366,6 +366,9 @@ public:
     virtual bool LoadPerspective(const char * id, const char * perspective) { return false; }
     virtual bool SetOption(const char * id, const char * value) { return false; }
     swUI16 GetInitialInterfacePlugIn();
+    void CreateStartUpFile(const char * name);
+    void DeleteStartUpFile(const char * name);
+    bool CheckStartUpFile(const char * name);
 
     static const long ID_TOOLBOOK;
     SwStringArray   m_fileList;

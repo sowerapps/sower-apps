@@ -306,7 +306,7 @@ SwDialogList::~SwDialogList()
     ReleaseDialogArray();
 }
 
-wxUint32 SwDialogList::AssignDialogObject()
+swUI32 SwDialogList::AssignDialogObject()
 {
     if (m_dialogarrayPos >= m_dialogobjectsAllocated && !IncreaseDialogArray())
         return NODE_ID_INVALID;
@@ -347,10 +347,10 @@ void SwDialogList::ReleaseDialogArray()
     m_dialogarrayPos = 0;
 }
 
-wxUint32 SwDialogList::Add(SwDialog * dialog)
+swUI32 SwDialogList::Add(SwDialog * dialog)
 {
 
-    wxUint32 position = AssignDialogObject();
+    swUI32 position = AssignDialogObject();
 
     if (position == NODE_ID_INVALID)
         return NODE_ID_INVALID;
@@ -360,9 +360,9 @@ wxUint32 SwDialogList::Add(SwDialog * dialog)
     return position;
 }
 
-void SwDialogList::Delete(wxUint32 position)
+void SwDialogList::Delete(swUI32 position)
 {
-    wxUint32 pos = position;
+    swUI32 pos = position;
     if (position >= m_dialogarrayPos)
         return;
 
@@ -384,7 +384,7 @@ void SwDialogList::Delete(wxUint32 position)
 
 void SwDialogList::Reset()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;
@@ -398,9 +398,9 @@ void SwDialogList::Reset()
     m_dialogarrayPos = 0;
 }
 
-wxUint32 SwDialogList::Find(SwDialog * dialog)
+swUI32 SwDialogList::Find(SwDialog * dialog)
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     while (pos < m_dialogarrayPos)
     {
@@ -414,7 +414,7 @@ wxUint32 SwDialogList::Find(SwDialog * dialog)
 }
 
 
-SwDialog * SwDialogList::GetDialog(wxUint32 position)
+SwDialog * SwDialogList::GetDialog(swUI32 position)
 {
     if (position >= m_dialogarrayPos)
         return NULL;
@@ -422,7 +422,7 @@ SwDialog * SwDialogList::GetDialog(wxUint32 position)
     return m_dialogArray[position];
 }
 
-void SwDialogList::SetDialog(wxUint32 position, SwDialog * dialog)
+void SwDialogList::SetDialog(swUI32 position, SwDialog * dialog)
 {
     if (position >= m_dialogarrayPos)
         return;
@@ -432,7 +432,7 @@ void SwDialogList::SetDialog(wxUint32 position, SwDialog * dialog)
 
 void SwDialogList::OnLanguageChangeBase()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;
@@ -448,7 +448,7 @@ void SwDialogList::OnLanguageChangeBase()
 
 void SwDialogList::OnThemeChangeBase()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;
@@ -464,7 +464,7 @@ void SwDialogList::OnThemeChangeBase()
 
 void SwDialogList::OnFontSizeChange()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;
@@ -482,7 +482,7 @@ void SwDialogList::OnFontSizeChange()
 
 void SwDialogList::OnModuleManagerReset()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;
@@ -498,7 +498,7 @@ void SwDialogList::OnModuleManagerReset()
 
 void SwDialogList::OnThMLFileManagerReset()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;
@@ -514,7 +514,7 @@ void SwDialogList::OnThMLFileManagerReset()
 
 void SwDialogList::OnModuleManagerLoaded()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;
@@ -530,7 +530,7 @@ void SwDialogList::OnModuleManagerLoaded()
 
 void SwDialogList::OnThMLFileManagerLoaded()
 {
-    wxUint32 pos = 0;
+    swUI32 pos = 0;
 
     if (!m_dialogArray)
         return;

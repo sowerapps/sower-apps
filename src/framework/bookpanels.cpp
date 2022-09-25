@@ -195,7 +195,7 @@ bool SwThMLBookPanel::GetBookMarkData(SwString & title, SwBookMarkClientData & d
     wxTreeItemId id = TocTreeCtrl->GetSelection();
     data.m_type = "ThML";
 
-    if (!id.IsOk())
+    if (!id.IsOk() || TocTreeCtrl->IsRoot(id))
     {
         if (TocTreeCtrl->GetIds().GetCount())
         {
@@ -308,6 +308,11 @@ bool SwThMLBookPanel::ActivateSearchItem(const char * path, const wchar_t * text
     searchPanel->OnSearchButtonClick(event);
 
     return true;
+}
+
+bool SwThMLBookPanel:: HasFile(const char * path)
+{
+    return TocTreeCtrl->HasFile(path);
 }
 
 void SwThMLBookPanel::SetPopUpMenu(SwViewMenu * menu)
@@ -478,7 +483,7 @@ bool SwModuleBookPanel::GetBookMarkData(SwString & title, SwBookMarkClientData &
     wxTreeItemId id = TocTreeCtrl->GetSelection();
     data.m_type = "Module";
 
-    if (!id.IsOk())
+    if (!id.IsOk() || TocTreeCtrl->IsRoot(id))
     {
         if (TocTreeCtrl->GetIds().GetCount())
         {
@@ -594,6 +599,11 @@ bool SwModuleBookPanel::ActivateSearchItem(swUI16 managerId, const wchar_t * tex
     searchPanel->OnSearchButtonClick(event);
 
     return true;
+}
+
+bool SwModuleBookPanel::HasModule(const char * bookId)
+{
+    return TocTreeCtrl->HasModule(bookId);
 }
 
 void SwModuleBookPanel::SetPopUpMenu(SwViewMenu * menu)
@@ -764,7 +774,7 @@ bool SwMultiModuleBookPanel::GetBookMarkData(SwString & title, SwBookMarkClientD
     wxTreeItemId id = TocTreeCtrl->GetSelection();
     data.m_type = "Module";
 
-    if (!id.IsOk())
+    if (!id.IsOk() || TocTreeCtrl->IsRoot(id))
     {
         if (TocTreeCtrl->GetIds().GetCount())
         {
@@ -880,6 +890,11 @@ bool SwMultiModuleBookPanel::ActivateSearchItem(swUI16 managerId, const wchar_t 
     searchPanel->OnSearchButtonClick(event);
 
     return true;
+}
+
+bool SwMultiModuleBookPanel::HasModule(const char * bookId)
+{
+    return TocTreeCtrl->HasModule(bookId);
 }
 
 void SwMultiModuleBookPanel::SetPopUpMenu(SwViewMenu * menu)
@@ -1059,7 +1074,7 @@ bool SwMultiFileThMLBookPanel::GetBookMarkData(SwString & title, SwBookMarkClien
     wxTreeItemId id = TocTreeCtrl->GetSelection();
     data.m_type = "ThML";
 
-    if (!id.IsOk())
+    if (!id.IsOk() || TocTreeCtrl->IsRoot(id))
     {
         if (TocTreeCtrl->GetIds().GetCount())
         {
@@ -1171,6 +1186,11 @@ bool SwMultiFileThMLBookPanel::ActivateSearchItem(swUI16 managerId, const wchar_
     searchPanel->OnSearchButtonClick(event);
 
     return true;
+}
+
+bool SwMultiFileThMLBookPanel::HasFile(const char * path)
+{
+    return TocTreeCtrl->HasFile(path);
 }
 
 void SwMultiFileThMLBookPanel::SetPopUpMenu(SwViewMenu * menu)

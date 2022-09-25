@@ -18,6 +18,7 @@ IMPLEMENT_APP(SowerApp);
 
 bool SowerApp::OnInit()
 {
+
     SwApplicationInterface::SetAppName("Sower");
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::GetPlugInManager().SetLoadType(PIT_UNKNOWN);
@@ -51,7 +52,7 @@ SowerAppFrame::SowerAppFrame(wxWindow *parent, wxWindowID id, const wxString &ti
     :SwFrame(parent, id, title, pos, size, style, name)
 {
     wxBusyCursor cursor;
-    m_silent = true;
+    m_startup = true;
     SetTitle(SwApplicationInterface::GetControlString("SID_SOWER", L"Sower"));
     SetIcon(SwApplicationInterface::GetSowerIcon());
     m_basicviewMenu = new SwBasicViewMenu(this);
@@ -127,25 +128,46 @@ SowerAppFrame::SowerAppFrame(wxWindow *parent, wxWindowID id, const wxString &ti
     path += PATH_SEP;
     path += "sw_session.gui";
 
-    SetFocus();
-
-    swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
-
-    if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+    if (!CheckStartUpFile("sower"))
     {
-        SwGuiMlParser parser;
+        SetFocus();
 
-        parser.SetFrame(this);
-        parser.OpenFile(path);
-        parser.Run();
+        swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetFrame(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+
+        for (size_t i = 0; i < m_toolbook->GetPageCount(); i ++)
+        {
+            SwThMLBookPanel * panel = (SwThMLBookPanel *) m_toolbook->GetPage(i);
+            if (panel && !panel->TocTreeCtrl->GetIds().GetCount())
+                m_toolbook->DeletePage(i);
+        }
+
+        if (m_toolbook->GetPageCount())
+            ToolAdded();
+
+        CreateStartUpFile("sower");
+    }
+    else
+    {
+        unlink(path);
     }
 
     Connect(id,wxEVT_CLOSE_WINDOW,(wxObjectEventFunction)&SowerAppFrame::OnQuit);
-    m_silent = false;
+    m_startup = false;
 }
 
 SowerAppFrame::~SowerAppFrame()
 {
+    DeleteStartUpFile("sower");
     SaveUserData();
 }
 
@@ -155,6 +177,10 @@ bool SowerAppFrame::OnCanDoClose()
         return (bool) m_toolbook->GetPageCount();
     else if (m_guipanel && m_guipanel->OnHasFocus())
         return m_guipanel->OnCanDoClose();
+    else if (m_guipanel)
+        return m_guipanel->OnCanDoClose();
+    else if (m_toolbook)
+        return (bool) m_toolbook->GetPageCount();
 
     return false;
 }
@@ -175,45 +201,63 @@ bool SowerAppFrame::OpenFile(const char * path, bool addtorecent)
 
     if (!path || !SwFile::DoesExist(path))
     {
-        if (!m_silent)
+        if (!m_startup)
             wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
+        else
+        {
+            SwThMLBookPanel * panel = new SwThMLBookPanel(m_toolbook);
+            m_toolbook->AddPage(panel, ".", false);
+        }
+
         return false;
     }
 
-    swUI32 id = m_toolbook->FindFile(path);
-
-    if (id != NODE_ID_INVALID)
-    {
-        m_toolbook->SetSelection(id);
-        return true;
-    }
-    else if (id == NODE_ID_INVALID)
+    if (m_startup)
     {
         SwThMLBookPanel * panel = new SwThMLBookPanel(m_toolbook);
-        if (!panel->OnOpen(path))
-        {
-            delete panel;
-            if (!m_silent)
-            wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
-            return false;
-        }
-
+        bool status = panel->OnOpen(path);
         SwStringW title(SwApplicationInterface::GetThMLFileManager().GetTitleFromPath(path));
         panel->SetPopUpMenu(m_basicviewMenu);
         panel->SetAllowBookMarks(false);
-        m_toolbook->SetFocus();
         m_toolbook->AddPage(panel, title.GetArray(), true);
-        ToolAdded();
+        return status;
     }
-
-    if (addtorecent && m_fileList.Find(path) == NODE_ID_INVALID)
+    else
     {
-        m_fileList.Insert(10, path);
+        swUI32 id = m_toolbook->FindFile(path);
 
-        if (m_fileList.GetCount() > 10)
-            m_fileList.Delete(0);
+        if (id != NODE_ID_INVALID)
+        {
+            m_toolbook->SetSelection(id);
+            return true;
+        }
+        else if (id == NODE_ID_INVALID)
+        {
+            SwThMLBookPanel * panel = new SwThMLBookPanel(m_toolbook);
+            if (!panel->OnOpen(path))
+            {
+                delete panel;
+                wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
+                return false;
+            }
 
-        m_menubar->UpdateRecentFileList(m_fileList);
+            SwStringW title(SwApplicationInterface::GetThMLFileManager().GetTitleFromPath(path));
+            panel->SetPopUpMenu(m_basicviewMenu);
+            panel->SetAllowBookMarks(false);
+            m_toolbook->SetFocus();
+            m_toolbook->AddPage(panel, title.GetArray(), true);
+            ToolAdded();
+        }
+
+        if (addtorecent && m_fileList.Find(path) == NODE_ID_INVALID)
+        {
+            m_fileList.Insert(10, path);
+
+            if (m_fileList.GetCount() > 10)
+                m_fileList.Delete(0);
+
+            m_menubar->UpdateRecentFileList(m_fileList);
+        }
     }
 
     return true;
@@ -349,7 +393,8 @@ void SowerAppFrame::SaveUserData()
         for (size_t i = 0; i < m_toolbook->GetPageCount(); i ++)
         {
             m_toolbook->SetSelection(i);
-            m_toolbook->GetBookMarkData(title, data);
+            if (!m_toolbook->GetBookMarkData(title, data))
+                continue;
 
             SwGuiMlParser::CreateBookTag(data, TOOLBOOK_STR, tag);
             buffer += tag;

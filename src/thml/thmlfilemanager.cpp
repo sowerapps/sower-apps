@@ -339,6 +339,19 @@ void SwThMLFileManager::AddFileIdByCategory(Swui16Array & idArray, swUI8 categor
     }
 }
 
+const char * SwThMLFileManager::GetFirstPageId(const char * path)
+{
+    if (!path)
+        return "0";
+
+    swUI16 id = FindByPath(path);
+
+    if (id == NODE_ID_INVALID_16)
+        return "0";
+
+    return GetAt(id)->GetTableofContents().GetIdText(0);
+}
+
 swUI16 SwThMLFileManager::GetFileCount()
 {
     return m_arrayPos;

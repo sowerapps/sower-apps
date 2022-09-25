@@ -34,6 +34,7 @@
 #include <wx/wx.h>
 #include <wx/clntdata.h>
 #include <wx/richtext/richtextbuffer.h>
+#include <wx/snglinst.h>
 
 #if defined __linux__
 #define OS_STRING "Linux"
@@ -76,8 +77,8 @@ typedef double swFloat;
 #define NODE_ID_INVALID_8           0xFF
 
 #define SOFTWAREVERSIONMAJOR 1
-#define SOFTWAREVERSIONMINOR 1
-#define SVSTR L"1.1"
+#define SOFTWAREVERSIONMINOR 2
+#define SVSTR L"1.2"
 
 #define UNIT_CHOICE_WIDTH 50
 
@@ -118,21 +119,21 @@ class SOWERBASEEXP SwClientData : public wxClientData
 {
 public:
     SwClientData();
-    SwClientData(wxUint32 data);
+    SwClientData(swUI32 data);
     virtual ~SwClientData();
 
-    void SetData(wxUint32 data);
-    wxUint32 GetData();
-    void SetHiWord(wxUint16 data);
-    wxUint16 GetHiWord();
-    void SetLoWord(wxUint16 data);
-    wxUint16 GetLoWord();
-    void SetHiByte(wxUint8 data, bool lowWord = true);
-    wxUint8 GetHiByte(bool lowWord = true);
-    void SetLoByte(wxUint8 data, bool lowWord = true);
-    wxUint8 GetLoByte(bool lowWord = true);
+    void SetData(swUI32 data);
+    swUI32 GetData();
+    void SetHiWord(swUI16 data);
+    swUI16 GetHiWord();
+    void SetLoWord(swUI16 data);
+    swUI16 GetLoWord();
+    void SetHiByte(swUI8 data, bool lowWord = true);
+    swUI8 GetHiByte(bool lowWord = true);
+    void SetLoByte(swUI8 data, bool lowWord = true);
+    swUI8 GetLoByte(bool lowWord = true);
 
-    wxUint32 m_data;
+    swUI32 m_data;
 };
 
 class SOWERBASEEXP SwScrollData

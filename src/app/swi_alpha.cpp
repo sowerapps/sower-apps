@@ -21,7 +21,7 @@ InterfacePlugIn::~InterfacePlugIn()
 {
 }
 
-wxUint8 InterfacePlugIn::GetVersion()
+swUI8 InterfacePlugIn::GetVersion()
 {
     return SOFTWAREVERSIONMAJOR;
 }
@@ -75,7 +75,7 @@ SWI_AlphaPanel::SWI_AlphaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     :SwGuiPanel(parent, id, pos, size, style, name)
 {
     swUI32 node;
-
+    m_startup = true;
     bool showBookmarks = true;
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("BookMarksList-Show");
     if (node != NODE_ID_INVALID)
@@ -115,27 +115,46 @@ SWI_AlphaPanel::SWI_AlphaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     m_libraryPanel->GetLibraryListCtrl()->LoadLibraryList();
 
     SwString path;
-
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
-    path += "sw_alpha_uisession.gui";
+    path += "sw_alpha_ses.gui";
 
-    SetFocus();
-
-    node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
-
-    if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+    if (!CheckStartUpFile("sw_alpha"))
     {
-        SwGuiMlParser parser;
+        SetFocus();
 
-        parser.SetGuiPanel(this);
-        parser.OpenFile(path);
-        parser.Run();
+        swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetGuiPanel(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+
+        for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
+        {
+            SwModuleBookPanel * panel = (SwModuleBookPanel *) m_librarybook->GetPage(i);
+            if (panel && !panel->TocTreeCtrl->GetIds().GetCount())
+                m_librarybook->DeletePage(i);
+        }
+
+        CreateStartUpFile("sw_alpha");
     }
+    else
+    {
+        unlink(path);
+    }
+
+    m_startup = false;
 }
 
 SWI_AlphaPanel::~SWI_AlphaPanel()
 {
+    DeleteStartUpFile("sw_alpha");
 }
 
 void SWI_AlphaPanel::OnDelete(wxCommandEvent & event)
@@ -227,7 +246,15 @@ bool SWI_AlphaPanel::ActivateBookMark(SwBookMarkClientData & data, const char * 
         swUI16 objpos= SwApplicationInterface::GetModuleManager().FindById(data.m_bookId);
 
         if (objpos == NODE_ID_INVALID_16)
+        {
+            if (m_startup)
+            {
+                SwModuleBookPanel * panel = new SwModuleBookPanel(m_librarybook);
+                m_librarybook->AddPage(panel, ".", false);
+            }
+
             return false;
+        }
 
         swUI16 managerId = SwApplicationInterface::GetModuleManager().GetAt(objpos)->GetManagerId();
 
@@ -270,7 +297,15 @@ bool SWI_AlphaPanel::LoadLibraryItem(swUI16 managerId)
     swUI16 objpos = SwApplicationInterface::GetModuleManager().FindByMID(managerId);
 
     if (objpos == NODE_ID_INVALID_16)
+    {
+        if (m_startup)
+        {
+            SwModuleBookPanel * panel = new SwModuleBookPanel(m_librarybook);
+            m_librarybook->AddPage(panel, ".", false);
+        }
+
         return false;
+    }
 
     SwModule * module = SwApplicationInterface::GetModuleManager().GetAt(objpos);
 
@@ -279,7 +314,7 @@ bool SWI_AlphaPanel::LoadLibraryItem(swUI16 managerId)
 
     swUI32 id = m_librarybook->FindModule(module->m_header.moduleIdentifier);
 
-    if (id != NODE_ID_INVALID)
+    if (!m_startup && id != NODE_ID_INVALID)
     {
         m_librarybook->SetSelection(id);
         return true;
@@ -333,7 +368,8 @@ void SWI_AlphaPanel::SaveUserData()
         for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
         {
             m_librarybook->SetSelection(i);
-            m_librarybook->GetBookMarkData(title, data);
+            if (!m_librarybook->GetBookMarkData(title, data))
+                continue;
 
             SwGuiMlParser::CreateBookTag(data, LIBRARYBOOK_STR, tag);
             buffer += tag;
@@ -352,7 +388,7 @@ void SWI_AlphaPanel::SaveUserData()
 
     title = SwApplicationInterface::GetUserDir();
     title += PATH_SEP;
-    title += "sw_alpha_uisession.gui";
+    title += "sw_alpha_ses.gui";
 
     FILE * f = SwFopen(title, FMD_WC);
     if (f)

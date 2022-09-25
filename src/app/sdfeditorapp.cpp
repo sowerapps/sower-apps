@@ -13,6 +13,7 @@ IMPLEMENT_APP(SowerDataFileEditorApp);
 
 bool SowerDataFileEditorApp::OnInit()
 {
+
     bool wxsOK = true;
 
     SwApplicationInterface::InitBasic();

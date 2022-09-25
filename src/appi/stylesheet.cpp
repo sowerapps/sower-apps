@@ -15,7 +15,7 @@ void SwApplicationInterface::FillStyleSheet()
     wxRichTextParagraphStyleDefinition * defpgstyle = new wxRichTextParagraphStyleDefinition(L"Basic Style");
     wxRichTextAttr defattr;
     defattr.SetFontFaceName(roman.GetFaceName());
-    defattr.SetFontSize(9);
+    defattr.SetFontSize(12);
 
     defattr.SetFlags(wxTEXT_ATTR_FONT | wxTEXT_ATTR_BACKGROUND_COLOUR | wxTEXT_ATTR_TEXT_COLOUR|wxTEXT_ATTR_ALIGNMENT|wxTEXT_ATTR_LEFT_INDENT|wxTEXT_ATTR_RIGHT_INDENT|wxTEXT_ATTR_TABS|
                     wxTEXT_ATTR_PARA_SPACING_BEFORE|wxTEXT_ATTR_PARA_SPACING_AFTER|wxTEXT_ATTR_LINE_SPACING|

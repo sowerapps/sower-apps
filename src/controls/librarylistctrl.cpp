@@ -49,7 +49,7 @@ wxThread::ExitCode SwThMLLibraryListCtrl::Entry()
     for (swUI8 count = 0; count < LOAD_CATEGORIES_MAX; count ++)
     {
         category = SwCategory::GetLoadOrder(count);
-        for (wxUint32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
+        for (swUI32 i = 0; i < SwApplicationInterface::GetThMLFileManager().GetFileCount(); i++)
         {
             file = SwApplicationInterface::GetThMLFileManager().GetAt(i);
 
@@ -122,7 +122,7 @@ wxThread::ExitCode SwModuleLibraryListCtrl::Entry()
     for (swUI8 count = 0; count < LOAD_CATEGORIES_MAX; count ++)
     {
         category = SwCategory::GetLoadOrder(count);
-        for (wxUint32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
+        for (swUI32 i = 0; i < SwApplicationInterface::GetModuleManager().GetModules(); i++)
         {
             module = SwApplicationInterface::GetModuleManager().GetAt(i);
 

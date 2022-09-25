@@ -14,6 +14,7 @@ IMPLEMENT_APP(SowerThemeEditorApp);
 
 bool SowerThemeEditorApp::OnInit()
 {
+
     bool wxsOK = true;
 
     SwApplicationInterface::InitBasic();

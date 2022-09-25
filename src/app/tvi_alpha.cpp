@@ -27,7 +27,7 @@ InterfacePlugIn::~InterfacePlugIn()
 {
 }
 
-wxUint8 InterfacePlugIn::GetVersion()
+swUI8 InterfacePlugIn::GetVersion()
 {
     return 1;
 }
@@ -78,7 +78,7 @@ TVI_AlphaPanel::TVI_AlphaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     :SwGuiPanel(parent, id, pos, wxSize(0, 0), style, name)
 {
     swUI32 node;
-    m_silent = true;
+    m_startup = true;
     bool showBookmarks = true;
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("BookMarksList-Show");
     if (node != NODE_ID_INVALID)
@@ -123,25 +123,44 @@ TVI_AlphaPanel::TVI_AlphaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     SwString path;
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
-    path += "tv_alpha_uisession.gui";
+    path += "tv_alpha_ses.gui";
 
-    SetFocus();
-
-    node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
-
-    if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+    if (!CheckStartUpFile("tvi_alpha"))
     {
-        SwGuiMlParser parser;
+        SetFocus();
 
-        parser.SetGuiPanel(this);
-        parser.OpenFile(path);
-        parser.Run();
+        swUI32 node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetGuiPanel(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+
+        for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
+        {
+            SwThMLBookPanel * panel = (SwThMLBookPanel *) m_librarybook->GetPage(i);
+            if (panel && !panel->TocTreeCtrl->GetIds().GetCount())
+                m_librarybook->DeletePage(i);
+        }
+
+        CreateStartUpFile("tvi_alpha");
     }
-    m_silent = false;
+    else
+    {
+        unlink(path);
+    }
+
+    m_startup = false;
 }
 
 TVI_AlphaPanel::~TVI_AlphaPanel()
 {
+    DeleteStartUpFile("tvi_alpha");
 }
 
 bool TVI_AlphaPanel::OpenFile(const char * path, bool addtorecent)
@@ -151,8 +170,14 @@ bool TVI_AlphaPanel::OpenFile(const char * path, bool addtorecent)
 
     if (!path || !SwFile::DoesExist(path))
     {
-        if (!m_silent)
+        if (!m_startup)
             wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
+        else
+        {
+            SwThMLBookPanel * thm = new SwThMLBookPanel(m_librarybook);
+            m_librarybook->AddPage(thm, "...", false);
+        }
+
         return false;
     }
 
@@ -191,7 +216,7 @@ bool TVI_AlphaPanel::OpenFile(const char * path, bool addtorecent)
 
     if (!status && id == NODE_ID_INVALID)
     {
-        if (!m_silent)
+        if (!m_startup)
             wxMessageBox(SwStringW(SwApplicationInterface::GetControlString("SID_UNABLETOOPENFILE", L"Unable to open file.")).GetArray(), SwStringW(SwApplicationInterface::GetControlString("SID_ERROR", L"Error")).GetArray());
     }
 
@@ -436,7 +461,15 @@ bool TVI_AlphaPanel::LoadLibraryItem(swUI16 managerId)
     swUI16 objpos = SwApplicationInterface::GetThMLFileManager().FindByMID(managerId);
 
     if (objpos == NODE_ID_INVALID_16)
+    {
+        if (m_startup)
+        {
+            SwThMLBookPanel * panel = new SwThMLBookPanel(m_librarybook);
+            m_librarybook->AddPage(panel, ".", false);
+        }
+
         return false;
+    }
 
     SwThMLFile * file = SwApplicationInterface::GetThMLFileManager().GetAt(objpos);
 
@@ -514,7 +547,8 @@ void TVI_AlphaPanel::SaveUserData()
         for (size_t i = 0; i < m_librarybook->GetPageCount(); i ++)
         {
             m_librarybook->SetSelection(i);
-            m_librarybook->GetBookMarkData(title, data);
+            if (!m_librarybook->GetBookMarkData(title, data))
+                continue;
 
             SwGuiMlParser::CreateBookTag(data, LIBRARYBOOK_STR, tag);
             buffer += tag;
@@ -533,7 +567,7 @@ void TVI_AlphaPanel::SaveUserData()
 
     title = SwApplicationInterface::GetUserDir();
     title += PATH_SEP;
-    title += "tv_alpha_uisession.gui";
+    title += "tv_alpha_ses.gui";
 
     FILE * f = SwFopen(title, FMD_WC);
     if (f)

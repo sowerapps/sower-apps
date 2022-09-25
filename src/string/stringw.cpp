@@ -627,6 +627,26 @@ swUI32 SwStringW::ScanToDigit(const wchar_t * source)
     return pos;
 }
 
+swUI32 SwStringW::CountRepetitions(const wchar_t * source, const wchar_t * str)
+{
+    if (!source || !str)
+        return 0;
+
+    swUI32 count = 0;
+    const wchar_t * p = source;
+
+    for (;;)
+    {
+        p = wcsstr(source, str);
+        if (!p)
+            break;
+        p ++;
+        count ++;
+    }
+
+    return count;
+}
+
 SwStringW::SwStringW()
 {
     Init();
@@ -662,12 +682,12 @@ void SwStringW::Init()
 {
     m_array = NULL;
     m_size = 0;
+    m_count = 0;
 
     if (!Size(21))
         return;
 
-    memset((void *) m_array, 0, 21);
-    m_count = 0;
+    m_array[0] = L'\0';
 }
 
 void SwStringW::Reset()
@@ -736,6 +756,16 @@ bool SwStringW::operator += (wchar_t ch)
     m_count = pos;
 
     return true;
+}
+
+bool SwStringW::operator = (SwStringW & str)
+{
+    return Copy(str.GetArray());
+}
+
+bool SwStringW::operator = (SwStringW * str)
+{
+    return Copy(str->GetArray());
 }
 
 bool SwStringW::operator = (const wchar_t * str)

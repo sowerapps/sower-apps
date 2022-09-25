@@ -104,7 +104,7 @@ protected:
     SwThMLLibraryPanel * m_libraryPanel;
     SwMenu * m_listMenu;
     SwStandardViewMenu * m_viewMenu;
-    bool m_silent;
+    bool m_startup;
 };
 
 #endif // TVI_ALPHA_H

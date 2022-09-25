@@ -50,7 +50,7 @@ void SwImageWindow::OnPaste()
         }
         else if (wxTheClipboard->IsSupported( wxDataFormat(ImageMapFormat)))
         {
-            wxUint32 id;
+            swUI32 id;
             SwImageMapDataObject dataObject;
             wxTheClipboard->GetData(dataObject);
             id = m_mapList.AddMap(dataObject.m_imageMap.GetName());

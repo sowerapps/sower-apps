@@ -14,7 +14,7 @@ SwTreeData::SwTreeData()
     m_data = 0;
 }
 
-SwTreeData::SwTreeData(wxUint32 data)
+SwTreeData::SwTreeData(swUI32 data)
 {
     m_data = data;
 }
@@ -23,12 +23,12 @@ SwTreeData::~SwTreeData()
 {
 }
 
-void SwTreeData::SetData(wxUint32 data)
+void SwTreeData::SetData(swUI32 data)
 {
     m_data = data;
 }
 
-wxUint32 SwTreeData::GetData()
+swUI32 SwTreeData::GetData()
 {
     return m_data;
 }
@@ -181,7 +181,7 @@ void SwTreeCtrl::SelectPrevious()
     SelectItem(id, true);
 }
 
-wxTreeItemId SwTreeCtrl::Search(wxTreeItemId& start, wxUint32 data)
+wxTreeItemId SwTreeCtrl::Search(wxTreeItemId& start, swUI32 data)
 {
     wxTreeItemId id, dummy;
     SwTreeData * tdata;
@@ -455,7 +455,7 @@ wxTreeItemId SwTreeCtrl::GetPrevItem(const wxTreeItemId& item)
     return dummy;
 }
 
-wxTreeItemId SwTreeCtrl::AppendItemEx(const char * text, SwTreeAppendData & appendData, int image, int stateImage, wxUint8 mode, wxTreeItemData *data)
+wxTreeItemId SwTreeCtrl::AppendItemEx(const char * text, SwTreeAppendData & appendData, int image, int stateImage, swUI8 mode, wxTreeItemData *data)
 {
     wxTreeItemId id;
 
@@ -491,7 +491,7 @@ wxTreeItemId SwTreeCtrl::AppendItemEx(const char * text, SwTreeAppendData & appe
     }
     else if (mode < appendData.depth)
     {
-        wxUint8 pos = appendData.depth;
+        swUI8 pos = appendData.depth;
         id = appendData.id;
 
         if (id.IsOk())

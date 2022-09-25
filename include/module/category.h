@@ -58,7 +58,10 @@ class SOWERBASEEXP SwCategory
 {
 public:
     static void GetGroups(Swui8Array & groups);
+    static swUI32 GetGroupCount();
     static void GetGroupList(swUI8 group, Swui8Array & grouplist);
+    static bool IsCategoryInGroup(swUI8 group, swUI8 category);
+    static swUI8 GetCategoryGroup(swUI8 category);
     static swUI8 GetLoadOrder(swUI8 count);
     static const char * GetId(swUI8 category);
     static const char * GetString(swUI8 category);

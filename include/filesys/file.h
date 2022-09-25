@@ -88,8 +88,6 @@ public:
     long Ftell();
     void Flush();
     int Fseek(long position, int origin = SEEK_SET);
-
-protected:
     FILE * m_file;
 };
 

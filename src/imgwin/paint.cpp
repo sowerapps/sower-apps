@@ -78,8 +78,8 @@ void SwImageWindow::OnPaint(wxPaintEvent& event)
         rcImg.SetRight(zWidth);
     }
 
-    wxUint32 x = rcImg.GetRight() / m_zoom;
-    wxUint32 y = rcImg.GetBottom() / m_zoom;
+    swUI32 x = rcImg.GetRight() / m_zoom;
+    swUI32 y = rcImg.GetBottom() / m_zoom;
 
     wxPaintDC dc(this);
     m_mdc.SelectObjectAsSource(*m_image);
@@ -92,7 +92,7 @@ void SwImageWindow::OnPaint(wxPaintEvent& event)
     event.Skip();
 }
 
-void SwImageWindow::DrawMapAreas(wxDC & dc, wxFloat32 zoom, wxUint32 originX, wxUint32 originY)
+void SwImageWindow::DrawMapAreas(wxDC & dc, swFloat zoom, swUI32 originX, swUI32 originY)
 {
     wxPen pen;
     wxBrush brush;
@@ -100,7 +100,7 @@ void SwImageWindow::DrawMapAreas(wxDC & dc, wxFloat32 zoom, wxUint32 originX, wx
     const wxPen & oldPen = dc.GetPen();
     const wxBrush & oldBrush = dc.GetBrush();
 
-    for(wxUint32 i = 0; i < m_mapList.GetMapCount(); i++)
+    for(swUI32 i = 0; i < m_mapList.GetMapCount(); i++)
         DrawImageMap(*m_mapList.GetMap(i), pen, brush, dc, zoom, originX, originY, m_drawmapList);
 
     DrawImageMap(m_drawAreas, pen, brush, dc, zoom, originX, originY, true);
@@ -117,11 +117,11 @@ void SwImageWindow::DrawMapAreas(wxDC & dc, wxFloat32 zoom, wxUint32 originX, wx
     dc.SetBrush(oldBrush);
 }
 
-void SwImageWindow::DrawImageMap(SwHtmlImageMap & imageMap, wxPen & pen, wxBrush & brush, wxDC & dc, wxFloat32 zoom, wxUint32 originX, wxUint32 originY, bool drawAreas)
+void SwImageWindow::DrawImageMap(SwHtmlImageMap & imageMap, wxPen & pen, wxBrush & brush, wxDC & dc, swFloat zoom, swUI32 originX, swUI32 originY, bool drawAreas)
 {
-    wxUint32 pos = 0;
-    wxUint32 pointPos;
-    wxUint8 r, g, b, a;
+    swUI32 pos = 0;
+    swUI32 pointPos;
+    swUI8 r, g, b, a;
 
     if (imageMap.GetMapNodeCount() > 0)
     {
@@ -173,7 +173,7 @@ void SwImageWindow::DrawImageMap(SwHtmlImageMap & imageMap, wxPen & pen, wxBrush
                     dc.DrawRectangle(wxRect(wxPoint(m_pt.GetArray()[0].x, m_pt.GetArray()[0].y), wxPoint(m_pt.GetArray()[1].x, m_pt.GetArray()[1].y)));
                 else if (drawAreas && imageMap.m_mapData[pos].type == AREA_TYPE_PATH  && pointPos > 1)
                 {
-                    wxUint32 points;
+                    swUI32 points;
                     points = imageMap.PathToPolygon(m_pt.GetArray(), imageMap.m_mapData[pos].points, m_p2polyBuffer, imageMap.GetPathWidth());
                     dc.DrawPolygon(points, (wxPoint *) m_p2polyBuffer.GetArray());
                 }

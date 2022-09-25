@@ -67,4 +67,14 @@ public:
     virtual void EnableItems(bool state);
 };
 
+class SOWERBASEEXP SwEditorToolBar : public SwToolBar
+{
+public:
+    SwEditorToolBar();
+    SwEditorToolBar(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &position=wxDefaultPosition, const wxSize &size=wxDefaultSize, long style=wxAUI_TB_DEFAULT_STYLE, bool primary = false, SwFrame * frame = NULL);
+    virtual ~SwEditorToolBar() {}
+
+    virtual void EnableItems(bool state);
+};
+
 #endif // SOWERTOOLBAR_H

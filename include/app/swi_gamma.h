@@ -88,6 +88,8 @@ protected:
     SwBookmarksListCtrl * m_bookmarksList;
     SwMenu * m_listMenu;
     SwStandardViewMenu * m_viewMenu;
+    bool m_startup;
+    SwPanelList m_panelList;
 };
 
 #endif // SWI_GAMMA_H
