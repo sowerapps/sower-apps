@@ -183,6 +183,10 @@ public:
     virtual void OnFastForward(wxCommandEvent & event);
     virtual void OnPrevious(wxCommandEvent & event);
     virtual void OnNext(wxCommandEvent & event);
+    virtual void OnAudioOpen() {}
+    virtual void OnAudioClose() {}
+    virtual void OnMediaOpen() {}
+    virtual void OnMediaClose() {}
     //
 
     // Software
@@ -357,6 +361,7 @@ public:
     virtual void ProcessCmdLine() {}
     SwStringArray & GetCmdArray() { return m_cmd; }
     virtual void OnTimer();
+    virtual void OnFrameTimer() {}
     virtual bool ActivateBookMark(SwBookMarkClientData & data, const char * ctrlid);
     virtual bool ActivateSearchItem(const char * path, const wchar_t * text, swUI8 searchType, bool wordonly, bool casesensitive);
     virtual bool ActivateSearchItem(swUI16 managerId, const wchar_t * text, swUI8 searchType, bool wordonly, bool casesensitive);
@@ -366,6 +371,9 @@ public:
     virtual bool LoadPerspective(const char * id, const char * perspective) { return false; }
     virtual bool SetOption(const char * id, const char * value) { return false; }
     swUI16 GetInitialInterfacePlugIn();
+
+    virtual void FilePathChanged(const char * oldPath, const char * newPath) {}
+    virtual void AddToRecentFileList(const char * path) {}
 
     static const long ID_TOOLBOOK;
     SwStringArray   m_fileList;

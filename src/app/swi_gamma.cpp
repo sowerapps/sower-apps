@@ -57,10 +57,10 @@ void InterfacePlugIn::OnInitialize()
     SwApplicationInterface::GetPreferences().GetTable().UpdateNode("Interface-PlugIn", GetName());
 }
 
-static InterfacePlugIn InterfacePlugIn;
+static InterfacePlugIn s_InterfacePlugIn;
 SwPlugIn * PlugInInitialize()
 {
-    return &InterfacePlugIn;
+    return &s_InterfacePlugIn;
 }
 
 const long SWI_GammaPanel::ID_NOTEBOOK = wxNewId();
@@ -113,7 +113,15 @@ SWI_GammaPanel::SWI_GammaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
 
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
+<<<<<<< Updated upstream
     path += "sw_gamma_uisession.gui";
+=======
+    path += "sw_gamma_ses.gui";
+    SetFocus();
+    if (!CheckStartUpFile("sw_gamma"))
+    {
+        node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+>>>>>>> Stashed changes
 
     SetFocus();
 
@@ -143,19 +151,30 @@ void SWI_GammaPanel::OnDelete(wxCommandEvent & event)
     m_bookmarksList->DeleteItem(item);
 }
 
+bool SWI_GammaPanel::OnCanDoClose()
+{
+    return SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCanDoClose();
+}
+
+bool SWI_GammaPanel::OnCanDoCloseAll()
+{
+    return SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCanDoCloseAll();
+}
+
 bool SWI_GammaPanel::OnClose()
 {
-    if (!SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount())
-        return false;
-
-    SwApplicationInterface::GetFrameWindow()->GetToolBook()->DeletePage(SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetSelection());
+    SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnClose();
+    SwApplicationInterface::GetFrameWindow()->ToolRemoved();
 
     return true;
 }
 
 bool SWI_GammaPanel::OnCloseAll()
 {
-    return SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCloseAll();
+    SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCloseAll();
+    SwApplicationInterface::GetFrameWindow()->ToolRemoved();
+
+    return true;
 }
 
 bool SWI_GammaPanel::OnBookmarksView()

@@ -120,7 +120,7 @@ bool SwPointArray::Copy(const SwPoint * src, swUI32 length)
     if (!Size(length))
         return false;
 
-    memcpy(m_array, (void *) src, length * sizeof(SwPoint));
+    memcpy((void *) m_array, (void *) src, length * sizeof(SwPoint));
 
     m_count = length;
 

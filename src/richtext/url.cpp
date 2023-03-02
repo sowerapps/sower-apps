@@ -6,6 +6,7 @@
 ///////////////////////////////////////////////////////////////////
 
 #include "../../include/richtext/richtextctrlext.h"
+#include "../../include/appi/appifa.h"
 
 void SwRichTextCtrl::OnThisRichTextUrl(wxTextUrlEvent& event)
 {
@@ -27,7 +28,6 @@ void SwRichTextCtrl::OnThisRichTextUrl(wxTextUrlEvent& event)
             {
                 JumpToAnchorPosition(pos);
             }
-
         }
         else if (url.Find("note:") == 0)
         {
@@ -47,14 +47,26 @@ void SwRichTextCtrl::OnThisRichTextUrl(wxTextUrlEvent& event)
                 JumpToAnchorPosition(url);
             }
         }
+        else if (url.Find("audio:") == 0)
+        {
+            url.Remove(0, 6);
+            SwApplicationInterface::GetAudio().Open(url.utf8_str());
+            SwApplicationInterface::GetAudio().Play();
+        }
+        else if (url.Find("media:") == 0)
+        {
+            url.Remove(0, 6);
+            // For future use.
+        }
         else
         {
             // Links, scripture: & module: etc. passed to derived
             // classes.
-            OnUrlClick(url, m_adClientPos.y - (m_adCaret.GetHeight()/2), m_adClientPos.y + m_adCaret.GetHeight()+ (m_adCaret.GetHeight()/3));
+            OnUrlClick(url, m_adClientPos.y - 1, m_adClientPos.y + (m_adCaret.GetHeight() + 1));
         }
     }
 
     m_lastmousePos = m_adClientPos;
+    m_urlClicked = true;
     event.Skip();
 }

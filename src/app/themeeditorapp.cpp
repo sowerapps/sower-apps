@@ -9,23 +9,28 @@
 #include "filesys/file.h"
 #include "appi/appifa.h"
 #include <wx/msgdlg.h>
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerThemeEditorApp);
 
 bool SowerThemeEditorApp::OnInit()
 {
+<<<<<<< Updated upstream
     bool wxsOK = true;
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_TOOLS32)));
+    #endif // defined __OSX__
+>>>>>>> Stashed changes
 
     SwApplicationInterface::InitBasic();
 
-    if ( wxsOK )
-    {
-    	SowerThemeEditorFrame* Frame = new SowerThemeEditorFrame(NULL, wxNewId(), L"");
-    	Frame->Show();
-    	SetTopWindow(Frame);
-    }
+    SowerThemeEditorFrame* Frame = new SowerThemeEditorFrame(NULL, wxNewId(), L"");
+    Frame->Show();
+    SetTopWindow(Frame);
 
-    return wxsOK;
+    return true;
 }
 
 const long SowerThemeEditorFrame::ID_IDENTIFIERSTATICTEXT = wxNewId();
@@ -154,6 +159,7 @@ SowerThemeEditorFrame::SowerThemeEditorFrame(wxWindow *parent, wxWindowID id, co
 
 SowerThemeEditorFrame::~SowerThemeEditorFrame()
 {
+    SwApplicationInterface::CloseFiles();
 }
 
 void SowerThemeEditorFrame::OnQuit(wxCommandEvent& event)

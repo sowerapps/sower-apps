@@ -640,7 +640,6 @@ bool SwImageViewPanel::OnLoad(SwPageData & pageData)
 
     SwApplicationInterface::GetModuleManager().LoadPage(pageData, data, canCopy);
 
-
     m_view->Reset();
     m_view->SetCanCopy(canCopy);
 
@@ -787,21 +786,47 @@ void SwImageViewPanel::OnSetPopUpMenu(SwMenu * menu)
     m_view->SetPopUpMenu(menu);
 }
 
+const long SwMapViewPanel::ID_TOOLNOTEBOOK = wxNewId();
+const long SwMapViewPanel::ID_PLACESLISTCTRL = wxNewId();
+const long SwMapViewPanel::ID_JOURNEYSSCHECKLISTBOX = wxNewId();
+const long SwMapViewPanel::ID_IMAGEVIEW = wxNewId();
+
 SwMapViewPanel::SwMapViewPanel()
 {
 }
 
 SwMapViewPanel::SwMapViewPanel(wxWindow *parent, wxWindowID id, const wxString &value, const wxPoint &pos, const wxSize &size, long style, const wxValidator &validator, const wxString &name)
-    :SwImageViewPanel(parent, id, value, pos, size, style, validator, name)
+    :SwViewPanel(parent, id, pos, size, style, name)
 {
-    m_view = new SwImageWindow(this, id, pos, size, 0, name);
-    m_find.SetView(m_view);
+    m_manager = new wxAuiManager(this, wxAUI_MGR_DEFAULT);
+    ToolNotebook = new wxNotebook(this, ID_TOOLNOTEBOOK, wxDefaultPosition, wxDefaultSize, 0, L"ID_TOOLNOTEBOOK");
+    ToolNotebook->SetBackgroundColour(*wxWHITE);
+    PlacesListCtrl = new SwStretchColumnListCtrl(ToolNotebook, ID_PLACESLISTCTRL, wxDefaultPosition, wxDefaultSize, wxLC_SINGLE_SEL | wxLC_NO_HEADER, wxDefaultValidator, L"ID_PLACESLISTCTRL");
+    ToolNotebook->AddPage(PlacesListCtrl, L"Places", false);
+    JourneysCheckListBox = new wxCheckListBox(ToolNotebook, ID_JOURNEYSSCHECKLISTBOX, wxDefaultPosition, wxDefaultSize, 0, 0, 0, wxDefaultValidator, L"ID_JOURNEYSCHECKLISTBOX");
+    ToolNotebook->AddPage(JourneysCheckListBox, L"Journeys", false);
+    m_manager->AddPane(ToolNotebook, wxAuiPaneInfo().Name(L"ToolBook").DefaultPane().CaptionVisible(false).CloseButton(false).Left().Floatable(false).MinSize(wxSize(200,-1)));
+    m_view = new SwImageWindow(this, ID_IMAGEVIEW, wxDefaultPosition, wxDefaultSize, 0, L"ID_IMAGEVIEW");
+    m_view->SetShowTips(true);
+    m_view->EnableAutoDef(true);
+    m_manager->AddPane(m_view, wxAuiPaneInfo().Name(L"View Pane").DefaultPane().CaptionVisible(false).Center().DockFixed().Floatable(false));
+    m_manager->Update();
 
-    Connect(id, wxEVT_SIZE,(wxObjectEventFunction)&SwMapViewPanel::OnResize);
+    OnLanguageChange();
+    SwApplicationInterface::GetMapPathsList(JourneysCheckListBox);
+    Connect(ID_PLACESLISTCTRL, wxEVT_LIST_ITEM_ACTIVATED,(wxObjectEventFunction)&SwMapViewPanel::OnPlaceItemActivated);
+    Connect(ID_JOURNEYSSCHECKLISTBOX, wxEVT_CHECKLISTBOX,(wxObjectEventFunction)&SwMapViewPanel::OnJourneyItemActivated);
 }
 
 SwMapViewPanel::~SwMapViewPanel()
 {
+    m_manager->UnInit();
+}
+
+void SwMapViewPanel::OnLanguageChange()
+{
+    ToolNotebook->SetPageText(0, SwApplicationInterface::GetControlString("SID_PLACES", L"Places"));
+    ToolNotebook->SetPageText(1, SwApplicationInterface::GetControlString("SID_JOURNEYS", L"Journeys"));
 }
 
 bool SwMapViewPanel::OnCanHandle(swUI8 contentType)
@@ -845,6 +870,208 @@ bool SwMapViewPanel::OnFindNext()
 {
     return m_find.FindNext();
 }
+
+bool SwMapViewPanel::OnLoad(SwPageData & pageData)
+{
+    SwString data;
+    bool canCopy;
+
+    for (swUI32 i = 0; i < JourneysCheckListBox->GetCount(); i++)
+        JourneysCheckListBox->Check(i, false);
+
+    SwApplicationInterface::GetModuleManager().LoadPage(pageData, data, canCopy);
+
+    m_view->Reset();
+    m_view->SetCanCopy(canCopy);
+
+    SwApplicationInterface::GetImageInterface().SetImageWindow(m_view);
+    if (!SwApplicationInterface::GetImageInterface().Load(data, data.Strlen()))
+        return false;
+
+    m_view->GetImageMapList().FillCtrlEx(PlacesListCtrl);
+
+    return true;
+}
+
+bool SwMapViewPanel::OnLoad(swUI8 contentType, SwStreamBuffer & data, const SwGeoConversionData * cd)
+{
+    for (swUI32 i = 0; i < JourneysCheckListBox->GetCount(); i++)
+        JourneysCheckListBox->Check(i, false);
+
+    if (cd)
+    {
+        m_view->GetImageMapList().SetUseGeo();
+        m_view->GetImageMapList().SetConversionData(*cd);
+    }
+
+    return m_view->LoadImage(data);
+}
+
+bool SwMapViewPanel::OnReset()
+{
+    m_view->Reset();
+
+    return true;
+}
+
+bool SwMapViewPanel::OnRefresh()
+{
+    m_view->Refresh();
+
+    return true;
+}
+
+bool SwMapViewPanel::OnHasFocus()
+{
+    return m_view->HasFocus();
+}
+
+bool SwMapViewPanel::OnGetScrollPos(SwScrollData & scrolldata)
+{
+    m_view->GetScrollPosition(scrolldata);
+
+    return true;
+}
+
+bool SwMapViewPanel::OnSetScrollPos(SwScrollData & scrolldata)
+{
+    m_view->ScrollToLocation(scrolldata);
+
+    return true;
+}
+
+
+bool SwMapViewPanel::OnSetCanCopy(bool canCopy)
+{
+    m_view->SetCanCopy(canCopy);
+
+    return true;
+}
+
+bool SwMapViewPanel::OnCanCopy()
+{
+    return m_view->GetCanCopy();
+}
+
+bool SwMapViewPanel::OnCanDoPrint()
+{
+    return m_view->GetCanCopy();
+}
+
+bool SwMapViewPanel::OnCanDoZoomIn()
+{
+    if (m_view->GetZoom() < 3)
+        return true;
+
+    return false;
+}
+
+bool SwMapViewPanel::OnCanDoZoomOut()
+{
+    if (m_view->GetZoom() > .5)
+        return true;
+
+    return false;
+}
+
+bool SwMapViewPanel::OnCanDoViewNormal()
+{
+    if (m_view->GetZoom() != 1)
+        return true;
+
+    return false;
+}
+
+bool SwMapViewPanel::OnPrint()
+{
+    m_view->OnPrint(L"");
+
+    return true;
+}
+
+bool SwMapViewPanel::OnZoomIn()
+{
+    m_view->OnZoomIn();
+
+    return true;
+}
+
+bool SwMapViewPanel::OnZoomOut()
+{
+    m_view->OnZoomOut();
+
+    return true;
+}
+
+bool SwMapViewPanel::OnViewNormal()
+{
+    m_view->OnViewNormal();
+
+    return true;
+}
+
+void SwMapViewPanel::OnEnableAutoDef(bool enable)
+{
+    m_view->EnableAutoDef(enable);
+}
+
+void SwMapViewPanel::OnResize(wxSizeEvent& event)
+{
+    event.Skip();
+}
+
+void SwMapViewPanel::OnSetPopUpMenu(SwMenu * menu)
+{
+    m_view->SetPopUpMenu(menu);
+}
+
+void SwMapViewPanel::OnPlaceItemActivated(wxListEvent& event)
+{
+    SwMapArea * mapData = (SwMapArea *) event.GetClientData();
+
+    if (!mapData)
+        return;
+
+    SwPoint point = mapData->GetAt(0);
+    SwScrollData scd;
+    scd.hpos = point.x;
+    scd.vpos = point.y;
+
+    m_view->ScrollToLocation(scd);
+}
+
+void SwMapViewPanel::OnJourneyItemActivated(wxCommandEvent& event)
+{
+    SwString data;
+    SwTableItem * tItem;
+    SwMapArea area;
+    swUI32 node;
+
+    if (JourneysCheckListBox->IsChecked(event.GetInt()))
+    {
+        tItem = SwApplicationInterface::GetMapPaths().GetTable().GetNode((swUI32) event.GetInt());
+        if (tItem)
+            return;
+
+        m_view->GetImageMapList().CreatePath(tItem->data, area, false);
+        area.SetType(AREA_TYPE_PATH);
+        area.SetAlt(tItem->id);
+        m_view->GetDrawAreaImageMap().AppendNode(area);
+        m_view->Refresh();
+    }
+    else
+    {
+        tItem = SwApplicationInterface::GetMapPaths().GetTable().GetNode((swUI32) event.GetInt());
+        if (tItem)
+            return;
+
+        node = m_view->GetDrawAreaImageMap().FindMapAreaByalt(tItem->id);
+        if (node != NODE_ID_INVALID)
+            m_view->GetDrawAreaImageMap().DeleteNode(node);
+        m_view->Refresh();
+    }
+}
+
 
 IMPLEMENT_DYNAMIC_CLASS(SwViewBook, wxSimplebook)
 

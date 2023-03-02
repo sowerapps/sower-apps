@@ -126,7 +126,7 @@ swUI32 SwRichTextInterface::Ona(swUI32 node)
                     buffer += " identifier:";
                     buffer += SwApplicationInterface::GetModuleManager().GetAt(managerPos)->GetHeader().GetIdentifier();
                 }
-            }
+            } // If m_isModule is false it is a ThML file.
             else if (m_moduleId != NODE_ID_INVALID_16 && !m_isModule)
             {
                 char s[100];
@@ -140,7 +140,7 @@ swUI32 SwRichTextInterface::Ona(swUI32 node)
             m_richAttr.SetFontUnderlined(true);
             SetEndStyleFlag(node, BeginInlineStyle(node, true));
         }
-        else if (GetNamedValueFromNode(node, "name", buffer))
+        else if (GetNamedValueFromNode(node, "name", buffer) || GetNamedValueFromNode(node, "id", buffer))
         {
             m_rich->GetAnchors().Add(buffer, m_rich->GetInsertionPoint());
         }

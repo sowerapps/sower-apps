@@ -32,6 +32,7 @@ public:
     void UpdateCard(SwCatalogCard * card);
     void SetCatalog(SwCatalogCardArray * catalog);
     void ShowStopButton(bool state = false);
+    void EnableOptionalControls(bool state = false);
     SwCheckBox* AllowCopyCheckBox;
     SwCheckBox* EncryptCheckBox;
     wxChoice* CategoryChoice;
@@ -84,10 +85,12 @@ public:
     void OnStopButtonClick(wxCommandEvent& event);
     void LoadFromFile(const char * path);
     void SetCategory(const char * path);
+    void SetValidate(bool state = true) { m_validate = state; }
 
 protected:
     SwCatalogCard * m_card;
     SwCatalogCardArray * m_catalog;
+    bool m_validate;
 };
 
 #endif // SOWERCATALOGCARDDLG_H

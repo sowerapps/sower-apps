@@ -35,6 +35,8 @@ bool SwString::IsRoman(char ch)
     case 'L' :
     case 'c' :
     case 'C' :
+    case 'm' :
+    case 'M' :
         return true;
         break;
     default :
@@ -42,6 +44,39 @@ bool SwString::IsRoman(char ch)
     }
 
     return false;
+}
+
+swUI16 SwString::GetRomanValue(char ch)
+{
+    switch(ch)
+    {
+    case 'i' :
+    case 'I' :
+        return 1;
+        break;
+    case 'v' :
+    case 'V' :
+        return 5;
+        break;
+    case 'x' :
+    case 'X' :
+        return 10;
+        break;
+    case 'l' :
+    case 'L' :
+        return 50;
+        break;
+    case 'c' :
+    case 'C' :
+        return 100;
+        break;
+    case 'm' :
+    case 'M' :
+        return 1000;
+        break;
+    }
+
+    return 0;
 }
 
 void SwString::ToRoman(SwString & dest, swUI16 number, bool upperCase)
@@ -133,181 +168,47 @@ swUI16 SwString::ConvertRoman(const char * str)
 {
     swUI32 pos = 0;
     swUI16 number = 0;
+    swI32 value;
 
-    while (str[pos] == 'M' || str[pos] == 'm')
+    while (str[pos] != '\0')
     {
-        number += 1000;
+        value = GetRomanValue(str[pos]);
+        if (!value)
+            break;
+        if (value >= GetRomanValue(str[pos + 1]))
+            number += value;
+        else
+            number -= value;
+
         pos ++;
     }
 
-    if ((str[pos] == 'C' || str[pos] == 'c') && (str[pos +1] == 'M' || str[pos + 1] == 'm'))
-    {
-        number += 900;
-        pos += 2;
-    }
-
-    if (str[pos] == 'D' || str[pos] == 'd')
-    {
-        number += 500;
-        pos ++;
-    }
-
-    if ((str[pos] == 'C' || str[pos] == 'c') && (str[pos +1] == 'D' || str[pos + 1] == 'd'))
-    {
-        number += 400;
-        pos += 2;
-    }
-
-    while (str[pos] == 'C' || str[pos] == 'c')
-    {
-        number += 100;
-        pos ++;
-    }
-
-    if ((str[pos] == 'X' || str[pos] == 'x') && (str[pos +1] == 'C' || str[pos + 1] == 'c'))
-    {
-        number += 90;
-        pos += 2;
-    }
-
-    if (str[pos] == 'L' || str[pos] == 'l')
-    {
-        number += 50;
-        pos ++;
-    }
-
-    if ((str[pos] == 'X' || str[pos] == 'x') && (str[pos +1] == 'L' || str[pos + 1] == 'l'))
-    {
-        number += 40;
-        pos ++;
-    }
-
-    while (str[pos] == 'X' || str[pos] == 'x')
-    {
-        number += 10;
-        pos ++;
-    }
-
-    if ((str[pos] == 'I' || str[pos] == 'i') && (str[pos +1] == 'X' || str[pos + 1] == 'x'))
-    {
-        number += 9;
-        pos ++;
-    }
-
-    if (str[pos] == 'V' || str[pos] == 'v')
-    {
-        number += 5;
-        pos ++;
-    }
-
-    if ((str[pos] == 'I' || str[pos] == 'i') && (str[pos +1] == 'V' || str[pos + 1] == 'v'))
-    {
-        number += 4;
-        pos += 2;
-    }
-
-    while (str[pos] == 'I' || str[pos] == 'i')
-    {
-        number += 1;
-        pos ++;
-    }
-
-    return number;
+    return (swUI16) number;
 }
 
 swUI16 SwString::ConvertRoman(const char * str, swUI32 & startPos, swUI32 & endPos)
 {
     swUI32 pos = startPos;
     swUI16 number = 0;
+    swI32 value;
 
-    while(!IsRoman(str[pos]) && str[pos] != '\0')
+    while (str[pos] != '\0')
     {
+        value = GetRomanValue(str[pos]);
+        if (!value)
+            break;
+        if (value >= GetRomanValue(str[pos + 1]))
+            number += value;
+        else
+            number -= value;
+
         pos ++;
     }
 
-    startPos = pos;
-
-    while (str[pos] == 'M' || str[pos] == 'm')
-    {
-        number += 1000;
-        pos ++;
-    }
-
-    if ((str[pos] == 'C' || str[pos] == 'c') && (str[pos +1] == 'M' || str[pos + 1] == 'm'))
-    {
-        number += 900;
-        pos += 2;
-    }
-
-    if (str[pos] == 'D' || str[pos] == 'd')
-    {
-        number += 500;
-        pos ++;
-    }
-
-    if ((str[pos] == 'C' || str[pos] == 'c') && (str[pos +1] == 'D' || str[pos + 1] == 'd'))
-    {
-        number += 400;
-        pos += 2;
-    }
-
-    while (str[pos] == 'C' || str[pos] == 'c')
-    {
-        number += 100;
-        pos ++;
-    }
-
-    if ((str[pos] == 'X' || str[pos] == 'x') && (str[pos +1] == 'C' || str[pos + 1] == 'c'))
-    {
-        number += 90;
-        pos += 2;
-    }
-
-    if (str[pos] == 'L' || str[pos] == 'l')
-    {
-        number += 50;
-        pos ++;
-    }
-
-    if ((str[pos] == 'X' || str[pos] == 'x') && (str[pos +1] == 'L' || str[pos + 1] == 'l'))
-    {
-        number += 40;
-        pos ++;
-    }
-
-    while (str[pos] == 'X' || str[pos] == 'x')
-    {
-        number += 10;
-        pos ++;
-    }
-
-    if ((str[pos] == 'I' || str[pos] == 'i') && (str[pos +1] == 'X' || str[pos + 1] == 'x'))
-    {
-        number += 9;
-        pos ++;
-    }
-
-    if (str[pos] == 'V' || str[pos] == 'v')
-    {
-        number += 5;
-        pos ++;
-    }
-
-    if ((str[pos] == 'I' || str[pos] == 'i') && (str[pos +1] == 'V' || str[pos + 1] == 'v'))
-    {
-        number += 4;
-        pos += 2;
-    }
-
-    while (str[pos] == 'I' || str[pos] == 'i')
-    {
-        number += 1;
-        pos ++;
-    }
 
     endPos = pos - 1;
 
-    return number;
+    return (swUI16) number;
 }
 
 bool SwString::IsStrDigit(const char * source)
@@ -889,7 +790,7 @@ bool SwString::Insert(swUI32 pos, const char * str)
 
     if (pos >= m_size)
     {
-      return Strcat(str);
+        return Strcat(str);
     }
 
     swUI32 ins = strlen(str);
@@ -1006,6 +907,38 @@ swUI32 SwString::Strtoul()
     return strtoul(m_array, NULL, 10);
 }
 
+swUI16 SwString::ConvertRoman()
+{
+    if (!m_array)
+        return 0;
+
+    return ConvertRoman(m_array);
+}
+
+bool SwString::IsRoman(swUI32 pos)
+{
+    if (pos >= m_size)
+        return false;
+
+    return IsRoman(m_array[pos]);
+}
+
+bool SwString::IsDigit(swUI32 pos)
+{
+    if (pos >= m_size)
+        return false;
+
+    return (bool) isdigit(m_array[pos]);
+}
+
+bool SwString::IsAlpha(swUI32 pos)
+{
+    if (pos >= m_size)
+        return false;
+
+    return (bool) isalpha(m_array[pos]);
+}
+
 bool SwString::BoolFromString()
 {
     if (!m_array)
@@ -1076,6 +1009,25 @@ void SwString::GetTextRange(swUI32 start, swUI32 end, SwString & buffer)
     }
 }
 
+bool SwString::FindInRange(swUI32 start, swUI32 end, char ch, swUI32 * pos)
+{
+    if (!m_array || start >= m_size || end >= m_size)
+        return NODE_ID_INVALID;
+
+    for (swUI32 i = start; i <= end; i ++)
+    {
+        if (m_array[i] == ch)
+        {
+            if (pos)
+                *pos = i;
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
 wchar_t * SwString::GetWideFromUtf8()
 {
     if (!m_array)
@@ -1107,4 +1059,19 @@ void SwString::IncrementCount(swUI32 inc)
 void SwString::DecrementCount(swUI32 dec)
 {
     m_count -= dec;
+}
+
+void SwString::CleanNewLines()
+{
+    if (!m_array)
+        return;
+
+    swUI32 len = Strlen();
+    for (swUI32 i = 0; i < len; i ++)
+    {
+        if (m_array[i] == '\r' || m_array[i] == '\n')
+            m_array[i] = ' ';
+    }
+
+    Replace("  ", 2, " ", 1);
 }

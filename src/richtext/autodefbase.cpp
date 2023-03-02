@@ -105,15 +105,16 @@ void SwAutoDefBase::OnUrlClick(const char * url, int top, int bottom)
                 SwThMLFile * f = SwApplicationInterface::GetThMLFileManager().GetAt(pos);
                 id = f->GetManagerId();
                 if (SwApplicationInterface::GetThMLFileManager().LoadAutoDefPage(id, urlCpy, m_adbuffer))
-                    WriteAutoDefText(m_adbuffer, m_adbuffer.Strlen(), true, &f->m_cssrules, f->GetBasePath(), true, top, bottom);
-
-                if (p)
                 {
-                    *p = '-';
+                    WriteAutoDefText(m_adbuffer, m_adbuffer.Strlen(), true, &f->m_cssrules, f->GetBasePath(), true, top, bottom);
+                    if (p)
+                    {
+                        *p = '-';
 
-                    m_autodefWindow->GetParagraphList().HiliteParagraph(urlCpy);
-                    m_autodefWindow->SetupScrollbars();
-                    m_autodefWindow->GetParagraphList().ShowParagraph(urlCpy);
+                        m_autodefWindow->GetParagraphList().HiliteParagraph(urlCpy);
+                        m_autodefWindow->SetupScrollbars();
+                        m_autodefWindow->GetParagraphList().ShowParagraph(urlCpy);
+                    }
                 }
             }
         }
@@ -144,15 +145,17 @@ void SwAutoDefBase::OnUrlClick(const char * url, int top, int bottom)
             {
                 id = SwApplicationInterface::GetModuleManager().GetAt(pos)->GetManagerId();
                 if (SwApplicationInterface::GetModuleManager().LoadAutoDefPage(id, urlCpy, m_adbuffer, canCopy))
+                {
                     WriteAutoDefText(m_adbuffer, "", canCopy, top, bottom);
 
-                if (p)
-                {
-                    *p = '-';
+                    if (p)
+                    {
+                        *p = '-';
 
-                    m_autodefWindow->GetParagraphList().HiliteParagraph(urlCpy);
-                    m_autodefWindow->SetupScrollbars();
-                    m_autodefWindow->GetParagraphList().ShowParagraph(urlCpy);
+                        m_autodefWindow->GetParagraphList().HiliteParagraph(urlCpy);
+                        m_autodefWindow->SetupScrollbars();
+                        m_autodefWindow->GetParagraphList().ShowParagraph(urlCpy);
+                    }
                 }
             }
         }

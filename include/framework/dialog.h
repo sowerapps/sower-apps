@@ -43,8 +43,13 @@ public:
     virtual void OnThMLFileAdded(swUI16 mid) {}
     virtual void OnThMLFileDeleted(swUI16 mid) {}
 
+    static bool SelectProjectFile(wxWindow * parent, SwString & filePath, const char * dir);
     static bool SelectThMLFile(wxWindow * parent, SwString & filePath, const char * dir);
+    static bool SelectHtmlThMLFile(wxWindow * parent, SwString & filePath, const char * dir);
+    static bool SaveAsHtmlThMLFile(wxWindow * parent, SwString & filePath, const char * dir);
     static bool SelectModuleFile(wxWindow * parent, SwString & filePath, const char * dir);
+    static bool SaveAsModuleFile(wxWindow * parent, SwString & filePath, const char * dir);
+    static bool SelectBz2ModuleFile(wxWindow * parent, SwString & filePath, const char * dir);
     static bool SelectImageFile(wxWindow * parent, SwString & filePath, const char * dir);
     static int RequestSave(wxWindow * parent);
 };

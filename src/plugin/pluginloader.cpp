@@ -27,6 +27,9 @@ bool SwPlugInLoader::OnFile(const char * path)
     {
         wxDynamicLibrary * dll = new wxDynamicLibrary(path, wxDL_NOW|wxDL_VERBATIM|wxDL_QUIET);
 
+        if (!dll)
+            return true;
+
         if (!dll->IsLoaded())
             delete dll;
         else

@@ -35,6 +35,7 @@ SwPreferencesDlg::SwPreferencesDlg(wxWindow* parent,wxWindowID id,const wxPoint&
 
 	GridBagSizer1 = new wxGridBagSizer(0, 0);
 	LanguageText = new wxStaticText(this, ID_LANGUAGETEXT, SwApplicationInterface::GetControlString("SID_LANGUAGE", L"Language"), wxDefaultPosition, wxDefaultSize, 0, L"ID_LANGUAGETEXT");
+	LanguageText->SetMinSize(wxSize(200, -1));
 	GridBagSizer1->Add(LanguageText, wxGBPosition(0, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	LanguageChoice = new wxChoice(this, ID_LANGUAGECHOICE, wxDefaultPosition, wxDefaultSize, 0, 0, 0, wxDefaultValidator, L"ID_LANGUAGECHOICE");
 	GridBagSizer1->Add(LanguageChoice, wxGBPosition(1, 0), wxDefaultSpan, wxALL|wxEXPAND|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
@@ -57,11 +58,11 @@ SwPreferencesDlg::SwPreferencesDlg(wxWindow* parent,wxWindowID id,const wxPoint&
 	ThMLLibraryLocationText = new wxStaticText(this, ID_THMLLIBRARYLOCATIONLOCATIONTEXT, SwApplicationInterface::GetControlString("SID_THMLLIBLOCATION", L"ThML Library Location"), wxDefaultPosition, wxDefaultSize, 0, L"ID_THMLLIBRARYLOCATIONLOCATIONTEXT");
 	GridBagSizer1->Add(ThMLLibraryLocationText, wxGBPosition(9, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	ThMLLibraryDirPickerCtrl = new wxDirPickerCtrl(this, ID_THMLLIBRARYDIRPICKERCTRL, wxEmptyString, SwApplicationInterface::GetControlString("SID_SELECTDIR", L"Select a directory"), wxDefaultPosition, wxDefaultSize, wxDIRP_DIR_MUST_EXIST|wxDIRP_USE_TEXTCTRL, wxDefaultValidator, _T("ID_LIBRARYDIRPICKERCTRL"));
-	GridBagSizer1->Add(ThMLLibraryDirPickerCtrl, wxGBPosition(10, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+	GridBagSizer1->Add(ThMLLibraryDirPickerCtrl, wxGBPosition(10, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxEXPAND, 5);
 	ModLibraryLocationText = new wxStaticText(this, ID_MODLIBRARYLOCATIONLOCATIONTEXT, SwApplicationInterface::GetControlString("SID_MODLIBLOCATION", L"Module Library Location"), wxDefaultPosition, wxDefaultSize, 0, L"ID_MODLIBRARYLOCATIONLOCATIONTEXT");
 	GridBagSizer1->Add(ModLibraryLocationText, wxGBPosition(11, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
 	ModLibraryDirPickerCtrl = new wxDirPickerCtrl(this, ID_MODLIBRARYDIRPICKERCTRL, wxEmptyString, SwApplicationInterface::GetControlString("SID_SELECTDIR", L"Select a directory"), wxDefaultPosition, wxDefaultSize, wxDIRP_DIR_MUST_EXIST|wxDIRP_USE_TEXTCTRL, wxDefaultValidator, _T("ID_LIBRARYDIRPICKERCTRL"));
-	GridBagSizer1->Add(ModLibraryDirPickerCtrl, wxGBPosition(12, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+	GridBagSizer1->Add(ModLibraryDirPickerCtrl, wxGBPosition(12, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxEXPAND, 5);
 
 
 	ADModulesText = new wxStaticText(this, ID_ADMODULESTEXT, SwApplicationInterface::GetControlString("SID_AUTODEFACCESS", L"Allow AutoDef to access:"), wxDefaultPosition, wxDefaultSize, 0, L"ID_ADMODULESTEXT");

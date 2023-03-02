@@ -81,7 +81,7 @@ bool SwRichTextCtrl::ProcessMouseMovement(wxRichTextParagraphLayoutBox* containe
             m_adText = contextObj->GetTextForRange(wxRichTextRange(start, end));
             m_adTextLen = m_adText.Len();
             GetCaretPositionForIndex(pos, m_adCaret, container);
-            m_adAbsolutePos = contextObj->GetAbsolutePosition();
+            m_adTextPos = pos;
         }
     }
 
@@ -101,19 +101,28 @@ bool SwRichTextCtrl::ProcessMouseMovement(wxRichTextParagraphLayoutBox* containe
 void SwRichTextCtrl::OnTimer(bool flag)
 {
     long caretPos = GetCaretPosition();
-    wxRect rct;
     long start, end;
     swUI32 offSet = 0;
 
     if (!SwAutoDefBase::IsMouseInWindow(this) || !IsShownOnScreen())
         return;
 
-    if (caretPos != m_lastcaretPos)
+    if (caretPos != m_lastcaretPos && HasFocus())
     {
         // Caret position has changed. Use text at caret for
         // AutoDef data, and position.
         HideAutoDef();
-
+        m_caretFlag = true;
+        m_lastcaretPos = caretPos;
+        m_mouseCount = 0;
+    }
+    else if (m_caretFlag && caretPos == m_lastcaretPos && HasFocus())
+    {
+        if (m_mouseCount < 7)
+        {
+            m_mouseCount ++;
+            return;
+        }
         if (caretPos - 30 < 0)
         {
             offSet = caretPos;
@@ -127,20 +136,31 @@ void SwRichTextCtrl::OnTimer(bool flag)
 
         end = caretPos + 20;
 
-        GetCaretPositionForIndex(caretPos, rct);
-        rct.y = rct.y / GetScale();
-        OnCaretChange(GetRange(start, end), offSet, rct.y, rct.y + (rct.GetHeight() * GetScale()));
+        GetCaretPositionForIndex(caretPos, m_adCaret);
+        m_adClientPos.x = m_adCaret.x;
+        m_adClientPos.y = m_adCaret.y;
+        m_adClientPos = GetScaledPoint(m_adClientPos);
+        m_adClientPos = GetPhysicalPoint(m_adClientPos);
+        if (!m_urlClicked)
+            OnCaretChange(GetRange(start, end), offSet, m_adClientPos.y - 1, m_adClientPos.y + (m_adCaret.GetHeight()) + 1);
 
         m_lastcaretPos = caretPos;
+        m_urlClicked = false;
+        m_caretFlag = false;
         return;
     }
 
     if (m_adClientPos == m_lastmousePos && m_adTextLen < 52)
     {
         m_mouseCount ++;
-        if (m_mouseCount > 2)
+        if (m_mouseCount >= 7)
         {
-            OnMouseHover(m_adText.utf8_str(), m_adOffset, m_adClientPos.y - (m_adCaret.GetHeight()/2), m_adClientPos.y + m_adCaret.GetHeight()+ (m_adCaret.GetHeight()/3));
+            GetCaretPositionForIndex(m_adTextPos, m_adCaret);
+            m_adClientPos.x = m_adCaret.x;
+            m_adClientPos.y = m_adCaret.y;
+            m_adClientPos = GetScaledPoint(m_adClientPos);
+            m_adClientPos = GetPhysicalPoint(m_adClientPos);
+            OnMouseHover(m_adText.utf8_str(), m_adOffset, m_adClientPos.y - 1, m_adClientPos.y + (m_adCaret.GetHeight() + 1));
         }
 
         return;

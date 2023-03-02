@@ -63,8 +63,13 @@ public:
     virtual bool OnClose();
     virtual bool OnCloseAll();
     bool OnCanDoOpen() { return true; }
+<<<<<<< Updated upstream
     bool OnCanDoClose() { return SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount(); }
     bool OnCanDoCloseAll() { return SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount(); }
+=======
+    bool OnCanDoClose() { return false; }
+    bool OnCanDoCloseAll() { return false; }
+>>>>>>> Stashed changes
     virtual void SaveUserData();
 
     virtual bool OnFile1();

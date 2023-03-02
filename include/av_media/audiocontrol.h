@@ -12,6 +12,7 @@
 #include "../sowerbase.h"
 #include "../module/module.h"
 #include "../module/mediacontents.h"
+<<<<<<< Updated upstream
 #include <SFML/System/InputStream.hpp>
 #include <SFML/Audio/Music.hpp>
 #include <wx/control.h>
@@ -20,22 +21,20 @@
 using namespace sf;
 
 class SOWERBASEEXP SwAudioStream : public sf::InputStream
+=======
+#include "audio.h"
+#include <wx/control.h>
+#include <wx/gbsizer.h>
+
+class SwAudioCtrl;
+class SOWERBASEEXP SwAudioCtrlTimer : public wxTimer
+>>>>>>> Stashed changes
 {
 public:
-    SwAudioStream();
-    virtual ~SwAudioStream();
-
-    bool open(swUI16 moduleId, const char * mediaId);
-    virtual Int64 read(void *data, Int64 size);
-    virtual Int64 seek(Int64 position);
-    virtual Int64 tell();
-    virtual Int64 getSize();
-
-protected:
-    SwModule *      m_module;
-    SwMediaNode *     m_mediaNode;
-    Int64           m_position;
-    Int64           m_size;
+    SwAudioCtrlTimer();
+    virtual ~SwAudioCtrlTimer();
+    virtual void Notify();
+    SwAudioCtrl * m_ctrl;
 };
 
 class SOWERBASEEXP SwAudioCtrl : public wxControl
@@ -46,32 +45,44 @@ public:
     virtual ~SwAudioCtrl();
 
     void BuildContent();
+    void Reset();
     bool OnOpen(const char * path);
-    bool OnOpen(swUI16 managerId, const char * src);
     void OnAutoPlay();
-    void SetLoop(bool loop = true);
     wxButton* PauseButton;
     wxButton* PlayButton;
     wxButton* StopButton;
-    wxSlider* VolmeSlider;
+    wxCheckBox* LoopCheckBox;
+    wxSlider* VolumeSlider;
+    wxSlider* PositionSlider;
     wxStaticText* TitleLabel;
     wxStaticText* VolumeLabel;
+    wxStaticText* PositionLabel;
+
+    void OnTimer();
 
 protected:
     static const long ID_PAUSEBUTTON;
     static const long ID_PLAYBUTTON;
     static const long ID_STOPBUTTON;
+    static const long ID_LOOPCHECKBOX;
     static const long ID_VOLUMELABEL;
     static const long ID_VOLUMESLIDER;
+    static const long ID_POSITIONLABEL;
+    static const long ID_POSITIONSLIDER;
     static const long ID_TITLELABEL;
 
     void OnPauseButtonClick(wxCommandEvent& event);
     void OnPlayButtonClick(wxCommandEvent& event);
     void OnStopButtonClick(wxCommandEvent& event);
-    void OnVolmeSliderCmdScroll(wxScrollEvent& event);
+    void OnVolumeSliderScroll(wxScrollEvent& event);
+    virtual void OnPositionSliderThumb(wxScrollEvent& event);
+    virtual void OnPositionSliderThumbRelease(wxScrollEvent& event);
+    virtual void OnLanguageChange();
 
-    sf::Music     m_music;
-    SwAudioStream m_stream;
+    SwAudio          m_audio;
+    SwAudioCtrlTimer m_timer;
+    bool             m_skip;
+    swUI8            m_delay;
 };
 
 #endif // AUDIOCONTROL_H

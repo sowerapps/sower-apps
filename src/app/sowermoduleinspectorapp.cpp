@@ -9,11 +9,20 @@
 #include "appi/appifa.h"
 #include "bible/standard_bible.h"
 #include "filesys/streambuffer.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerModuleInspectorApp);
 
 bool SowerModuleInspectorApp::OnInit()
 {
+<<<<<<< Updated upstream
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_TOOLS32)));
+    #endif
+
+>>>>>>> Stashed changes
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadPlugIns();
     SwApplicationInterface::LoadAllKeys();
@@ -337,6 +346,7 @@ void SowerModuleInspectorFrame::OnClose(wxCommandEvent& event)
 
 void SowerModuleInspectorFrame::OnQuit(wxCommandEvent& event)
 {
+    SwApplicationInterface::CloseFiles();
     Close();
 }
 

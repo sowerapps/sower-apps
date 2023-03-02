@@ -25,7 +25,6 @@
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DwxUSE_UNICODE" />
 					<Add directory="../depends-msw/wxwidgets/include" />
-					<Add directory="../depends-msw/SFML/include" />
 					<Add directory="../depends-msw/bzip2" />
 				</Compiler>
 				<Linker>
@@ -36,8 +35,7 @@
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_propgrid.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_richtext.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_media.a" />
-					<Add library="../depends-msw/SFML/lib/libsfml-audio.a" />
-					<Add library="../depends-msw/SFML/lib/libsfml-system.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_stc.a" />
 					<Add library="../depends-msw/bzip2/lib/libbz2.a" />
 					<Add library="libwinmm" />
 				</Linker>
@@ -60,7 +58,6 @@
 					<Add option="-DWXUSINGDLL" />
 					<Add option="-DwxUSE_UNICODE" />
 					<Add directory="../depends-msw/wxwidgets/include" />
-					<Add directory="../depends-msw/SFML/include" />
 					<Add directory="../depends-msw/bzip2" />
 				</Compiler>
 				<Linker>
@@ -72,8 +69,7 @@
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_propgrid.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_richtext.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_media.a" />
-					<Add library="../depends-msw/SFML/lib/libsfml-audio.a" />
-					<Add library="../depends-msw/SFML/lib/libsfml-system.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_stc.a" />
 					<Add library="../depends-msw/bzip2/lib/libbz2.a" />
 					<Add library="libwinmm" />
 				</Linker>
@@ -98,9 +94,7 @@
 					<Add option="-DwxUSE_UNICODE" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
-					<Add library="../../../../../../../lib/x86_64-linux-gnu/libsfml-system.so" />
-					<Add library="../../../../../../../lib/x86_64-linux-gnu/libsfml-audio.so" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, xml, core, adv, aui, richtext, html, media, propgrid, stc`" />
 					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
 				</Linker>
 			</Target>
@@ -124,9 +118,7 @@
 					<Add option="-DDISABLEWXASSERTS" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
-					<Add library="../../../../../../../lib/x86_64-linux-gnu/libsfml-system.so" />
-					<Add library="../../../../../../../lib/x86_64-linux-gnu/libsfml-audio.so" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, xml, core, adv, aui, richtext, html, media, propgrid, stc`" />
 					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
 				</Linker>
 			</Target>
@@ -139,14 +131,17 @@
 		<Unit filename="../include/array/cardarray.h" />
 		<Unit filename="../include/array/moduleitemarray.h" />
 		<Unit filename="../include/array/pointarray.h" />
+		<Unit filename="../include/array/referenceitemarray.h" />
 		<Unit filename="../include/array/stringarray.h" />
 		<Unit filename="../include/array/textrangearray.h" />
 		<Unit filename="../include/array/uintarray.h" />
+		<Unit filename="../include/av_media/audio.h" />
 		<Unit filename="../include/av_media/audiocontrol.h" />
 		<Unit filename="../include/av_media/mediadevice.h" />
 		<Unit filename="../include/bible/bibledatacontainers.h" />
 		<Unit filename="../include/bible/bookidentifier.h" />
 		<Unit filename="../include/bible/commentarymap.h" />
+		<Unit filename="../include/bible/referenceparser.h" />
 		<Unit filename="../include/bible/scripturemap.h" />
 		<Unit filename="../include/bible/standard_bible.h" />
 		<Unit filename="../include/controls/bookmarkslistctrl.h" />
@@ -181,6 +176,7 @@
 		<Unit filename="../include/framework/guipanel.h" />
 		<Unit filename="../include/framework/librarypanels.h" />
 		<Unit filename="../include/framework/librarysearchpanels.h" />
+		<Unit filename="../include/framework/markuppanel.h" />
 		<Unit filename="../include/framework/menubar.h" />
 		<Unit filename="../include/framework/panel.h" />
 		<Unit filename="../include/framework/searchpanel.h" />
@@ -235,10 +231,12 @@
 		<Unit filename="../include/sowerbase.h" />
 		<Unit filename="../include/string/string.h" />
 		<Unit filename="../include/string/stringcompare.h" />
+		<Unit filename="../include/string/stringpair.h" />
 		<Unit filename="../include/string/stringw.h" />
 		<Unit filename="../include/string/strparser.h" />
-		<Unit filename="../include/string/utf8.h" />
 		<Unit filename="../include/swguiml/swguimlparser.h" />
+		<Unit filename="../include/swopf/swopfparser.h" />
+		<Unit filename="../include/swprjml/swprjmlparser.h" />
 		<Unit filename="../include/thml/thml_css.h" />
 		<Unit filename="../include/thml/thml_elements.h" />
 		<Unit filename="../include/thml/thml_file.h" />
@@ -260,14 +258,17 @@
 		<Unit filename="../src/array/cardarray.cpp" />
 		<Unit filename="../src/array/moduleitemarray.cpp" />
 		<Unit filename="../src/array/pointarray.cpp" />
+		<Unit filename="../src/array/referenceitemarray.cpp" />
 		<Unit filename="../src/array/stringarray.cpp" />
 		<Unit filename="../src/array/textrangearray.cpp" />
 		<Unit filename="../src/array/uintarray.cpp" />
+		<Unit filename="../src/av_media/audio.cpp" />
 		<Unit filename="../src/av_media/audiocontrol.cpp" />
 		<Unit filename="../src/av_media/mediadevice.cpp" />
 		<Unit filename="../src/bible/bibledatacontainers.cpp" />
 		<Unit filename="../src/bible/bookidentifier.cpp" />
 		<Unit filename="../src/bible/commentarymap.cpp" />
+		<Unit filename="../src/bible/referenceparser.cpp" />
 		<Unit filename="../src/bible/scripturemap.cpp" />
 		<Unit filename="../src/bible/standard_bible.cpp" />
 		<Unit filename="../src/controls/bookmarkslistctrl.cpp" />
@@ -302,6 +303,7 @@
 		<Unit filename="../src/framework/guipanel.cpp" />
 		<Unit filename="../src/framework/librarypanels.cpp" />
 		<Unit filename="../src/framework/librarysearchpanels.cpp" />
+		<Unit filename="../src/framework/markuppanel.cpp" />
 		<Unit filename="../src/framework/menubar.cpp" />
 		<Unit filename="../src/framework/panel.cpp" />
 		<Unit filename="../src/framework/searchpanel.cpp" />
@@ -340,6 +342,7 @@
 		<Unit filename="../src/imgwin/zoom.cpp" />
 		<Unit filename="../src/interface/imagewin/imagewindowinterface.cpp" />
 		<Unit filename="../src/interface/interface.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/audiovideomusic.cpp" />
 		<Unit filename="../src/interface/richtext/handlers/basic.cpp" />
 		<Unit filename="../src/interface/richtext/handlers/body.cpp" />
 		<Unit filename="../src/interface/richtext/handlers/information.cpp" />
@@ -400,9 +403,12 @@
 		<Unit filename="../src/sowerbase.cpp" />
 		<Unit filename="../src/string/string.cpp" />
 		<Unit filename="../src/string/stringcompare.cpp" />
+		<Unit filename="../src/string/stringpair.cpp" />
 		<Unit filename="../src/string/stringw.cpp" />
 		<Unit filename="../src/string/strparser.cpp" />
 		<Unit filename="../src/swguiml/swguimlparser.cpp" />
+		<Unit filename="../src/swopf/swopfparser.cpp" />
+		<Unit filename="../src/swprjml/swprjmlparser.cpp" />
 		<Unit filename="../src/thml/thml_css.cpp" />
 		<Unit filename="../src/thml/thml_elements.cpp" />
 		<Unit filename="../src/thml/thml_file.cpp" />
@@ -425,8 +431,6 @@
 				<general />
 			</DoxyBlocks>
 			<lib_finder disable_auto="1">
-				<lib name="sfml-audio" />
-				<lib name="sfml-system" />
 				<lib name="libbz2" />
 			</lib_finder>
 		</Extensions>

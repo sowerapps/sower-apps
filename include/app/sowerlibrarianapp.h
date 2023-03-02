@@ -43,6 +43,7 @@ private:
     wxTextCtrl* ReportTextCtrl;
     wxButton* CancelButton;
     wxButton* OkButton;
+    SwCheckBox* CompressCheckBox;
 
     static const long ID_SOURCELABEL;
     static const long ID_SOURCEDIRPICKERCTRL;
@@ -53,6 +54,7 @@ private:
     static const long ID_PASSWORDLABEL;
     static const long ID_PASSWORDTEXTCTRL;
     static const long ID_CANCELBUTTON;
+    static const long ID_COMPRESSCHECKBOX;
 
     void OnQuit(wxCommandEvent& event);
     void OnCancelButtonClick(wxCommandEvent& event);

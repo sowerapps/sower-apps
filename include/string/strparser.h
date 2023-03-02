@@ -23,6 +23,7 @@ public:
     void ParseStringStrict(const char * dataString);
     swUI32 GetItems();
     const char * GetItem(swUI32 item);
+    swUI32 GetItemPosition(swUI32 item);
     void SetDeliminator(char ch);
     swUI32 Find(const char * str);
 
@@ -42,6 +43,7 @@ public:
     void ParseString(const wchar_t * dataString);
     swUI32 GetItems();
     const wchar_t * GetItem(swUI32 item);
+    swUI32 GetItemPosition(swUI32 item);
     void SetDeliminator(wchar_t ch);
     swUI32 Find(const wchar_t * str);
 

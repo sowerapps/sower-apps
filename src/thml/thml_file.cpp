@@ -520,12 +520,17 @@ bool SwThMLFile::Open(const char * path)
         m_category = SwCategory::IdentifyCategory(data);
 
         if (!SwThMLUtility::GetIdentifier(m_identifier, path))
-            return false;
+        {
+            m_identifier = "0000000";
+        }
 
         if (!SwThMLUtility::GetTitle(m_title, path))
-            return false;
-
-        SetAbbreviation();
+        {
+            m_title = "Unknown";
+            m_abbrev = "UKN";
+        }
+        else
+            SetAbbreviation();
     }
 
     m_file = SwFopen(path, FMD_R);

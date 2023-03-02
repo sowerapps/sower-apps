@@ -72,6 +72,7 @@ public:
     static void GetSyncValue(const char * source, swUI8 & syncType, swUI16 & syncValue);
     static bool IdentifyBook(const char * name, swUI8 & book);
     static const char * GetThMLBookIdString(swUI8 book, bool abbrev = true);
+    static const wchar_t * GetThMLBookIdStringW(swUI8 book, bool abbrev = true);
     static bool ParseScriptureId(const char * id, swUI8 & book, swUI8 & chapter, swUI8 & verse);
     static bool ParseScriptureId(const char * id, SwScriptureRange & sr);
     static bool ParseScriptureId(const char * id, swUI8 & book, swUI8 & chapter, swUI8 & verseStart, swUI8 & verseEnd);

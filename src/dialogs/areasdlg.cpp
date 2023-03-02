@@ -80,17 +80,20 @@ void SwAreaDlg::BuildContent(wxWindow* parent, wxWindowID id,const wxPoint& pos,
     XStaticText = new wxStaticText(this, ID_XSTATICTEXT, L"X", wxDefaultPosition, wxDefaultSize, 0, L"ID_XSTATICTEXT");
     GridBagSizer1->Add(XStaticText, wxGBPosition(5, 4), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
     XTextCtrl = new wxTextCtrl(this, ID_XTEXTCTRL, "", wxDefaultPosition, wxDefaultSize, 0, wxTextValidator(wxFILTER_DIGITS), L"ID_XTEXTCTRL");
-    GridBagSizer1->Add(XTextCtrl, wxGBPosition(5, 5), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    XTextCtrl->SetMinSize(wxSize(65, -1));
+    GridBagSizer1->Add(XTextCtrl, wxGBPosition(5, 5), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxEXPAND, 5);
 
     YStaticText = new wxStaticText(this, ID_YSTATICTEXT, L"Y", wxDefaultPosition, wxDefaultSize, 0, L"ID_YSTATICTEXT");
     GridBagSizer1->Add(YStaticText, wxGBPosition(6, 4), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
     YTextCtrl = new wxTextCtrl(this, ID_XTEXTCTRL, "", wxDefaultPosition, wxDefaultSize, 0, wxTextValidator(wxFILTER_DIGITS), L"ID_YTEXTCTRL");
-    GridBagSizer1->Add(YTextCtrl, wxGBPosition(6, 5), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    YTextCtrl->SetMinSize(wxSize(65, -1));
+    GridBagSizer1->Add(YTextCtrl, wxGBPosition(6, 5), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxEXPAND, 5);
 
     RadiusStaticText = new wxStaticText(this, ID_RADIUSSTATICTEXT, SwApplicationInterface::GetControlString("SID_RADIUS", L"Radius"), wxDefaultPosition, wxDefaultSize, 0, L"ID_RADIUSSTATICTEXT");
     GridBagSizer1->Add(RadiusStaticText, wxGBPosition(7, 4), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
     RadiusTextCtrl = new wxTextCtrl(this, ID_RADIUSTEXTCTRL, "3", wxDefaultPosition, wxDefaultSize, 0, wxTextValidator(wxFILTER_DIGITS), L"ID_YTEXTCTRL");
-    GridBagSizer1->Add(RadiusTextCtrl, wxGBPosition(7, 5), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    RadiusTextCtrl->SetMinSize(wxSize(65, -1));
+    GridBagSizer1->Add(RadiusTextCtrl, wxGBPosition(7, 5), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxEXPAND, 5);
 
     NewAreaButton = new wxButton(this, ID_NEWAREABUTTON, SwApplicationInterface::GetControlString("SID_NEW", L"New"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, L"ID_NEWAREABUTTON");
     GridBagSizer1->Add(NewAreaButton, wxGBPosition(1, 7), wxDefaultSpan, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);

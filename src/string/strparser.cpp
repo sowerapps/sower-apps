@@ -125,6 +125,14 @@ const char * SwStrParser::GetItem(swUI32 item)
     return &m_stringBuffer[m_indexArray.GetAt(item)];
 }
 
+swUI32 SwStrParser::GetItemPosition(swUI32 item)
+{
+    if (item >= m_indexArray.GetCount())
+        return NODE_ID_INVALID;
+
+    return m_indexArray.GetAt(item);
+}
+
 void SwStrParser::SetDeliminator(char ch)
 {
     m_deliminator = ch;
@@ -223,6 +231,14 @@ const wchar_t * SwStrParserW::GetItem(swUI32 item)
         return L"";
 
     return &m_stringBuffer[m_indexArray.GetAt(item)];
+}
+
+swUI32 SwStrParserW::GetItemPosition(swUI32 item)
+{
+    if (item >= m_indexArray.GetCount())
+        return NODE_ID_INVALID;
+
+    return m_indexArray.GetAt(item);
 }
 
 void SwStrParserW::SetDeliminator(wchar_t ch)

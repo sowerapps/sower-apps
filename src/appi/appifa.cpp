@@ -100,6 +100,8 @@ SwString SwApplicationInterface::sw_appName;
 SwRichTextInterface    SwApplicationInterface::sw_richInterface;
 SwImageWindowInterface SwApplicationInterface::sw_imageInterface;
 bool SwApplicationInterface::sw_useappDir = false;
+SwAudio SwApplicationInterface::sw_audio;
+bool  SwApplicationInterface::sw_imagehandlersInitialized = false;
 
 SwApplicationInterface::SwApplicationInterface()
 {
@@ -140,24 +142,10 @@ void SwApplicationInterface::InitWX()
     #endif // DISABLEWXASSERTS
 
     if (sw_wxInitialized)
-    {
         return;
-    }
 
-    // Don't call wxInitAllImageHandlers();
-    // Do it this way to avoid inclusion
-    // of tiff handler.
-    wxImage::AddHandler(new wxPNGHandler);
-    wxImage::AddHandler(new wxJPEGHandler);
-    wxImage::AddHandler(new wxGIFHandler);
-    wxImage::AddHandler(new wxPCXHandler);
-    wxImage::AddHandler(new wxPNMHandler);
-    wxImage::AddHandler(new wxTGAHandler);
-    wxImage::AddHandler(new wxXPMHandler);
-    wxImage::AddHandler(new wxICOHandler);
-    wxImage::AddHandler(new wxCURHandler);
-    wxImage::AddHandler(new wxANIHandler);
-
+    if (!sw_imagehandlersInitialized)
+        InitImageHandlers();
 
     sw_imageList.Create(16, 16);
 
@@ -178,6 +166,24 @@ void SwApplicationInterface::InitWX()
     sw_wxInitialized = true;
 
     CheckForConfigFile();
+}
+
+void SwApplicationInterface::InitImageHandlers()
+{
+    // Don't call wxInitAllImageHandlers();
+    // Do it this way to avoid inclusion
+    // of tiff handler.
+    wxImage::AddHandler(new wxPNGHandler);
+    wxImage::AddHandler(new wxJPEGHandler);
+    wxImage::AddHandler(new wxGIFHandler);
+    wxImage::AddHandler(new wxPCXHandler);
+    wxImage::AddHandler(new wxPNMHandler);
+    wxImage::AddHandler(new wxTGAHandler);
+    wxImage::AddHandler(new wxXPMHandler);
+    wxImage::AddHandler(new wxICOHandler);
+    wxImage::AddHandler(new wxCURHandler);
+    wxImage::AddHandler(new wxANIHandler);
+    sw_imagehandlersInitialized = true;
 }
 
 void SwApplicationInterface::InitBasic()

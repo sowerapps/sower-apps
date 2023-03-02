@@ -432,3 +432,8 @@ SwImageWindowInterface & SwApplicationInterface::GetImageInterface()
 {
     return sw_imageInterface;
 }
+
+SwAudio & SwApplicationInterface::GetAudio()
+{
+    return sw_audio;
+}

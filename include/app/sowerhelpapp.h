@@ -17,8 +17,8 @@
 
 class SowerHelpApp : public SwBaseApp
 {
-    public:
-        virtual bool OnInit();
+public:
+    virtual bool OnInit();
 };
 
 class SowerHelpFrame : public SwFrame
@@ -33,22 +33,40 @@ public:
 
     virtual void OnLanguageChange();
     virtual void OnThemeChange();
-    virtual void OnTimer();
+    virtual void OnFrameTimer();
 
     virtual void OnBookmark(wxCommandEvent & event);
     virtual void OnDelete(wxCommandEvent & event);
     virtual void OnBookmarkActivated(wxListEvent& event);
     virtual void OnRightClick(wxCommandEvent & event);
-
     virtual void ProcessCmdLine();
+    virtual void OnAudioOpen();
+    virtual void OnVolumeSliderScroll(wxScrollEvent& event);
+    virtual void OnPositionSliderThumb(wxScrollEvent& event);
+    virtual void OnPositionSliderThumbRelease(wxScrollEvent& event);
+    virtual bool OnCanDoPlay();
+    virtual bool OnCanDoPause();
+    virtual bool OnCanDoStop();
+    virtual void OnPlay(wxCommandEvent& event);
+    virtual void OnPause(wxCommandEvent& event);
+    virtual void OnStop(wxCommandEvent& event);
 
     static const long ID_TOOLBAR;
+    static const long ID_POSITIONSLIDER;
+    static const long ID_VOLUMESLIDER;
+    static const long ID_LOOPCHECKBOX;
     static const long ID_BOOKMARKSLIST;
-    bool m_showBookmarks;
+
+private:
     SwHelpBookmarksListCtrl * m_bookmarksList;
-    SwMenu * m_listMenu;
-    SwStandardViewMenu * m_viewMenu;
-    SwModuleBookPanel * m_bookPanel;
+    SwMenu *                  m_listMenu;
+    SwStandardViewMenu *      m_viewMenu;
+    SwModuleBookPanel *       m_bookPanel;
+    wxSlider *                m_PositionSlider;
+    wxSlider *                m_VolumeSlider;
+    wxCheckBox *              m_LoopCheckBox;
+    bool                      m_showBookmarks;
+    bool                      m_skip;
 };
 
 #endif // SOWERHELPAPP_H

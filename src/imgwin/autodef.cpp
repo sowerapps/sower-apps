@@ -62,7 +62,7 @@ void SwImageWindow::ShowAutoDef(int top, int bottom)
         return;
 
     m_tipWindow->Hide();
-    m_autodefwindow->SetValue("");
+    m_autodefwindow->Reset();
     m_autodefwindow->WriteXmlText(m_buffer, true, "");
     m_autodefwindow->ShowAutoDef(top, bottom);
 }

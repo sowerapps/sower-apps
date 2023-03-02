@@ -1,8 +1,7 @@
 ///////////////////////////////////////////////////////////////////
 // Name:        richview.cpp
-// Purpose:     Derived from SwRichTextCtrl, it is read only by
-//              default, and extends processing for AutoDef
-//              functionality.
+// Purpose:     Derived from SwRichTextCtrl, it extends processing
+//              for AutoDef functionality.
 // Copyright:   David Reynolds
 // License:     Sower Applications License
 ///////////////////////////////////////////////////////////////////

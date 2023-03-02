@@ -38,7 +38,7 @@ public:
     virtual bool OnCanDoRedo() { return m_imageWindow->GetCommandProcessor().CanRedo(); }
     virtual bool OnCanDoGeo() { return m_imageWindow->HasImage(); }
     virtual bool OnCanDoMaps() { return m_imageWindow->HasImage(); }
-    virtual bool OnCanDoAreas() { return m_imageWindow->HasImage(); }
+    virtual bool OnCanDoAreas() { return m_imageWindow->HasImage();  }
     virtual bool OnCanDoZoomIn() { return m_imageWindow->HasImage(); }
     virtual bool OnCanDoZoomOut() { return m_imageWindow->HasImage(); }
     virtual bool OnCanDoViewNormal() { if (m_imageWindow->GetZoom() != 1) return m_imageWindow->HasImage(); return false; }

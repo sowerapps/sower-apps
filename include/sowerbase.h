@@ -76,8 +76,13 @@ typedef double swFloat;
 #define NODE_ID_INVALID_8           0xFF
 
 #define SOFTWAREVERSIONMAJOR 1
+<<<<<<< Updated upstream
 #define SOFTWAREVERSIONMINOR 1
 #define SVSTR L"1.1"
+=======
+#define SOFTWAREVERSIONMINOR 3
+#define SVSTR L"1.3"
+>>>>>>> Stashed changes
 
 #define UNIT_CHOICE_WIDTH 50
 

@@ -355,28 +355,25 @@ static const char * KJV_Abbrev [] =
 
 SwReferenceData::SwReferenceData()
 {
-    book = 0;
-    chapter = 0;
-    verseStart = 0;
-    verseEnd = 0;
-    strongs = 0;
-    referenceType = 0;
+    Reset();
 }
 
 SwReferenceData::~SwReferenceData()
 {
 }
 
-void SwReferenceData::Display()
+void SwReferenceData::Reset()
 {
-    SwString a, b, c, d, e;
-    a.Itoa((int)book);
-    b.Itoa((int)chapter);
-    c.Itoa((int)verseStart);
-    d.Itoa((int)verseEnd);
-    e.Size(1000);
-    sprintf(e, "%s %s:%s-%s", a.GetArray(), b.GetArray(), c.GetArray(), d.GetArray());
-    wxMessageBox(e.GetArray());
+    book = 0;
+    chapter = 0;
+    verseStart = 0;
+    verseEnd = 0;
+    strongs = 0;
+    bookposStart = 0;
+    bookposEnd = 0;
+    chapterposStart = 0;
+    verseposStart = 0;
+    referenceType = 0;
 }
 
 swUI8 SwStandardBible::Get_KJV_BookChapters(swUI8 book)
@@ -392,6 +389,18 @@ swUI8 SwStandardBible::Get_KJV_BookChapters(swUI8 book)
     // Books are numbered 1 - 66, Genesis - Revelation,
 
     return KJV_BookChapterArray[book];
+}
+
+bool SwStandardBible::IsSingleChapterBook(swUI8 book)
+{
+     // Verify ui8_Book.
+    if ((book < 1 ) || (book > KJV_BOOKS))
+        return false;
+
+    if (Get_KJV_BookChapters(book) == 1)
+        return true;
+
+    return false;
 }
 
 // Returns the number of verses for the specified book, and chapter.
@@ -1427,6 +1436,7 @@ bool SwStandardBible::IdentifyReference(const wchar_t * referenceString, swUI32 
             else if (referenceString[count] != L'-')
             {
                 verseStart = count + 1;
+                referenceData.verseposStart = verseStart;
                 break;
             }
         }
@@ -1478,6 +1488,7 @@ bool SwStandardBible::IdentifyReference(const wchar_t * referenceString, swUI32 
                     if (!iswdigit(referenceString[count]) && !SwStringW::IsRoman(referenceString[count]))
                     {
                         chapterStart = count + 1;
+                        referenceData.chapterposStart = chapterStart;
                         chapterFound = true;
                         break;
                     }
@@ -1629,6 +1640,7 @@ bool SwStandardBible::IdentifyReference(const wchar_t * referenceString, swUI32 
     while (referenceString[count] == L' ' || referenceString[count] == L'(')
         count ++;
     bookEnd ++;
+    referenceData.bookposEnd = bookEnd;
     wmemcpy(bookName, referenceString + count, bookEnd - count);
     wcslwr(bookName);
     bookStart = IdentifyBibleBookName(bookName);
@@ -1803,6 +1815,8 @@ bool SwStandardBible::IdentifyChapterReference(const wchar_t * referenceString, 
     }
 
     endPos ++;
+    referenceData.bookposStart = count;
+    referenceData.bookposEnd = endPos;
     wmemcpy(bookName, referenceString + count, endPos - count);
     wcslwr(bookName);
 
@@ -1810,7 +1824,7 @@ bool SwStandardBible::IdentifyChapterReference(const wchar_t * referenceString, 
         return false;
 
     int ncpos = chapterPos;
-
+    referenceData.chapterposStart = chapterPos;
     if (SwStringW::IsRoman(referenceString[chapterPos]))
     {
         while (SwStringW::IsRoman(referenceString[ncpos]))
@@ -1831,6 +1845,7 @@ bool SwStandardBible::IdentifyChapterReference(const wchar_t * referenceString, 
     referenceData.referenceType = REFERENCE_TYPE_SCRIPTURE;
     referenceData.verseStart = 0;
     referenceData.verseEnd = 0;
+    referenceData.verseposStart = 0;
     return true;
 }
 

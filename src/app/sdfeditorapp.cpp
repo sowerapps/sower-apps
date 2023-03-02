@@ -8,23 +8,28 @@
 #include "app/sdfeditorapp.h"
 #include "filesys/file.h"
 #include "appi/appifa.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerDataFileEditorApp);
 
 bool SowerDataFileEditorApp::OnInit()
 {
+<<<<<<< Updated upstream
     bool wxsOK = true;
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_TOOLS32)));
+    #endif // defined __OSX__
+>>>>>>> Stashed changes
 
     SwApplicationInterface::InitBasic();
 
-    if ( wxsOK )
-    {
-    	SowerDataFileEditorFrame* Frame = new SowerDataFileEditorFrame(NULL, wxNewId(), L"");
-    	Frame->Show();
-    	SetTopWindow(Frame);
-    }
+    SowerDataFileEditorFrame* Frame = new SowerDataFileEditorFrame(NULL, wxNewId(), L"");
+    Frame->Show();
+    SetTopWindow(Frame);
 
-    return wxsOK;
+    return true;
 }
 
 const long SowerDataFileEditorFrame::ID_TABLESSTATICTEXT = wxNewId();
@@ -56,7 +61,7 @@ SowerDataFileEditorFrame::SowerDataFileEditorFrame()
 }
 
 SowerDataFileEditorFrame::SowerDataFileEditorFrame(wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style, const wxString &name)
-:SwFrame(parent, id, title, pos, size, style, name)
+    :SwFrame(parent, id, title, pos, size, style, name)
 {
     wxGridBagSizer* GridBagSizer1;
     wxGridBagSizer* GridBagSizer2;
@@ -151,6 +156,7 @@ SowerDataFileEditorFrame::SowerDataFileEditorFrame(wxWindow *parent, wxWindowID 
 
 SowerDataFileEditorFrame::~SowerDataFileEditorFrame()
 {
+    SwApplicationInterface::CloseFiles();
 }
 
 void SowerDataFileEditorFrame::OnQuit(wxCommandEvent& event)
@@ -158,13 +164,13 @@ void SowerDataFileEditorFrame::OnQuit(wxCommandEvent& event)
     int status;
     if (TableSaveBtn->IsEnabled())
     {
-       status = SwDialog::RequestSave(this);
-       if (status == wxCANCEL)
-        return;
-       else if (status == wxYES)
-       {
-           OnTableSaveBtnClick(event);
-       }
+        status = SwDialog::RequestSave(this);
+        if (status == wxCANCEL)
+            return;
+        else if (status == wxYES)
+        {
+            OnTableSaveBtnClick(event);
+        }
     }
 
     Close();
@@ -250,13 +256,13 @@ void SowerDataFileEditorFrame::OnTableCloseBtnClick(wxCommandEvent& event)
 
     if (TableSaveBtn->IsEnabled())
     {
-       status = SwDialog::RequestSave(this);
-       if (status == wxCANCEL)
-        return;
-       else if (status == wxYES)
-       {
-           OnTableSaveBtnClick(event);
-       }
+        status = SwDialog::RequestSave(this);
+        if (status == wxCANCEL)
+            return;
+        else if (status == wxYES)
+        {
+            OnTableSaveBtnClick(event);
+        }
     }
 
     DataTable->DeleteAllItems();
@@ -325,14 +331,14 @@ void SowerDataFileEditorFrame::OnClose(wxCommandEvent& event)
 
     if (TableSaveBtn->IsEnabled())
     {
-       status = SwDialog::RequestSave(this);
+        status = SwDialog::RequestSave(this);
 
-       if (status == wxCANCEL)
-        return;
-       else if (status == wxYES)
-       {
-           OnTableSaveBtnClick(event);
-       }
+        if (status == wxCANCEL)
+            return;
+        else if (status == wxYES)
+        {
+            OnTableSaveBtnClick(event);
+        }
     }
 
     m_statusBar->SetStatusText("");
@@ -418,7 +424,7 @@ void SowerDataFileEditorFrame::OnDeleteIdBtnClick(wxCommandEvent& event)
 
     if (selected < 0)
     {
-      selected = DataTable->GetSelectedRow();
+        selected = DataTable->GetSelectedRow();
     }
 
     if (selected != wxNOT_FOUND)

@@ -38,6 +38,7 @@ const long SwCatalogCardDlg::ID_STOPBUTTON = wxNewId();
 SwCatalogCardDlg::SwCatalogCardDlg(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
     :SwDialog(parent, id, "", pos, size, wxDEFAULT_DIALOG_STYLE, "")
 {
+    m_validate = true;
     m_card = NULL;
     m_catalog = NULL;
     wxGridBagSizer* GridBagSizer1, * GridBagSizer2;
@@ -179,7 +180,7 @@ void SwCatalogCardDlg::OnQuit(wxCommandEvent& event)
 
 void SwCatalogCardDlg::OnOkButtonClick(wxCommandEvent& event)
 {
-    if (!Validate())
+    if (m_validate && !Validate())
         return;
     UpdateCard(m_card);
     EndModal(1);
@@ -314,4 +315,14 @@ void SwCatalogCardDlg::SetCategory(const char * path)
         return;
 
     SwCategory::SetCategory(CategoryChoice, SwCategory::IdentifyCategory(buffer));
+}
+
+void SwCatalogCardDlg::EnableOptionalControls(bool state)
+{
+    EncryptCheckBox->Enable(state);
+    AllowCopyCheckBox->Enable(state);
+    VersificationComboBox->Enable(state);
+    OfnTextCtrl->Enable(state);
+    GroupComboBox->Enable(state);
+    AbbreviationTextCtrl->Enable(state);
 }

@@ -174,16 +174,17 @@ protected:
     swUI32             m_adTextLen;
     wxRect             m_adCaret;
     wxPoint            m_adClientPos;
-    wxPoint            m_adAbsolutePos;
     bool               m_canCopy;
     wxCursor           m_arrowCursor;
     wxPoint            m_lastmousePos;
     long               m_mouseCount;
     long               m_lastcaretPos;
-    SwRichTimer          m_richTimer;
+    bool               m_caretFlag;
+    SwRichTimer        m_richTimer;
     wxRichTextPrinting m_printing;
     SwString           m_base;
-    long               m_textPos;
+    long               m_adTextPos;
+    bool               m_urlClicked;
 };
 
 #endif // RICHTEXTCTRLEXT_H

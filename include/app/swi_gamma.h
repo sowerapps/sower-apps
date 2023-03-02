@@ -59,6 +59,8 @@ public:
     SWI_GammaPanel(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, long style=wxTAB_TRAVERSAL, const wxString &name=wxPanelNameStr);
     virtual ~SWI_GammaPanel();
 
+    virtual bool OnCanDoClose();
+    virtual bool OnCanDoCloseAll();
     virtual bool OnClose();
     virtual bool OnCloseAll();
     virtual void SaveUserData();

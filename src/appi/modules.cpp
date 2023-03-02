@@ -30,6 +30,17 @@ void SwApplicationInterface::LoadHelpModules()
     SetModuleManagerState((bool) sw_modulemanager.GetModules());
 }
 
+void SwApplicationInterface::LoadReferenceModules()
+{
+    SwString filepath;
+    SwModuleLoader loader;
+
+    filepath = GetReferenceDir();
+    loader.RecurseDir(filepath, true);
+
+    SetModuleManagerState((bool) sw_modulemanager.GetModules());
+}
+
 void SwApplicationInterface::GetModuleList(wxChoice * choice)
 {
     if (!choice)

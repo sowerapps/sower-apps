@@ -14,6 +14,7 @@ class SOWERBASEEXP SwStringW
 {
 public:
     static bool IsRoman(wchar_t ch);
+    static swUI16 GetRomanValue(wchar_t ch);
     static void ToRoman(SwStringW & dest, swUI16 number, bool upperCase);
     static swUI16 ConvertRoman(const wchar_t * str);
     static swUI16 ConvertRoman(const wchar_t * str, swUI32 & startPos, swUI32 & endPos);
@@ -67,12 +68,17 @@ public:
     swI32 Atoi();
     bool Itoa(swI32 value);
     swUI32 Strtoul();
+    swUI16 ConvertRoman();
+    bool IsRoman(swUI32 pos);
+    bool IsDigit(swUI32 pos);
+    bool IsAlpha(swUI32 pos);
     bool BoolFromString();
     wchar_t * StrChr(wchar_t ch);
     wchar_t * StrRevChr(wchar_t ch);
     wchar_t * StrStr(const wchar_t * str);
     int StrCmp(const wchar_t * str);
     void GetTextRange(swUI32 start, swUI32 end, SwStringW & buffer);
+    bool FindInRange(swUI32 start, swUI32 end, wchar_t ch, swUI32 * pos);
 
 protected:
     wchar_t * m_array;

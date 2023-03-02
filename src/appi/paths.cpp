@@ -416,6 +416,41 @@ const char * SwApplicationInterface::GetHelpDir()
     return filepath;
 }
 
+const char * SwApplicationInterface::GetReferenceDir()
+{
+    static SwString filepath;
+    swUI32 item = NODE_ID_INVALID;
+
+    if (sw_configureInitialized)
+    {
+        item = sw_configure.GetTable().FindItemById("Reference-Path");
+        if (item != NODE_ID_INVALID)
+        {
+            filepath = sw_configure.GetTable().GetNodeData(item);
+
+            if (filepath.Strlen())
+                return filepath;
+        }
+    }
+
+    if (sw_useappDir)
+    {
+        filepath = GetAppDir();
+
+        filepath += S_PATH_SEP;
+        filepath += "reference";
+
+        return filepath;
+    }
+
+    filepath = GetResourcesDir();
+
+    filepath += S_PATH_SEP;
+    filepath += "reference";
+
+    return filepath;
+}
+
 const char * SwApplicationInterface::GetDataDir()
 {
     static SwString filepath;

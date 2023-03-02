@@ -34,9 +34,9 @@ public:
 
 protected:
     SwThMLTreeCtrl * m_multifilethmlTree;
-    SwAutoDefBase *           m_autodefWindow;
-    bool                    m_autodefEnabled;
-    static SwString         m_adbuffer;
+    SwAutoDefBase *  m_autodefWindow;
+    bool             m_autodefEnabled;
+    static SwString  m_adbuffer;
 };
 
 #endif // AUTODEFBASE_H

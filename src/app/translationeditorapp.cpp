@@ -13,23 +13,28 @@
 #include <wx/font.h>
 #include <wx/intl.h>
 #include <wx/string.h>
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerTranslationEditorApp);
 
 bool SowerTranslationEditorApp::OnInit()
 {
+<<<<<<< Updated upstream
     bool wxsOK = true;
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_TOOLS32)));
+    #endif // defined __OSX__
+>>>>>>> Stashed changes
 
     SwApplicationInterface::InitBasic();
 
-    if ( wxsOK )
-    {
-    	SowerTranslationEditorFrame* Frame = new SowerTranslationEditorFrame(NULL, wxNewId(), L"");
-    	Frame->Show();
-    	SetTopWindow(Frame);
-    }
+    SowerTranslationEditorFrame* Frame = new SowerTranslationEditorFrame(NULL, wxNewId(), L"");
+    Frame->Show();
+    SetTopWindow(Frame);
 
-    return wxsOK;
+    return true;
 }
 
 const long SowerTranslationEditorFrame::ID_IDENTIFIERSSTATICTEXT = wxNewId();
@@ -53,7 +58,7 @@ const long SowerTranslationEditorFrame::ID_REFERENCETABLELISTVIEW = wxNewId();
 const long SowerTranslationEditorFrame::ID_STATUSBAR1 = wxNewId();
 
 SowerTranslationEditorFrame::SowerTranslationEditorFrame(wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style, const wxString &name)
-:SwFrame(parent, id, title, pos, size, style, name)
+    :SwFrame(parent, id, title, pos, size, style, name)
 {
     wxGridBagSizer* GridBagSizer1;
 
@@ -158,6 +163,7 @@ SowerTranslationEditorFrame::SowerTranslationEditorFrame(wxWindow *parent, wxWin
 
 SowerTranslationEditorFrame::~SowerTranslationEditorFrame()
 {
+    SwApplicationInterface::CloseFiles();
 }
 
 void SowerTranslationEditorFrame::OnQuit(wxCommandEvent& event)
@@ -166,13 +172,13 @@ void SowerTranslationEditorFrame::OnQuit(wxCommandEvent& event)
 
     if (TableSaveBtn->IsEnabled())
     {
-       status = SwDialog::RequestSave(this);
-       if (status == wxCANCEL)
-        return;
-       else if (status == wxYES)
-       {
-           OnTableSaveBtnClick(event);
-       }
+        status = SwDialog::RequestSave(this);
+        if (status == wxCANCEL)
+            return;
+        else if (status == wxYES)
+        {
+            OnTableSaveBtnClick(event);
+        }
     }
 
     Close();
@@ -360,13 +366,13 @@ void SowerTranslationEditorFrame::OnTableCloseBtnClick(wxCommandEvent& event)
     int status;
     if (TableSaveBtn->IsEnabled())
     {
-       status = SwDialog::RequestSave(this);
-       if (status == wxCANCEL)
-        return;
-       else if (status == wxYES)
-       {
-           OnTableSaveBtnClick(event);
-       }
+        status = SwDialog::RequestSave(this);
+        if (status == wxCANCEL)
+            return;
+        else if (status == wxYES)
+        {
+            OnTableSaveBtnClick(event);
+        }
     }
 
     TranslationTable->DeleteAllItems();
@@ -430,13 +436,13 @@ void SowerTranslationEditorFrame::OnClose(wxCommandEvent& event)
     int status;
     if (TableSaveBtn->IsEnabled())
     {
-       status = SwDialog::RequestSave(this);
-       if (status == wxCANCEL)
-        return;
-       else if (status == wxYES)
-       {
-           OnTableSaveBtnClick(event);
-       }
+        status = SwDialog::RequestSave(this);
+        if (status == wxCANCEL)
+            return;
+        else if (status == wxYES)
+        {
+            OnTableSaveBtnClick(event);
+        }
     }
 
     m_statusBar->SetStatusText("");

@@ -46,6 +46,16 @@ void SwClipExtension(char * path)
         *p = '\0';
 }
 
+void SwClipAnchor(char * path)
+{
+    if (!path)
+        return;
+
+    char * p = strrchr(path, '#');
+    if (p)
+        *p = '\0';
+}
+
 bool SwGetFileName(const char * path, SwString & dest)
 {
     if (!path)
@@ -81,6 +91,31 @@ bool SwGetExtension(const char * path, SwString & dest)
     while (len > 0)
     {
         if (path[len] == '.')
+        {
+            break;
+        }
+
+        len --;
+    }
+
+    if (len < 1)
+        return false;
+
+    dest = &path[len + 1];
+
+    return true;
+}
+
+bool SwGetAnchor(const char * path, SwString & dest)
+{
+    if (!path)
+        return false;
+
+    int len = strlen(path);
+
+    while (len > 0)
+    {
+        if (path[len] == '#')
         {
             break;
         }
@@ -394,7 +429,21 @@ const char * SwFilePath::GetExtension()
 {
     char * p = StrRevChr('.');
     if (!p)
-        return m_array;
+        return "";
+
+    return p + 1;
+}
+
+void SwFilePath::ClipAnchor()
+{
+    SwClipAnchor(m_array);
+}
+
+const char * SwFilePath::GetAnchor()
+{
+    char * p = StrRevChr('#');
+    if (!p)
+        return "";
 
     return p + 1;
 }

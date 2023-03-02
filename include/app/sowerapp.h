@@ -26,7 +26,6 @@ public:
     virtual bool OnCanDoOpen() { return true; }
     virtual bool OpenFile(const char * path, bool addtorecent);
     virtual void OpenRecent(swUI8 pos);
-    virtual bool OnCanDoClose();
     virtual void OnOpen(wxCommandEvent & event);
     virtual void OnFile1(wxCommandEvent & event);
     virtual void OnFile2(wxCommandEvent & event);
@@ -52,12 +51,34 @@ public:
     virtual void OnLanguageChange();
     virtual void OnThemeChange();
     virtual void ProcessCmdLine();
+    virtual void OnAudioOpen();
+    virtual void OnVolumeSliderScroll(wxScrollEvent& event);
+    virtual void OnPositionSliderThumb(wxScrollEvent& event);
+    virtual void OnPositionSliderThumbRelease(wxScrollEvent& event);
+    virtual bool OnCanDoPlay();
+    virtual bool OnCanDoPause();
+    virtual bool OnCanDoStop();
+    virtual void OnPlay(wxCommandEvent& event);
+    virtual void OnPause(wxCommandEvent& event);
+    virtual void OnStop(wxCommandEvent& event);
+    virtual void OnFrameTimer();
 
     static const long ID_TOOLBAR;
+    static const long ID_POSITIONSLIDER;
+    static const long ID_VOLUMESLIDER;
+    static const long ID_LOOPCHECKBOX;
 
 private:
     SwBasicViewMenu * m_basicviewMenu;
+<<<<<<< Updated upstream
     bool m_silent;
+=======
+    wxSlider *        m_PositionSlider;
+    wxSlider *        m_VolumeSlider;
+    wxCheckBox *      m_LoopCheckBox;
+    bool              m_startup;
+    bool              m_skip;
+>>>>>>> Stashed changes
 };
 
 #endif // SOWERAPP_H

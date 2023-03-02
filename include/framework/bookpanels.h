@@ -42,6 +42,11 @@ public:
     virtual bool OnPrint();
     virtual bool OnPrintPreview();
 
+    virtual bool OnClose()
+    {
+        return true;
+    }
+
     virtual bool OnCanDoClose()
     {
         return true;
@@ -215,6 +220,11 @@ public:
     virtual bool OnPrint();
     virtual bool OnPrintPreview();
 
+    virtual bool OnClose()
+    {
+        return true;
+    }
+
     virtual bool OnCanDoClose()
     {
         return true;
@@ -367,6 +377,11 @@ public:
     SwMultiModuleBookPanel();
     SwMultiModuleBookPanel(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, long style=wxTAB_TRAVERSAL, const wxString &name=wxPanelNameStr);
     virtual ~SwMultiModuleBookPanel();
+
+    virtual bool OnClose()
+    {
+        return true;
+    }
 
     virtual bool OnContentsUp();
     virtual bool OnContentsDown();
@@ -527,6 +542,11 @@ public:
     SwMultiFileThMLBookPanel();
     SwMultiFileThMLBookPanel(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, long style=wxTAB_TRAVERSAL, const wxString &name=wxPanelNameStr);
     virtual ~SwMultiFileThMLBookPanel();
+
+    virtual bool OnClose()
+    {
+        return true;
+    }
 
     virtual bool OnContentsUp();
     virtual bool OnContentsDown();

@@ -82,6 +82,7 @@ public:
     swUI32 Onautodefbody(swUI32 node);
     swUI32 Onbody(swUI32 node);
     swUI32 Ona(swUI32 node);
+    swUI32 Onaudio(swUI32 node);
     swUI32 Onbr(swUI32 node);
     swUI32 Oncaption(swUI32 node);
     swUI32 Oncol(swUI32 node);
@@ -120,6 +121,7 @@ public:
     swUI32 Onsync(swUI32 node);
     swUI32 Onterm(swUI32 node);
     swUI32 Onunclear(swUI32 node);
+    swUI32 Onvideo(swUI32 node);
 
     virtual swUI32 Ontext(swUI32 node)
     {
@@ -148,6 +150,7 @@ public:
     void BeginNumberedBullet(int number, int leftIndent, int subIndent);
     void EndNumberedBullet();
     void WriteSymbol(swUI8 listType);
+    void WriteAVLink(const char * data);
 
 protected:
     SwRichTextTableMatrixArray m_matrixArray;

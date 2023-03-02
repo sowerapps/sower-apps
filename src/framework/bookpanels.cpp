@@ -310,6 +310,14 @@ bool SwThMLBookPanel::ActivateSearchItem(const char * path, const wchar_t * text
     return true;
 }
 
+<<<<<<< Updated upstream
+=======
+bool SwThMLBookPanel::HasFile(const char * path)
+{
+    return TocTreeCtrl->HasFile(path);
+}
+
+>>>>>>> Stashed changes
 void SwThMLBookPanel::SetPopUpMenu(SwViewMenu * menu)
 {
     viewBook->OnSetPopUpMenu(menu);

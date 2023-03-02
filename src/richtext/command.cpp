@@ -35,7 +35,7 @@ void SwRichTextCtrl::Init()
     m_arrowCursor = wxCursor(wxCURSOR_ARROW);
     SetMargins(12.5);
     m_canCopy = true;
-
+    m_caretFlag = false;
     m_printing.SetPageSetupData(*SwApplicationInterface::GetPageSetupData());
     m_printing.SetPrintData(*SwApplicationInterface::GetPrintData());
     m_printing.SetParentWindow(this);
@@ -55,6 +55,7 @@ void SwRichTextCtrl::SetBaseFont()
 
 void SwRichTextCtrl::Reset()
 {
+    m_urlClicked = false;
     HideAutoDef();
     SetMargins(12.5);
     SetFocusObject(NULL);
@@ -67,6 +68,7 @@ void SwRichTextCtrl::Reset()
     m_lastcaretPos = 0;
     m_lastmousePos.x = 0;
     m_lastmousePos.y = 0;
+    m_caretFlag = false;
     SetBaseFont();
     SetStyleSheet(SwApplicationInterface::GetStyleSheet());
     SetBaseStyle();

@@ -13,20 +13,29 @@
 #include "framework/bookpanels.h"
 #include "swguiml/swguimlparser.h"
 #include "filesys/file.h"
+#include "av_media/audio.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerApp);
 
 bool SowerApp::OnInit()
 {
+<<<<<<< Updated upstream
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_CROSS32)));
+    #endif // defined __OSX__
+
+    wxBusyCursor cursor;
+>>>>>>> Stashed changes
     SwApplicationInterface::SetAppName("Sower");
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::GetPlugInManager().SetLoadType(PIT_UNKNOWN);
     SwApplicationInterface::LoadPlugIns();
+    SowerAppFrame* Frame = new SowerAppFrame(NULL, wxNewId(), L"Sower");
     SwApplicationInterface::GetPlugInManager().OnInitialize();
-
-    SowerAppFrame* Frame = new SowerAppFrame(NULL, wxNewId(), L"");
-    SwApplicationInterface::GetPlugInManager().OnInitializeTools();
-    SwSplashScreen * splash= new SwSplashScreen(wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT, 7000, Frame);
+    SwSplashScreen * splash = new SwSplashScreen(wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT, 7000, Frame);
     splash->SetText(SwApplicationInterface::GetControlString("SID_SOWER", L"Sower"), L"2020");
     SwApplicationInterface::LoadAllKeys();
     SwApplicationInterface::LoadModules();
@@ -46,6 +55,9 @@ bool SowerApp::OnInit()
 }
 
 const long SowerAppFrame::ID_TOOLBAR = wxNewId();
+const long SowerAppFrame::ID_POSITIONSLIDER = wxNewId();
+const long SowerAppFrame::ID_VOLUMESLIDER = wxNewId();
+const long SowerAppFrame::ID_LOOPCHECKBOX = wxNewId();
 
 SowerAppFrame::SowerAppFrame(wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style, const wxString &name)
     :SwFrame(parent, id, title, pos, size, style, name)
@@ -54,6 +66,7 @@ SowerAppFrame::SowerAppFrame(wxWindow *parent, wxWindowID id, const wxString &ti
     m_silent = true;
     SetTitle(SwApplicationInterface::GetControlString("SID_SOWER", L"Sower"));
     SetIcon(SwApplicationInterface::GetSowerIcon());
+
     m_basicviewMenu = new SwBasicViewMenu(this);
     m_menubar = new SwMenuBar(this);
     m_menubar->AddStockItem(SW_GUIID_OPEN, true, true);
@@ -96,7 +109,7 @@ SowerAppFrame::SowerAppFrame(wxWindow *parent, wxWindowID id, const wxString &ti
     m_menubar->AddStockItem(SW_GUIID_SELECTINTERFACE, status, true);
     SetMenuBar(m_menubar);
 
-    m_toolbar = new SwToolBar(this, ID_TOOLBAR, wxPoint(86,76), wxDefaultSize, wxAUI_TB_DEFAULT_STYLE, true, this);
+    m_toolbar = new SwToolBar(this, ID_TOOLBAR, wxDefaultPosition, wxDefaultSize, SW_TOOLBAR_DEFAULT_STYLE, true, this);
     m_toolbar->AddStockItem(SW_GUIID_OPEN, true, true);
     m_toolbar->AddStockItem(SW_GUIID_CLOSE, false, true);
     m_toolbar->AddStockItem(SW_GUIID_PRINT, false, true);
@@ -109,9 +122,33 @@ SowerAppFrame::SowerAppFrame(wxWindow *parent, wxWindowID id, const wxString &ti
     m_toolbar->AddStockItem(SW_GUIID_CONTENTSUP, false, true);
     m_toolbar->AddStockItem(SW_GUIID_BACKINHISTORY, false, true);
     m_toolbar->AddStockItem(SW_GUIID_FORWARDINHISTORY, false, true);
-    m_toolbar->AddSeparator();
-    m_toolbar->AddStockItem(SW_GUIID_BOOKMARKPAGE, true, false);
+    m_toolbar->AddStockItem(SW_GUIID_BOOKMARKPAGE, true, true);
+
+    m_VolumeSlider = new wxSlider(m_toolbar, ID_VOLUMESLIDER, 50, 0, 100, wxDefaultPosition, wxSize(100, -1), 0, wxDefaultValidator, L"ID_VOLUMESLIDER");
+    #ifdef __MSWIN__
+    m_VolumeSlider->SetThumbLength(12);
+    #endif
+    SwApplicationInterface::GetAudio().SetVolume(0.5);
+    m_toolbar->AddControl(m_VolumeSlider);
+    m_toolbar->SetToolShortHelp(ID_VOLUMESLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_VOLUME", L"Volume")).GetArray());
+
+    m_toolbar->AddStockItem(SW_GUIID_PLAY, false, false);
+    m_toolbar->AddStockItem(SW_GUIID_PAUSE, false, false);
+
+    m_PositionSlider = new wxSlider(m_toolbar, ID_POSITIONSLIDER, 0, 0, 100, wxDefaultPosition, wxSize(100, -1), 0, wxDefaultValidator, L"ID_POSITIONSLIDER");
+    #ifdef __MSWIN__
+    m_PositionSlider->SetThumbLength(12);
+    #endif
+    m_toolbar->AddControl(m_PositionSlider);
+    m_toolbar->SetToolShortHelp(ID_POSITIONSLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_PLAYPOSITION", L"Play position")).GetArray());
+
+    m_LoopCheckBox = new wxCheckBox(m_toolbar, ID_LOOPCHECKBOX, "", wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT, wxDefaultValidator, L"ID_LOOPCHECKEBOX");
+    m_toolbar->AddControl(m_LoopCheckBox);
+    m_toolbar->SetToolShortHelp(ID_LOOPCHECKBOX, SwStringW(SwApplicationInterface::GetControlString("SID_LOOP", L"Loop")).GetArray());
+
+    m_toolbar->AddStockItem(SW_GUIID_STOP, false, true);
     m_toolbar->AddStockItem(SW_GUIID_ABOUT, true, true);
+
     m_toolbar->AddSpacer(10000);
     m_toolbar->Realize();
 
@@ -140,13 +177,26 @@ SowerAppFrame::SowerAppFrame(wxWindow *parent, wxWindowID id, const wxString &ti
         parser.Run();
     }
 
+    m_skip = false;
+
+    Connect(ID_VOLUMESLIDER,wxEVT_SCROLL_LINEUP,(wxObjectEventFunction)&SowerAppFrame::OnVolumeSliderScroll);
+    Connect(ID_VOLUMESLIDER,wxEVT_SCROLL_LINEDOWN,(wxObjectEventFunction)&SowerAppFrame::OnVolumeSliderScroll);
+    Connect(ID_VOLUMESLIDER,wxEVT_SCROLL_THUMBRELEASE,(wxObjectEventFunction)&SowerAppFrame::OnVolumeSliderScroll);
+    Connect(ID_POSITIONSLIDER,wxEVT_SCROLL_THUMBTRACK,(wxObjectEventFunction)&SowerAppFrame::OnPositionSliderThumb);
+    Connect(ID_POSITIONSLIDER,wxEVT_SCROLL_THUMBRELEASE,(wxObjectEventFunction)&SowerAppFrame::OnPositionSliderThumbRelease);
     Connect(id,wxEVT_CLOSE_WINDOW,(wxObjectEventFunction)&SowerAppFrame::OnQuit);
+<<<<<<< Updated upstream
     m_silent = false;
+=======
+
+    m_startup = false;
+>>>>>>> Stashed changes
 }
 
 SowerAppFrame::~SowerAppFrame()
 {
     SaveUserData();
+<<<<<<< Updated upstream
 }
 
 bool SowerAppFrame::OnCanDoClose()
@@ -157,6 +207,9 @@ bool SowerAppFrame::OnCanDoClose()
         return m_guipanel->OnCanDoClose();
 
     return false;
+=======
+    SwApplicationInterface::CloseFiles();
+>>>>>>> Stashed changes
 }
 
 void SowerAppFrame::OnOpen(wxCommandEvent & event)
@@ -405,6 +458,9 @@ void SowerAppFrame::OnPreferences(wxCommandEvent& event)
 void SowerAppFrame::OnLanguageChange()
 {
     SetTitle(SwApplicationInterface::GetControlString("SID_SOWER", L"Sower"));
+    m_toolbar->SetToolShortHelp(ID_VOLUMESLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_VOLUME", L"Volume")).GetArray());
+    m_toolbar->SetToolShortHelp(ID_POSITIONSLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_PLAYPOSITION", L"Play position")).GetArray());
+    m_toolbar->SetToolShortHelp(ID_LOOPCHECKBOX, SwStringW(SwApplicationInterface::GetControlString("SID_LOOP", L"Loop")).GetArray());
 
     if (m_guipanel)
         m_guipanel->OnLanguageChange();
@@ -429,5 +485,99 @@ void SowerAppFrame::ProcessCmdLine()
     {
         if (m_guipanel)
             m_guipanel->OpenFile(m_cmd.GetAt(i));
+    }
+}
+
+void SowerAppFrame::OnAudioOpen()
+{
+    m_PositionSlider->SetValue(0);
+    m_PositionSlider->SetRange(0, SwApplicationInterface::GetAudio().GetPlayLength());
+}
+
+void SowerAppFrame::OnPositionSliderThumb(wxScrollEvent& event)
+{
+    m_skip = true;
+}
+
+void SowerAppFrame::OnPositionSliderThumbRelease(wxScrollEvent& event)
+{
+    SwApplicationInterface::GetAudio().SetPlayPosition(event.GetPosition());
+    m_skip = false;
+}
+
+void SowerAppFrame::OnVolumeSliderScroll(wxScrollEvent& event)
+{
+    SwApplicationInterface::GetAudio().SetVolume(0.01 * event.GetPosition());
+}
+
+bool SowerAppFrame::OnCanDoPlay()
+{
+    if (SwApplicationInterface::GetAudio().HasAudio())
+    {
+        // Trying to avoid flicker.
+        if (!m_VolumeSlider->IsEnabled())
+        {
+            m_PositionSlider->Enable();
+            m_VolumeSlider->Enable();
+            m_LoopCheckBox->Enable();
+        }
+    }
+    else
+    {
+        // Trying to avoid flicker.
+        if (m_VolumeSlider->IsEnabled())
+        {
+            m_PositionSlider->Disable();
+            m_VolumeSlider->Disable();
+            m_LoopCheckBox->Disable();
+        }
+    }
+
+    return SwApplicationInterface::GetAudio().HasAudio() && !SwApplicationInterface::GetAudio().IsPlaying();
+}
+
+bool SowerAppFrame::OnCanDoPause()
+{
+    return SwApplicationInterface::GetAudio().HasAudio() && SwApplicationInterface::GetAudio().IsPlaying();
+}
+
+bool SowerAppFrame::OnCanDoStop()
+{
+    return SwApplicationInterface::GetAudio().HasAudio();
+}
+
+void SowerAppFrame::OnPlay(wxCommandEvent& event)
+{
+    SwApplicationInterface::GetAudio().Play();
+}
+
+void SowerAppFrame::OnPause(wxCommandEvent& event)
+{
+    SwApplicationInterface::GetAudio().Pause();
+}
+
+void SowerAppFrame::OnStop(wxCommandEvent& event)
+{
+    SwApplicationInterface::GetAudio().Close();
+}
+
+void SowerAppFrame::OnFrameTimer()
+{
+    if (!m_skip)
+    {
+        if (!SwApplicationInterface::GetAudio().HasAudio())
+        {
+            m_PositionSlider->SetValue(0);
+        }
+        else if (SwApplicationInterface::GetAudio().HasAudio() && !SwApplicationInterface::GetAudio().IsPlaying() && !SwApplicationInterface::GetAudio().IsPaused())
+        {
+            if (!m_LoopCheckBox->GetValue())
+                SwApplicationInterface::GetAudio().Pause();
+
+            m_PositionSlider->SetValue(0);
+            SwApplicationInterface::GetAudio().SetPlayPosition(0);
+        }
+        else
+            m_PositionSlider->SetValue(SwApplicationInterface::GetAudio().GetPlayPosition());
     }
 }

@@ -21,6 +21,8 @@ bool SwStringW::IsRoman(wchar_t ch)
     case L'L' :
     case L'c' :
     case L'C' :
+    case L'm' :
+    case L'M' :
         return true;
         break;
     default :
@@ -28,6 +30,39 @@ bool SwStringW::IsRoman(wchar_t ch)
     }
 
     return false;
+}
+
+swUI16 SwStringW::GetRomanValue(wchar_t ch)
+{
+    switch(ch)
+    {
+    case L'i' :
+    case L'I' :
+        return 1;
+        break;
+    case L'v' :
+    case L'V' :
+        return 5;
+        break;
+    case L'x' :
+    case L'X' :
+        return 10;
+        break;
+    case L'l' :
+    case L'L' :
+        return 50;
+        break;
+    case L'c' :
+    case L'C' :
+        return 100;
+        break;
+    case L'm' :
+    case L'M' :
+        return 1000;
+        break;
+    }
+
+    return 0;
 }
 
 void SwStringW::ToRoman(SwStringW & dest, swUI16 number, bool upperCase)
@@ -120,86 +155,22 @@ swUI16 SwStringW::ConvertRoman(const wchar_t * str)
 {
     swUI32 pos = 0;
     swUI16 number = 0;
+    swI32 value;
 
-    while (str[pos] == L'M' || str[pos] == L'm')
+    while (str[pos] != L'\0')
     {
-        number += 1000;
+        value = GetRomanValue(str[pos]);
+        if (!value)
+            break;
+        if (value >= GetRomanValue(str[pos + 1]))
+            number += value;
+        else
+            number -= value;
+
         pos ++;
     }
 
-    if ((str[pos] == L'C' || str[pos] == L'c') && (str[pos +1] == L'M' || str[pos + 1] == L'm'))
-    {
-        number += 900;
-        pos += 2;
-    }
-
-    if (str[pos] == L'D' || str[pos] == L'd')
-    {
-        number += 500;
-        pos ++;
-    }
-
-    if ((str[pos] == L'C' || str[pos] == L'c') && (str[pos +1] == L'D' || str[pos + 1] == L'd'))
-    {
-        number += 400;
-        pos += 2;
-    }
-
-    while (str[pos] == L'C' || str[pos] == L'c')
-    {
-        number += 100;
-        pos ++;
-    }
-
-    if ((str[pos] == L'X' || str[pos] == L'x') && (str[pos +1] == L'C' || str[pos + 1] == L'c'))
-    {
-        number += 90;
-        pos += 2;
-    }
-
-    if (str[pos] == L'L' || str[pos] == L'l')
-    {
-        number += 50;
-        pos ++;
-    }
-
-    if ((str[pos] == L'X' || str[pos] == L'x') && (str[pos +1] == L'L' || str[pos + 1] == L'l'))
-    {
-        number += 40;
-        pos ++;
-    }
-
-    while (str[pos] == L'X' || str[pos] == L'x')
-    {
-        number += 10;
-        pos ++;
-    }
-
-    if ((str[pos] == L'I' || str[pos] == L'i') && (str[pos +1] == L'X' || str[pos + 1] == L'x'))
-    {
-        number += 9;
-        pos ++;
-    }
-
-    if (str[pos] == L'V' || str[pos] == L'v')
-    {
-        number += 5;
-        pos ++;
-    }
-
-    if ((str[pos] == L'I' || str[pos] == L'i') && (str[pos +1] == L'V' || str[pos + 1] == L'v'))
-    {
-        number += 4;
-        pos += 2;
-    }
-
-    while (str[pos] == L'I' || str[pos] == L'i')
-    {
-        number += 1;
-        pos ++;
-    }
-
-    return number;
+    return (swUI16) number;
 }
 
 
@@ -207,95 +178,25 @@ swUI16 SwStringW::ConvertRoman(const wchar_t * str, swUI32 & startPos, swUI32 & 
 {
     swUI32 pos = startPos;
     swUI16 number = 0;
+    swI32 value;
 
-    while(!IsRoman(str[pos]) && str[pos] != L'\0')
+    while (str[pos] != L'\0')
     {
+        value = GetRomanValue(str[pos]);
+        if (!value)
+            break;
+        if (value >= GetRomanValue(str[pos + 1]))
+            number += value;
+        else
+            number -= value;
+
         pos ++;
     }
 
-    startPos = pos;
-
-    while (str[pos] == L'M' || str[pos] == L'm')
-    {
-        number += 1000;
-        pos ++;
-    }
-
-    if ((str[pos] == L'C' || str[pos] == L'c') && (str[pos +1] == L'M' || str[pos + 1] == L'm'))
-    {
-        number += 900;
-        pos += 2;
-    }
-
-    if (str[pos] == L'D' || str[pos] == L'd')
-    {
-        number += 500;
-        pos ++;
-    }
-
-    if ((str[pos] == L'C' || str[pos] == L'c') && (str[pos +1] == L'D' || str[pos + 1] == L'd'))
-    {
-        number += 400;
-        pos += 2;
-    }
-
-    while (str[pos] == L'C' || str[pos] == L'c')
-    {
-        number += 100;
-        pos ++;
-    }
-
-    if ((str[pos] == L'X' || str[pos] == L'x') && (str[pos +1] == L'C' || str[pos + 1] == L'c'))
-    {
-        number += 90;
-        pos += 2;
-    }
-
-    if (str[pos] == L'L' || str[pos] == L'l')
-    {
-        number += 50;
-        pos ++;
-    }
-
-    if ((str[pos] == L'X' || str[pos] == L'x') && (str[pos +1] == L'L' || str[pos + 1] == L'l'))
-    {
-        number += 40;
-        pos ++;
-    }
-
-    while (str[pos] == L'X' || str[pos] == L'x')
-    {
-        number += 10;
-        pos ++;
-    }
-
-    if ((str[pos] == L'I' || str[pos] == L'i') && (str[pos +1] == L'X' || str[pos + 1] == L'x'))
-    {
-        number += 9;
-        pos ++;
-    }
-
-    if (str[pos] == L'V' || str[pos] == L'v')
-    {
-        number += 5;
-        pos ++;
-    }
-
-    if ((str[pos] == L'I' || str[pos] == L'i') && (str[pos +1] == L'V' || str[pos + 1] == L'v'))
-    {
-        number += 4;
-        pos += 2;
-    }
-
-    while (str[pos] == L'I' || str[pos] == L'i')
-    {
-        number += 1;
-        pos ++;
-    }
 
     endPos = pos - 1;
 
-    return number;
+    return (swUI16) number;
 }
 
 bool SwStringW::IsStrDigit(const wchar_t * str)
@@ -986,6 +887,38 @@ swUI32 SwStringW::Strtoul()
     return wcstoul(m_array, NULL, 10);
 }
 
+swUI16 SwStringW::ConvertRoman()
+{
+    if (!m_array)
+        return 0;
+
+    return ConvertRoman(m_array);
+}
+
+bool SwStringW::IsRoman(swUI32 pos)
+{
+    if (pos >= m_size)
+        return false;
+
+    return IsRoman(m_array[pos]);
+}
+
+bool SwStringW::IsDigit(swUI32 pos)
+{
+    if (pos >= m_size)
+        return false;
+
+    return (bool) iswdigit(m_array[pos]);
+}
+
+bool SwStringW::IsAlpha(swUI32 pos)
+{
+    if (pos >= m_size)
+        return false;
+
+    return (bool) iswalpha(m_array[pos]);
+}
+
 bool SwStringW::BoolFromString()
 {
     if (!m_array)
@@ -1054,4 +987,23 @@ void SwStringW::GetTextRange(swUI32 start, swUI32 end, SwStringW & buffer)
     {
         buffer += GetAt(i);
     }
+}
+
+bool SwStringW::FindInRange(swUI32 start, swUI32 end, wchar_t ch, swUI32 * pos)
+{
+    if (!m_array || start >= m_size || end >= m_size)
+        return NODE_ID_INVALID;
+
+    for (swUI32 i = start; i <= end; i ++)
+    {
+        if (m_array[i] == ch)
+        {
+            if (pos)
+                *pos = i;
+
+            return true;
+        }
+    }
+
+    return false;
 }

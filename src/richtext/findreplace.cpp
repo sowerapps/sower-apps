@@ -16,6 +16,9 @@ SwFindReplace::SwFindReplace()
     m_replacetextLength = 0;
     Reset();
     m_foundList.Size(100);
+    m_collection.Alloc(7000);
+    m_collectionLwr.Alloc(7000);
+    m_rangeData.Alloc(200);
 }
 
 SwFindReplace::~SwFindReplace()

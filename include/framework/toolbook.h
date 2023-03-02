@@ -182,6 +182,7 @@ public:
     virtual void OnModuleDeleted(swUI16 mid);
     virtual void OnThMLFileAdded(swUI16 mid);
     virtual void OnThMLFileDeleted(swUI16 mid);
+    void OnClosePanelEvent(wxAuiNotebookEvent& event);
     virtual bool OnClosePanel();
     virtual bool OnCloseAllPanels();
     //

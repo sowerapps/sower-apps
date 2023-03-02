@@ -63,10 +63,10 @@ void InterfacePlugIn::OnInitialize()
     SwApplicationInterface::GetPreferences().GetTable().UpdateNode("Interface-PlugIn", GetName());
 }
 
-static InterfacePlugIn InterfacePlugIn;
+static InterfacePlugIn s_InterfacePlugIn;
 SwPlugIn * PlugInInitialize()
 {
-    return &InterfacePlugIn;
+    return &s_InterfacePlugIn;
 }
 
 TVI_BetaPanel::TVI_BetaPanel()
@@ -115,7 +115,25 @@ TVI_BetaPanel::TVI_BetaPanel(wxWindow *parent, wxWindowID id, const wxPoint &pos
     path += PATH_SEP;
     path += "tv_beta_uisession.gui";
 
+<<<<<<< Updated upstream
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+=======
+    if (!CheckStartUpFile("tvi_beta"))
+    {
+        SetFocus();
+
+        node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+
+            parser.SetGuiPanel(this);
+            parser.OpenFile(path);
+            parser.Run();
+            parser.CloseFile();
+        }
+>>>>>>> Stashed changes
 
     if (node == NODE_ID_INVALID || SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
     {

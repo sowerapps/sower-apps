@@ -12,11 +12,20 @@
 #include "thml/thml_utility.h"
 #include "filesys/bzcompression.h"
 #include "dialogs/carddlg.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerLibrarianApp);
 
 bool SowerLibrarianApp::OnInit()
 {
+<<<<<<< Updated upstream
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_TOOLS32)));
+    #endif // defined __OSX__
+
+>>>>>>> Stashed changes
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadPlugIns();
     SwApplicationInterface::LoadAllKeys();
@@ -37,6 +46,7 @@ const long SowerLibrarianDlg::ID_BUILDBUTTON = wxNewId();
 const long SowerLibrarianDlg::ID_PASSWORDLABEL = wxNewId();
 const long SowerLibrarianDlg::ID_PASSWORDTEXTCTRL = wxNewId();
 const long SowerLibrarianDlg::ID_CANCELBUTTON = wxNewId();
+const long SowerLibrarianDlg::ID_COMPRESSCHECKBOX = wxNewId();
 
 SowerLibrarianDlg::SowerLibrarianDlg(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
     :SwDialog(parent, id, L"", pos, size, wxDEFAULT_DIALOG_STYLE, L"")
@@ -50,22 +60,27 @@ SowerLibrarianDlg::SowerLibrarianDlg(wxWindow* parent,wxWindowID id,const wxPoin
     SourceLabel = new wxStaticText(this, ID_SOURCELABEL, SwApplicationInterface::GetControlString("SID_SOURCE", L"Source"), wxDefaultPosition, wxDefaultSize, 0, "ID_SOURCELABEL");
     GridBagSizer1->Add(SourceLabel, wxGBPosition(0, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
     SourceDirPickerCtrl = new wxDirPickerCtrl(this, ID_SOURCEDIRPICKERCTRL, wxEmptyString, SwStringW(SwApplicationInterface::GetControlString("SID_SELECTAFILE", L"Select a file")).GetArray(), wxDefaultPosition, wxDefaultSize, wxDIRP_DEFAULT_STYLE, wxDefaultValidator, L"ID_SOURCEFILEPICKERCTRL");
+    SourceDirPickerCtrl->SetMinSize(wxSize(200, -1));
     GridBagSizer1->Add(SourceDirPickerCtrl, wxGBPosition(1, 0), wxGBSpan(1, 3), wxALL|wxEXPAND, 5);
     PasswordLabel = new wxStaticText(this, ID_PASSWORDLABEL, SwApplicationInterface::GetControlString("SID_PASSWORD", L"Password"), wxDefaultPosition, wxDefaultSize, 0, L"ID_PASSWORDLABEL");
-    GridBagSizer1->Add(PasswordLabel, wxGBPosition(0, 3), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    GridBagSizer1->Add(PasswordLabel, wxGBPosition(0, 3), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxEXPAND, 5);
     PasswordTextCtrl = new wxTextCtrl(this, ID_PASSWORDTEXTCTRL, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, L"ID_PASSWORDTEXTCTRL");
     GridBagSizer1->Add(PasswordTextCtrl, wxGBPosition(1, 3), wxGBSpan(1, 1), wxALL|wxEXPAND, 5);
+    PasswordTextCtrl->SetMinSize(wxSize(200, -1));
+    CompressCheckBox = new SwCheckBox(this, ID_COMPRESSCHECKBOX, SwApplicationInterface::GetControlString("SID_COMPRESS", L"Compress"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, L"ID_COMPRESSCHECKBOX");
+    CompressCheckBox->SetValue(false);
+    GridBagSizer1->Add(CompressCheckBox, wxGBPosition(2, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
     ProgressGauge = new wxGauge(this, ID_PROGRESSGAUGE, 100, wxDefaultPosition, wxSize(-1,7), 0, wxDefaultValidator, L"ID_PROGRESSGAUGE");
-    GridBagSizer1->Add(ProgressGauge, wxGBPosition(2, 0), wxGBSpan(1, 5), wxALL|wxEXPAND, 5);
+    GridBagSizer1->Add(ProgressGauge, wxGBPosition(3, 0), wxGBSpan(1, 5), wxALL|wxEXPAND, 5);
     ReportTextCtrl = new wxTextCtrl(this, ID_REPORTTEXTCTRL, wxEmptyString, wxDefaultPosition, wxSize(-1,100), wxTE_MULTILINE|wxTE_READONLY, wxDefaultValidator, L"ID_REPORTTEXTCTRL");
-    GridBagSizer1->Add(ReportTextCtrl, wxGBPosition(3, 0), wxGBSpan(2, 5), wxALL|wxEXPAND, 5);
+    GridBagSizer1->Add(ReportTextCtrl, wxGBPosition(4, 0), wxGBSpan(2, 5), wxALL|wxEXPAND, 5);
     AboutButton = new wxButton(this, ID_ABOUTBUTTON, SwApplicationInterface::GetControlString("SID_ABOUT", L"About"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, L"ID_ABOUTBUTTON");
     GridBagSizer2->Add(AboutButton, wxGBPosition(0, 0), wxDefaultSpan, wxALL|wxALIGN_CENTER|wxALIGN_CENTER_VERTICAL, 5);
     OkButton = new wxButton(this, ID_BUILDBUTTON, SwApplicationInterface::GetControlString("SID_BUILD", L"Build"));
     GridBagSizer2->Add(OkButton, wxGBPosition(0, 1), wxDefaultSpan, wxALL|wxALIGN_CENTER|wxALIGN_CENTER_VERTICAL, 5);
     CancelButton = new wxButton(this, ID_CANCELBUTTON, SwApplicationInterface::GetControlString("SID_CANCEL", L"Cancel"));
     GridBagSizer2->Add(CancelButton, wxGBPosition(0, 2), wxDefaultSpan, wxALL|wxALIGN_CENTER|wxALIGN_CENTER_VERTICAL, 5);
-    GridBagSizer1->Add(GridBagSizer2, wxGBPosition(5, 0), wxGBSpan(1, 5), wxALL|wxALIGN_CENTER|wxEXPAND, 5);
+    GridBagSizer1->Add(GridBagSizer2, wxGBPosition(6, 0), wxGBSpan(1, 5), wxALL|wxALIGN_CENTER|wxEXPAND, 5);
 
     SetSizer(GridBagSizer1);
     GridBagSizer1->Fit(this);
@@ -88,6 +103,7 @@ SowerLibrarianDlg::SowerLibrarianDlg(wxWindow* parent,wxWindowID id,const wxPoin
 SowerLibrarianDlg::~SowerLibrarianDlg()
 {
     Unbind(wxEVT_THREAD, &SowerLibrarianDlg::OnThreadUpdate, this);
+    SwApplicationInterface::CloseFiles();
 }
 
 void SowerLibrarianDlg::OnQuit(wxCommandEvent& event)
@@ -244,11 +260,12 @@ bool SowerLibrarianDlg::OnFile(const char * path)
     QueText(L"\n");
 
     SwCatalogCard card;
+    card.Zero();
     if (card.ReadData(cardPath.GetFilePath()) && SwFile::DoesExist(modPath.GetFilePath()))
     {
         if (SwFile::CompareModifiedDates(path, modPath.GetFilePath()) == 2 &&
-            card.softwareversionMajor == MODULEVERSIONMAJOR &&
-            card.softwareversionMinor == MODULEVERSIONMINOR)
+                card.softwareversionMajor == MODULEVERSIONMAJOR &&
+                card.softwareversionMinor == MODULEVERSIONMINOR)
         {
             QueText(SwApplicationInterface::GetControlString("SID_MODULEUPTODATE", L"Existing module is up to date.\n\n"));
             return true;
@@ -264,8 +281,8 @@ bool SowerLibrarianDlg::OnFile(const char * path)
         int result = dlg.ShowModal();
         if (result == 0)
         {
-             QueText(SwApplicationInterface::GetControlString("SID_SKIPPINGMSG1", L"Skipping as result of user input.\n\n"));
-             return true;
+            QueText(SwApplicationInterface::GetControlString("SID_SKIPPINGMSG1", L"Skipping as result of user input.\n\n"));
+            return true;
         }
 
         if (result == 2)
@@ -411,20 +428,22 @@ bool SowerLibrarianDlg::OnFile(const char * path)
 
     QueText(s);
 
-    QueText(SwApplicationInterface::GetControlString("SID_COMPRESSINGMODULE", L"Compressing module."));
-    QueText(L"\n");
-
-    SwBZipFile(modPath.GetFilePath(), bzPath.GetFilePath());
-
-    FILE * f = SwFopen(htmlPath.GetFilePath(), FMD_WC);
-    SwString buffer;
-    buffer.Copy(card.GetTitle());
-    if (f)
+    if (CompressCheckBox->GetValue())
     {
-        fprintf(f, formatstr, buffer.GetArray());
-        fclose(f);
-    }
+        QueText(SwApplicationInterface::GetControlString("SID_COMPRESSINGMODULE", L"Compressing module."));
+        QueText(L"\n");
 
+        SwBZipFile(modPath.GetFilePath(), bzPath.GetFilePath());
+
+        FILE * f = SwFopen(htmlPath.GetFilePath(), FMD_WC);
+        SwString buffer;
+        buffer.Copy(card.GetTitle());
+        if (f)
+        {
+            fprintf(f, formatstr, buffer.GetArray());
+            fclose(f);
+        }
+    }
     m_catalog += card;
     card.WriteData(cardPath.GetFilePath());
 
@@ -439,6 +458,7 @@ void SowerLibrarianDlg::EnableControls()
     SourceDirPickerCtrl->GetPickerCtrl()->Enable();
     SourceDirPickerCtrl->GetTextCtrl()->Enable();
     PasswordTextCtrl->Enable(SwApplicationInterface::GetEncryptor());
+    CompressCheckBox->Enable();
     OkButton->Enable();
     CancelButton->Disable();
 }
@@ -447,6 +467,7 @@ void SowerLibrarianDlg::DisableControls()
 {
     SourceDirPickerCtrl->GetPickerCtrl()->Disable();
     SourceDirPickerCtrl->GetTextCtrl()->Disable();
+    CompressCheckBox->Disable();
     OkButton->Disable();
     PasswordTextCtrl->Disable();
     CancelButton->Enable();

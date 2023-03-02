@@ -10,6 +10,7 @@
 #define THML_ELEMENTS_H
 
 #include "../html/html.h"
+#include <wx/listctrl.h>
 
 // Any additions or deletions to this file
 // must also be made to htmlcss.cpp
@@ -56,6 +57,16 @@ enum STANDARD_ELEMENTS
     THML_U, THML_UL, THML_UNCLEAR, THML_VAR, THML_VERSE, THML_VERSION,
     THML_VIDEO, THML_WBR, THML_XML, THML_XML_STYLESHEET,
     N_THML_ELEMENTS
+};
+
+class SOWERBASEEXP SwThMLElements
+{
+public :
+    static void GetThMLList(wxListCtrl * listCtrl);
+    static void GetElementList(SwString & buffer);
+    static bool GetThMLElementData(swUI16 id, SwString & name, SwString & attributes);
+    static void GetHtmlList(wxListCtrl * listCtrl);
+    static bool GetHtmlElementData(swUI16 id, SwString & name, SwString & attributes);
 };
 
 #endif // THML_ELEMENTS_H

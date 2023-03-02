@@ -61,6 +61,7 @@ public:
 
     virtual bool OnClose();
     virtual bool OnCloseAll();
+    virtual bool OnCanDoCloseAll();
     virtual void SaveUserData();
 
     virtual bool HasLibraryView() { return true; }

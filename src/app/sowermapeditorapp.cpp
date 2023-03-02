@@ -12,31 +12,36 @@
 #include "appi/appifa.h"
 #include "thml/thml_utility.h"
 #include "geo/geolocation.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerMapEditorApp);
 
 bool SowerMapEditorApp::OnInit()
 {
+<<<<<<< Updated upstream
     bool wxsOK = true;
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_TOOLS32)));
+    #endif // defined __OSX__
+
+>>>>>>> Stashed changes
     SwApplicationInterface::SetAppName("Sower Map Editor");
     SwApplicationInterface::InitBasic();
 
-    if ( wxsOK )
+    SowerMapEditorFrame* Frame = new SowerMapEditorFrame(NULL, wxNewId(), L"");
+    Frame->Maximize();
+    SetTopWindow(Frame);
+
+    for (int i = 1; i < argc; i ++)
     {
-        SowerMapEditorFrame* Frame = new SowerMapEditorFrame(NULL, wxNewId(), L"");
-        Frame->Maximize();
-        SetTopWindow(Frame);
-
-        for (int i = 1; i < argc; i ++)
-        {
-            Frame->GetCmdArray().Add(argv[i]);
-        }
-
-        Frame->ProcessCmdLine();
+        Frame->GetCmdArray().Add(argv[i]);
     }
 
-    return wxsOK;
+    Frame->ProcessCmdLine();
 
+    return true;
 }
 
 const long SowerMapEditorFrame::ID_TOOLBAR = wxNewId();
@@ -66,6 +71,7 @@ SowerMapEditorFrame::SowerMapEditorFrame(wxWindow *parent, wxWindowID id, const 
     m_menubar->AddStockItem(SW_GUIID_FILE10, false, true);
     m_menubar->AddStockItem(SW_GUIID_SAVE, false, true);
     m_menubar->AddStockItem(SW_GUIID_CLOSE, false, true);
+    m_menubar->AddStockItem(SW_GUIID_PRINT, false, true);
     m_menubar->AddStockItem(SW_GUIID_QUIT, true, true);
     m_menubar->AddStockItem(SW_GUIID_UNDO, false, false);
     m_menubar->AddStockItem(SW_GUIID_REDO, false, true);
@@ -80,7 +86,7 @@ SowerMapEditorFrame::SowerMapEditorFrame(wxWindow *parent, wxWindowID id, const 
 
     SetMenuBar(m_menubar);
 
-    m_toolbar = new SwToolBar(this, ID_TOOLBAR, wxPoint(86,76), wxDefaultSize, wxAUI_TB_DEFAULT_STYLE, true, this);
+    m_toolbar = new SwToolBar(this, ID_TOOLBAR, wxDefaultPosition, wxDefaultSize, SW_TOOLBAR_DEFAULT_STYLE, true, this);
     m_toolbar->AddStockItem(SW_GUIID_OPEN, array.GetCount(), true);
     m_toolbar->AddStockItem(SW_GUIID_SAVE, false, true);
     m_toolbar->AddStockItem(SW_GUIID_CLOSE, false, true);
@@ -119,6 +125,7 @@ SowerMapEditorFrame::SowerMapEditorFrame(wxWindow *parent, wxWindowID id, const 
 
 SowerMapEditorFrame::~SowerMapEditorFrame()
 {
+    SwApplicationInterface::CloseFiles();
 }
 
 void SowerMapEditorFrame::OnFile1(wxCommandEvent & event)
@@ -184,12 +191,12 @@ bool SowerMapEditorFrame::OpenFile(const char * path, bool addtorecent)
         return false;
 
     status = m_imageWindow->LoadImage(path);
-/*
-    if (status)
-        m_geoPanel->SetImageWindow(m_imageWindow);
-    else
-        m_geoPanel->SetImageWindow(NULL);
-*/
+    /*
+        if (status)
+            m_geoPanel->SetImageWindow(m_imageWindow);
+        else
+            m_geoPanel->SetImageWindow(NULL);
+    */
     if (status)
     {
         m_filePath = path;

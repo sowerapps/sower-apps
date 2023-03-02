@@ -48,7 +48,7 @@ void SwRichTextInterface::InitHandlers()
     m_thmlHandlers[THML_ARTICLE] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_ASIDE] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_ATTR] = &SwRichTextInterface::Onblock;
-    m_thmlHandlers[THML_AUDIO] = &SwRichTextInterface::Onvoid;
+    m_thmlHandlers[THML_AUDIO] = &SwRichTextInterface::Onaudio;
     m_thmlHandlers[THML_AUTODEF_BODY] = &SwRichTextInterface::Onautodefbody;
     m_thmlHandlers[THML_B] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_BIG] = &SwRichTextInterface::Oninline;
@@ -120,7 +120,7 @@ void SwRichTextInterface::InitHandlers()
     m_thmlHandlers[THML_MARK] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_MENU] = &SwRichTextInterface::Onhide;
     m_thmlHandlers[THML_METER] = &SwRichTextInterface::Onmeter;
-    m_thmlHandlers[THML_MUSIC] = &SwRichTextInterface::Onvoid;
+    m_thmlHandlers[THML_MUSIC] = &SwRichTextInterface::Onmusic;
     m_thmlHandlers[THML_NAME] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_NAV] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_NOTE] = &SwRichTextInterface::Onnote;
@@ -171,7 +171,7 @@ void SwRichTextInterface::InitHandlers()
     m_thmlHandlers[THML_UNCLEAR] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_VAR] = &SwRichTextInterface::Oninline;
     m_thmlHandlers[THML_VERSE] = &SwRichTextInterface::Onblock;
-    m_thmlHandlers[THML_VIDEO] = &SwRichTextInterface::Onvoid;
+    m_thmlHandlers[THML_VIDEO] = &SwRichTextInterface::Onvideo;
     m_thmlHandlers[THML_AUTHOR] = &SwRichTextInterface::Oninformation;
     m_thmlHandlers[THML_AUTHORID] = &SwRichTextInterface::Oninformation;
     m_thmlHandlers[THML_BOOKID] = &SwRichTextInterface::Oninformation;

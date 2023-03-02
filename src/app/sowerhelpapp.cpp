@@ -9,13 +9,23 @@
 #include "framework/bookpanels.h"
 #include "appi/appifa.h"
 #include "thml/thml_utility.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerHelpApp);
 
 bool SowerHelpApp::OnInit()
 {
+<<<<<<< Updated upstream
     bool wxsOK = true;
 
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_HELP32)));
+    #endif // defined __OSX__
+
+    wxBusyCursor cursor;
+>>>>>>> Stashed changes
     SwApplicationInterface::SetAppName("Sower Help");
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadAllKeys();
@@ -23,34 +33,31 @@ bool SowerHelpApp::OnInit()
     SwApplicationInterface::GetPlugInManager().SetLoadType(PIT_UNKNOWN);
     SwApplicationInterface::LoadPlugIns();
 
-    if ( wxsOK )
+    SowerHelpFrame* Frame = new SowerHelpFrame(NULL, wxNewId(), L"");
+    SwApplicationInterface::GetPlugInManager().OnInitializeTools();
+    Frame->Maximize();
+    SetTopWindow(Frame);
+
+    for (int i = 1; i < argc; i ++)
     {
-    	SowerHelpFrame* Frame = new SowerHelpFrame(NULL, wxNewId(), L"");
-    	SwApplicationInterface::GetPlugInManager().OnInitializeTools();
-
-    	Frame->Maximize();
-        SetTopWindow(Frame);
-
-        for (int i = 1; i < argc; i ++)
-        {
-            Frame->GetCmdArray().Add(argv[i]);
-        }
-
-        Frame->ProcessCmdLine();
+        Frame->GetCmdArray().Add(argv[i]);
     }
 
-    return wxsOK;
+    Frame->ProcessCmdLine();
 
+    return true;
 }
 
 const long SowerHelpFrame::ID_TOOLBAR = wxNewId();
+const long SowerHelpFrame::ID_POSITIONSLIDER = wxNewId();
+const long SowerHelpFrame::ID_VOLUMESLIDER = wxNewId();
+const long SowerHelpFrame::ID_LOOPCHECKBOX = wxNewId();
 const long SowerHelpFrame::ID_BOOKMARKSLIST = wxNewId();
 
 SowerHelpFrame::SowerHelpFrame(wxWindow *parent, wxWindowID id, const wxString &title, const wxPoint &pos, const wxSize &size, long style, const wxString &name)
     :SwFrame(parent, id, title, pos, size, style, name)
 {
     wxBusyCursor cursor;
-
     SetTitle(SwApplicationInterface::GetControlString("SID_SOWERHELP", L"Sower Help"));
     SetIcon(SwApplicationInterface::GetToolsIcon());
 
@@ -73,7 +80,7 @@ SowerHelpFrame::SowerHelpFrame(wxWindow *parent, wxWindowID id, const wxString &
 
     SetMenuBar(m_menubar);
 
-    m_toolbar = new SwToolBar(this, ID_TOOLBAR, wxPoint(86,76), wxDefaultSize, wxAUI_TB_DEFAULT_STYLE, true, this);
+    m_toolbar = new SwToolBar(this, ID_TOOLBAR, wxDefaultPosition, wxDefaultSize, SW_TOOLBAR_DEFAULT_STYLE, true, this);
     m_toolbar->AddStockItem(SW_GUIID_PRINT, false, false);
     m_toolbar->AddStockItem(SW_GUIID_COPY, false, true);
     m_toolbar->AddStockItem(SW_GUIID_SELECTALL, false, false);
@@ -84,9 +91,33 @@ SowerHelpFrame::SowerHelpFrame(wxWindow *parent, wxWindowID id, const wxString &
     m_toolbar->AddStockItem(SW_GUIID_CONTENTSUP, false, true);
     m_toolbar->AddStockItem(SW_GUIID_BACKINHISTORY, false, true);
     m_toolbar->AddStockItem(SW_GUIID_FORWARDINHISTORY, false, true);
-    m_toolbar->AddSeparator();
-    m_toolbar->AddStockItem(SW_GUIID_BOOKMARKPAGE, true, false);
+    m_toolbar->AddStockItem(SW_GUIID_BOOKMARKPAGE, true, true);
+
+        m_VolumeSlider = new wxSlider(m_toolbar, ID_VOLUMESLIDER, 50, 0, 100, wxDefaultPosition, wxSize(100, -1), 0, wxDefaultValidator, L"ID_VOLUMESLIDER");
+#ifdef __MSWIN__
+    m_VolumeSlider->SetThumbLength(12);
+#endif
+    SwApplicationInterface::GetAudio().SetVolume(0.5);
+    m_toolbar->AddControl(m_VolumeSlider);
+    m_toolbar->SetToolShortHelp(ID_VOLUMESLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_VOLUME", L"Volume")).GetArray());
+
+    m_toolbar->AddStockItem(SW_GUIID_PLAY, false, false);
+    m_toolbar->AddStockItem(SW_GUIID_PAUSE, false, false);
+
+    m_PositionSlider = new wxSlider(m_toolbar, ID_POSITIONSLIDER, 0, 0, 100, wxDefaultPosition, wxSize(100, -1), 0, wxDefaultValidator, L"ID_POSITIONSLIDER");
+#ifdef __MSWIN__
+    m_PositionSlider->SetThumbLength(12);
+#endif
+    m_toolbar->SetToolShortHelp(ID_POSITIONSLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_PLAYPOSITION", L"Play position")).GetArray());
+    m_toolbar->AddControl(m_PositionSlider);
+
+    m_LoopCheckBox = new wxCheckBox(m_toolbar, ID_LOOPCHECKBOX, "", wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT, wxDefaultValidator, L"ID_LOOPCHECKEBOX");
+    m_toolbar->AddControl(m_LoopCheckBox);
+    m_toolbar->SetToolShortHelp(ID_LOOPCHECKBOX, SwStringW(SwApplicationInterface::GetControlString("SID_LOOP", L"Loop")).GetArray());
+
+    m_toolbar->AddStockItem(SW_GUIID_STOP, false, true);
     m_toolbar->AddStockItem(SW_GUIID_ABOUT, true, true);
+
     m_toolbar->AddSpacer(10000);
     m_toolbar->Realize();
 
@@ -96,7 +127,6 @@ SowerHelpFrame::SowerHelpFrame(wxWindow *parent, wxWindowID id, const wxString &
     SetSowerMenuBar(m_menubar);
     SetSowerToolBar(m_toolbar);
 
-    Connect(id,wxEVT_CLOSE_WINDOW,(wxObjectEventFunction)&SowerHelpFrame::OnQuit);
     SwGuiPanel * guiPanel = new SwGuiPanel(this, wxNewId());
     SetGuiPanel(guiPanel);
 
@@ -130,13 +160,19 @@ SowerHelpFrame::SowerHelpFrame(wxWindow *parent, wxWindowID id, const wxString &
     m_listMenu = new SwMenu();
     m_listMenu->AddStockItem(SW_GUIID_DELETE, true, false);
 
-
     m_bookmarksList->ReadFromTable();
 
+    m_skip = false;
+
+    Connect(ID_VOLUMESLIDER,wxEVT_SCROLL_LINEUP,(wxObjectEventFunction)&SowerHelpFrame::OnVolumeSliderScroll);
+    Connect(ID_VOLUMESLIDER,wxEVT_SCROLL_LINEDOWN,(wxObjectEventFunction)&SowerHelpFrame::OnVolumeSliderScroll);
+    Connect(ID_VOLUMESLIDER,wxEVT_SCROLL_THUMBRELEASE,(wxObjectEventFunction)&SowerHelpFrame::OnVolumeSliderScroll);
+    Connect(ID_POSITIONSLIDER,wxEVT_SCROLL_THUMBTRACK,(wxObjectEventFunction)&SowerHelpFrame::OnPositionSliderThumb);
+    Connect(ID_POSITIONSLIDER,wxEVT_SCROLL_THUMBRELEASE,(wxObjectEventFunction)&SowerHelpFrame::OnPositionSliderThumbRelease);
     Connect(ID_BOOKMARKSLIST, wxEVT_LIST_ITEM_ACTIVATED,(wxObjectEventFunction)&SowerHelpFrame::OnBookmarkActivated);
     Connect(ID_BOOKMARKSLIST, wxEVT_LIST_ITEM_RIGHT_CLICK,(wxObjectEventFunction)&SowerHelpFrame::OnRightClick);
     Connect(SwGuiData::GetDataForItemSwId(SW_GUIID_DELETE)->wx_id, wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&SowerHelpFrame::OnDelete);
-
+    Connect(id,wxEVT_CLOSE_WINDOW,(wxObjectEventFunction)&SowerHelpFrame::OnQuit);
     Show();
 }
 
@@ -144,6 +180,7 @@ SowerHelpFrame::~SowerHelpFrame()
 {
     SwApplicationInterface::WriteHelpBookMarklistToTable(m_bookmarksList);
     SwApplicationInterface::SaveUserData();
+    SwApplicationInterface::CloseFiles();
 }
 
 void SowerHelpFrame::OnAbout(wxCommandEvent& event)
@@ -164,6 +201,9 @@ void SowerHelpFrame::OnQuit(wxCommandEvent& event)
 void SowerHelpFrame::OnLanguageChange()
 {
     SetTitle(SwApplicationInterface::GetControlString("SID_SOWERHELP", L"Sower Help"));
+    m_toolbar->SetToolShortHelp(ID_VOLUMESLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_VOLUME", L"Volume")).GetArray());
+    m_toolbar->SetToolShortHelp(ID_POSITIONSLIDER, SwStringW(SwApplicationInterface::GetControlString("SID_PLAYPOSITION", L"Play position")).GetArray());
+    m_toolbar->SetToolShortHelp(ID_LOOPCHECKBOX, SwStringW(SwApplicationInterface::GetControlString("SID_LOOP", L"Loop")).GetArray());
 
     if (m_guipanel)
         m_guipanel->OnLanguageChange();
@@ -189,9 +229,98 @@ void SowerHelpFrame::OnThemeChange()
         m_viewMenu->OnThemeChange();
 }
 
-void SowerHelpFrame::OnTimer()
+void SowerHelpFrame::OnAudioOpen()
 {
-    SwFrame::OnTimer();
+    m_PositionSlider->SetValue(0);
+    m_PositionSlider->SetRange(0, SwApplicationInterface::GetAudio().GetPlayLength());
+}
+
+void SowerHelpFrame::OnPositionSliderThumb(wxScrollEvent& event)
+{
+    m_skip = true;
+}
+
+void SowerHelpFrame::OnPositionSliderThumbRelease(wxScrollEvent& event)
+{
+    SwApplicationInterface::GetAudio().SetPlayPosition(event.GetPosition());
+    m_skip = false;
+}
+
+void SowerHelpFrame::OnVolumeSliderScroll(wxScrollEvent& event)
+{
+    SwApplicationInterface::GetAudio().SetVolume(0.01 * event.GetPosition());
+}
+
+bool SowerHelpFrame::OnCanDoPlay()
+{
+    if (SwApplicationInterface::GetAudio().HasAudio())
+    {
+        // Trying to avoid flicker.
+        if (!m_VolumeSlider->IsEnabled())
+        {
+            m_PositionSlider->Enable();
+            m_VolumeSlider->Enable();
+            m_LoopCheckBox->Enable();
+        }
+    }
+    else
+    {
+        // Trying to avoid flicker.
+        if (m_VolumeSlider->IsEnabled())
+        {
+            m_PositionSlider->Disable();
+            m_VolumeSlider->Disable();
+            m_LoopCheckBox->Disable();
+        }
+    }
+
+    return SwApplicationInterface::GetAudio().HasAudio() && !SwApplicationInterface::GetAudio().IsPlaying();
+}
+
+bool SowerHelpFrame::OnCanDoPause()
+{
+    return SwApplicationInterface::GetAudio().HasAudio() && SwApplicationInterface::GetAudio().IsPlaying();
+}
+
+bool SowerHelpFrame::OnCanDoStop()
+{
+    return SwApplicationInterface::GetAudio().HasAudio();
+}
+
+void SowerHelpFrame::OnPlay(wxCommandEvent& event)
+{
+    SwApplicationInterface::GetAudio().Play();
+}
+
+void SowerHelpFrame::OnPause(wxCommandEvent& event)
+{
+    SwApplicationInterface::GetAudio().Pause();
+}
+
+void SowerHelpFrame::OnStop(wxCommandEvent& event)
+{
+    SwApplicationInterface::GetAudio().Close();
+}
+
+void SowerHelpFrame::OnFrameTimer()
+{
+    if (!m_skip)
+    {
+        if (!SwApplicationInterface::GetAudio().HasAudio())
+        {
+            m_PositionSlider->SetValue(0);
+        }
+        else if (SwApplicationInterface::GetAudio().HasAudio() && !SwApplicationInterface::GetAudio().IsPlaying() && !SwApplicationInterface::GetAudio().IsPaused())
+        {
+            if (!m_LoopCheckBox->GetValue())
+                SwApplicationInterface::GetAudio().Pause();
+
+            m_PositionSlider->SetValue(0);
+            SwApplicationInterface::GetAudio().SetPlayPosition(0);
+        }
+        else
+            m_PositionSlider->SetValue(SwApplicationInterface::GetAudio().GetPlayPosition());
+    }
 }
 
 void SowerHelpFrame::OnBookmark(wxCommandEvent & event)

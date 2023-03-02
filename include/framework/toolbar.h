@@ -13,21 +13,43 @@
 #include "frame.h"
 #include "../plugin/plugin.h"
 #include <wx/aui/auibar.h>
+#include <wx/toolbar.h>
+
+#if !defined __USE_WXAUI_TOOLBAR__ && !defined __USE_WXTOOLBAR__
+#define __USE_WXAUI_TOOLBAR__
+#endif
+
+#ifdef __USE_WXAUI_TOOLBAR__
+#define SW_TOOLBAR_DEFAULT_STYLE wxAUI_TB_DEFAULT_STYLE
+#define SwToolBarItem wxAuiToolBarItem
+#else
+#define SW_TOOLBAR_DEFAULT_STYLE wxTB_DEFAULT_STYLE
+#define SwToolBarItem wxToolBarToolBase
+#endif // __USE_WXAUI_TOOLBAR__
 
 class SwFrame;
 
 typedef void (SwFrame::*SwToolBarEventHandler)(wxCommandEvent & event);
 
+#ifdef __USE_WXAUI_TOOLBAR__
 class SOWERBASEEXP SwToolBar : public wxAuiToolBar
+#else
+class SOWERBASEEXP SwToolBar : public wxToolBar
+#endif
 {
 public:
     SwToolBar();
     SwToolBar(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &position=wxDefaultPosition, const wxSize &size=wxDefaultSize, long style=wxAUI_TB_DEFAULT_STYLE, bool primary = false, SwFrame * frame = NULL);
     virtual ~SwToolBar() {}
-
+    virtual void OnResize(wxSizeEvent& event);
+    int GetItemCount();
+    SwToolBarItem * Find(int id);
+    #ifdef __USE_WXTOOLBAR__
+    void AddSpacer(int i) { return; }
+    #endif
     void SetFrameWindow(SwFrame * frame);
     void OnEvent(wxCommandEvent & event);
-    wxAuiToolBarItem * AddStockItem(swUI8 swid, bool enable, bool addSeparators);
+    SwToolBarItem * AddStockItem(swUI8 swid, bool enable, bool addSeparators);
     void EnableItem(swUI8 swid, bool enable);
     bool IsItemEnabled(swUI8 swid);
     void CheckItem(swUI8 swid, bool check);

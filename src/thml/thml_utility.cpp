@@ -13,10 +13,10 @@
 #include "../../include/string/strparser.h"
 #include "../../include/bible/standard_bible.h"
 
-char headerstart[] = "<ThML>\n<ThML.head>\n<electronicEdInfo>\n";
-char headerclose[] = "</electronicEdInfo>\n</ThML.head>\n<ThML.body>\n";
+char headerstart[] = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"../../../../ss/thml.html.xsl\"?>\n<ThML>\n<ThML.head>\n";
+char headerclose[] = "</ThML.head>\n<ThML.body>\n";
 char thmlclose[] = "\n</ThML.body>\n</ThML>";
-char blankdc[] = "<DC>\n<DC.Title>Untitled</DC.Title>\n<DC.Creator></DC.Creator>\n<DC.Publisher></DC.Publisher>\n<DC.Subject scheme=\"\"></DC.Subject>\n<DC.Date></DC.Date>\n<DC.Type></DC.Type>\n<DC.Format></DC.Format>\n<DC.Identifier scheme=\"\">\n</DC.Identifier>\n<DC.Source></DC.Source>\n<DC.Language></DC.Language>\n<DC.Rights></DC.Rights>\n</DC>\n";
+char blankdc[] = "<electronicEdInfo>\n<DC>\n<DC.Title>Untitled</DC.Title>\n<DC.Creator></DC.Creator>\n<DC.Publisher></DC.Publisher>\n<DC.Subject scheme=\"\">General</DC.Subject>\n<DC.Date></DC.Date>\n<DC.Type></DC.Type>\n<DC.Format></DC.Format>\n<DC.Identifier scheme=\"\">0000000</DC.Identifier>\n<DC.Source></DC.Source>\n<DC.Language></DC.Language>\n<DC.Rights></DC.Rights>\n</DC>\n</electronicEdInfo>\n";
 
 SwOsisId::SwOsisId()
 {
@@ -321,13 +321,13 @@ bool SwThMLUtility::ReadTitle(char * buffer, swUI32 bufferLen, FILE * file, swUI
 
         if (titleStart == false)
         {
-            if (strstr(p1, "<title") || strstr(p1, "<DC.Title"))
+            if (strstr(p1, "<title") || strstr(p1, "<DC.Title") || strstr(p1, "dc.title"))
                 titleStart = true;
             else
                 continue;
         }
 
-        if (strstr(p1, "</title") || strstr(p1, "</DC.Title"))
+        if (strstr(p1, "</title") || strstr(p1, "</DC.Title") || strstr(p1, "</dc.title"))
             return true;
 
         bytes = strlen(p1);
@@ -385,7 +385,8 @@ bool SwThMLUtility::ReadIdentifier(char * buffer, swUI32 bufferLen, FILE * file,
         {
             if (strstr(p1, "<DC.Subject scheme=\"LCCN\"") || strstr(p1, "<DC.Subject scheme=\"lccn\"") ||
                 strstr(p1, "<DC.Subject scheme=\"ISBN\"")  || strstr(p1, "<DC.Subject scheme=\"isbn\"") ||
-                strstr(p1, "<DC.Subject scheme=\"SWR\"")  || strstr(p1, "<DC.Subject scheme=\"swr\""))
+                strstr(p1, "<DC.Subject scheme=\"SW\"")  || strstr(p1, "<DC.Subject scheme=\"sw\"") ||
+                strstr(p1, "<DC.Subject"))
                 start = true;
             else
                 continue;
@@ -487,13 +488,13 @@ bool SwThMLUtility::ReadDublinCore(char * buffer, swUI32 bufferLen, FILE * file,
 
         if (dcStart == false)
         {
-            if (strstr(p1, "<DC"))
+            if (strstr(p1, "<DC>") || strstr(p1, "<dc>"))
                 dcStart = true;
             else
                 continue;
         }
 
-        if (strstr(p1, "</DC>"))
+        if (strstr(p1, "</DC>") || strstr(p1, "</dc>"))
             return true;
 
         bytes = strlen(p1);
@@ -610,6 +611,21 @@ const char * SwThMLUtility::GetThMLBookIdString(swUI8 book, bool abbrev)
         return ThMLID[book][0];
 
     return ThMLID[book][2];
+}
+
+const wchar_t * SwThMLUtility::GetThMLBookIdStringW(swUI8 book, bool abbrev)
+{
+    static SwStringW buffer;
+
+    if (book > 66)
+        return L"";
+
+    if (abbrev)
+        buffer.Copy(ThMLID[book][0]);
+    else
+        buffer.Copy(ThMLID[book][2]);
+
+    return buffer.GetArray();
 }
 
 bool SwThMLUtility::ParseScriptureId(const char * id, swUI8 & book, swUI8 & chapter, swUI8 & verse)

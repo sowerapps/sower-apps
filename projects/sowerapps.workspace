@@ -11,14 +11,16 @@
 		<Project filename="tvi_beta.cbp" />
 		<Project filename="tvi_ gamma.cbp" />
 		<Project filename="sowerhelp.cbp" />
+		<Project filename="sowerdatafileeditor.cbp" />
+		<Project filename="sowerthemeeditor.cbp" />
+		<Project filename="sowertranslationeditor.cbp" />
 		<Project filename="sowermodulewriter.cbp" />
 		<Project filename="sowerlibrarian.cbp" />
 		<Project filename="sowermoduleinspector.cbp" />
-		<Project filename="sowerkeygenerator.cbp" />
 		<Project filename="thmlbuilder.cbp" />
 		<Project filename="sowermapeditor.cbp" />
-		<Project filename="swdatafileeditor.cbp" />
-		<Project filename="swthemeeditor.cbp" />
-		<Project filename="swtranslationeditor.cbp" />
+		<Project filename="sowermoduleinstaller.cbp" />
+		<Project filename="sowerprojectwriter.cbp" />
+		<Project filename="sowermarkupeditor.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

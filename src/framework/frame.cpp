@@ -888,6 +888,13 @@ void SwFrame::OnTimer()
         m_toolbook->UpdateGui(m_toolbar, m_menubar);
     else if (m_guipanel && m_guipanel->OnHasFocus())
         m_guipanel->UpdateGui(m_toolbar, m_menubar);
+<<<<<<< Updated upstream
+=======
+    else if (m_toolbook)
+        m_toolbook->UpdateGui(m_toolbar, m_menubar);
+
+    OnFrameTimer();
+>>>>>>> Stashed changes
 }
 
 // false - language, true - theme

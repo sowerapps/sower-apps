@@ -38,6 +38,8 @@
 extern "C" SOWERBASEEXP FILE * SwFopen(const char * path, const char * mode);
 extern "C" SOWERBASEEXP void SwClipFileName(char * path);
 extern "C" SOWERBASEEXP void SwClipExtension(char * path);
+extern "C" SOWERBASEEXP void SwClipAnchor(char * path);
+extern "C" SOWERBASEEXP bool SwGetAnchor(const char * path, SwString & dest);
 extern "C" SOWERBASEEXP bool SwGetFileName(const char * path, SwString & dest);
 extern "C" SOWERBASEEXP bool SwGetExtension(const char * path, SwString & dest);
 extern "C" SOWERBASEEXP void NormalizePath(char * path);
@@ -61,6 +63,8 @@ public:
     const char * GetFilePath();
     void ClipExtension();
     const char * GetExtension();
+    void ClipAnchor();
+    const char * GetAnchor();
     void NormalizePath();
     bool MakePath();
     bool MakeDir();

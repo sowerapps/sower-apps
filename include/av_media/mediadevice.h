@@ -12,23 +12,28 @@
 #include "../sowerbase.h"
 #include "../module/module.h"
 
+
 class SOWERBASEEXP SwMediaStream
 {
 public:
     SwMediaStream();
     virtual ~SwMediaStream();
 
-    bool open(swUI16 moduleId, const char * mediaId);
+    bool Open(const char * path);
+    bool Open(swUI16 moduleId, const char * mediaId);
+    void Close();
     virtual swI64 read(void *data, swI64 size);
-    virtual swI64 seek(swI64 position);
+    virtual swI64 seek(swI64 offset, int origin);
     virtual swI64 tell();
     virtual swI64 getSize();
+    FILE * GetFile() { return m_file; }
 
 protected:
-    SwModule *    m_module;
+    SwModule *      m_module;
     SwMediaNode *   m_mediaNode;
-    swI64         m_position;
-    swI64         m_size;
+    swI64           m_position;
+    swI64           m_size;
+    FILE *          m_file;
 };
 
 /*  Example ...

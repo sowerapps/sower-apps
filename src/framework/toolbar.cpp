@@ -16,13 +16,39 @@ SwToolBar::SwToolBar()
     m_lastgroup = SW_MENUID_UNKNOWN;
 }
 
+
 SwToolBar::SwToolBar(wxWindow *parent, wxWindowID id, const wxPoint &position, const wxSize &size, long style, bool primary, SwFrame * frame)
+#ifdef __USE_WXAUI_TOOLBAR__
     :wxAuiToolBar(parent, id, position, size, style | wxAUI_TB_OVERFLOW)
+#else
+    :wxToolBar(parent, id, position, size, style)
+#endif
 {
     wxFont thisFont(SwApplicationInterface::GetInterfaceFontSize(),wxFONTFAMILY_ROMAN,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,wxEmptyString,wxFONTENCODING_DEFAULT);
     SetFont(thisFont);
 
     SetFrameWindow(frame);
+#ifdef __linux__
+    Connect(id, wxEVT_SIZE,(wxObjectEventFunction)&SwToolBar::OnResize);
+#endif
+}
+
+int SwToolBar::GetItemCount()
+{
+#ifdef __USE_WXAUI_TOOLBAR__
+    return GetToolCount();
+#else
+    return GetToolsCount();
+#endif
+}
+
+SwToolBarItem * SwToolBar::Find(int id)
+{
+#ifdef __USE_WXAUI_TOOLBAR__
+    return FindTool(id);
+#else
+    return FindById(id);
+#endif
 }
 
 void SwToolBar::SetFrameWindow(SwFrame * frame)
@@ -159,6 +185,15 @@ void SwToolBar::SetFrameWindow(SwFrame * frame)
     m_eventHandlers[SW_GUIID_NEXT] = &SwFrame::OnNext;
 }
 
+void SwToolBar::OnResize(wxSizeEvent& event)
+{
+    int h, w, x, y;
+    GetSize(&w, &h);
+    GetPosition(&x, &y);
+    SetSize(wxSize(GetParent()->GetSize().GetWidth() - (x * 2), h));
+    event.Skip();
+}
+
 void SwToolBar::OnEvent(wxCommandEvent & event)
 {
     if (!m_frame)
@@ -176,16 +211,16 @@ void SwToolBar::OnEvent(wxCommandEvent & event)
     }
 }
 
-wxAuiToolBarItem * SwToolBar::AddStockItem(swUI8 swid, bool enable, bool addSeparators)
+SwToolBarItem * SwToolBar::AddStockItem(swUI8 swid, bool enable, bool addSeparators)
 {
     if (swid >= N_SW_GUIITEM_IDS)
         return NULL;
 
-    wxAuiToolBarItem * item = NULL;
+    SwToolBarItem * item = NULL;
 
     swUI8 sep = SwGuiData::GetDataForItemSwId(swid)->separator;
 
-    if (addSeparators && (sep == SEP_BEFORE || (GetToolCount() && m_lastgroup != SwGuiData::GetDataForItemSwId(swid)->sw_guiid_parent)))
+    if (addSeparators && (sep == SEP_BEFORE || (GetItemCount() && m_lastgroup != SwGuiData::GetDataForItemSwId(swid)->sw_guiid_parent)))
         AddSeparator();
 
     if (strlen(SwGuiData::GetDataForItemSwId(swid)->sid_image))
@@ -240,7 +275,11 @@ bool SwToolBar::IsItemChecked(swUI8 swid)
     if (swid >= N_SW_GUIITEM_IDS)
         return false;
 
+#ifdef __USE_WXAUI_TOOLBAR__
     return GetToolToggled(SwGuiData::GetDataForItemSwId(swid)->wx_id);
+#else
+    return GetToolState(SwGuiData::GetDataForItemSwId(swid)->wx_id);
+#endif
 }
 
 const wchar_t * SwToolBar::GetItemLabel(swUI8 swid)
@@ -248,7 +287,7 @@ const wchar_t * SwToolBar::GetItemLabel(swUI8 swid)
     if (swid >= N_SW_GUIITEM_IDS)
         return L"";
 
-    return GetToolLabel(SwGuiData::GetDataForItemSwId(swid)->wx_id).wchar_str();
+    return GetToolShortHelp(SwGuiData::GetDataForItemSwId(swid)->wx_id).wchar_str();
 }
 
 void SwToolBar::SetCustomToolBitmap(int wxid, const char * strid)
@@ -256,7 +295,15 @@ void SwToolBar::SetCustomToolBitmap(int wxid, const char * strid)
     if (!strid)
         return;
 
+#ifdef __USE_WXAUI_TOOLBAR__
     SetToolBitmap(wxid, SwApplicationInterface::GetImage(strid));
+#else
+#if wxCHECK_VERSION(3, 1, 0)
+    SetToolNormalBitmap(wxid, wxBitmapBundle(SwApplicationInterface::GetImage(strid)));
+#else
+    SetToolNormalBitmap(wxid, SwApplicationInterface::GetImage(strid));
+#endif
+#endif
 }
 
 void SwToolBar::SetCustomToolLabel(int wxid, const char * strid, const wchar_t * deflabel)
@@ -264,17 +311,19 @@ void SwToolBar::SetCustomToolLabel(int wxid, const char * strid, const wchar_t *
     if (!strid || !deflabel)
         return;
 
+#ifdef __USE_WXAUI_TOOLBAR__
     SetToolLabel(wxid, SwApplicationInterface::GetControlString(strid, deflabel));
+#endif
     SetToolShortHelp(wxid, SwApplicationInterface::GetControlString(strid, deflabel));
 }
 
 void SwToolBar::OnLanguageChange()
 {
-    wxAuiToolBarItem * item;
+    SwToolBarItem * item;
 
     for (swUI8 swid = 0; swid < N_SW_GUIITEM_IDS; swid ++)
     {
-        item = FindTool(SwGuiData::GetDataForItemSwId(swid)->wx_id);
+        item = Find(SwGuiData::GetDataForItemSwId(swid)->wx_id);
 
         if (item)
             item->SetShortHelp(SwApplicationInterface::GetControlString(SwGuiData::GetDataForItemSwId(swid)->sid_label, SwGuiData::GetDataForItemSwId(swid)->label));
@@ -283,24 +332,43 @@ void SwToolBar::OnLanguageChange()
 
 void SwToolBar::OnThemeChange()
 {
-    wxAuiToolBarItem * item;
+    SwToolBarItem * item;
 
     for (swUI8 swid = 0; swid < N_SW_GUIITEM_IDS; swid ++)
     {
-        item = FindTool(SwGuiData::GetDataForItemSwId(swid)->wx_id);
+        item = Find(SwGuiData::GetDataForItemSwId(swid)->wx_id);
 
         if (item)
         {
             if (strlen(SwGuiData::GetDataForItemSwId(swid)->sid_image))
             {
+#ifdef __USE_WXAUI_TOOLBAR__
                 item->SetBitmap(SwApplicationInterface::GetImage(SwGuiData::GetDataForItemSwId(swid)->sid_image));
                 item->SetDisabledBitmap(SwApplicationInterface::GetImage(SwGuiData::GetDataForItemSwId(swid)->sid_image).ConvertToDisabled(100));
-
+#else
+#if wxCHECK_VERSION(3, 1, 0)
+                item->SetNormalBitmap(wxBitmapBundle(SwApplicationInterface::GetImage(SwGuiData::GetDataForItemSwId(swid)->sid_image)));
+                item->SetDisabledBitmap(wxBitmapBundle(SwApplicationInterface::GetImage(SwGuiData::GetDataForItemSwId(swid)->sid_image).ConvertToDisabled(100)));
+#else
+                item->SetNormalBitmap(SwApplicationInterface::GetImage(SwGuiData::GetDataForItemSwId(swid)->sid_image));
+                item->SetDisabledBitmap(SwApplicationInterface::GetImage(SwGuiData::GetDataForItemSwId(swid)->sid_image).ConvertToDisabled(100));
+#endif
+#endif
             }
             else
             {
+#ifdef __USE_WXAUI_TOOLBAR__
                 item->SetBitmap(SwApplicationInterface::GetMissingImage());
                 item->SetDisabledBitmap(SwApplicationInterface::GetMissingImage().ConvertToDisabled());
+#else
+#if wxCHECK_VERSION(3, 1, 0)
+                item->SetNormalBitmap(wxBitmapBundle(SwApplicationInterface::GetMissingImage()));
+                item->SetDisabledBitmap(wxBitmapBundle(SwApplicationInterface::GetMissingImage().ConvertToDisabled()));
+#else
+                item->SetNormalBitmap(SwApplicationInterface::GetMissingImage());
+                item->SetDisabledBitmap(SwApplicationInterface::GetMissingImage().ConvertToDisabled());
+#endif
+#endif
             }
         }
     }
@@ -317,13 +385,13 @@ void SwToolBar::UpdateGui()
     if (!m_frame)
         return;
 
-    wxAuiToolBarItem * item;
+    SwToolBarItem * item;
     bool canDo;
     int buttonState;
 
     for (swUI8 i = 0; i < N_SW_GUIITEM_IDS; i ++)
     {
-        item = FindTool(SwGuiData::GetDataForElement(i)->wx_id);
+        item = Find(SwGuiData::GetDataForElement(i)->wx_id);
 
         if (!item)
             continue;

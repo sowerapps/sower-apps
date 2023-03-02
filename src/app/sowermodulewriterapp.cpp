@@ -13,11 +13,20 @@
 #include "filesys/bzcompression.h"
 #include "dialogs/carddlg.h"
 #include "bible/standard_bible.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SowerModuleWriterApp);
 
 bool SowerModuleWriterApp::OnInit()
 {
+<<<<<<< Updated upstream
+=======
+    #if defined __OSX__
+    wxTaskBarIcon * dockIcon = new wxTaskBarIcon(wxTBI_DOCK);
+    dockIcon->SetIcon(wxBitmapBundle(SwApplicationInterface::GetStockImage(IMG_TOOLS32)));
+    #endif // defined __OSX__
+
+>>>>>>> Stashed changes
     SwApplicationInterface::InitBasic();
     SwApplicationInterface::LoadPlugIns();
     SwApplicationInterface::LoadAllKeys();
@@ -48,6 +57,7 @@ const long SowerModuleWriterDlg::ID_VERSIFICATIONCOMBOBOX = wxNewId();
 const long SowerModuleWriterDlg::ID_ALLOWCOPYCHECKBOX = wxNewId();
 const long SowerModuleWriterDlg::ID_OFNLABEL = wxNewId();
 const long SowerModuleWriterDlg::ID_ENCRYPTCHECKBOX = wxNewId();
+const long SowerModuleWriterDlg::ID_COMPRESSCHECKBOX = wxNewId();
 const long SowerModuleWriterDlg::ID_OFNTEXTCTRL = wxNewId();
 const long SowerModuleWriterDlg::ID_PROGRESSGAUGE = wxNewId();
 const long SowerModuleWriterDlg::ID_REPORTTEXTCTRL = wxNewId();
@@ -117,16 +127,19 @@ SowerModuleWriterDlg::SowerModuleWriterDlg(wxWindow* parent,wxWindowID id,const 
     EncryptCheckBox = new SwCheckBox(this, ID_ENCRYPTCHECKBOX, SwApplicationInterface::GetControlString("SID_ENCRYPT", L"Encrypt"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, L"ID_ENCRYPTCHECKBOX");
     EncryptCheckBox->SetValue(false);
     GridBagSizer1->Add(EncryptCheckBox, wxGBPosition(10, 1), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    CompressCheckBox = new SwCheckBox(this, ID_COMPRESSCHECKBOX, SwApplicationInterface::GetControlString("SID_COMPRESS", L"Compress"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, L"ID_COMPRESSCHECKBOX");
+    CompressCheckBox->SetValue(false);
+    GridBagSizer1->Add(CompressCheckBox, wxGBPosition(10, 2), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
     ProgressGauge = new wxGauge(this, ID_PROGRESSGAUGE, 100, wxDefaultPosition, wxSize(-1,7), 0, wxDefaultValidator, L"ID_PROGRESSGAUGE");
     GridBagSizer1->Add(ProgressGauge, wxGBPosition(11, 0), wxGBSpan(1, 3), wxALL|wxEXPAND, 5);
     ReportTextCtrl = new wxTextCtrl(this, ID_REPORTTEXTCTRL, wxEmptyString, wxDefaultPosition, wxSize(-1,100), wxTE_MULTILINE|wxTE_READONLY, wxDefaultValidator, L"ID_REPORTTEXTCTRL");
     GridBagSizer1->Add(ReportTextCtrl, wxGBPosition(12, 0), wxGBSpan(1, 3), wxALL|wxEXPAND, 5);
     AboutButton = new wxButton(this, ID_ABOUTBUTTON, SwApplicationInterface::GetControlString("SID_ABOUT", L"About"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, L"ID_ABOUTBUTTON");
-    GridBagSizer1->Add(AboutButton, wxGBPosition(13, 0), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    GridBagSizer1->Add(AboutButton, wxGBPosition(13, 0), wxDefaultSpan, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
     OkButton = new wxButton(this, ID_BUILDBUTTON, SwApplicationInterface::GetControlString("SID_BUILD", L"Build"));
-    GridBagSizer1->Add(OkButton, wxGBPosition(13, 1), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    GridBagSizer1->Add(OkButton, wxGBPosition(13, 1), wxDefaultSpan, wxALL|wxALIGN_CENTER|wxALIGN_CENTER_VERTICAL, 5);
     CancelButton = new wxButton(this, ID_CANCELBUTTON, SwApplicationInterface::GetControlString("SID_CANCEL", L"Cancel"));
-    GridBagSizer1->Add(CancelButton, wxGBPosition(13, 2), wxDefaultSpan, wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL, 5);
+    GridBagSizer1->Add(CancelButton, wxGBPosition(13, 2), wxDefaultSpan, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5);
 
     PasswordLabel->Enable(false);
     PasswordTextCtrl->Enable(false);
@@ -162,6 +175,7 @@ SowerModuleWriterDlg::SowerModuleWriterDlg(wxWindow* parent,wxWindowID id,const 
 SowerModuleWriterDlg::~SowerModuleWriterDlg()
 {
     Unbind(wxEVT_THREAD, &SowerModuleWriterDlg::OnThreadUpdate, this);
+    SwApplicationInterface::CloseFiles();
 }
 
 void SowerModuleWriterDlg::OnQuit(wxCommandEvent& event)
@@ -485,22 +499,25 @@ wxThread::ExitCode SowerModuleWriterDlg::Entry()
 
     QueText(s);
 
-    QueText(SwApplicationInterface::GetControlString("SID_COMPRESSINGMODULE", L"Compressing module."));
-    QueText(L"\n");
-
-    path.Copy(SaveasFilePickerCtrl->GetPath().utf8_str());
-    path += ".bz2";
-    SwBZipFile(SaveasFilePickerCtrl->GetPath().utf8_str(), path);
-
-    path.Copy(SaveasFilePickerCtrl->GetFileName().GetPathWithSep().utf8_str());
-    path += "Title.html";
-    FILE * f = SwFopen(path, FMD_WC);
-    SwString buffer;
-    buffer.Copy(TitleTextCtrl->GetValue().utf8_str());
-    if (f)
+    if (CompressCheckBox->GetValue())
     {
-        fprintf(f, formatstr, buffer.GetArray());
-        fclose(f);
+        QueText(SwApplicationInterface::GetControlString("SID_COMPRESSINGMODULE", L"Compressing module."));
+        QueText(L"\n");
+
+        path.Copy(SaveasFilePickerCtrl->GetPath().utf8_str());
+        path += ".bz2";
+        SwBZipFile(SaveasFilePickerCtrl->GetPath().utf8_str(), path);
+
+        path.Copy(SaveasFilePickerCtrl->GetFileName().GetPathWithSep().utf8_str());
+        path += "Title.html";
+        FILE * f = SwFopen(path, FMD_WC);
+        SwString buffer;
+        buffer.Copy(TitleTextCtrl->GetValue().utf8_str());
+        if (f)
+        {
+            fprintf(f, formatstr, buffer.GetArray());
+            fclose(f);
+        }
     }
 
     SwCatalogCard card;
@@ -649,6 +666,7 @@ void SowerModuleWriterDlg::EnableControls()
     if (EncryptCheckBox->GetValue())
         PasswordTextCtrl->Enable();
     EncryptCheckBox->Enable();
+    CompressCheckBox->Enable();
     CancelButton->Disable();
 }
 
@@ -660,6 +678,7 @@ void SowerModuleWriterDlg::DisableControls()
     SaveasFilePickerCtrl->GetTextCtrl()->Disable();
     OkButton->Disable();
     EncryptCheckBox->Disable();
+    CompressCheckBox->Disable();
     PasswordTextCtrl->Disable();
     CancelButton->Enable();
 }

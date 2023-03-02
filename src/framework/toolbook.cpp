@@ -287,6 +287,7 @@ SwToolBook::SwToolBook(wxWindow *parent, wxWindowID id, const wxPoint &pos, cons
     :wxAuiNotebook(parent, id, pos, size, style | wxAUI_NB_SCROLL_BUTTONS)
 {
     Init();
+    Connect(id,wxEVT_AUINOTEBOOK_PAGE_CLOSE,(wxObjectEventFunction)&SwToolBook::OnClosePanelEvent);
 }
 
 SwToolBook::~SwToolBook()
@@ -367,22 +368,27 @@ bool SwToolBook::OnClose()
         return false;
 
     SwPanel * panel = (SwPanel *) GetPage(page);
-    panel->OnClose();
+    bool state = panel->OnClose();
 
-    return DeletePage(page);
+    if (state)
+        DeletePage(page);
+
+    return state;
 }
 
 bool SwToolBook::OnCloseAll()
 {
-    int pages = GetPageCount();
-
-    for (int i = 0; i < pages; i ++)
+    for(int curPage = GetPageCount() - 1; curPage > -1; curPage --)
     {
-        SwPanel * panel = (SwPanel *) GetPage(i);
-        panel->OnCloseAll();
+        SwPanel * panel = (SwPanel *) GetPage(curPage);
+
+        if (panel->OnClose())
+            DeletePage(curPage);
+        else
+            return false;
     }
 
-    return DeleteAllPages();
+    return true;
 }
 
 bool SwToolBook::OnPrint()
@@ -1533,6 +1539,13 @@ void SwToolBook::OnThMLFileDeleted(swUI16 mid)
 
         panel->OnThMLFileDeleted(mid);
     }
+}
+
+void SwToolBook::OnClosePanelEvent(wxAuiNotebookEvent& event)
+{
+    SwPanel * panel = (SwPanel *) GetPage(event.GetSelection());
+    if (!panel->OnClosePanel())
+        event.Veto();
 }
 
 bool SwToolBook::OnClosePanel()

@@ -367,6 +367,13 @@ struct SwElement
     swUI8         whiteSpace;
 };
 
+struct SwElementData
+{
+    const char *  name;
+    swUI16        elementId;
+    const char *  attributes;
+};
+
 class SOWERBASEEXP SwHtml
 {
 public:

@@ -19,7 +19,6 @@
 #define APPIFA_H
 
 #include "../sdf/datafile.h"
-
 #include "../framework/toolbar.h"
 #include "../framework/frame.h"
 #include "../framework/dialog.h"
@@ -40,13 +39,16 @@
 #include "../interface/richtext/richtextinterface.h"
 #include "../interface/imagewin/imagewindowinterface.h"
 #include "../filesys/recurse.h"
+#include "../../include/av_media/audio.h"
 
 enum STOCK_IMAGE_ID
 {
     IMG_MISSING, IMG_CROSS, IMG_THML, IMG_TOOLS,
-    IMG_CIRCLE_HOLLOW, IMG_CIRCLE_SOLID,
+    IMG_HELP, IMG_CIRCLE_HOLLOW, IMG_CIRCLE_SOLID,
     IMG_RHOMBUS_HOLLOW, IMG_RHOMBUS_SOLID, IMG_RHOMBUS_SOLID_RED,
-    IMG_SQUARE_HOLLOW, IMG_SQUARE_SOLID, IMG_SPLASH, N_STOCK_IMAGE_ID
+    IMG_SQUARE_HOLLOW, IMG_SQUARE_SOLID, IMG_SPLASH,
+    IMG_CROSS32, IMG_THML32, IMG_TOOLS32, IMG_HELP32,
+    N_STOCK_IMAGE_ID
 };
 
 class SwPlugInManager;
@@ -165,6 +167,8 @@ public :
     static const char * GetAppName();
     static void SetAppName(const char * appName);
 
+    static SwAudio & GetAudio();
+
     // Flag : force use of app dir for
     // user data files.
     static bool GetUseAppDir();
@@ -180,12 +184,14 @@ public :
     static const char * GetMasterKeysDir();
     static const char * GetPublisherKeysDir();
     static const char * GetHelpDir();
+    static const char * GetReferenceDir();
     static const char * GetDataDir();
 
 
     static bool GetWxState();
     static void SetWxState(bool initialized = true);
     static void InitWX();
+    static void InitImageHandlers();
     static bool GetBasicState();
     static void SetBasicState(bool initialized = true);
     static void InitBasic();
@@ -202,9 +208,9 @@ public :
     static void LoadAllKeys();
     static void LoadUserKeys();
     static void LoadMasterKeys();
-    static void LoadPublisherKeys();
     static void LoadModules();
     static void LoadHelpModules();
+    static void LoadReferenceModules();
     static void LoadPlugIns();
     static void LoadUserFiles();
     static void LoadUserData();
@@ -317,6 +323,8 @@ public :
     static SwRichTextInterface     sw_richInterface;
     static SwImageWindowInterface  sw_imageInterface;
     static bool                    sw_useappDir;
+    static SwAudio                 sw_audio;
+    static bool                    sw_imagehandlersInitialized;
 };
 
 #define QuickText   SwApplicationInterface::SetWindowTitle

@@ -158,7 +158,7 @@ struct SwImgListSwap
 {
     swUI32              m_maparrayPos;
     swUI32              m_mapobjectsAllocated;
-    SwHtmlImageMap **     m_mapArray;
+    SwHtmlImageMap **   m_mapArray;
 };
 
 class SOWERBASEEXP SwHtmlImageMapList : public SwModuleInterface
@@ -188,6 +188,7 @@ public:
     virtual bool ReadFromFile(FILE * file, swUI8 k1, swUI32 k2);
     virtual swUI32 GetType();
     void FillCtrl(wxListCtrl * listctrl);
+    void FillCtrlEx(wxListCtrl * listctrl);
     void SetUseGeo(bool useGeo = true) { m_useGeo = useGeo; }
     bool GetUseGeo() { return m_useGeo; }
     void SetConversionData(const SwGeoConversionData & cd) { m_geocd = cd; }

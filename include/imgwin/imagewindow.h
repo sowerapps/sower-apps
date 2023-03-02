@@ -249,8 +249,13 @@ protected:
     SwPointArray              m_pt;
     SwPointArray              m_p2polyBuffer;
     SwStringW                 m_tipText;
+<<<<<<< Updated upstream
     wxFloat32                 m_zoom;
     wxFloat32                 m_czoom;
+=======
+    swFloat                   m_zoom;
+    swFloat                   m_czoom;
+>>>>>>> Stashed changes
     SwMapArea *               m_hotmapArea;
     SwHtmlImageMap *          m_hotMap;
     SwMapArea *               m_leftdownmapArea;

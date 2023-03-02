@@ -102,7 +102,6 @@ swUI32 SwImageWindowInterface::Handle(swUI16 id, swUI32 node)
         if (item == NODE_ID_INVALID_16)
             return node;
 
-
         SwApplicationInterface::GetModuleManager().GetAt(m_moduleId)->GetMediaContents().GetNode(item)->ReadData(
         SwApplicationInterface::GetModuleManager().GetAt(m_moduleId)->m_file,
         m_imagewindow->GetImageMapList(),

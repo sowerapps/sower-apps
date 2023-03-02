@@ -57,10 +57,10 @@ void InterfacePlugIn::OnInitialize()
     SwApplicationInterface::GetPreferences().GetTable().UpdateNode("Interface-PlugIn", GetName());
 }
 
-static InterfacePlugIn InterfacePlugIn;
+static InterfacePlugIn s_InterfacePlugIn;
 SwPlugIn * PlugInInitialize()
 {
-    return &InterfacePlugIn;
+    return &s_InterfacePlugIn;
 }
 
 const long SWI_BetaPanel::ID_BOOKMARKSLIST = wxNewId();
@@ -116,7 +116,17 @@ SWI_BetaPanel::SWI_BetaPanel(wxWindow *parent, wxWindowID id, const wxPoint &pos
 
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
+<<<<<<< Updated upstream
     path += "sw_beta_uisession.gui";
+=======
+    path += "sw_beta_ses.gui";
+
+    if (!CheckStartUpFile("sw_beta"))
+    {
+        SetFocus();
+
+        node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+>>>>>>> Stashed changes
 
     SetFocus();
 
@@ -159,12 +169,18 @@ bool SWI_BetaPanel::OnCanDoCloseAll()
 
 bool SWI_BetaPanel::OnClose()
 {
-    return SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnClose();
+    SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnClose();
+    SwApplicationInterface::GetFrameWindow()->ToolRemoved();
+
+    return true;
 }
 
 bool SWI_BetaPanel::OnCloseAll()
 {
-    return SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCloseAll();
+    SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCloseAll();
+    SwApplicationInterface::GetFrameWindow()->ToolRemoved();
+
+    return true;
 }
 
 bool SWI_BetaPanel::OnBookmarksView()

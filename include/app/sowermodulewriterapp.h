@@ -38,6 +38,7 @@ private:
     wxButton* BuildButton;
     SwCheckBox* AllowCopyCheckBox;
     SwCheckBox* EncryptCheckBox;
+    SwCheckBox* CompressCheckBox;
     wxChoice* CategoryChoice;
     wxComboBox* GroupComboBox;
     wxComboBox* VersificationComboBox;
@@ -84,6 +85,7 @@ private:
     static const long ID_ALLOWCOPYCHECKBOX;
     static const long ID_OFNLABEL;
     static const long ID_ENCRYPTCHECKBOX;
+    static const long ID_COMPRESSCHECKBOX;
     static const long ID_OFNTEXTCTRL;
     static const long ID_PROGRESSGAUGE;
     static const long ID_REPORTTEXTCTRL;

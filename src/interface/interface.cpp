@@ -5,7 +5,7 @@
 //              additional attribute (type) for ThML div elements
 //              to specify the type of view needed to display the
 //              content of the div. Views are created as needed,
-//              and the interface for the content/view type writes
+//              and the interface for the content/view type
 //              writes/transfers content to the view.
 // Copyright:   David Reynolds
 // License:     Sower Applications License

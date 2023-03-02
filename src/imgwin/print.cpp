@@ -6,7 +6,6 @@
 ///////////////////////////////////////////////////////////////////
 
 #include "../../include/imgwin/imagewindow.h"
-#include "../../include/string/stringcompare.h"
 
 void SwImageWindow::OnPrint(const wchar_t * title)
 {

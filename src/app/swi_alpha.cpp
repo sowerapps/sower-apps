@@ -57,10 +57,10 @@ void InterfacePlugIn::OnInitialize()
     SwApplicationInterface::GetPreferences().GetTable().UpdateNode("Interface-PlugIn", GetName());
 }
 
-static InterfacePlugIn InterfacePlugIn;
+static InterfacePlugIn s_InterfacePlugIn;
 SwPlugIn * PlugInInitialize()
 {
-    return &InterfacePlugIn;
+    return &s_InterfacePlugIn;
 }
 
 const long SWI_AlphaPanel::ID_NOTEBOOK = wxNewId();
@@ -118,7 +118,21 @@ SWI_AlphaPanel::SWI_AlphaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
 
     path = SwApplicationInterface::GetUserDir();
     path += PATH_SEP;
+<<<<<<< Updated upstream
     path += "sw_alpha_uisession.gui";
+=======
+    path += "sw_alpha_ses.gui";
+
+    if (!CheckStartUpFile("sw_alpha"))
+    {
+        SetFocus();
+
+        node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+>>>>>>> Stashed changes
 
     SetFocus();
 
@@ -148,19 +162,23 @@ void SWI_AlphaPanel::OnDelete(wxCommandEvent & event)
     m_bookmarksList->DeleteItem(item);
 }
 
+bool SWI_AlphaPanel::OnCanDoCloseAll()
+{
+    return (bool) m_librarybook->GetPageCount() || SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount();
+}
+
 bool SWI_AlphaPanel::OnClose()
 {
-    if (!SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetPageCount())
-        return false;
-
-    SwApplicationInterface::GetFrameWindow()->GetToolBook()->DeletePage(SwApplicationInterface::GetFrameWindow()->GetToolBook()->GetSelection());
-
-    return true;
+    return m_librarybook->OnClose();
 }
 
 bool SWI_AlphaPanel::OnCloseAll()
 {
-    return SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCloseAll();
+    m_librarybook->OnCloseAll();
+    SwApplicationInterface::GetFrameWindow()->GetToolBook()->OnCloseAll();
+    SwApplicationInterface::GetFrameWindow()->ToolRemoved();
+
+    return true;
 }
 
 bool SWI_AlphaPanel::OnBookmarksView()

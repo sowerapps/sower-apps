@@ -81,10 +81,17 @@ SwPlugInManager::SwPlugInManager()
     m_interface = NULL;
     m_pluginsInitialized = false;
     m_loadType = PIT_UNKNOWN;
+    Size(21);
 }
 
 SwPlugInManager::~SwPlugInManager()
 {
+    for (swUI16 i = 0; i < m_count; i++)
+    {
+        if (m_array[i]->m_dll)
+            delete m_array[i]->m_dll;
+    }
+
     if (m_array)
     {
         free(m_array);
@@ -93,6 +100,12 @@ SwPlugInManager::~SwPlugInManager()
 
 void SwPlugInManager::Reset()
 {
+    for (swUI16 i = 0; i < m_count; i++)
+    {
+        if (m_array[i]->m_dll)
+            delete m_array[i]->m_dll;
+    }
+
     Size(7);
     SetCount(0);
 }
@@ -114,7 +127,7 @@ swUI32 SwPlugInManager::Size(swUI32 size, bool shrink)
     if (m_array && m_size >= size && !shrink)
         return m_size;
 
-    SwPlugIn ** p = (SwPlugIn **) realloc((void *) m_array, m_size * sizeof(SwPlugIn *));
+    SwPlugIn ** p = (SwPlugIn **) realloc((void *) m_array, size * sizeof(SwPlugIn *));
 
     if (p)
     {

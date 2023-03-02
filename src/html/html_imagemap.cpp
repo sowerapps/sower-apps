@@ -2119,3 +2119,37 @@ void SwHtmlImageMapList::FillCtrl(wxListCtrl * listctrl)
         listctrl->InsertItem(lItem);
     }
 }
+
+void SwHtmlImageMapList::FillCtrlEx(wxListCtrl * listctrl)
+{
+    if (!listctrl)
+        return;
+
+    listctrl->DeleteAllItems();
+
+    SwHtmlImageMap * map;
+    wxListItem lItem;
+    SwStringW buffer;
+
+    for (swUI32 i = 0; i < GetMapCount(); i ++)
+    {
+        wxListItem lItem;
+        SwStringW buffer;
+        map = GetMap(i);
+
+        if (!map)
+            return;
+
+        for (swUI32 n = 0; n < map->GetMapNodeCount(); n ++)
+        {
+            lItem.Clear();
+            lItem.SetStateMask(wxLIST_MASK_TEXT|wxLIST_MASK_DATA);
+            lItem.SetColumn(0);
+            lItem.SetId(listctrl->GetItemCount());
+            buffer.Copy(map->GetMapData(n)->GetAlt());
+            lItem.SetText(buffer.GetArray());
+            lItem.SetData(map->GetMapData(n));
+            listctrl->InsertItem(lItem);
+        }
+    }
+}

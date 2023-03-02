@@ -8,6 +8,7 @@
 ///////////////////////////////////////////////////////////////////
 
 #include "../include/sowerbase.h"
+#include "../include/appi/appifa.h"
 #include <wx/stdpaths.h>
 
 #if defined __linux__ || defined __OSX__
@@ -78,6 +79,7 @@ SowerWxInit::~SowerWxInit()
 
 SwBaseApp::SwBaseApp()
 {
+    SwApplicationInterface::InitImageHandlers();
     SetVendorName(L"Sower Applications");
     wxStandardPaths::Get().UseAppInfo(wxStandardPathsBase::AppInfo_VendorName);
     #if defined __linux__

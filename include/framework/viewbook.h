@@ -197,15 +197,30 @@ public:
     SwImageWindow * m_view;
 };
 
-class SOWERBASEEXP SwMapViewPanel : public SwImageViewPanel
+class SOWERBASEEXP SwMapViewPanel : public SwViewPanel
 {
 public:
     SwMapViewPanel();
     SwMapViewPanel(wxWindow *parent, wxWindowID id=-1, const wxString &value=wxEmptyString, const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, long style=wxRE_MULTILINE, const wxValidator &validator=wxDefaultValidator, const wxString &name=wxTextCtrlNameStr);
     virtual ~SwMapViewPanel();
 
+    void OnLanguageChange();
+
     // Viewer
     virtual bool OnCanHandle(swUI8 contentType);
+    virtual bool OnLoad(SwPageData & pageData);
+    virtual bool OnLoad(swUI8 contentType, SwStreamBuffer & data, const SwGeoConversionData * cd = NULL);
+    virtual bool OnReset();
+    virtual bool OnRefresh();
+    virtual bool OnGetScrollPos(SwScrollData & scrolldata);
+    virtual bool OnSetScrollPos(SwScrollData & scrolldata);
+    virtual bool OnHasFocus();
+    virtual bool OnSetCanCopy(bool canCopy);
+    virtual bool OnCanCopy();
+    virtual bool OnCanDoPrint();
+    virtual bool OnCanDoZoomIn();
+    virtual bool OnCanDoZoomOut();
+    virtual bool OnCanDoViewNormal();
 
     // Find
     virtual bool OnFindReset();
@@ -215,9 +230,33 @@ public:
     // User
     virtual bool OnFind(const wchar_t * text, bool casesensitive, bool wholewordonly);
     virtual bool OnFindNext();
+    virtual bool OnPrint();
+    virtual bool OnZoomIn();
+    virtual bool OnZoomOut();
+    virtual bool OnViewNormal();
+    virtual void OnPlaceItemActivated(wxListEvent& event);
+    virtual void OnJourneyItemActivated(wxCommandEvent& event);
+
+
+
+    // System
+    virtual void OnEnableAutoDef(bool enable = true);
+    virtual void OnSetPopUpMenu(SwMenu * menu);
+    void OnResize(wxSizeEvent& event);
+
+    static const long ID_TOOLNOTEBOOK;
+    static const long ID_PLACESLISTCTRL;
+    static const long ID_JOURNEYSSCHECKLISTBOX;
+    static const long ID_IMAGEVIEW;
+
+    wxNotebook * ToolNotebook;
+    SwStretchColumnListCtrl * PlacesListCtrl;
+    wxCheckListBox * JourneysCheckListBox;
+    SwImageWindow * m_view;
 
 private:
     SwGeoFind m_find;
+    wxAuiManager *  m_manager;
 };
 
 class SOWERBASEEXP SwViewBook : public wxSimplebook

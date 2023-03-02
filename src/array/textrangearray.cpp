@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////
-// Name:        SwTextRangeArray.cpp
+// Name:        textrangearray.cpp
 // Purpose:     SwTextRange array.
 // Copyright:   David Reynolds
 // License:     Sower Applications License

@@ -238,3 +238,247 @@ bool SwThMLParser::SetThML_ElementArray()
     m_markupType = MARKUP_THML;
     return true;
 }
+
+SwElementData ThMLElementData[] =
+{
+    {"added", THML_ADDED, "reason=\"\" resp=\"\" date=\"\""},
+    {"argument", THML_ARGUMENT, ""},
+    {"attr", THML_ATTR, ""},
+    {"author", THML_AUTHOR, "authorID=\"\" composerID=\"\" type=\"\""},
+    {"authorid", THML_AUTHORID, ""},
+    {"bookid", THML_BOOKID, ""},
+    {"citation", THML_CITATION, "title=\"\" href=\"\""},
+    {"comments", THML_COMMENTS, ""},
+    {"composer", THML_COMPOSER, "authorID=\"\" composerID=\"\" type=\"\""},
+    {"copyLocation", THML_COPYLOCATION, ""},
+    {"date", THML_DATE, "value=\"\""},
+    {"DC", THML_DC, ""},
+    {"DC.Contributor", THML_DC_CONTRIBUTOR, "scheme=\"\""},
+    {"DC.Coverage", THML_DC_COVERAGE, ""},
+    {"DC.Creator", THML_DC_CREATOR, ""},
+    {"DC.Date", THML_DC_DATE, ""},
+    {"DC.Description", THML_DC_DESCRIPTION, ""},
+    {"DC.Format", THML_DC_FORMAT, ""},
+    {"DC.Identifier", THML_DC_IDENTIFIER, "scheme=\"\""},
+    {"DC.Language", THML_DC_LANGUAGE, "scheme=\"\""},
+    {"DC.Publisher", THML_DC_PUBLISHER, "scheme=\"\""},
+    {"DC.Relation", THML_DC_RELATION, ""},
+    {"DC.Rights", THML_DC_RIGHTS, ""},
+    {"DC.Source", THML_DC_SOURCE, ""},
+    {"DC.Subject", THML_DC_SUBJECT, "scheme=\"\""},
+    {"DC.Title", THML_DC_TITLE, ""},
+    {"DC.Type", THML_DC_TYPE, "scheme=\"\""},
+    {"def", THML_DEF, ""},
+    {"deleted", THML_DELETED, "reason=\"\" resp=\"\" date=\"\""},
+    {"description", THML_DESCRIPTION, ""},
+    {"div1", THML_DIV1, "type=\"\" n=\"\" title=\"\""},
+    {"div2", THML_DIV2, "type=\"\" n=\"\" title=\"\""},
+    {"div3", THML_DIV3, "type=\"\" n=\"\" title=\"\""},
+    {"div4", THML_DIV4, "type=\"\" n=\"\" title=\"\""},
+    {"div5", THML_DIV5, "type=\"\" n=\"\" title=\"\""},
+    {"div6", THML_DIV6, "type=\"\" n=\"\" title=\"\""},
+    {"editorialComments", THML_EDITORIALCOMMENTS, ""},
+    {"electronicEdInfo", THML_ELECTRONICEDINFO, ""},
+    {"firstpublished", THML_FIRSTPUBLISHED, ""},
+    {"foreign", THML_FOREIGN, "lang=\"\" dir=\"\""},
+    {"generalinfo", THML_GENERALINFO, ""},
+    {"glossary", THML_GLOSSARY, "type=\"\""},
+    {"hymn", THML_HYMN, ""},
+    {"image", THML_IMAGE, "type=\"\" href=\"\""},
+    {"incipit", THML_INCIPIT, "value=\"\""},
+    {"index", THML_INDEX, "type=\"\" subjectID=\"\" title=\"\""},
+    {"insertindex", THML_INSERTINDEX, "type=\"\""},
+    {"l", THML_L, ""},
+    {"meter", THML_METER, ""},
+    {"music", THML_MUSIC, "href=\"\" type\"\""},
+    {"name", THML_NAME, "title\"\""},
+    {"note", THML_NOTE, "n=\"\""},
+    {"pb", THML_PB, "n=\"\" href=\"\""},
+    {"printsourceinfo", THML_PRINTSOURCEINFO, ""},
+    {"pubhistory", THML_PUBHISTORY, ""},
+    {"published", THML_PUBLISHED, ""},
+    {"publisherid", THML_PUBLISHERID, ""},
+    {"revisionhistory", THML_REVISIONHISTORY, ""},
+    {"scripCom", THML_SCRIPCOM, "passage=\"\""},
+    {"scripContext", THML_SCRIPCONTEXT, "passage=\"\""},
+    {"scripRef", THML_SCRIPREF, "passage=\"\""},
+    {"scripture", THML_SCRIPTURE, "passage=\"\""},
+    {"status", THML_STATUS, ""},
+    {"sync", THML_SYNC, "type=\"\" value\"\""},
+    {"term", THML_TERM, ""},
+    {"ThML", THML_THML, ""},
+    {"ThML.body", THML_THML_BODY, ""},
+    {"ThML.head", THML_THML_HEAD, ""},
+    {"tune", THML_TUNE, "tuneID=\"\""},
+    {"unclear", THML_UNCLEAR, ""},
+    {"verse", THML_VERSE, ""},
+    {"version", THML_VERSION, ""},
+    {"", INT_UNKNOWN, ""}
+};
+
+SwElementData HtmlElementData[] =
+{
+    {"a", THML_A, "href=\"\""},
+    {"abbr", THML_ABBR, "title=\"\""},
+    {"address", THML_ADDRESS, ""},
+    {"article", THML_ARTICLE, ""},
+    {"audio", THML_AUDIO, "controls"},
+    {"b", THML_B, ""},
+    {"blockquote", THML_BLOCKQUOTE, ""},
+    {"body", THML_BODY, ""},
+    {"br", THML_BR, ""},
+    {"caption", THML_CAPTION, ""},
+    {"cite", THML_CITE, ""},
+    {"col", THML_COL, "span=\"\""},
+    {"colgroup", THML_COLGROUP, ""},
+    {"dd", THML_DD, ""},
+    {"del", THML_DEL, ""},
+    {"details", THML_DETAILS, ""},
+    {"dfn", THML_DFN, ""},
+    {"div", THML_DIV, ""},
+    {"dl", THML_DL, ""},
+    {"dt", THML_DT, ""},
+    {"em", THML_EM, ""},
+    {"figcaption", THML_FIGCAPTION, ""},
+    {"figure", THML_FIGURE, ""},
+    {"footer", THML_FOOTER, ""},
+    {"head", THML_HEAD, ""},
+    {"header", THML_HEADER, ""},
+    {"hr", THML_HR, ""},
+    {"html", THML_HTML, ""},
+    {"h1", THML_H1, ""},
+    {"h2", THML_H2, ""},
+    {"h3", THML_H3, ""},
+    {"h4", THML_H4, ""},
+    {"h5", THML_H5, ""},
+    {"h6", THML_H6, ""},
+    {"i", THML_I, ""},
+    {"img", THML_IMG, "src=\"\" alt=\"\""},
+    {"ins", THML_INS, ""},
+    {"li", THML_LI, ""},
+    {"mark", THML_MARK, ""},
+    {"ol", THML_OL, ""},
+    {"p", THML_P, ""},
+    {"pre", THML_PRE, ""},
+    {"q", THML_Q, ""},
+    {"s", THML_S, ""},
+    {"samp", THML_SAMP, ""},
+    {"section", THML_SECTION, ""},
+    {"small", THML_SMALL, ""},
+    {"source", THML_SOURCE, "src=\"\" type=\"\""},
+    {"span", THML_SPAN, ""},
+    {"strike", THML_STRIKE, ""},
+    {"strong", THML_STRONG, ""},
+    {"sub", THML_SUB, ""},
+    {"summary", THML_SUMMARY, ""},
+    {"sup", THML_SUP, ""},
+    {"table", THML_TABLE, ""},
+    {"tbody", THML_TBODY, ""},
+    {"td", THML_TD, ""},
+    {"tfoot", THML_TFOOT, ""},
+    {"th", THML_TH, ""},
+    {"thead", THML_THEAD, ""},
+    {"time", THML_TIME, ""},
+    {"title", THML_TITLE, ""},
+    {"tr", THML_TR, ""},
+    {"u", THML_U, ""},
+    {"ul", THML_UL, ""},
+    {"video", THML_VIDEO, "controls"},
+    {"", INT_UNKNOWN, ""}
+};
+
+void SwThMLElements::GetThMLList(wxListCtrl * listCtrl)
+{
+    if (!listCtrl)
+        return;
+
+    SwStringW buffer;
+    wxListItem lItem;
+
+    for (swUI16 i = 0; ThMLElementData[i].elementId != INT_UNKNOWN; i ++)
+    {
+        lItem.Clear();
+        lItem.SetStateMask(wxLIST_MASK_TEXT|wxLIST_MASK_DATA);
+        lItem.SetColumn(0);
+        lItem.SetId(i);
+        buffer.Copy(ThMLElementData[i].name);
+        lItem.SetText(buffer.GetArray());
+        lItem.SetData(ThMLElementData[i].elementId);
+        listCtrl->InsertItem(lItem);
+    }
+}
+
+void SwThMLElements::GetElementList(SwString & buffer)
+{
+    for (swUI16 i = 0; HtmlElementData[i].elementId != INT_UNKNOWN; i ++)
+    {
+        if (i)
+            buffer += ' ';
+
+        buffer += HtmlElementData[i].name;
+    }
+
+    for (swUI16 i = 0; ThMLElementData[i].elementId != INT_UNKNOWN; i ++)
+    {
+        buffer += ' ';
+        buffer += ThMLElementData[i].name;
+    }
+}
+
+bool SwThMLElements::GetThMLElementData(swUI16 id, SwString & name, SwString & attributes)
+{
+    name.Reset();
+    attributes.Reset();
+
+    for (swUI16 i = 0; ThMLElementData[i].elementId != INT_UNKNOWN; i ++)
+    {
+        if (ThMLElementData[i].elementId == id)
+        {
+            name = ThMLElementData[i].name;
+            attributes = ThMLElementData[i].attributes;
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void SwThMLElements::GetHtmlList(wxListCtrl * listCtrl)
+{
+    if (!listCtrl)
+        return;
+
+    SwStringW buffer;
+    wxListItem lItem;
+
+    for (swUI16 i = 0; HtmlElementData[i].elementId != INT_UNKNOWN; i ++)
+    {
+        lItem.Clear();
+        lItem.SetStateMask(wxLIST_MASK_TEXT|wxLIST_MASK_DATA);
+        lItem.SetColumn(0);
+        lItem.SetId(i);
+        buffer.Copy(HtmlElementData[i].name);
+        lItem.SetText(buffer.GetArray());
+        lItem.SetData(HtmlElementData[i].elementId);
+        listCtrl->InsertItem(lItem);
+    }
+}
+
+bool SwThMLElements::GetHtmlElementData(swUI16 id, SwString & name, SwString & attributes)
+{
+    name.Reset();
+    attributes.Reset();
+
+    for (swUI16 i = 0; HtmlElementData[i].elementId != INT_UNKNOWN; i ++)
+    {
+        if (HtmlElementData[i].elementId == id)
+        {
+            name = HtmlElementData[i].name;
+            attributes = HtmlElementData[i].attributes;
+            return true;
+        }
+    }
+
+    return false;
+}
+

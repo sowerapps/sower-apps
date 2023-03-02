@@ -63,10 +63,10 @@ void InterfacePlugIn::OnInitialize()
     SwApplicationInterface::GetPreferences().GetTable().UpdateNode("Interface-PlugIn", GetName());
 }
 
-static InterfacePlugIn InterfacePlugIn;
+static InterfacePlugIn s_InterfacePlugIn;
 SwPlugIn * PlugInInitialize()
 {
-    return &InterfacePlugIn;
+    return &s_InterfacePlugIn;
 }
 
 
@@ -125,7 +125,19 @@ TVI_AlphaPanel::TVI_AlphaPanel(wxWindow *parent, wxWindowID id, const wxPoint &p
     path += PATH_SEP;
     path += "tv_alpha_uisession.gui";
 
+<<<<<<< Updated upstream
     SetFocus();
+=======
+    if (!CheckStartUpFile("tvi_alpha"))
+    {
+        SetFocus();
+
+        node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
+
+        if (node != NODE_ID_INVALID && SwString::BoolFromString(SwApplicationInterface::GetPreferences().GetTable().GetNodeData(node)))
+        {
+            SwGuiMlParser parser;
+>>>>>>> Stashed changes
 
     node = SwApplicationInterface::GetPreferences().GetTable().FindItemById("Save-Session");
 

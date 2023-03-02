@@ -81,7 +81,7 @@ class SOWERBASEEXP SwReferenceData
 public :
     SwReferenceData();
     virtual ~SwReferenceData();
-    void Display();
+    void Reset();
 
     swUI8    book;
     swUI8    chapter;
@@ -89,6 +89,10 @@ public :
     swUI8    verseEnd;
     swUI16   strongs;
     swUI8    referenceType;
+    swUI32   bookposStart;
+    swUI32   bookposEnd;
+    swUI32   chapterposStart;
+    swUI32   verseposStart;
     SwString buffer;
 };
 
@@ -112,6 +116,7 @@ class SOWERBASEEXP SwStandardBible
 {
 public :
     static swUI8 Get_KJV_BookChapters(swUI8 book);
+    static bool IsSingleChapterBook(swUI8 book);
     static swUI8 Get_KJV_ChapterVerses(swUI8 book, swUI8 chapter);
     static swUI8 Verify_KJV_Reference(swUI8 book, swUI8 chapter, swUI8 verse);
     static swUI8 Get_kJV_BookTitle(swUI8 book, swUI8 flags, SwString & buffer);

@@ -16,6 +16,25 @@
 #include "../../include/controls/thmltreectrl.h"
 #include "../../include/richtext/richtextctrlext.h"
 
+bool SwDialog::SelectProjectFile(wxWindow * parent, SwString & filePath, const char * dir)
+{
+    wxString p;
+
+    if (dir)
+        p = dir;
+
+    wxFileDialog fileDlg(parent, "", p, "", SwApplicationInterface::GetControlString("SID_PRJFILTER", L"Sower Project files (*.swprj)|*.swprj"), wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+
+    if (fileDlg.ShowModal() == wxID_CANCEL)
+    {
+        return false;
+    }
+
+    filePath = fileDlg.GetPath().utf8_str();
+
+    return true;
+}
+
 bool SwDialog::SelectThMLFile(wxWindow * parent, SwString & filePath, const char * dir)
 {
     wxString p;
@@ -24,6 +43,44 @@ bool SwDialog::SelectThMLFile(wxWindow * parent, SwString & filePath, const char
         p = dir;
 
     wxFileDialog fileDlg(parent, "", p, "", SwApplicationInterface::GetControlString("SID_THMLFILTER", L"ThML files (*.thm)|*.thm"), wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+
+    if (fileDlg.ShowModal() == wxID_CANCEL)
+    {
+        return false;
+    }
+
+    filePath = fileDlg.GetPath().utf8_str();
+
+    return true;
+}
+
+bool SwDialog::SelectHtmlThMLFile(wxWindow * parent, SwString & filePath, const char * dir)
+{
+    wxString p;
+
+    if (dir)
+        p = dir;
+
+    wxFileDialog fileDlg(parent, "", p, "", SwApplicationInterface::GetControlString("SID_HTMLTHMLFILTER", L"Html files (*.htm;*html)|*.htm;*html|ThML files (*.thm)|*.thm|Sower project files (*.swprj)|*.swprj"), wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+
+    if (fileDlg.ShowModal() == wxID_CANCEL)
+    {
+        return false;
+    }
+
+    filePath = fileDlg.GetPath().utf8_str();
+
+    return true;
+}
+
+bool SwDialog::SaveAsHtmlThMLFile(wxWindow * parent, SwString & filePath, const char * dir)
+{
+    wxString p;
+
+    if (dir)
+        p = dir;
+
+    wxFileDialog fileDlg(parent, "", p, "", SwApplicationInterface::GetControlString("SID_HTMLTHMLFILTER", L"Html files (*.htm;*html)|*.htm;*html|ThML files (*.thm)|*.thm|Sower project files (*.swprj)|*.swprj"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
 
     if (fileDlg.ShowModal() == wxID_CANCEL)
     {
@@ -62,6 +119,44 @@ bool SwDialog::SelectModuleFile(wxWindow * parent, SwString & filePath, const ch
         p = dir;
 
     wxFileDialog fileDlg(parent, "", p, "", SwApplicationInterface::GetControlString("SID_MODULEFILTER", L"Sower Modules (*.smd)|*.smd"), wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+
+    if (fileDlg.ShowModal() == wxID_CANCEL)
+    {
+        return false;
+    }
+
+    filePath = fileDlg.GetPath().utf8_str();
+
+    return true;
+}
+
+bool SwDialog::SaveAsModuleFile(wxWindow * parent, SwString & filePath, const char * dir)
+{
+    wxString p;
+
+    if (dir)
+        p = dir;
+
+    wxFileDialog fileDlg(parent, "", p, "", SwApplicationInterface::GetControlString("SID_MODULEFILTER", L"Sower Modules (*.smd)|*.smd"), wxFD_SAVE|wxFD_OVERWRITE_PROMPT);
+
+    if (fileDlg.ShowModal() == wxID_CANCEL)
+    {
+        return false;
+    }
+
+    filePath = fileDlg.GetPath().utf8_str();
+
+    return true;
+}
+
+bool SwDialog::SelectBz2ModuleFile(wxWindow * parent, SwString & filePath, const char * dir)
+{
+    wxString p;
+
+    if (dir)
+        p = dir;
+
+    wxFileDialog fileDlg(parent, "", p, "", SwApplicationInterface::GetControlString("SID_BZMODULE", L"Compressed Modules (*.smd.bz2)|*.smd.bz2"), wxFD_OPEN|wxFD_FILE_MUST_EXIST);
 
     if (fileDlg.ShowModal() == wxID_CANCEL)
     {

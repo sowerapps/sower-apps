@@ -382,10 +382,19 @@ public:
         if (!name || !value || GetNodeType(node) == NODE_TYPE_BINARY || GetNodeType(node) == NODE_TYPE_TEXT_RUN)
             return false;
 
-        if (!name || !value || !DeleteNamedValueFromNode(node, name))
+        SwString tag, attribute;
+
+        if (!name || !value || !GetNodeData(node, tag))
             return false;
 
-        return InsertNamedValueInNode(node, name, value);
+        DeleteNamedValue(tag, name, true);
+        attribute = name;
+        attribute += "=\"";
+        attribute += value;
+        attribute += "\"";
+        InsertAttribute(tag, attribute, false);
+
+        return ReplaceNode(node, tag);
     }
 
     bool DeleteNamedValueFromNode(swUI32 node, const char * name)
@@ -715,7 +724,6 @@ public:
     static bool GetNamedValue(const char * name, const char * source, SwString & dest);
     static bool GetNamedValuePos(const char * source, const char * name, swUI32 & begin, swUI32 & end);
     static bool DeleteNamedValue(SwString & tag, const char * name, bool despace);
-    static bool InsertNamedValue(SwString & tag, const char * name, const char * value, bool despace);
     static bool InsertAttribute(SwString & tag, const char * attribute, bool despace);
     static swUI32 FindInsertPosition(const char * tag);
 
@@ -747,8 +755,8 @@ protected:
 
 enum MARKUP_TYPE
 {
-    MARKUP_UNKNOWN, MARKUP_NONE, MARKUP_HTML,
-    MARKUP_THML, MARKUP_SWGUI,
+    MARKUP_UNKNOWN, MARKUP_NONE, MARKUP_HTML, MARKUP_THML,
+    MARKUP_SWGUI, MARKUP_SWOPF, MARKUP_SWPRJ,
     N_MARKUP
 };
 
