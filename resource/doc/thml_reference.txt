@@ -1,0 +1,2 @@
+The source for information on ThML in thml.thm, and thml.smd is:
+https://www.ccel.org/ThML/ThML1.04.htm
