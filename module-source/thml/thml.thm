@@ -1,0 +1,377 @@
+<ThML>
+<ThML.head>
+<electronicEdInfo>
+<DC>
+<DC.Title>ThML</DC.Title>
+<DC.Subject scheme="sw">Reference</DC.Subject>
+<DC.Source scheme="URL">https://www.ccel.org/ThML/ThML1.04.htm</DC.Source>
+</DC>
+</electronicEdInfo>
+</ThML.head>
+<ThML.body>
+
+<div1 type="" n="i" title="ThML">
+
+<term>added</term>
+<def>
+<p>Used to mark sections that have been added and do not appear in the print edition.<br>Attributes :<br><b>resp</b> - the person responsible for the changes.<br> <b>reason</b> - reason for the change.<br><b>date</b> - time of the change.</p>
+</def>
+
+<term>argument</term>project
+<def>
+<p>Section topic.<br>Attributes : none</p>
+</def>
+
+<term>attr</term>
+<def>
+<p>Attributions of authors.<br>Attributes : none</p>
+</def>
+
+<term>author</term>
+<def>
+<p>Author of a work.<br>Attributes :<br><b>authorID</b> - assigned identifier of author.<br><b>type</b> - type of the identifier.</p>
+</def>
+
+<term>authorid</term>
+<def>
+<p>Author ID as assigned by publisher.<br>Attributes : none</p>
+</def>
+
+<term>bookid</term>
+<def>
+<p>Book ID as assigned by publisher.<br>Attributes : none</p>
+</def>
+
+<term>citation</term>
+<def>
+<p>Citations of other works.<br>Attributes :<br><b>href</b> - location of referenced work.</p>
+</def>
+
+<term>comments</term>
+<def>
+<p>Any additional comments as a child of the electronicEdInfo, or generalInfo section of a ThML file.<br>Attributes : none</p>
+</def>
+
+<term>composer</term>
+<def>
+<p>Composer of a work.<br>Attributes :<br><b> - composerId - assigned identifier of composer.<br><b>type</b> - type of the identifier.</p>
+</def>
+
+<term>copyLocation</term>
+<def>
+<p>Location of the print source as a child of the printSourceInfo section of a ThML file.<br>Attributes : none</p>
+</def>
+
+<term>date</term>
+<def>
+<p>Any date or time.<br>Attributes :<br><b>value<b> - date.</p>
+</def>
+
+<term>DC</term>
+<def>
+<p>Dublin Core section as a child of the electronicEdInfo section of a ThML file.<br>Attributes : none</p>
+</def>
+
+<term>DC.Contributor</term>
+<def>
+<p>Information about the transcriber, typist, or person responsible for markup.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Coverage</term>
+<def>
+<p>Spatial or temporal topic of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Creator</term>
+<def>
+<p>Author of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Date</term>
+<def>
+<p>Date of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Description</term>
+<def>
+<p>Description of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Format</term>
+<def>
+<p>Format of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Identifier</term>
+<def>
+<p>Standard identifier.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Language</term>
+<def>
+<p>Language of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Publisher</term>
+<def>
+<p>Publisher of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Relation</term>
+<def>
+<p>A related resource.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Rights</term>
+<def>
+<p>Copyright status of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Source</term> 
+<def>
+<p>Source of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Subject</term>
+<def>
+<p>Subject of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Title</term>
+<def>
+<p>Title of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>DC.Type</term>
+<def>
+<p>Genre of the work.<br>Attributes :<br><b>lang</b>- the language in an ISO639-1 representation.<br>scheme</b> - identifies the representational scheme.<b>sub</b> - subtype.</p>
+</def>
+
+<term>def</term>
+<def>
+<p>Definition from glossary.<br>Attributes : none</p>
+</def>
+
+<term>deleted</term>
+<def>
+<p>Sections from the print edition that should not appear when the book is presented.<br>Attributes :<br><b>resp</b> - the person responsible for the changes.<br> <b>reason</b> - reason for the change.<br><b>date</b> - time of the change.</p>
+</def>
+
+<term>description</term>
+<def>
+<p>Textual description of the work.<br>Attributes : none</p>
+</def>
+
+<term>div1</term>
+<def>
+<p>A structural division within a work.<br>Attributes :<br><b>title</b> - title of the division.<br><b>type</b> - chapter, index, etc.<br><b>n</b> - number of the division.</p>
+</def>
+
+<term>div2</term>
+<def>
+<p>A structural division within a work.<br>Attributes :<br><b>title</b> - title of the division.<br><b>type</b> - chapter, index, etc.<br><b>n</b> - number of the division.</p>
+</def>
+
+<term>div3</term>
+<def>
+<p>A structural division within a work.<br>Attributes :<br><b>title</b> - title of the division.<br><b>type</b> - chapter, index, etc.<br><b>n</b> - number of the division.</p>
+</def>
+
+<term>div4</term>
+<def>
+<p>A structural division within a work.<br>Attributes :<br><b>title</b> - title of the division.<br><b>type</b> - chapter, index, etc.<br><b>n</b> - number of the division.</p>
+</def>
+
+<term>div5</term>
+<def>
+<p>A structural division within a work.<br>Attributes :<br><b>title</b> - title of the division.<br><b>type</b> - chapter, index, etc.<br><b>n</b> - number of the division.</p>
+</def>
+
+<term>div6</term>
+<def>
+<p>A structural division within a work.<br>Attributes :<br><b>title</b> - title of the division.<br><b>type</b> - chapter, index, etc.<br><b>n</b> - number of the division.</p>
+</def>
+
+<term>editorialComments</term>
+<def>
+<p>Comments about editorial practices.<br>Attributes : none</p>
+</def>
+
+<term>electronicEdInfo</term>
+<def>
+<p>Information for the electronic version of the work. Also contains the Dublin Core for the work.<br>Attributes : none</p>
+</def>
+
+<term>firstpublished</term>
+<def>
+<p>Date first published in any edition.<br>Attributes : none</p>
+</def>
+
+<term>foreign</term>
+<def>
+<p>Passages in languages other than the primary language of the work.<br>Attributes :<br><b>lang</b> - ISO 639 identifier.</p>
+</def>
+
+<term>generalinfo</term>
+<def>
+<p>Information about the work that is not specific to the electronic edition or the print edition.<br>Attributes :</p>
+</def>
+
+<term>glossary</term>
+<def>
+<p>Contains a glossary.<br>Attributes :<br><b>type</b> - type of glossary.</p>
+</def>
+
+<term>hymn</term>
+<def>
+<p> Attributes :</p>
+</def>
+
+<term>image</term>
+<def>
+<p>Location of mages of print source.<br>Attributes :<br><b>type</b> - description of the image, or images.<br><b>href</b> - location.</p>
+</def>
+
+<term>incipit</term>
+<def>
+<p>First line of the melody as it would be if transposed to C, using f and s for accidentals.<br>Attributes :<br><b>value</b> - the notes.</p>
+</def>
+
+<term>index</term>
+<def>
+<p>A point in the text marked for insertion into an index<br>Attributes :<br><b>type</b> - used to identify the index that this reference is to be added to.<br><b>title</b> -  the identifier in the Table of Contents.<br><b>subject1 - subject4</b> - classification.<br><b>subjectId</b> - identifier in a classification scheme.</p>
+</def>
+
+<term>insertindex</term>
+<def>
+<p>Insert an index.<br>Attributes :<br><b>type</b> - elements to be added to the index.</p>
+</def>
+
+<term>l</term>
+<def>
+<p>Line of a stanza or verse.<br>Attributes :<br><b>class<b> - to specify indentation (t1, t2, t3).</p>
+</def>
+
+<term>meter</term>
+<def>
+<p>Contains the meter as represented in a hymnal.<br>Attributes :<br><b>standard</b> -  the meter in a standardized form.</p>
+</def>
+
+<term>music</term>
+<def>
+<p>A link to an electronic format for the music.<br>Attributes :<br><b>href</b> - location of the music.<br><b>inline</b> - loads image in the same page.<br><b>actuate</b> - automatically play, or display.<br><b>type</b> - type of media.</p>
+</def>
+
+<term>name</term>
+<def>
+<p>Marks a name.<br>Attributes :<br><b>title</b> - a different representation of the name.</p>
+</def>
+
+<term>note</term>
+<def>
+<p> Attributes :<br><b>place</b> - where the note appears in the text.<br><b>resp</b> - identifies the person responsible for the note.<br><b>target</b> -  start of the text being annotated.<br><b>targetEnd</b> - of the text being annotated .<br><b>n</b> -  gives the marker to use to show the footnote point in the text.<br><b>anchored</b> - specifies whether the note is anchored at an exact location.</p>
+</def>
+
+<term>pb</term>
+<def>
+<p>Page break in print edition.<br>Attributes :<br><b>n</b> - page number.<br><b>href</b>- location of page image.</p>
+</def>
+
+<term>printsourceinfo</term>
+<def>
+<p>Information specific to the print source from which the electronic text was derived. It may contain these elements published, copyLocation, and image.<br>Attributes : none</p>
+</def>
+
+<term>pubhistory</term>
+<def>
+<p>Any available information on the publication history.<br>Attributes : none</p>
+</def>
+
+<term>published</term>
+<def>
+<p>Publication information of the print source.<br>Attributes : none</p>
+</def>
+
+<term>publisherid</term>
+<def>
+<p>Publisher code of electronic edition.<br>Attributes : none</p>
+</def>
+
+<term>revisionhistory</term>
+<def>
+<p>A list of published editions and changes between them.<br>Attributes : none</p>
+</def>
+
+<term>scripCom</term>
+<def>
+<p>Commentary on a section of scripture.<br>Attributes :<br><b>passage</b> - book chapter:first verse-last verse.<br><b>parsed</b> - version|book|chapter|first verse|last verse.<br><b>version</b> - identifier.<br><b>type</b> - type of commentary.</p>
+</def>
+
+<term>scripContext</term>
+<def>
+<p>Sets the default version, book, or chapter for succeeding references.<br>Attributes :<br><b>passage</b> - book chapter.<br><b>parsed</b> - version|book|chapter.<br><b>version</b> - identifier.</p>
+</def>
+
+<term>scripRef</term>
+<def>
+<p>A reference to scripture.<br>Attributes :<br><b>passage</b> - book chapter:first verse-last verse.<br><b>parsed</b> - version|book|chapter|first verse|last verse.<br><b>version</b> - identifier.</p>
+</def>
+
+<term>scripture</term>
+<def>
+<p>Quotation, or verse of scripture.<br>Attributes :<br><b>passage</b> - book chapter:verse.<br><b>parsed</b> - version|book|chapter|verse.<br><b>version</b> - identifier.</p>
+</def>
+
+<term>status</term>
+<def>
+<p>Current status of text.<br>Attributes : none</p>
+</def>
+
+<term>sync</term>
+<def>
+<p>information to be used for symbolic cross-referencing.<br>Attributes :<b>type</b> - type of data being represented.<br><b>value</b> - reference data.</p>
+</def>
+
+<term>term</term>
+<def>
+<p>Term from glossary.<br>Attributes : none</p>
+</def>
+
+<term>ThML</term>
+<def>
+<p>Contains the contents of a ThML file.<br>Attributes : none</p>
+</def>
+
+<term>ThML.body</term>
+<def>
+<p>Contains the main body of the work. It exists within the ThML element, and follows the ThML.head element.<br>Attributes : none</p>
+</def>
+
+<term>ThML.head</term>
+<def>
+<p>Contains css, and information elements of the ThML file. It should be the first child of the ThML element.<br>Attributes : none</p>
+</def>
+
+<term>tune</term>
+<def>
+<p>Contains the name of a tune.<br>Attributes :<br><b>tuneID</b> - identifier of the tune.</p>
+</def>
+
+<term>unclear</term>
+<def>
+<p>Unclear or uncertain text.<br>Attributes : none</p>
+</def>
+
+<term>verse</term>
+<def>
+<p>A stanza, verse, or other unit of verse.<br>Attributes :</p>
+</def>
+
+<term>version</term>
+<def>
+<p>Edition or version of electronic edition.<br>Attributes : none</p>
+</def>
+
+<div1>
+</ThML.body>
+</ThML>
