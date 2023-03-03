@@ -1,0 +1,1289 @@
+<html>
+<head>
+<meta content="text/html; charset=utf8" http-equiv="content-type">
+</head>
+<body>
+<datalist id="String Identifiers">
+<option value="SID_ABBREVIATION"/>
+<option value="SID_ABBREVIATIONINUSE"/>
+<option value="SID_ABBREVIATIONLENGTH"/>
+<option value="SID_ABOUT"/>
+<option value="SID_ADD"/>
+<option value="SID_ALLFILES"/>
+<option value="SID_ALLOWCOPY"/>
+<option value="SID_APPLICATION"/>
+<option value="SID_AREAS"/>
+<option value="SID_AUTODEFACCESS"/>
+<option value="SID_AUTODEFFONTSIZE"/>
+<option value="SID_BOOKMARKS"/>
+<option value="SID_BOTTOM"/>
+<option value="SID_BREAK"/>
+<option value="SID_BUILD"/>
+<option value="SID_BUILDCOMPLETE"/>
+<option value="SID_BUILDFAILED"/>
+<option value="SID_BUILDINGMODULE"/>
+<option value="SID_BZMODULE"/>
+<option value="SID_CANCEL"/>
+<option value="SID_CASESENSITIVE"/>
+<option value="SID_CATALOGCARD"/>
+<option value="SID_CATEGORY"/>
+<option value="SID_CLOSE"/>
+<option value="SID_COMMENTARY"/>
+<option value="SID_COMPRESS"/>
+<option value="SID_COMPRESSINGMODULE"/>
+<option value="SID_CONFIRM"/>
+<option value="SID_CONTENTS"/>
+<option value="SID_COPYRIGHT"/>
+<option value="SID_CREATOR"/>
+<option value="SID_CSSFILE"/>
+<option value="SID_CSSFILTER"/>
+<option value="SID_CURRENTTABLE"/>
+<option value="SID_CVDIV"/>
+<option value="SID_DATA"/>
+<option value="SID_DATE"/>
+<option value="SID_DEGREES"/>
+<option value="SID_DELETE"/>
+<option value="SID_DIVISION"/>
+<option value="SID_DRAWCOLOR"/>
+<option value="SID_EDIT"/>
+<option value="SID_ENCRYPT"/>
+<option value="SID_ENCRYPTED"/>
+<option value="SID_ENCRYPTIONNOTAVAILABLE"/>
+<option value="SID_ERROR"/>
+<option value="SID_ERRORS"/>
+<option value="SID_FAILEDTOCREATEFILE"/>
+<option value="SID_FILLCOLOR"/>
+<option value="SID_FIND"/>
+<option value="SID_FIND-REPLACE"/>
+<option value="SID_FINDNEXT"/>
+<option value="SID_FINISHED"/>
+<option value="SID_FIRSTLETTERUPPERCASE"/>
+<option value="SID_FONT"/>
+<option value="SID_FONTSIZE"/>
+<option value="SID_FORMAT"/>
+<option value="SID_GENERATE"/>
+<option value="SID_GEO"/>
+<option value="SID_GROUP"/>
+<option value="SID_HELP"/>
+<option value="SID_HTML"/>
+<option value="SID_HTMLFILTER"/>
+<option value="SID_HTMLTHMLFILTER"/>
+<option value="SID_IDENTIFIER"/>
+<option value="SID_IDENTIFIERALREADYEXISTS"/>
+<option value="SID_IDENTIFIERINUSE"/>
+<option value="SID_IDENTIFIERLENGTH"/>
+<option value="SID_IDENTIFIERS"/>
+<option value="SID_IMAGE"/>
+<option value="SID_IMGFILTER"/>
+<option value="SID_INFORMATION"/>
+<option value="SID_INLININGCSS"/>
+<option value="SID_INSERTHORIZONTALRULE"/>
+<option value="SID_INSERTIMAGE"/>
+<option value="SID_INSTALL"/>
+<option value="SID_INTERFACE"/>
+<option value="SID_INVALIDPASSWORD"/>
+<option value="SID_ITEM"/>
+<option value="SID_JOURNEYS"/>
+<option value="SID_KEYGENERATED"/>
+<option value="SID_LANGUAGE"/>
+<option value="SID_LATITUDE"/>
+<option value="SID_LEFT"/>
+<option value="SID_LIBRARY"/>
+<option value="SID_LOAD"/>
+<option value="SID_LONGITUDE"/>
+<option value="SID_LOOP"/>
+<option value="SID_MAPAREAS"/>
+<option value="SID_MAPS"/>
+<option value="SID_MARKERS"/>
+<option value="SID_MASTERKEYS"/>
+<option value="SID_MEDIA"/>
+<option value="SID_MM"/>
+<option value="SID_MODLIBLOCATION"/>
+<option value="SID_MODULE"/>
+<option value="SID_MODULEFAILED"/>
+<option value="SID_MODULEFILTER"/>
+<option value="SID_MODULEINSTALLED"/>
+<option value="SID_MODULEINSTALLFAILED"/>
+<option value="SID_MODULELIBRARY"/>
+<option value="SID_MODULELOADED"/>
+<option value="SID_MODULENOTENCRYPTED"/>
+<option value="SID_MODULEPATHINVALID"/>
+<option value="SID_MODULEUPTODATE"/>
+<option value="SID_NAME"/>
+<option value="SID_NEW"/>
+<option value="SID_NOTES"/>
+<option value="SID_OK"/>
+<option value="SID_OPENFILE"/>
+<option value="SID_ORIGINALFILENAME"/>
+<option value="SID_ORIGINALFILENAMELENGTH"/>
+<option value="SID_PARAGRAPH"/>
+<option value="SID_PARAMETER1"/>
+<option value="SID_PARAMETER2"/>
+<option value="SID_PARSING"/>
+<option value="SID_PASSWORD"/>
+<option value="SID_PASSWORDLENGTH"/>
+<option value="SID_PATH"/>
+<option value="SID_PAUSE"/>
+<option value="SID_PERCENT"/>
+<option value="SID_PIXELPOSITION"/>
+<option value="SID_PLACES"/>
+<option value="SID_PLAY"/>
+<option value="SID_PLAYPOSITION"/>
+<option value="SID_PLUGINS"/>
+<option value="SID_PNGFILTER"/>
+<option value="SID_POSITION"/>
+<option value="SID_PREFERENCES"/>
+<option value="SID_PRINT"/>
+<option value="SID_PRJFILTER"/>
+<option value="SID_PROCESSING"/>
+<option value="SID_PROCESSINGDIVISION"/>
+<option value="SID_PROCESSREFERENCES"/>
+<option value="SID_PROCESSTERMINATED"/>
+<option value="SID_PT"/>
+<option value="SID_PUBLISHER"/>
+<option value="SID_PUBLISHERNAMELENGTH"/>
+<option value="SID_PX"/>
+<option value="SID_RADIUS"/>
+<option value="SID_REFERENCE"/>
+<option value="SID_RENAME"/>
+<option value="SID_REPLACE"/>
+<option value="SID_REPLACEALL"/>
+<option value="SID_REPLACEWITH"/>
+<option value="SID_REQUESTSAVE"/>
+<option value="SID_RESOURCES"/>
+<option value="SID_RIGHT"/>
+<option value="SID_RIGHTS"/>
+<option value="SID_ROMANLOWERCASE"/>
+<option value="SID_ROMANNUMERALCHAPTERS"/>
+<option value="SID_ROMANNUMERALVERSES"/>
+<option value="SID_SAVE"/>
+<option value="SID_SAVEAS"/>
+<option value="SID_SAVECHANGES"/>
+<option value="SID_SAVEFILE"/>
+<option value="SID_SAVESESSION"/>
+<option value="SID_SCHEME"/>
+<option value="SID_SCRIPTURE"/>
+<option value="SID_SDFEDITOR"/>
+<option value="SID_SDFFILTER"/>
+<option value="SID_SEARCH"/>
+<option value="SID_SEARCHFOR"/>
+<option value="SID_SELECTAFILE"/>
+<option value="SID_SELECTDIR"/>
+<option value="SID_SELECTFILES"/>
+<option value="SID_SKIP"/>
+<option value="SID_SKIPPING"/>
+<option value="SID_SKIPPINGMSG1"/>
+<option value="SID_SKIPPINGMSG2"/>
+<option value="SID_SMDFILTER"/>
+<option value="SID_SOURCE"/>
+<option value="SID_SOURCEINVALID"/>
+<option value="SID_SOWER"/>
+<option value="SID_SOWERCONFIGURATION"/>
+<option value="SID_SOWERHELP"/>
+<option value="SID_SOWERKEYGENERATOR"/>
+<option value="SID_SOWERLIBRARIAN"/>
+<option value="SID_SOWERMAPEDITOR"/>
+<option value="SID_SOWERMODULEINSPECTOR"/>
+<option value="SID_SOWERMODULEINSTALLER"/>
+<option value="SID_SOWERMODULEWRITER"/>
+<option value="SID_SOWERPROJECTWRITER"/>
+<option value="SID_SOWERTHEMEEDITOR"/>
+<option value="SID_SOWERTRANSLATIONEDITOR"/>
+<option value="SID_SPAN"/>
+<option value="SID_STATUS"/>
+<option value="SID_STOP"/>
+<option value="SID_STRONGSGREEK"/>
+<option value="SID_STRONGSHEBREW"/>
+<option value="SID_SUBJECT"/>
+<option value="SID_SWMARKUPEDITOR"/>
+<option value="SID_SWPRJML"/>
+<option value="SID_TABLEEXISTS"/>
+<option value="SID_TABLES"/>
+<option value="SID_TARGET"/>
+<option value="SID_TERM"/>
+<option value="SID_TERMINATINGMSG"/>
+<option value="SID_THEME"/>
+<option value="SID_THEMES"/>
+<option value="SID_ThML"/>
+<option value="SID_THMLBUILDER"/>
+<option value="SID_THMLFILTER"/>
+<option value="SID_THMLLIBLOCATION"/>
+<option value="SID_THMLLIBRARY"/>
+<option value="SID_THMLVIEWER"/>
+<option value="SID_TITLE"/>
+<option value="SID_TITLEINUSE"/>
+<option value="SID_TITLELENGTH"/>
+<option value="SID_TOP"/>
+<option value="SID_TRANSPARENT"/>
+<option value="SID_TREATLINEBREAKSASSPACE"/>
+<option value="SID_TYPE"/>
+<option value="SID_UNABLETOOPENFILE"/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value="SID_UPDATE"/>
+<option value="SID_USER"/>
+<option value="SID_USERKEYS"/>
+<option value="SID_VALUE"/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+<option value=""/>
+</datalist>
+
+<table border="1" width="100%%">
+<caption>English (US)</caption>
+<tbody>
+<tr param1="0" param2="0">
+<td>SID_ABBREVIATION</td>
+<td>Abbreviation</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ABBREVIATIONINUSE</td>
+<td>Abbreviation in use.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ABBREVIATIONLENGTH</td>
+<td>Abbreviation must be 3 - 12 characters.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ABOUT</td>
+<td>About</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ADD</td>
+<td>Add</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ALLFILES</td>
+<td>All files</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ALLOWCOPY</td>
+<td>Allow Copy</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_APPLICATION</td>
+<td>Application</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_AREAS</td>
+<td>Areas</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_AUTODEFACCESS</td>
+<td>Allow AutoDef to access:</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_AUTODEFFONTSIZE</td>
+<td>AutoDef Font Size</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BOOKMARKS</td>
+<td>Bookmarks</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BOTTOM</td>
+<td>Bottom</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BREAK</td>
+<td>Break</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BUILD</td>
+<td>Build</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BUILDCOMPLETE</td>
+<td>Build complete.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BUILDFAILED</td>
+<td>Build failed.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BUILDINGMODULE</td>
+<td>Building module.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_BZMODULE</td>
+<td>Compressed Modules (*.smd.bz2)|*.smd.bz2</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CANCEL</td>
+<td>Cancel</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CASESENSITIVE</td>
+<td>Case Sensitive</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_ALLTEXT</td>
+<td>All Text</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_ART</td>
+<td>Art</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_BIBLE</td>
+<td>Bible</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_BIBLECOMMENTARY</td>
+<td>Bible Commentary</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_BIBLESTORY</td>
+<td>Bible Story</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_BIBLESTUDY</td>
+<td>Bible Study</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_BIOGRAPHY</td>
+<td>Biography</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_DEVOTIONAL</td>
+<td>Devotional</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_DICTIONARY</td>
+<td>Dictionary</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_ENCYCLOPEDIA</td>
+<td>Encyclopedia</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_ETHICS</td>
+<td>Ethics</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_FICTION</td>
+<td>Fiction</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_GENERAL</td>
+<td>General</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_HELP</td>
+<td>Help</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_HISTORY</td>
+<td>History</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_HYMNAL</td>
+<td>Hymnal</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_LEXICON</td>
+<td>Lexicon</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_MAP</td>
+<td>Map</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_MEDIA</td>
+<td>Media</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_MYSTICISM</td>
+<td>Mysticism</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_PRAYER</td>
+<td>Prayer</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_REFERENCE</td>
+<td>Reference</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_SCIENCE</td>
+<td>Science</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_SERMON</td>
+<td>Sermon</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_SYMBOLS</td>
+<td>Symbols</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_THEOLOGY</td>
+<td>Theology</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_TOPICALINDEX</td>
+<td>Topical Index</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_UNKNOWN</td>
+<td>Unknown</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CAT_WORSHIP</td>
+<td>Worship</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CATALOGCARD</td>
+<td>Catalog Card</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CATEGORY</td>
+<td>Category</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CLOSE</td>
+<td>Close</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_COMMENTARY</td>
+<td>Commentary</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_COMPRESS</td>
+<td>Compress</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_COMPRESSINGMODULE</td>
+<td>Compressing module.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CONFIRM</td>
+<td>Confirm</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CONTENTS</td>
+<td>Contents</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_COPYRIGHT</td>
+<td>Copyright</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CREATOR</td>
+<td>Creator</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CSSFILE</td>
+<td>Css File</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CSSFILTER</td>
+<td>Css files (*.css)|*.css</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_2D</td>
+<td>2D</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_3D</td>
+<td>3D</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_AUDIO</td>
+<td>Audio</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_HTML</td>
+<td>Html</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_HYMN</td>
+<td>Hymn</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_IMAGE</td>
+<td>Image</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_LESSON</td>
+<td>Lesson</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_MAP</td>
+<td>Map</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_TEXT</td>
+<td>Text</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_THML</td>
+<td>ThML</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_UNKNOWN</td>
+<td>Unknown</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CTTYPE_VIDEO</td>
+<td>Video</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CURRENTTABLE</td>
+<td>Current Table</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_CVDIV</td>
+<td>Chap. Vs. division</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_DATA</td>
+<td>Data</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_DATE</td>
+<td>Date</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_DEGREES</td>
+<td>Degrees</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_DELETE</td>
+<td>Delete</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_DIVISION</td>
+<td>Division</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_DRAWCOLOR</td>
+<td>Draw Color</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_EDIT</td>
+<td>Edit</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ENCRYPT</td>
+<td>Encrypt</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ENCRYPTED</td>
+<td>Encrypted</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ENCRYPTIONNOTAVAILABLE</td>
+<td>Encryption not available.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ERROR</td>
+<td>Error</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ERRORS</td>
+<td>Errors</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FAILEDTOCREATEFILE</td>
+<td>Failed to create file.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FILLCOLOR</td>
+<td>Fill Color</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FIND</td>
+<td>Find</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FIND-REPLACE</td>
+<td>Find - Replace</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FINDNEXT</td>
+<td>Find Next</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FINISHED</td>
+<td>Finished.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FIRSTLETTERUPPERCASE</td>
+<td>First letter of book names must be upper case.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FONT</td>
+<td>Font</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FONTSIZE</td>
+<td>Font Size</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_FORMAT</td>
+<td>Format</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_GENERATE</td>
+<td>Generate</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_GEO</td>
+<td>Geo</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_GROUP</td>
+<td>Group</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_HELP</td>
+<td>Help</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_HTML</td>
+<td>Html</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_HTMLFILTER</td>
+<td>Html files (*.htm;*.html)|*.htm;*.html</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_HTMLTHMLFILTER</td>
+<td>Html files (*.htm;*html)|*.htm;*html|ThML files (*.thm)|*.thm|Sower project files (*.swprj)|*.swprj</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_IDENTIFIER</td>
+<td>Identifier</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_IDENTIFIERALREADYEXISTS</td>
+<td>Identifier already exists.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_IDENTIFIERINUSE</td>
+<td>Identifier in use.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_IDENTIFIERLENGTH</td>
+<td>Identifier must be 7 - 12 characters.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_IDENTIFIERS</td>
+<td>Identifiers</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_IMAGE</td>
+<td>Image</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_IMGFILTER</td>
+<td>All image files|*.bmp;*.gif;*.png;*.jpg|BMP files (*.bmp)|*.bmp|GIF files (*.gif)|*.gif|PNG files (*.png)|*.png|JPG files (*.jpg)|*.jpg</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_INFORMATION</td>
+<td>Information</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_INLININGCSS</td>
+<td>Inlining CSS.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_INSERTHORIZONTALRULE</td>
+<td>Insert Horizontal Rule</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_INSERTIMAGE</td>
+<td>Insert Image</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_INSTALL</td>
+<td>Install</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_INTERFACE</td>
+<td>Interface</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_INVALIDPASSWORD</td>
+<td>Invalid password!</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ITEM</td>
+<td>Item</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_JOURNEYS</td>
+<td>Journeys</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_KEYGENERATED</td>
+<td>Key generated.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_LANGUAGE</td>
+<td>Language</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_LATITUDE</td>
+<td>Latitude</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_LEFT</td>
+<td>Left</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_LIBRARY</td>
+<td>Library</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_LOAD</td>
+<td>Load</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_LONGITUDE</td>
+<td>Longitude</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_LOOP</td>
+<td>Loop</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MAPAREAS</td>
+<td>Map Areas</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MAPS</td>
+<td>Maps</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MARKERS</td>
+<td>Markers</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MASTERKEYS</td>
+<td>Master Keys</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MEDIA</td>
+<td>Media</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MM</td>
+<td>mm</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODLIBLOCATION</td>
+<td>Module Library Location</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULE</td>
+<td>Module</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULEFAILED</td>
+<td>Module failed.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULEFILTER</td>
+<td>Sower Modules (*.smd)|*.smd</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULEINSTALLED</td>
+<td>Module Installed.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULEINSTALLFAILED</td>
+<td>Module install failed.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULELIBRARY</td>
+<td>Module Library</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULELOADED</td>
+<td>Module loaded.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULENOTENCRYPTED</td>
+<td>Module will not be encrypted.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULEPATHINVALID</td>
+<td>Module path invalid.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_MODULEUPTODATE</td>
+<td>Existing module is up to date.\n\n</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_NAME</td>
+<td>Name</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_NEW</td>
+<td>New</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_NOTES</td>
+<td>Notes</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_OK</td>
+<td>OK</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_OPENFILE</td>
+<td>Open file</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ORIGINALFILENAME</td>
+<td>Original File Name</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ORIGINALFILENAMELENGTH</td>
+<td>Original file name may not exceed 39 characters.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PARAGRAPH</td>
+<td>paragraph</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PARAMETER1</td>
+<td>Parameter 1</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PARAMETER2</td>
+<td>Parameter 2</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PARSING</td>
+<td>Parsing file.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PASSWORD</td>
+<td>Password</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PASSWORDLENGTH</td>
+<td>Password must be at least 7 characters</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PATH</td>
+<td>Path</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PAUSE</td>
+<td>Pause</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PERCENT</td>
+<td>%</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PIXELPOSITION</td>
+<td>Pixel Position</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PLACES</td>
+<td>Places</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PLAY</td>
+<td>Play</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PLAYPOSITION</td>
+<td>Play position</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PLUGINS</td>
+<td>Plugins</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PNGFILTER</td>
+<td>png files (*.png)|*.png</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_POSITION</td>
+<td>Position</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PREFERENCES</td>
+<td>Preferences</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PRINT</td>
+<td>Print</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PRJFILTER</td>
+<td>Sower Project files (*.swprj)|*.swprj</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PROCESSING</td>
+<td>Processing ...</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PROCESSINGDIVISION</td>
+<td>Processing division ... </td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PROCESSREFERENCES</td>
+<td>Process references.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PROCESSTERMINATED</td>
+<td>Process terminated.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PT</td>
+<td>pt</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PUBLISHER</td>
+<td>Publisher</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PUBLISHERNAMELENGTH</td>
+<td>Publisher name may not exceed 49 characters.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_PX</td>
+<td>px</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_RADIUS</td>
+<td>Radius</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_REFERENCE</td>
+<td>Reference</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_RENAME</td>
+<td>Rename</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_REPLACE</td>
+<td>Replace</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_REPLACEALL</td>
+<td>Replace All</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_REPLACEWITH</td>
+<td>Replace With:</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_REQUESTSAVE</td>
+<td>Save file?</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_RESOURCES</td>
+<td>Resources</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_RIGHT</td>
+<td>Right</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_RIGHTS</td>
+<td>Rights</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ROMANLOWERCASE</td>
+<td>Roman numerals must be lower case.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ROMANNUMERALCHAPTERS</td>
+<td>Roman numerals for chapters.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ROMANNUMERALVERSES</td>
+<td>Roman numerals for verses.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SAVE</td>
+<td>Save</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SAVEAS</td>
+<td>Save as</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SAVECHANGES</td>
+<td>Save changes?</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SAVEFILE</td>
+<td>Save file</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SAVESESSION</td>
+<td>Save session.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SCHEME</td>
+<td>Scheme</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SCRIPTURE</td>
+<td>Scripture</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SDFEDITOR</td>
+<td>Sower Data File Editor</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SDFFILTER</td>
+<td>Sower data files (*.sdf)|*.sdf</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SEARCH</td>
+<td>Search</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SEARCHFOR</td>
+<td>Search For:</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SELECTAFILE</td>
+<td>Select a file</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SELECTDIR</td>
+<td>Select a directory</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SELECTFILES</td>
+<td>Select files</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SKIP</td>
+<td>Skip</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SKIPPING</td>
+<td>Skipping.\n\n</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SKIPPINGMSG1</td>
+<td>Skipping as result of user input.\n\n</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SKIPPINGMSG2</td>
+<td>Encryption has been specified for module.\nNo password has been set.\nSkipping.\n\n</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SMDFILTER</td>
+<td>Sower module files (*.smd;)|*.smd;</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOURCE</td>
+<td>Source</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOURCEINVALID</td>
+<td>Source invalid.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWER</td>
+<td>Sower</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERCONFIGURATION</td>
+<td>Sower Configuration</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERHELP</td>
+<td>Sower Help</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERKEYGENERATOR</td>
+<td>Sower Key Generator</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERLIBRARIAN</td>
+<td>Sower Librarian</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERMAPEDITOR</td>
+<td>Sower Map Editor</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERMODULEINSPECTOR</td>
+<td>Sower Module Inspector</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERMODULEINSTALLER</td>
+<td>Sower Module Installer</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERMODULEWRITER</td>
+<td>Sower Module Writer</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERPROJECTWRITER</td>
+<td>Sower Project Writer</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERTHEMEEDITOR</td>
+<td>Sower Theme Editor</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SOWERTRANSLATIONEDITOR</td>
+<td>Sower Translation Editor</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SPAN</td>
+<td>Span</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_STATUS</td>
+<td>Status</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_STOP</td>
+<td>Stop</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_STRONGSGREEK</td>
+<td>Strongs Greek</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_STRONGSHEBREW</td>
+<td>Strongs Hebrew</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SUBJECT</td>
+<td>Subject</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SWMARKUPEDITOR</td>
+<td>Sower Markup Editor</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_SWPRJML</td>
+<td>SwPrjML</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TABLEEXISTS</td>
+<td>Table already exists.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TABLES</td>
+<td>Tables</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TARGET</td>
+<td>Target</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TERM</td>
+<td>Term</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TERMINATINGMSG</td>
+<td>Terminating as result of user input.\n</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_THEME</td>
+<td>Theme</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_THEMES</td>
+<td>Themes</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_ThML</td>
+<td>ThML</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_THMLBUILDER</td>
+<td>ThML Builder</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_THMLFILTER</td>
+<td>ThML files (*.thm)|*.thm</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_THMLLIBLOCATION</td>
+<td>ThML Library Location</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_THMLLIBRARY</td>
+<td>ThML Library</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_THMLVIEWER</td>
+<td>ThML Viewer</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TITLE</td>
+<td>Title</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TITLEINUSE</td>
+<td>Title in use.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TITLELENGTH</td>
+<td>Title must be 3 - 199 characters.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TOP</td>
+<td>Top</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TRANSPARENT</td>
+<td>transparent</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TREATLINEBREAKSASSPACE</td>
+<td>Treat line breaks as space.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_TYPE</td>
+<td>Type</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_UNABLETOOPENFILE</td>
+<td>Unable to open file.</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_UPDATE</td>
+<td>Update</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_USER</td>
+<td>User</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_USERKEYS</td>
+<td>User Keys</td>
+</tr>
+<tr param1="0" param2="0">
+<td>SID_VALUE</td>
+<td>Value</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
