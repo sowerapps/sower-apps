@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Sower Project Markup Language</title>
+  </head>
+  <body>
+    <p>Sower Project Markup Language is a markup language which specifies how a
+      ThML file is to be created from one or more files. The table below
+      describes the elements. All elements are processed in the order listed in
+      the project file.</p>
+    <table style="width: 100%;" border="1">
+      <thead>
+        <tr>
+          <td>Element</td>
+          <td>Description</td>
+          <td>Attributes</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>body</td>
+          <td>Represents where the body of the ThML file begins, and ends.</td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>div1</td>
+          <td rowspan="6" colspan="1">div1 through div6 represent a division,
+            and depth in the text as in ThML.</td>
+          <td rowspan="6" colspan="1">src - the relative path to the file that
+            contains the content for the division.<br>
+            title - the title for the division.<br>
+            id - the id for the division.</td>
+        </tr>
+        <tr>
+          <td>div2</td>
+        </tr>
+        <tr>
+          <td>div3</td>
+        </tr>
+        <tr>
+          <td>div4</td>
+        </tr>
+        <tr>
+          <td>div5</td>
+        </tr>
+        <tr>
+          <td>div6</td>
+        </tr>
+        <tr>
+          <td>file</td>
+          <td>A file that is to be copied to the current position of the ThML
+            file.</td>
+          <td>src - the relative path to the file.</td>
+        </tr>
+        <tr>
+          <td>head</td>
+          <td>Represents where the head of the ThML file begins, and ends.</td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>info</td>
+          <td>Represents where the electronic information of the ThML file
+            begins, and ends.</td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>project</td>
+          <td>Begins, and ends a project file.</td>
+          <td>target - relative path for the ThML file that is to be created.</td>
+        </tr>
+        <tr>
+          <td>references</td>
+          <td>Defines if scripture references should be processed, and the rules
+            to recognize those references. Enforcing strict rules will help
+            prevent inaccurate markup.</td>
+          <td>process - true to process references, otherwise false.<br>
+            cvdiv - marker that is exists between chapter, and verse numbers.
+            Typically ':'.<br>
+            span - marker that represents a span in a reference. Typically '-'.<br>
+            div - marker that represents a division in a reference. Typically
+            ','.<br>
+            break - marker that represents a break in a reference. Typically
+            ';'.<br>
+            romanforchapters - true if chapter numbers are roman numerals, false
+            otherwise.<br>
+            romanforverses - true if verse numbers are roman numerals, false
+            otherwise.<br>
+            romanlowercase - true if roman numerals are only valid if lower
+            case, otherwise false.<br>
+            booknameuppercase - true if book names must always begin with a
+            capital letter, otherwise false.<br>
+            linebreakisspace - line breaks should be treated as space
+            characters. This should be false for text files, and true for
+            most&nbsp; markup languages.</td>
+        </tr>
+        <tr>
+          <td>style</td>
+          <td>Represents where any css style information begins, and ends.</td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>verbatim</td>
+          <td>Text enclosed in the 'verbatim' element will be copied verbatim to
+            the target file.</td>
+          <td>none</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Project file example:</p>
+    <p>&lt;project target="book.thm"&gt;<br>
+      &lt;references process="true" cvdiv=":" span="-" div="," break=";"
+      romanforchapters="true" romanforverses="false" romanlowercase="true"
+      booknameuppercase="true" linebreakisspace="true"/&gt;<br>
+      &lt;head&gt;<br>
+      &lt;info&gt;<br>
+      &lt;verbatim&gt;<br>
+      --Dublin Core Text--<br>
+      &lt;/verbatim&gt;<br>
+      &lt;/info&gt;<br>
+      &lt;style&gt;<br>
+      &lt;file src="book.css"/&gt;<br>
+      &lt;/style&gt;<br>
+      &lt;/head&gt;<br>
+      &lt;body&gt;<br>
+      &lt;div1 src="chapter1.htm" title="Chapter 1" id="i"/&gt;<br>
+      &lt;/body&gt;<br>
+      &lt;/project&gt;</p>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Sower Configuration</title>
+  </head>
+  <body>
+    <p>SowerBase can be configured to search for resources in specific locations
+      through a file named 'sw_configure.sdf'. Settings in this file will
+      override all other settings, and must exist in the application directory.
+      This could be used to run Sower applications from a usb device, or to
+      share resources such as modules between operating systems on the same
+      computer. This file can be created, and edited with Sower Table Editor.
+      Settings must exist in a table named according to the operating system on
+      which it is to be used. These names are MSW, Linux, and MacOs. To add a
+      setting use an identifier from the first column in the table below and set
+      the 'Data' parameter to the desired value.</p>
+    <table style="width: 100%" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Identifier:</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Value:</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Location
+            for: </td>
+          <td style="text-align: left;">Defaults to:</td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Use-App-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">(Boolean)
+            true, false</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Overrides
+            all other settings, and causes Sower applications to search the
+            application directory for all resources. Using the same directory
+            structure presented for each item in the fourth column.</td>
+          <td style="text-align: left;">User specified entries.</td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Data-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Base
+            location for application data files. </td>
+          <td style="text-align: left;">Resources-Path + 'data' </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">User-Data-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Bookmark,
+            and preferences files. </td>
+          <td style="text-align: left;">OS defined location.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Resources-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Base
+            location for application data files. </td>
+          <td style="text-align: left;">OS defined location + 'resource' </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Themes-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Themes
+            data file, and related images. </td>
+          <td style="text-align: left;">Resources-Path + 'themes'<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">User-Keys-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">User
+            keys. </td>
+          <td style="text-align: left;">Resource-Path + 'keys' + 'user' </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Master-Keys-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Master
+            keys. </td>
+          <td style="text-align: left;">Resource-Path + 'keys' + 'master' </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Publisher-Keys-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Publisher
+            keys. </td>
+          <td style="text-align: left;">Resource-Path + 'keys' + 'publisher' </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Module-Library-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Module
+            library. </td>
+          <td style="text-align: left;">
+            <ol>
+              <li> Value defined in settings.sdf.</li>
+              <li>OS defined location + 'library' + 'module'</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">ThML-Library-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">ThML
+            library. </td>
+          <td style="text-align: left;">
+            <ol>
+              <li>Value defined in settings.sdf.</li>
+              <li>OS defined location + 'library' + 'thml' </li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Plugins-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Plugins.<br>
+          </td>
+          <td style="text-align: left;">OS defined location + 'plugins' <br>
+            Application specific plugins:<br>
+            Plugins-Path + 'app name' <br>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 25%; background-color: white; text-align: left;">Help-Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td style="width: 25%; background-color: white; text-align: left;">Help
+            modules. </td>
+          <td style="text-align: left;">Resources-Path + 'help' </td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br>
+    </p>
+  </body>
+</html>

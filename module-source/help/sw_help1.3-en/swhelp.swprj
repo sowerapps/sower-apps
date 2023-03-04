@@ -1,0 +1,42 @@
+<project target="source/sw_help1.3-en.thm">
+<head>
+<verbatim>
+<electronicEdInfo>
+<DC>
+<DC.Title>Sower Applications Help 1.3 EN</DC.Title>
+<DC.Creator>DNR</DC.Creator>
+<DC.Publisher>DNR</DC.Publisher>
+<DC.Subject scheme="sw">Help</DC.Subject>
+<DC.Date>2022</DC.Date>
+<DC.Type></DC.Type>
+<DC.Format></DC.Format>
+<DC.Identifier scheme="sw">SW-HELP1.3-EN</DC.Identifier>
+<DC.Source></DC.Source>
+<DC.Language>EN</DC.Language>
+<DC.Rights>(c) DNR</DC.Rights>
+</DC>
+</electronicEdInfo>
+</verbatim>
+</head>
+<div1 src="source/html/Title Page.html" title="Title Page" id="i"/>
+<div1 src="source/html/Sower & ThML Viewer.html" title="Sower &amp; ThML Viewer" id="ii"/>
+<div1 src="source/html/Sower Data File Editor.html" title="Sower Data File Editor" id="iii"/>
+<div1 src="source/html/Sower Theme Editor.html" title="Sower Theme Editor" id="iv"/>
+<div1 src="source/html/Sower Translation Editor.html" title="Sower Translation Editor" id="v"/>
+<div1 src="source/html/Sower Help.html" title="Sower Help" id="vi"/>
+<div1 src="source/html/Sower Configuration.html" title="Sower Configuration" id="vii"/>
+<div1 src="source/html/Sower Module Writer.html" title="Sower Module Writer" id="viii"/>
+<div1 src="source/html/Sower Librarian.html" title="Sower Librarian" id="ix"/>
+<div1 src="source/html/Sower Module Inspector.html" title="Sower Module Inspector" id="x"/>
+<div1 src="source/html/ThML Builder.html" title="ThML Builder" id="xii"/>
+<div1 src="source/html/Sower Map Editor.html" title="Sower Map Editor" id="xiii"/>
+<div1 src="source/html/Sower Module Installer.html" title="Sower Module Installer" id="xiv"/>
+<div1 src="source/html/Sower Project Writer.html" title="Sower Project Writer" id="xv"/>
+<div1 src="source/html/Sower Markup Editor.html" title="Sower Markup Editor" id="xvi"/>
+<div1 src="source/html/Sower Project Markup Language.html" title="Sower Project Markup Language" id="xvii"/>
+<div1 src="source/html/SowerBase.html" title="SowerBase" id="xviii"/>
+<div1 src="source/html/AddInfoForModules.html" title="Additional Information For Building Modules" id="xix"/>
+<div1 src="source/html/Credits.html" title="Credits" id="xx"/>
+<div1 src="source/html/License.html" title="License" id="xxi"/>
+<div1 src="source/html/Contact Information.html" title="Contact Information" id="xxii"/>
+</project>

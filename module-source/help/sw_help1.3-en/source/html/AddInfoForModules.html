@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Additional Information For Building Modules</title>
+  </head>
+  <body>
+    <p>Sower Modules are built from ThML files (Theological Markup Language),
+      and although ThML is specifically designed for theological texts it is
+      suited to almost any type of book. More information on ThML can be found
+      at www.ccel.org.</p>
+    <p>There are a few Sower specific extensions to ThML:</p>
+    <ol>
+      <li>Div1 - Div6 can have an extra attribute named 'type' which causes a
+        specific content viewer to be used for display if a viewer of that type
+        is available. The possible values for 'type' are:<br>
+        <ul>
+          <li> Text</li>
+          <li> ThML</li>
+          <li> Html</li>
+          <li> Hymn</li>
+          <li> Lesson</li>
+          <li> Image</li>
+          <li> Map</li>
+          <li> Audio</li>
+          <li> Video</li>
+          <li> 2D</li>
+          <li> 3D</li>
+        </ul>
+        <p> ThML is the default, and does not need to be specified. </p>
+      </li>
+      <li> An 'geodata' attribute can be added to the html 'img' element and
+        should 6 variables. And should take this form:<br>
+        geodata="width in px, height in px, latitude top, latitude bottom,
+        longitude left, longitude right"<br>
+        This will cause SowerBase to use internal geolocation data to identify
+        places at the position of the mouse and display data associated with the
+        place if any has been found.</li>
+      <li>(img, audio, video, music, and source) elements can be used to cause
+        media files to be stored in the module.<br>
+        &lt;audio&gt;<br>
+        &lt;source src="sample-15s.wav" type="audio/wav"&gt;<br>
+        &lt;/audio&gt; <br>
+        &nbsp; <audio controls="controls"> <source src="sample-15s.wav" type="audio/wav">
+        </audio></li>
+      <li>The Sower specific 'interface' element can be used to for Sower Binary
+        Object files to be stored in the module using a relative path as in the
+        'img' element.</li>
+      <li>A Sower specific element 'term.strongs' is intended for use in markup
+        of lexicons. Used in place of the ThML 'term' element. It has 3
+        attributes, value (strongs number followed with a G, or H depending on
+        the language), translit (english transliteration of the original word),
+        origin (the word in the original language).</li>
+      <li>A Sower specific element 'christ' can be used to mark Christ's words
+        in scripture.</li>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Sower Module Writer</title>
+  </head>
+  <body>
+    <p> Sower Module Writer creates modules from ThML files.</p>
+    <p>Steps to module creation:</p>
+    <ul>
+      <li>Select the source file.</li>
+      <li>Select the destination file.</li>
+      <li>Enter the title of the book, and an abbreviation to be used to
+        represent the book.</li>
+      <li>Enter an identifier for the book. This should be something such as a
+        ISBN number if available. It must be unique.</li>
+      <li>Select the category that best fits the book.</li>
+      <li>Enter any group that applies to the book. Such as a particular author.</li>
+      <li>And if applicable enter the versification scheme used by the book,
+        such as 'KJV'.</li>
+      <li>Enter the original file name of the source file in the box provided.
+        This maybe used to follow links between books. Enter only the file name,
+        do not include the file path.</li>
+      <li>Sower Modules can be encrypted. If the encryption plug-in is available
+        the 'Encrypt' box will be enabled which can be checked and will enable a
+        password to be entered. The module will be encrypted, and a master key
+        will be created and stored in Sower's data folder
+        (data-dir\keys\master). Copy commands to content viewers that are
+        displaying any content of this module can be disabled by unchecking the
+        box labeled 'Allow Copy'.</li>
+    </ul>
+    <p>Click 'Build'.</p>
+    <p>Five files will be created the module (.smd), a bzipped file containing
+      the compressed module (.bz2), a catalog card that contains information for
+      the module so that it doesn't have to be entered again if the module is
+      rebuilt (.card), and an html file which displays the full title of the
+      module in that folder (Title.html). It is best for&nbsp; ThML files to be
+      stored in it's own folder. A log file containing containing the results of
+      the build process (.log.txt).</p>
+    <p>During the build process error messages may be displayed. For most error
+      messages the portion of the text in the source file that caused the error
+      will follow the error code so that the problem can be located in the
+      source file.</p>
+    <table style="width: 100%" border="1">
+      <tbody>
+        <tr>
+          <td style="width: 33%; background-color: white;">1.
+            EC_UNCONTAINED_TEXT_RUN</td>
+          <td style="width: 33%; background-color: white;">Some portion of text
+            is not contained in an element other than the '&lt;divN&gt;' that it
+            exists in.</td>
+          <td style="width: 33%; background-color: white;">Possible cause:<br>
+            &lt;div1&gt;text&lt;/div1&gt;<br>
+            <br>
+            Solution:<br>
+            &lt;div1&gt;&lt;p&gt;text&lt;/p&gt;&lt;/div1&gt;</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">2.
+            EC_UNCONTAINED_SCRIPTURE</td>
+          <td style="width: 33%; background-color: white;">A scripture element
+            does not have a mate.</td>
+          <td style="width: 33%; background-color: white;">Possible cause:<br>
+            &lt;scripture/&gt;verse text<br>
+            <br>
+            Solution:<br>
+            &lt;scripture&gt;verse text&lt;/scripture&gt;</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">3.
+            EC_UNCONTAINED_COMMENTARY</td>
+          <td style="width: 33%; background-color: white;">A scripCom element
+            does not have a mate.</td>
+          <td style="width: 33%; background-color: white;">Possible cause:<br>
+            &lt;scripCom/&gt;commentary text<br>
+            <br>
+            Solution:<br>
+            &lt;scripCom&gt;verse text&lt;/scripCom&gt;</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">4.
+            EC_UNABLE_TO_IDENTIFY_ID</td>
+          <td style="width: 33%; background-color: white;" rowspan="3" colspan="1">4,
+            - 6 all represent a situation where the scripture represented by an
+            id could not be identified.</td>
+          <td style="width: 33%; background-color: white;" rowspan="3" colspan="1">Possible
+            cause:<br>
+            This is most likely due to an unrecognized book name, or
+            abbreviation.<br>
+            <br>
+            Solution:<br>
+            Replace with one that is known to work.</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">5.
+            EC_UNABLE_TO_IDENTIFY_PASSAGE</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">6.
+            EC_UNABLE_TO_IDENTIFY_OSISID</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">7.
+            EC_UNABLE_TO_LOCATE_EXTERNAL_FILE</td>
+          <td style="width: 33%; background-color: white;">A file referenced in
+            the source file can not be located, and has not been included in the
+            module.</td>
+          <td style="width: 33%; background-color: white;">Possible cause:<br>
+            A missing, or misplaced file such as an image has been referenced in
+            the source file.<br>
+            <br>
+            Solution:<br>
+            Locate the file and put it in the proper place in relation to the
+            source file.</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">8.
+            EC_UNABLE_TO_LOAD_EXTERNAL_FILE</td>
+          <td style="width: 33%; background-color: white;">A file referenced in
+            the source file has been located, but can not be read.</td>
+          <td style="width: 33%; background-color: white;">Possible cause:<br>
+            Another application may have the file open, and is preventing other
+            applications from accessing the file.<br>
+            <br>
+            Solution:<br>
+            Close any applications that may be using the file.</td>
+        </tr>
+        <tr>
+          <td style="width: 33%; background-color: white;">9.
+            EC_CORRUPT_ITEM_DATA</td>
+          <td style="width: 33%; background-color: white;">An internal error has
+            occurred.</td>
+          <td style="width: 33%; background-color: white;">Possible cause:<br>
+            Unknown.<br>
+            <br>
+            Solution:<br>
+            Rebuild the module.</td>
+        </tr>
+        <tr>
+          <td>10. EC_POSSIBLE_ENTITY_ENCODING_ERROR</td>
+          <td>This is considered as a warning, as it is not certain that it is
+            an error.</td>
+          <td>Possible cause:<br>
+            A '#' character has been found in a text run, and has been followed
+            with at least one digit, and a semicolon. And is not preceded by an
+            ampersand character. Which it must be if it is actually an encoded
+            character.<br>
+            <br>
+            Solution:<br>
+            Insert '&amp;' before the '#'.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

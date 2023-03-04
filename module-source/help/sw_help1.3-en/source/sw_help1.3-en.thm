@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../ss/thml.html.xsl"?>
+<ThML>
+
+<ThML.head>
+
+<electronicEdInfo>
+<DC>
+<DC.Title>Sower Applications Help 1.3 EN</DC.Title>
+<DC.Creator>DNR</DC.Creator>
+<DC.Publisher>DNR</DC.Publisher>
+<DC.Subject scheme="sw">Help</DC.Subject>
+<DC.Date>2022</DC.Date>
+<DC.Type></DC.Type>
+<DC.Format></DC.Format>
+<DC.Identifier scheme="sw">SW-HELP1.3-EN</DC.Identifier>
+<DC.Source></DC.Source>
+<DC.Language>EN</DC.Language>
+<DC.Rights>(c) DNR</DC.Rights>
+</DC>
+</electronicEdInfo>
+
+</ThML.head>
+
+<div1 title="Title Page" id="i">
+<h1 id="i-p0.9" style="text-align: center;">Sower Applications Help 1.3</h1>
+  </div1>
+
+<div1 title="Sower &amp; ThML Viewer" id="ii">
+<p id="ii-p1">Sower, and ThML Viewer are very similar applications. The primary
+      difference is that Sower is designed to use Sower Modules for primary
+      content while ThML Viewer uses ThML files. Both rely on Sower Modules, and
+      ThML files for AutoDef data. Both are also designed so that the user
+      interface is created through plug-ins. Alpha, Beta, and Gamma
+      interface plug-ins are available for both programs, and each provides
+      access to the available content in a different way so that users can
+      choose the interface that is most comfortable for them. Below is some
+      basic information on the user interfaces.</p>
+    <ol id="ii-p2.1">
+ <li id="ii-p2.2">AutoDef windows are pop-up windows that appear when a link has been
+        clicked, or the mouse has been moved over a reference that the
+        application recognizes, or a word that an entry can be found for in a
+        dictionary etc. Moving the mouse into the AutoDef window will cause it
+        to stay visible. The window can be scrolled to view content, if the
+        contents are not copy protected it can be selected and copied, or
+        printed. And AutoDef windows can have AutoDef windows. It may take
+        practice to work with AutoDef windows, the advantage is automatic
+        retrieval of information, and the ability to follow a stream of
+        information up to the point where there is insufficient space for a
+        window within a window. AutoDef can also use GeoLocation, or embedded
+        map data to find relevant information for locations when moving the
+        mouse within an image of a map.</li>
+      <li id="ii-p2.4">Modules, and ThML files that AutoDef is allowed to retrieve can be
+        enabled\disabled through the Preferences dialog.</li>
+      <li id="ii-p2.6">When creating a bookmark selecting a section of text will the
+        selection to be selected when the bookmark is activated later.</li>
+      <li id="ii-p2.8">Once a bookmark has been created a note can be added, or edited with a
+        left click on the item in the BookMarks panel.</li>
+      <li id="ii-p2.10">Right click on a bookmark will pull up a menu that allows the bookmark
+        to be deleted.</li>
+      <li id="ii-p2.12">Use the Preferences dialog to:<br>
+        <ul id="ii-p2.13">
+ <li id="ii-p2.14">Set the location of libraries.</li>
+          <li id="ii-p2.16">Default font size for content viewers, and AutoDef windows.</li>
+          <li id="ii-p2.18">Select the user interface.</li>
+          <li id="ii-p2.20">Select the theme.</li>
+          <li id="ii-p2.22">Select the language.</li>
+          <li id="ii-p2.24">Enable\disable saving the session at upon closing the application.</li>
+        </ul>
+      </li>
+      <li id="ii-p2.28">The Alpha interface is a tabbed interface. The tab control can be
+        split by dragging a tab to a different position in the window. Once a
+        tab control has been split other tabs can be dragged onto any of the new
+        tab controls. There can be any number of tab controls split off in this
+        manner allowing the user to have multiple books viewable at the same
+        time, and allowing the tab controls to be organized, and sized to the
+        preferences of the user.</li>
+      <li id="ii-p2.30">The Beta interface provides a single table of contents for all
+        available content, and all content is displayed in the same window.</li>
+      <li id="ii-p2.32">The Gamma interface is a tabbed interface in which content is divided
+        into categories with a separate tab, and table of contents for each.</li>
+      <li id="ii-p2.34">Sower is intended to provide content from Sower Modules. But, Sower
+        can also display ThML files which when opened will be displayed in a
+        separate tab control. </li>
+    </ol>
+    <p id="ii-p3"> Note: </p>
+    <p id="ii-p5">ThML files exist in two forms. In one form it is split into multiple
+      files, while in the other form everything exists in one large file (with
+      the exception of any external media). ThML Viewer is designed to work with
+      ThML files in the second form only. </p>
+  </div1>
+
+<div1 title="Sower Data File Editor" id="iii">
+<p id="iii-p1">Sower Data File Editor is used to edit Sower's table based data files
+      (sdf), and is similar to Sower Theme Editor, and Sower Translation Editor.
+      It is designed for general use and allows more direct editing of the data
+      in those files, and does not require that each table have the same list of
+      identifiers.</p>
+    <p id="iii-p3">To edit a file first open it with the 'Open' command on the 'File' menu.
+    </p>
+    <p id="iii-p5">Table Editor will show a list of the&nbsp; tables available in the file.</p>
+    <p id="iii-p7"><b>Table Panel:</b></p>
+    <p id="iii-p9"> Select a table, and click 'Load' to open that table for editing. Click
+      'Save' to save changes to the table before clicking 'Close' which will
+      close the loaded table without saving any changes.<br>
+    </p>
+    <p id="iii-p11">To add a new table enter a name in the box provided, and click 'Add'.
+      Click 'Load' to open the new table for editing.</p>
+    <p id="iii-p13">Clicking 'Delete' will delete any selected table.</p>
+    <p id="iii-p15">Values are edited by clicking the item in the list at the of the
+      application frame. </p>
+    <p id="iii-p17"><b>Identifiers Panel:</b><br>
+      String identifiers can only be added, or deleted when a table is loaded.
+      And are only added to the loaded table.</p>
+    <p id="iii-p19">Enter an identifier and click 'Add' after loading a table to add a new
+      identifier.</p>
+    <p id="iii-p21">Clicking 'Delete' will delete any selected identifier from the loaded
+      table.</p>
+    <p id="iii-p23"> Values are edited by clicking the item in the list at the of the top of
+      the application frame.</p>
+  </div1>
+
+<div1 title="Sower Theme Editor" id="iv">
+<p id="iv-p1">Sower Theme Editor is used to create, and edit themes for
+      Sower software. A theme is simply a list of images to be used for gui
+      element of the user interface, and each image is associated with a string
+      identifier. The theme file is named 'themes.sdf' which can be found in the
+      software's data directory + 'themes'. For MS Windows this will be the
+      directory where the application resides. Images should be in the png
+      format, and 16X16 pixels. To create a new theme first create a sub-folder
+      in Sower's theme directory, place the images for the theme in that folder.
+      Then start Theme Editor, open 'themes.sdf', add a new table with the name
+      of the new theme. Select the new table, and click 'Load'. Once the new
+      table is loaded right click on any identifier in the list at the top of
+      application frame to set the image for that identifier.</p>
+    <p id="iv-p3"><b>Table Panel:</b></p>
+    <p id="iv-p5">
+ Select a table, and click 'Load' to open that table for editing. Click
+      'Save' to save changes to the table before clicking 'Close' which will
+      close the loaded table without saving any changes.</p>
+    <p id="iv-p7">To add a new theme table enter a name in the box provided, and click
+      'Add'. Click 'Load' to open the new table for editing.</p>
+    <p id="iv-p9">Clicking 'Delete' will delete any selected table.</p>
+    <p id="iv-p11">Values are edited by clicking the item in the list at the top of the
+      application frame.</p>
+    <p id="iv-p13"><b>Identifiers Panel:</b></p>
+    <p id="iv-p15">
+ String identifiers can only be added, or deleted when no tables are
+      loaded. String identifiers when added are added to all tables, and when
+      deleted are deleted from all tables.</p>
+    <p id="iv-p17">Enter an identifier and click 'Add' when there no loaded tables to add a
+      new identifier.</p>
+    <p id="iv-p19">
+ Clicking 'Delete' will delete any selected identifier from all tables.
+    </p>
+  </div1>
+
+<div1 title="Sower Translation Editor" id="v">
+<p id="v-p1">Sower Translation Editor is used to edit translation files for Sower
+      software. The translation file for user interface elements is named
+      'guitranslation.sdf', and for maps 'maptranslation.sdf', which be found in
+      the software's data directory.</p>
+    <p id="v-p3">To edit a translation file first open it with the 'Open' command on the
+      'File' menu.</p>
+    <p id="v-p5">Translation Editor will show a list of the translation tables available
+      in the file.</p>
+    <p id="v-p7"><b>Table Panel:</b></p>
+    <p id="v-p9">
+ Select a table, and click 'Load' to open that table for editing. Click
+      'Save' to save changes to the table before clicking 'Close' which will
+      close the loaded table without saving any changes.</p>
+    <p id="v-p11">To add a new translation table select a language from the choices
+      provided, and click 'Add'. Click 'Load' to open the new table for editing.</p>
+    <p id="v-p13">Clicking 'Delete' will delete any selected table.</p>
+    <p id="v-p15">Values are edited by clicking the item in the list at the top of the
+      application frame.</p>
+    <p id="v-p17"><b>Identifiers Panel:</b></p>
+    <p id="v-p19">
+ String identifiers can only be added, or deleted when no tables are
+      loaded. String identifiers when added are added to all tables, and when
+      deleted are deleted from all tables.</p>
+    <p id="v-p21">Enter an identifier and click 'Add' when there no loaded tables to add a
+      new identifier.</p>
+    <p id="v-p23">
+ Clicking 'Delete' will delete any selected identifier from all tables.
+    </p>
+  </div1>
+
+<div1 title="Sower Help" id="vi">
+<p id="vi-p1">Sower applications are designed to be cross-platform, and so
+      a cross-platform solution for application help files was needed. The solution is Sower Help, which is a Sower application that loads only
+      Sower modules with a category setting of 'Help'. Help modules are built from ThML files like all other other Sower modules,
+      and have the same capabilities as other modules (such as streaming media, and AutoDef functionality).</p>
+  </div1>
+
+<div1 title="Sower Configuration" id="vii">
+<p id="vii-p1">SowerBase can be configured to search for resources in specific locations
+      through a file named 'sw_configure.sdf'. Settings in this file will
+      override all other settings, and must exist in the application directory.
+      This could be used to run Sower applications from a usb device, or to
+      share resources such as modules between operating systems on the same
+      computer. This file can be created, and edited with Sower Table Editor.
+      Settings must exist in a table named according to the operating system on
+      which it is to be used. These names are MSW, Linux, and MacOs. To add a
+      setting use an identifier from the first column in the table below and set
+      the 'Data' parameter to the desired value.</p>
+    <table id="vii-p2.1" style="width: 100%" border="1">
+ <tbody>
+        <tr>
+          <td id="vii-p2.2" style="width: 25%; background-color: white; text-align: left;">Identifier:</td>
+          <td id="vii-p2.4" style="width: 25%; background-color: white; text-align: left;">Value:</td>
+          <td id="vii-p2.6" style="width: 25%; background-color: white; text-align: left;">Location
+            for: </td>
+          <td id="vii-p2.8" style="text-align: left;">Defaults to:</td>
+        </tr>
+        <tr>
+          <td id="vii-p2.10" style="width: 25%; background-color: white; text-align: left;">Use-App-Path</td>
+          <td id="vii-p2.12" style="width: 25%; background-color: white; text-align: left;">(Boolean)
+            true, false</td>
+          <td id="vii-p2.14" style="width: 25%; background-color: white; text-align: left;">Overrides
+            all other settings, and causes Sower applications to search the
+            application directory for all resources. Using the same directory
+            structure presented for each item in the fourth column.</td>
+          <td id="vii-p2.16" style="text-align: left;">User specified entries.</td>
+        </tr>
+        <tr>
+          <td id="vii-p2.18" style="width: 25%; background-color: white; text-align: left;">Data-Path</td>
+          <td id="vii-p2.20" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.22" style="width: 25%; background-color: white; text-align: left;">Base
+            location for application data files. </td>
+          <td id="vii-p2.24" style="text-align: left;">Resources-Path + 'data' </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.26" style="width: 25%; background-color: white; text-align: left;">User-Data-Path</td>
+          <td id="vii-p2.28" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.30" style="width: 25%; background-color: white; text-align: left;">Bookmark,
+            and preferences files. </td>
+          <td id="vii-p2.32" style="text-align: left;">OS defined location.<br>
+          </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.34" style="width: 25%; background-color: white; text-align: left;">Resources-Path</td>
+          <td id="vii-p2.36" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.38" style="width: 25%; background-color: white; text-align: left;">Base
+            location for application data files. </td>
+          <td id="vii-p2.40" style="text-align: left;">OS defined location + 'resource' </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.42" style="width: 25%; background-color: white; text-align: left;">Themes-Path</td>
+          <td id="vii-p2.44" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.46" style="width: 25%; background-color: white; text-align: left;">Themes
+            data file, and related images. </td>
+          <td id="vii-p2.48" style="text-align: left;">Resources-Path + 'themes'<br>
+          </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.50" style="width: 25%; background-color: white; text-align: left;">User-Keys-Path</td>
+          <td id="vii-p2.52" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.54" style="width: 25%; background-color: white; text-align: left;">User
+            keys. </td>
+          <td id="vii-p2.56" style="text-align: left;">Resource-Path + 'keys' + 'user' </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.58" style="width: 25%; background-color: white; text-align: left;">Master-Keys-Path</td>
+          <td id="vii-p2.60" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.62" style="width: 25%; background-color: white; text-align: left;">Master
+            keys. </td>
+          <td id="vii-p2.64" style="text-align: left;">Resource-Path + 'keys' + 'master' </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.66" style="width: 25%; background-color: white; text-align: left;">Publisher-Keys-Path</td>
+          <td id="vii-p2.68" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.70" style="width: 25%; background-color: white; text-align: left;">Publisher
+            keys. </td>
+          <td id="vii-p2.72" style="text-align: left;">Resource-Path + 'keys' + 'publisher' </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.74" style="width: 25%; background-color: white; text-align: left;">Module-Library-Path</td>
+          <td id="vii-p2.76" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.78" style="width: 25%; background-color: white; text-align: left;">Module
+            library. </td>
+          <td id="vii-p2.80" style="text-align: left;">
+ <ol id="vii-p2.81">
+ <li id="vii-p2.82"> Value defined in settings.sdf.</li>
+              <li id="vii-p2.84">OS defined location + 'library' + 'module'</li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.88" style="width: 25%; background-color: white; text-align: left;">ThML-Library-Path</td>
+          <td id="vii-p2.90" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.92" style="width: 25%; background-color: white; text-align: left;">ThML
+            library. </td>
+          <td id="vii-p2.94" style="text-align: left;">
+ <ol id="vii-p2.95">
+ <li id="vii-p2.96">Value defined in settings.sdf.</li>
+              <li id="vii-p2.98">OS defined location + 'library' + 'thml' </li>
+            </ol>
+          </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.102" style="width: 25%; background-color: white; text-align: left;">Plugins-Path</td>
+          <td id="vii-p2.104" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.106" style="width: 25%; background-color: white; text-align: left;">Plugins.<br>
+          </td>
+          <td id="vii-p2.108" style="text-align: left;">OS defined location + 'plugins' <br>
+            Application specific plugins:<br>
+            Plugins-Path + 'app name' <br>
+          </td>
+        </tr>
+        <tr>
+          <td id="vii-p2.110" style="width: 25%; background-color: white; text-align: left;">Help-Path</td>
+          <td id="vii-p2.112" style="width: 25%; background-color: white; text-align: left;">Path</td>
+          <td id="vii-p2.114" style="width: 25%; background-color: white; text-align: left;">Help
+            modules. </td>
+          <td id="vii-p2.116" style="text-align: left;">Resources-Path + 'help' </td>
+        </tr>
+      </tbody>
+    </table>
+    <p id="vii-p3"><br>
+    </p>
+  </div1>
+
+<div1 title="Sower Module Writer" id="viii">
+<p id="viii-p1"> Sower Module Writer creates modules from ThML files.</p>
+    <p id="viii-p3">Steps to module creation:</p>
+    <ul id="viii-p4.1">
+ <li id="viii-p4.2">Select the source file.</li>
+      <li id="viii-p4.4">Select the destination file.</li>
+      <li id="viii-p4.6">Enter the title of the book, and an abbreviation to be used to
+        represent the book.</li>
+      <li id="viii-p4.8">Enter an identifier for the book. This should be something such as a
+        ISBN number if available. It must be unique.</li>
+      <li id="viii-p4.10">Select the category that best fits the book.</li>
+      <li id="viii-p4.12">Enter any group that applies to the book. Such as a particular author.</li>
+      <li id="viii-p4.14">And if applicable enter the versification scheme used by the book,
+        such as 'KJV'.</li>
+      <li id="viii-p4.16">Enter the original file name of the source file in the box provided.
+        This maybe used to follow links between books. Enter only the file name,
+        do not include the file path.</li>
+      <li id="viii-p4.18">Sower Modules can be encrypted. If the encryption plug-in is available
+        the 'Encrypt' box will be enabled which can be checked and will enable a
+        password to be entered. The module will be encrypted, and a master key
+        will be created and stored in Sower's data folder
+        (data-dir\keys\master). Copy commands to content viewers that are
+        displaying any content of this module can be disabled by unchecking the
+        box labeled 'Allow Copy'.</li>
+    </ul>
+    <p id="viii-p5">Click 'Build'.</p>
+    <p id="viii-p7">Five files will be created the module (.smd), a bzipped file containing
+      the compressed module (.bz2), a catalog card that contains information for
+      the module so that it doesn't have to be entered again if the module is
+      rebuilt (.card), and an html file which displays the full title of the
+      module in that folder (Title.html). It is best for&nbsp; ThML files to be
+      stored in it's own folder. A log file containing containing the results of
+      the build process (.log.txt).</p>
+    <p id="viii-p9">During the build process error messages may be displayed. For most error
+      messages the portion of the text in the source file that caused the error
+      will follow the error code so that the problem can be located in the
+      source file.</p>
+    <table id="viii-p10.1" style="width: 100%" border="1">
+ <tbody>
+        <tr>
+          <td id="viii-p10.2" style="width: 33%; background-color: white;">1.
+            EC_UNCONTAINED_TEXT_RUN</td>
+          <td id="viii-p10.4" style="width: 33%; background-color: white;">Some portion of text
+            is not contained in an element other than the '&lt;divN&gt;' that it
+            exists in.</td>
+          <td id="viii-p10.6" style="width: 33%; background-color: white;">Possible cause:<br>
+            &lt;div1&gt;text&lt;/div1&gt;<br>
+            <br>
+            Solution:<br>
+            &lt;div1&gt;&lt;p&gt;text&lt;/p&gt;&lt;/div1&gt;</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.8" style="width: 33%; background-color: white;">2.
+            EC_UNCONTAINED_SCRIPTURE</td>
+          <td id="viii-p10.10" style="width: 33%; background-color: white;">A scripture element
+            does not have a mate.</td>
+          <td id="viii-p10.12" style="width: 33%; background-color: white;">Possible cause:<br>
+            &lt;scripture/&gt;verse text<br>
+            <br>
+            Solution:<br>
+            &lt;scripture&gt;verse text&lt;/scripture&gt;</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.14" style="width: 33%; background-color: white;">3.
+            EC_UNCONTAINED_COMMENTARY</td>
+          <td id="viii-p10.16" style="width: 33%; background-color: white;">A scripCom element
+            does not have a mate.</td>
+          <td id="viii-p10.18" style="width: 33%; background-color: white;">Possible cause:<br>
+            &lt;scripCom/&gt;commentary text<br>
+            <br>
+            Solution:<br>
+            &lt;scripCom&gt;verse text&lt;/scripCom&gt;</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.20" style="width: 33%; background-color: white;">4.
+            EC_UNABLE_TO_IDENTIFY_ID</td>
+          <td id="viii-p10.22" style="width: 33%; background-color: white;" rowspan="3" colspan="1">4,
+            - 6 all represent a situation where the scripture represented by an
+            id could not be identified.</td>
+          <td id="viii-p10.24" style="width: 33%; background-color: white;" rowspan="3" colspan="1">Possible
+            cause:<br>
+            This is most likely due to an unrecognized book name, or
+            abbreviation.<br>
+            <br>
+            Solution:<br>
+            Replace with one that is known to work.</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.26" style="width: 33%; background-color: white;">5.
+            EC_UNABLE_TO_IDENTIFY_PASSAGE</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.28" style="width: 33%; background-color: white;">6.
+            EC_UNABLE_TO_IDENTIFY_OSISID</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.30" style="width: 33%; background-color: white;">7.
+            EC_UNABLE_TO_LOCATE_EXTERNAL_FILE</td>
+          <td id="viii-p10.32" style="width: 33%; background-color: white;">A file referenced in
+            the source file can not be located, and has not been included in the
+            module.</td>
+          <td id="viii-p10.34" style="width: 33%; background-color: white;">Possible cause:<br>
+            A missing, or misplaced file such as an image has been referenced in
+            the source file.<br>
+            <br>
+            Solution:<br>
+            Locate the file and put it in the proper place in relation to the
+            source file.</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.36" style="width: 33%; background-color: white;">8.
+            EC_UNABLE_TO_LOAD_EXTERNAL_FILE</td>
+          <td id="viii-p10.38" style="width: 33%; background-color: white;">A file referenced in
+            the source file has been located, but can not be read.</td>
+          <td id="viii-p10.40" style="width: 33%; background-color: white;">Possible cause:<br>
+            Another application may have the file open, and is preventing other
+            applications from accessing the file.<br>
+            <br>
+            Solution:<br>
+            Close any applications that may be using the file.</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.42" style="width: 33%; background-color: white;">9.
+            EC_CORRUPT_ITEM_DATA</td>
+          <td id="viii-p10.44" style="width: 33%; background-color: white;">An internal error has
+            occurred.</td>
+          <td id="viii-p10.46" style="width: 33%; background-color: white;">Possible cause:<br>
+            Unknown.<br>
+            <br>
+            Solution:<br>
+            Rebuild the module.</td>
+        </tr>
+        <tr>
+          <td id="viii-p10.48">10. EC_POSSIBLE_ENTITY_ENCODING_ERROR</td>
+          <td id="viii-p10.50">This is considered as a warning, as it is not certain that it is
+            an error.</td>
+          <td id="viii-p10.52">Possible cause:<br>
+            A '#' character has been found in a text run, and has been followed
+            with at least one digit, and a semicolon. And is not preceded by an
+            ampersand character. Which it must be if it is actually an encoded
+            character.<br>
+            <br>
+            Solution:<br>
+            Insert '&amp;' before the '#'.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div1>
+
+<div1 title="Sower Librarian" id="ix">
+<p id="ix-p1">Sower Librarian is a tool designed to create, and maintain a library of
+      Sower Modules built from ThML files. It scans the selected folder, and
+      sub-folders searching for ThML files, and corresponding modules. It
+      compares file dates and skips any that appear to be current. If a module
+      has been built before there should be a card file for the module. If there
+      is a card file and the module needs to be rebuilt it is done without
+      requiring any user interaction. This minimizes the need for user input
+      when updating an existing library. A password can be entered for any
+      modules that require encryption. The same password will be used for all
+      encrypted modules. If a modules requires encryption and a password has not
+      been entered the module will be skipped. It is similar in operation to
+      Sower Module Writer, and creates the same files with the exception that it
+      creates one log file for all modules in the root folder of the library
+      instead of a log file for each module.</p>
+   <p id="ix-p3">Encryption is only available if the encryption plug-in is available. At
+      this point in time that plug-in has not been released.</p>
+  </div1>
+
+<div1 title="Sower Module Inspector" id="x">
+<p id="x-p1">Sower Module Inspector is a utility to examine modules created with Sower
+      Module Writer. </p>
+    <ol id="x-p2.1">
+ <li id="x-p2.2">The module header.</li>
+      <li id="x-p2.4">The table of contents.</li>
+      <li id="x-p2.6">The media contents, external files referenced in the source file that
+        have been automatically included in the module.</li>
+      <li id="x-p2.8">Scripture elements that have been identified in the source file. These
+        are not presented in a list, to verify this enter a reference in the box
+        provided and click the 'Find' button such as 'Gen. 1:1'.</li>
+      <li id="x-p2.10">ScripCom elements that have been identified in the source file. Check
+        for entries as with Scripture elements.</li>
+      <li id="x-p2.12">Strongs Greek entries.</li>
+      <li id="x-p2.14">Strongs Hebrew entries.</li>
+      <li id="x-p2.16">Terms (entries) in dictionaries, or encyclopedias.</li>
+      <li id="x-p2.18">Notes, a complete list of notes identified in the source file.</li>
+    </ol>
+    <p id="x-p3">For encrypted modules there must be a master key, or a user key
+      available to open the module.</p>
+  </div1>
+
+<div1 title="ThML Builder" id="xii">
+<p id="xii-p1">ThML Builder is a utility designed to create a ThML file from multiple
+      html files. The resulting file may require further editing. It is intended
+      to reduce some of the work required to convert a multi-file html book to
+      ThML.</p>
+    <p id="xii-p3">To create a ThML file:</p>
+    <ul id="xii-p4.1">
+ <li id="xii-p4.2">Enter any information that should be stored in the dublin core of the
+        file.</li>
+      <li id="xii-p4.4">Click the 'Select files' button to select the files to be used in the
+        build.</li>
+      <li id="xii-p4.6">Select or enter the 'Save as' file path.</li>
+      <li id="xii-p4.8">Uncheck any files in the list that should not be included in the
+        build.</li>
+      <li id="xii-p4.10">Use the 'Up', and 'Down' buttons to position the files according to
+        the desired contents of the resulting ThML file.</li>
+      <li id="xii-p4.12">Click 'Build'.</li>
+    </ul>
+    <p id="xii-p5">ThML Builder can also load a Sower Project file which describes how to
+      build the ThML file. This method allows for the creation of more complex
+      books. And also provides options for automatic markup of scripture
+      references.</p>
+    <ul id="xii-p6.1">
+ </ul>
+  </div1>
+
+<div1 title="Sower Map Editor" id="xiii">
+<p id="xiii-p1">Sower Map Editor is a utility for creating Image Maps (a list of points
+      on an image) which can be included in Sower Modules, and related to a
+      specific image. It does not edit the image itself.</p>
+    <p id="xiii-p3">The items (map areas) in the image map specify the position of a point on
+      the image, name, draw color, fill color, and radius. AutoDef uses the name
+      to locate information related to the area to display in an AutoDef window.
+      If a translation file is available the name of the area can be translated
+      and displayed in a tooltip window, or used to find information for AutoDef
+      in a different language.</p>
+    <p id="xiii-p5">Image Maps can be automatically generated with user input for approximate
+      pixels positions of latitude, and longitude of&nbsp; 4 positions on the
+      map image. These are top, bottom, left, and right. And do not have to be
+      the absolute corners, but as close as possible for greatest accuracy. The
+      generated map areas can be edited manually if needed. Image Maps are
+      stored in an Image Map List, allowing multiple Image Maps for the image to
+      be stored in one Sower Binary Object. </p>
+  </div1>
+
+<div1 title="Sower Module Installer" id="xiv">
+<p id="xiv-p1">Sower Module Installer decompresses bzipped modules into the Sower Modules directory. This utility is provided to make it easier for users who may not know where the module library is on their system.</p> 
+</div1>
+
+<div1 title="Sower Project Writer" id="xv">
+<p id="xv-p1"> Sower Project Writer creates a Sower Project file from opf files used in epub books.
+     ThML Writer can then be used to create a ThML file of the ebook. The target should be a file name without extension for the project file that will be generated. This file will be created in the same directory as the opf file.<br>
+     This name will also be used for the ThML file that is to be created from the project file.</p>
+  </div1>
+
+<div1 title="Sower Markup Editor" id="xvi">
+<p id="xvi-p1">Sower Markup Editor is a text based markup editor.  Elements for Html, ThML, and SwPrjML
+      can be entered by selecting an item from a list. If there is a text selection the open, and closing
+       tags will enclose the selection. When a mouse hovers over an element AutoDef will provide
+       information about the element if any information is available in installed Sower Modules.</p>
+  </div1>
+
+<div1 title="Sower Project Markup Language" id="xvii">
+<p id="xvii-p1">Sower Project Markup Language is a markup language which specifies how a
+      ThML file is to be created from one or more files. The table below
+      describes the elements. All elements are processed in the order listed in
+      the project file.</p>
+    <table id="xvii-p2.1" style="width: 100%;" border="1">
+ <thead id="xvii-p2.2">
+ <tr>
+          <td id="xvii-p2.3">Element</td>
+          <td id="xvii-p2.5">Description</td>
+          <td id="xvii-p2.7">Attributes</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="xvii-p2.10">body</td>
+          <td id="xvii-p2.12">Represents where the body of the ThML file begins, and ends.</td>
+          <td id="xvii-p2.14">none</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.16">div1</td>
+          <td id="xvii-p2.18" rowspan="6" colspan="1">div1 through div6 represent a division,
+            and depth in the text as in ThML.</td>
+          <td id="xvii-p2.20" rowspan="6" colspan="1">src - the relative path to the file that
+            contains the content for the division.<br>
+            title - the title for the division.<br>
+            id - the id for the division.</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.22">div2</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.24">div3</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.26">div4</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.28">div5</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.30">div6</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.32">file</td>
+          <td id="xvii-p2.34">A file that is to be copied to the current position of the ThML
+            file.</td>
+          <td id="xvii-p2.36">src - the relative path to the file.</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.38">head</td>
+          <td id="xvii-p2.40">Represents where the head of the ThML file begins, and ends.</td>
+          <td id="xvii-p2.42">none</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.44">info</td>
+          <td id="xvii-p2.46">Represents where the electronic information of the ThML file
+            begins, and ends.</td>
+          <td id="xvii-p2.48">none</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.50">project</td>
+          <td id="xvii-p2.52">Begins, and ends a project file.</td>
+          <td id="xvii-p2.54">target - relative path for the ThML file that is to be created.</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.56">references</td>
+          <td id="xvii-p2.58">Defines if scripture references should be processed, and the rules
+            to recognize those references. Enforcing strict rules will help
+            prevent inaccurate markup.</td>
+          <td id="xvii-p2.60">process - true to process references, otherwise false.<br>
+            cvdiv - marker that is exists between chapter, and verse numbers.
+            Typically ':'.<br>
+            span - marker that represents a span in a reference. Typically '-'.<br>
+            div - marker that represents a division in a reference. Typically
+            ','.<br>
+            break - marker that represents a break in a reference. Typically
+            ';'.<br>
+            romanforchapters - true if chapter numbers are roman numerals, false
+            otherwise.<br>
+            romanforverses - true if verse numbers are roman numerals, false
+            otherwise.<br>
+            romanlowercase - true if roman numerals are only valid if lower
+            case, otherwise false.<br>
+            booknameuppercase - true if book names must always begin with a
+            capital letter, otherwise false.<br>
+            linebreakisspace - line breaks should be treated as space
+            characters. This should be false for text files, and true for
+            most&nbsp; markup languages.</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.62">style</td>
+          <td id="xvii-p2.64">Represents where any css style information begins, and ends.</td>
+          <td id="xvii-p2.66">none</td>
+        </tr>
+        <tr>
+          <td id="xvii-p2.68">verbatim</td>
+          <td id="xvii-p2.70">Text enclosed in the 'verbatim' element will be copied verbatim to
+            the target file.</td>
+          <td id="xvii-p2.72">none</td>
+        </tr>
+      </tbody>
+    </table>
+    <p id="xvii-p3">Project file example:</p>
+    <p id="xvii-p5">&lt;project target="book.thm"&gt;<br>
+      &lt;references process="true" cvdiv=":" span="-" div="," break=";"
+      romanforchapters="true" romanforverses="false" romanlowercase="true"
+      booknameuppercase="true" linebreakisspace="true"/&gt;<br>
+      &lt;head&gt;<br>
+      &lt;info&gt;<br>
+      &lt;verbatim&gt;<br>
+      --Dublin Core Text--<br>
+      &lt;/verbatim&gt;<br>
+      &lt;/info&gt;<br>
+      &lt;style&gt;<br>
+      &lt;file src="book.css"/&gt;<br>
+      &lt;/style&gt;<br>
+      &lt;/head&gt;<br>
+      &lt;body&gt;<br>
+      &lt;div1 src="chapter1.htm" title="Chapter 1" id="i"/&gt;<br>
+      &lt;/body&gt;<br>
+      &lt;/project&gt;</p>
+  </div1>
+
+<div1 title="SowerBase" id="xviii">
+<p id="xviii-p1">SowerBase is a cross-platform dynamic link library, or shared object
+      designed to provide the foundation code for Sower applications. Some of it's
+      capabilities are:</p>
+    <ul id="xviii-p2.1">
+ <li id="xviii-p2.2">Handles theme, translation, bookmark, and preferences files for
+        applications.</li>
+      <li id="xviii-p2.4">Provides facilities for working with Html, and ThML.</li>
+      <li id="xviii-p2.6">Recognizes scripture references in multiple languages, and forms.</li>
+      <li id="xviii-p2.8">GeoLocation data for working with maps of the ancient world.</li>
+      <li id="xviii-p2.10">Provides a very versatile book module design, and the facilities to
+        work with those modules.</li>
+      <li id="xviii-p2.12">Provides a gui frame work on top of the wxWidgets frame work, reducing
+        much of the work involved in handling windows, menus, and toolbars.
+        Including specialized controls designed to work with Sower modules, ThML
+        files, and automatically update themselves for language, or theme
+        changes.</li>
+      <li id="xviii-p2.14">Plug-In, and module managers.</li>
+      <li id="xviii-p2.16">Initialization of applications, and SowerBase itself.</li>
+    </ul>
+    <p id="xviii-p3">And more. Greatly reducing the complexity of writing document driven
+      software that works with ThML files, or Sower modules.</p>
+  </div1>
+
+<div1 title="Additional Information For Building Modules" id="xix">
+<p id="xix-p1">Sower Modules are built from ThML files (Theological Markup Language),
+      and although ThML is specifically designed for theological texts it is
+      suited to almost any type of book. More information on ThML can be found
+      at www.ccel.org.</p>
+    <p id="xix-p3">There are a few Sower specific extensions to ThML:</p>
+    <ol id="xix-p4.1">
+ <li id="xix-p4.2">Div1 - Div6 can have an extra attribute named 'type' which causes a
+        specific content viewer to be used for display if a viewer of that type
+        is available. The possible values for 'type' are:<br>
+        <ul id="xix-p4.3">
+ <li id="xix-p4.4"> Text</li>
+          <li id="xix-p4.6"> ThML</li>
+          <li id="xix-p4.8"> Html</li>
+          <li id="xix-p4.10"> Hymn</li>
+          <li id="xix-p4.12"> Lesson</li>
+          <li id="xix-p4.14"> Image</li>
+          <li id="xix-p4.16"> Map</li>
+          <li id="xix-p4.18"> Audio</li>
+          <li id="xix-p4.20"> Video</li>
+          <li id="xix-p4.22"> 2D</li>
+          <li id="xix-p4.24"> 3D</li>
+        </ul>
+        <p id="xix-p5"> ThML is the default, and does not need to be specified. </p>
+      </li>
+      <li id="xix-p6.2"> An 'geodata' attribute can be added to the html 'img' element and
+        should 6 variables. And should take this form:<br>
+        geodata="width in px, height in px, latitude top, latitude bottom,
+        longitude left, longitude right"<br>
+        This will cause SowerBase to use internal geolocation data to identify
+        places at the position of the mouse and display data associated with the
+        place if any has been found.</li>
+      <li id="xix-p6.4">(img, audio, video, music, and source) elements can be used to cause
+        media files to be stored in the module.<br>
+        &lt;audio&gt;<br>
+        &lt;source src="sample-15s.wav" type="audio/wav"&gt;<br>
+        &lt;/audio&gt; <br>
+        &nbsp; <audio id="xix-p6.5" controls="controls"> <source id="xix-p6.6" src="sample-15s.wav" type="audio/wav">
+        </audio></li>
+      <li id="xix-p6.9">The Sower specific 'interface' element can be used to for Sower Binary
+        Object files to be stored in the module using a relative path as in the
+        'img' element.</li>
+      <li id="xix-p6.11">A Sower specific element 'term.strongs' is intended for use in markup
+        of lexicons. Used in place of the ThML 'term' element. It has 3
+        attributes, value (strongs number followed with a G, or H depending on
+        the language), translit (english transliteration of the original word),
+        origin (the word in the original language).</li>
+      <li id="xix-p6.13">A Sower specific element 'christ' can be used to mark Christ's words
+        in scripture.</li>
+    </ol>
+  </div1>
+
+<div1 title="Credits" id="xx">
+<p id="xx-p1">Sower Applications are developed with CodeBlocks, and gcc. Using
+      wxWidgets for user interface elements, MiniAudio for audio, and libbz2 for
+      file compression.</p>
+	<p id="xx-p3">All of Sower Applications has been designed to work with ThML files as defined in ThML 1.04.htm which
+	can be found at 'https://www.ccel.org/ThML/ThML1.04.htm' . The reference information in thml.smd
+	comes from the same file. To learn more go to ccel.org .</p>
+    <p id="xx-p5">The jpeg library is used for displaying jpeg images, and this notice is
+      required:</p>
+    <p id="xx-p7">'This software is based in part on the work of the Independent JPEG
+      Group.' </p>
+  </div1>
+
+<div1 title="License" id="xxi">
+<p id="xxi-p1"><b>Sower Applications License</b><br>
+      <br>
+      NOTICE: CAREFULLY READ THE FOLLOWING LEGAL AGREEMENT.&nbsp;
+      REDISTRIBUTION, OR USE OF THE SOFTWARE PROVIDED WITH THIS AGREEMENT (THE
+      "SOFTWARE") CONSTITUTES YOUR ACCEPTANCE OF THESE TERMS.&nbsp; IF YOU DO
+      NOT AGREE TO THE TERMS OF THIS AGREEMENT, DO NOT REDISTRIBUTE, INSTALL
+      AND/OR USE THIS SOFTWARE.&nbsp; USER'S USE OF THIS SOFTWARE AND PERMISSION
+      TO REDISTRIBUTE THIS SOFTWARE IS CONDITIONED UPON COMPLIANCE BY USER WITH
+      THE TERMS OF THIS AGREEMENT.<br>
+      <br>
+      1. LICENSE GRANT.&nbsp; DNR (the "AUTHOR") grants you a license to use the
+      software on as many systems as you need.&nbsp; "You" means the company,
+      entity or individual that is redistributing, and/or using the
+      SOFTWARE.&nbsp; "Use" means storing, loading, installing, executing or
+      displaying the SOFTWARE.&nbsp; You may not sell the SOFTWARE.<br>
+      <br>
+      2. OWNERSHIP.&nbsp; The SOFTWARE is owned and copyrighted by the
+      AUTHOR.&nbsp; Your license confers no title or ownership in the SOFTWARE
+      and should not be construed as a transfer of any right in the SOFTWARE.
+      &nbsp;<br>
+      <br>
+      3. COPYRIGHT.&nbsp; The SOFTWARE is protected by United States copyright
+      law and international treaty provisions.&nbsp; You acknowledge that no
+      title to the intellectual property in the SOFTWARE is transferred to
+      you.&nbsp; You further acknowledge that title and full ownership rights to
+      the SOFTWARE will remain the exclusive property of the AUTHOR and you will
+      not acquire any rights to the SOFTWARE except as expressly set forth in
+      this license.&nbsp; You agree that any copies of the SOFTWARE will contain
+      the same proprietary notices which appear on and in the SOFTWARE.<br>
+      <br>
+      4. NO WARRANTIES.&nbsp; THE AUTHOR DOES NOT WARRANT THAT THE SOFTWARE IS
+      ERROR FREE.&nbsp; THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RESPECT TO THE
+      SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED
+      WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT OF THIRD PARTY RIGHTS.&nbsp;&nbsp; THE SOFTWARE IS
+      PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.<br>
+      <br>
+      5. SEVERABILITY.&nbsp; In the event of invalidity of any provision of this
+      license, the parties agree that such invalidity shall not affect the
+      validity of the remaining portions of this license. &nbsp;<br>
+      <br>
+      6. NO LIABILITY FOR CONSEQUENTIAL DAMAGES.&nbsp; IN NO EVENT SHALL THE
+      AUTHOR, OR ANY OTHER DISTRIBUTOR OF THE SOFTWARE, BE LIABLE TO YOU FOR ANY
+      CONSEQUENTIAL, SPECIAL, INCIDENTAL OR INDIRECT DAMAGES OF ANY KIND ARISING
+      OUT OF THE DELIVERY, PERFORMANCE OR USE OF THE SOFTWARE, EVEN IF THE
+      AUTHOR, OR THE DISTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+      DAMAGES.<br>
+      <br>
+      7. GOVERNING LAW.&nbsp; This license will be governed by the laws of the
+      State of Tennessee as they are applied to agreements between Tennessee
+      residents entered into and to be performed entirely within Tennessee.<br>
+      <br>
+      8. NOTICES.&nbsp; You must ensure that anyone who receives a copy of any
+      part of the software from you also gets a copy of this LICENSE.<br>
+      <br>
+      9. REDISTRIBUTION OF THE SOFTWARE.&nbsp; YOU MAY NOT SELL THE
+      SOFTWARE.&nbsp; You may redistribute unlimited verbatim copies of the
+      SOFTWARE for noncommercial purposes only.<br>
+      <br>
+      10. NEW WORKS. You may create new works based on the SOFTWARE for
+      noncommercial purposes.&nbsp; Any work based on, or including any part of
+      the SOFTWARE must be released to the public under this LICENSE, and this
+      LICENSE only. The source code for the new work must be made freely
+      available to the public, and released under this LICENSE.<br>
+      <br>
+      11. VIOLATIONS.&nbsp; Your license for the SOFTWARE is terminated once you
+      have been notified that you have violated any term of this agreement.<br>
+      <br>
+      12. NO OTHER RIGHTS.&nbsp; These terms do not allow you to sublicense or
+      transfer any of your licenses to anyone else, or prevent the licensor from
+      granting licenses to anyone else.&nbsp; These terms do not imply any other
+      licenses.<br>
+      <br>
+      13. ENTIRE AGREEMENT.&nbsp; This is the entire agreement between you and
+      the AUTHOR which supersedes any prior agreement or understanding, whether
+      written or oral, relating to the subject matter of this license.<br>
+      <br>
+    </p>
+  </div1>
+
+<div1 title="Contact Information" id="xxii">
+<p id="xxii-p1">Site: https://sowerapps.github.io</p>
+    <p id="xxii-p3">Email: dvnr@protonmail.com</p>
+  </div1>
+
+</ThML>

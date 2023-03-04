@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Sower Theme Editor</title>
+  </head>
+  <body>
+    <p>Sower Theme Editor is used to create, and edit themes for
+      Sower software. A theme is simply a list of images to be used for gui
+      element of the user interface, and each image is associated with a string
+      identifier. The theme file is named 'themes.sdf' which can be found in the
+      software's data directory + 'themes'. For MS Windows this will be the
+      directory where the application resides. Images should be in the png
+      format, and 16X16 pixels. To create a new theme first create a sub-folder
+      in Sower's theme directory, place the images for the theme in that folder.
+      Then start Theme Editor, open 'themes.sdf', add a new table with the name
+      of the new theme. Select the new table, and click 'Load'. Once the new
+      table is loaded right click on any identifier in the list at the top of
+      application frame to set the image for that identifier.</p>
+    <p><b>Table Panel:</b></p>
+    <p>
+      Select a table, and click 'Load' to open that table for editing. Click
+      'Save' to save changes to the table before clicking 'Close' which will
+      close the loaded table without saving any changes.</p>
+    <p>To add a new theme table enter a name in the box provided, and click
+      'Add'. Click 'Load' to open the new table for editing.</p>
+    <p>Clicking 'Delete' will delete any selected table.</p>
+    <p>Values are edited by clicking the item in the list at the top of the
+      application frame.</p>
+    <p><b>Identifiers Panel:</b></p>
+    <p>
+      String identifiers can only be added, or deleted when no tables are
+      loaded. String identifiers when added are added to all tables, and when
+      deleted are deleted from all tables.</p>
+    <p>Enter an identifier and click 'Add' when there no loaded tables to add a
+      new identifier.</p>
+    <p>
+      Clicking 'Delete' will delete any selected identifier from all tables.
+    </p>
+  </body>
+</html>
