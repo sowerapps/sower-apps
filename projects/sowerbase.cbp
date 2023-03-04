@@ -8,7 +8,7 @@
 		<Build>
 			<Target title="debug_msw">
 				<Option platforms="Windows;" />
-				<Option output="../build-msw-debug/libsowerbase_d" imp_lib="../lib-msw/$(TARGET_OUTPUT_BASENAME).a" def_file="../lib-msw/$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option output="../build-msw-debug/sowerbase_d" imp_lib="../lib-msw/$(TARGET_OUTPUT_BASENAME).a" def_file="../lib-msw/$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../obj-msw/debug" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -42,7 +42,7 @@
 			</Target>
 			<Target title="release_msw">
 				<Option platforms="Windows;" />
-				<Option output="../build-msw/libsowerbase" imp_lib="../lib-msw/$(TARGET_OUTPUT_BASENAME)" def_file="../lib-msw/$(TARGET_OUTPUT_BASENAME)" prefix_auto="1" extension_auto="1" />
+				<Option output="../build-msw/sowerbase" imp_lib="../lib-msw/$(TARGET_OUTPUT_BASENAME)" def_file="../lib-msw/$(TARGET_OUTPUT_BASENAME)" prefix_auto="1" extension_auto="1" />
 				<Option object_output="../obj-msw/release" />
 				<Option type="3" />
 				<Option compiler="gcc" />
@@ -74,6 +74,39 @@
 					<Add library="libwinmm" />
 				</Linker>
 			</Target>
+			<Target title="release_osx">
+				<Option platforms="Mac;" />
+				<Option output="../build-osx/sowerbase" imp_lib="../lib-osx$(TARGET_OUTPUT_BASENAME)" def_file="../lib-osx/$(TARGET_OUTPUT_BASENAME)" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj-osx/release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-fPIC" />
+					<Add option="-pthread" />
+					<Add option="-fpermissive" />
+					<Add option="-D__OSX__" />
+					<Add option="-D__WXMAC__" />
+					<Add option="-D__WXOSX_COCOA__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add option="-DDISABLEWXASSERTS" />
+					<Add directory="../depends-osx/wxwidgets/include" />
+					<Add directory="../depends-osx/bzip2" />
+				</Compiler>
+				<Linker>
+					<Add library="../build-osx/libwx_baseu-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_core-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_aui-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_propgrid-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_richtext-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_media-3.2.0.dylib" />
+					<Add library="../depends-osx/bzip2/lib/libbz2.a" />
+				</Linker>
+			</Target>
 			<Target title="debug_linux">
 				<Option platforms="Unix;" />
 				<Option output="../lib/libsowerbase_d.so" prefix_auto="0" extension_auto="0" />
@@ -94,7 +127,7 @@
 					<Add option="-DwxUSE_UNICODE" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, xml, core, adv, aui, richtext, html, media, propgrid, stc`" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
 					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
 				</Linker>
 			</Target>
@@ -118,7 +151,7 @@
 					<Add option="-DDISABLEWXASSERTS" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, xml, core, adv, aui, richtext, html, media, propgrid, stc`" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
 					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
 				</Linker>
 			</Target>

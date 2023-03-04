@@ -17,10 +17,12 @@
 		<Project filename="sowermodulewriter.cbp" />
 		<Project filename="sowerlibrarian.cbp" />
 		<Project filename="sowermoduleinspector.cbp" />
+		<Project filename="sowerkeygenerator.cbp" />
 		<Project filename="thmlbuilder.cbp" />
 		<Project filename="sowermapeditor.cbp" />
 		<Project filename="sowermoduleinstaller.cbp" />
 		<Project filename="sowerprojectwriter.cbp" />
 		<Project filename="sowermarkupeditor.cbp" />
+		<Project filename="swcrypt.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

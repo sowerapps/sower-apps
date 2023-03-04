@@ -2,15 +2,14 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Sower Theme Editor" />
+		<Option title="SwCrypt" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="debug_msw">
-				<Option platforms="Windows;" />
-				<Option output="../build-msw-debug/SwThemeEditor" prefix_auto="1" extension_auto="1" />
-				<Option object_output="../obj-msw/debug" />
-				<Option type="0" />
+				<Option output="../build-msw-debug/plugins/swcrypt_d" prefix_auto="0" extension_auto="1" />
+				<Option object_output="../obj-msw/debug/plugins/" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-m64" />
@@ -19,6 +18,7 @@
 					<Add option="-D__WXMSW__" />
 					<Add option="-D__MSWIN__" />
 					<Add option="-D__WXDEBUG__" />
+					<Add option="-DBUILD_DLL" />
 					<Add directory="../depends-msw/wxwidgets/include" />
 				</Compiler>
 				<ResourceCompiler>
@@ -29,20 +29,19 @@
 					<Add library="../lib-msw/libsowerbase_d.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxbase32ud.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_core.a" />
-					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_aui.a" />
 				</Linker>
 			</Target>
 			<Target title="release_msw">
-				<Option platforms="Windows;" />
-				<Option output="../build-msw/SwThemeEditor" prefix_auto="1" extension_auto="1" />
-				<Option object_output="../obj-msw/release" />
-				<Option type="0" />
+				<Option output="../build-msw/plugins/swcrypt" prefix_auto="0" extension_auto="1" />
+				<Option object_output="../obj-msw/release/plugins/" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-m64" />
 					<Add option="-mthreads" />
 					<Add option="-D__WXMSW__" />
 					<Add option="-D__MSWIN__" />
+					<Add option="-DBUILD_DLL" />
 					<Add directory="../depends-msw/wxwidgets/include" />
 				</Compiler>
 				<ResourceCompiler>
@@ -54,20 +53,17 @@
 					<Add library="../lib-msw/libsowerbase.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxbase32u.a" />
 					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_core.a" />
-					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_aui.a" />
 				</Linker>
 			</Target>
 			<Target title="release_osx">
-				<Option platforms="Mac;" />
-				<Option output="../build-osx/SwThemeEditor" prefix_auto="1" extension_auto="1" />
-				<Option object_output="../obj-osx/release" />
-				<Option type="0" />
+				<Option output="../build-osx/plugins/swcrypt" prefix_auto="0" extension_auto="1" />
+				<Option object_output="../obj-osx/release/plugins/" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
-					<Add option="-O2" />
-					<Add option="-fPIC" />
-					<Add option="-fno-pie" />
+					<<Add option="-fPIC" />
+					<Add option="-g" />
 					<Add option="-pthread" />
 					<Add option="-D__OSX__" />
 					<Add option="-D__WXMAC__" />
@@ -78,28 +74,19 @@
 					<Add directory="../depends-osx/wxwidgets/include" />
 				</ResourceCompiler>
 				<Linker>
+					<Add library="../build-osx/sowerbase.dylib" />
 					<Add library="../build-osx/libwx_baseu-3.2.0.dylib" />
 					<Add library="../build-osx/libwx_osx_cocoau_core-3.2.0.dylib" />
-					<Add library="../build-osx/libwx_osx_cocoau_aui-3.2.0.dylib" />
-					<Add library="../build-osx/sowerbase.dylib" />
 				</Linker>
-				<ExtraCommands>
-					<Add after="install_name_tool -add_rpath @executable_path/. $exe_dir/SwThemeEditor" />
-					<Add after="install_name_tool -change ../build-osx/sowerbase.dylib @executable_path/sowerbase.dylib $exe_dir/SwThemeEditor" />
-					<Add after="install_name_tool -change @rpath/libwx_baseu-3.2.0.dylib @executable_path/libwx_baseu-3.2.0.dylib $exe_dir/SwThemeEditor" />
-					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_core-3.2.0.dylib @executable_path/libwx_osx_cocoau_core-3.2.0.dylib $exe_dir/SwThemeEditor" />
-					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_aui-3.2.0.dylib @executable_path/libwx_osx_cocoau_aui-3.2.0.dylib $exe_dir/SwThemeEditor" />
-				</ExtraCommands>
 			</Target>
 			<Target title="debug_linux">
 				<Option platforms="Unix;" />
-				<Option output="../build-linux-debug/SwThemeEditor" prefix_auto="1" extension_auto="1" />
-				<Option object_output="../obj-linux/debug" />
-				<Option type="0" />
+				<Option output="../build-linux-debug/plugins/swcrypt_d" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="0" extension_auto="1" />
+				<Option object_output="../obj-linux/debug/plugins/" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
-					<Add option="-fno-pie" />
 					<Add option="-fPIC" />
 					<Add option="-g" />
 					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --cflags`" />
@@ -107,29 +94,25 @@
 					<Add directory="../include" />
 				</Compiler>
 				<Linker>
-					<Add option="-no-pie" />
 					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, core, aui`" />
 					<Add library="../lib/libsowerbase_d.so" />
 				</Linker>
 			</Target>
 			<Target title="release_linux">
 				<Option platforms="Unix;" />
-				<Option output="../build-linux/SwThemeEditor" prefix_auto="1" extension_auto="1" />
-				<Option object_output="../obj-linux/release" />
-				<Option type="0" />
+				<Option output="../build-linux/plugins/swcrypt" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="0" extension_auto="1" />
+				<Option object_output="../obj-linux/release/plugins/" />
+				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
-					<Add option="-O2" />
-					<Add option="-fno-pie" />
 					<Add option="-fPIC" />
+					<Add option="-g" />
 					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --cflags`" />
 					<Add option="-pthread" />
 					<Add directory="../include" />
 				</Compiler>
 				<Linker>
-					<Add option="-s" />
-					<Add option="-no-pie" />
 					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, core, aui`" />
 					<Add library="../lib/libsowerbase.so" />
 				</Linker>
@@ -142,16 +125,10 @@
 			<Add option="-DwxUSE_UNICODE" />
 			<Add directory="../include" />
 		</Compiler>
-		<Unit filename="../include/app/themeeditorapp.h" />
-		<Unit filename="../rc/resource-tools.rc">
-			<Option compilerVar="WINDRES" />
-		</Unit>
-		<Unit filename="../src/app/themeeditorapp.cpp" />
+		<Unit filename="../include/app/swcrypt.h" />
+		<Unit filename="../src/app/swcrypt.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
-			<wxsmith version="1">
-				<gui name="wxWidgets" src="Theme_EditorApp.cpp" main="Theme_EditorFrame" init_handlers="necessary" language="CPP" />
-			</wxsmith>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
