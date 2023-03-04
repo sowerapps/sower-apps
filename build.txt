@@ -1,9 +1,0 @@
-For all builds download miniaudio.h and place it in a directory named 'depends-common' in the directory that contains sower-apps.
-
-For Linux install wxWidgets, and libbz2.
-
-For MSW build wxWidgets, and libbz2 in depends-MSW. For MAC build wxWidgets, and libbz2 in depends-osx.
-
-Open sowerapps.workspace with CodeBlocks, and build.
-
-Resources (such as images for buttons) that SowerBase relies on are in the 'resource' directory, this folder can be copied to the default location where SowerBase expects to find it, which is depends on the operating system. Click 'Configuration' on the Help menu of Sower, or ThML Viewer to find see where SowerBase expects resources to be. SowerBase can be configured to find it somewhere else. Refer to Sower Help for more information on this.
