@@ -1,2 +1,0 @@
-Download miniaudio.h and place it in this directory. This file is common to all builds.
-https://raw.githubusercontent.com/mackron/miniaudio/master/miniaudio.h
