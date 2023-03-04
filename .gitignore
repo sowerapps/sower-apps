@@ -1,2 +1,4 @@
 
 *.layout
+depends-msw/bzip2
+depends-msw/wxwidgets
