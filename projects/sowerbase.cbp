@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="sowerbase" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="debug_msw">
+				<Option platforms="Windows;" />
+				<Option output="../build-msw-debug/sowerbase_d" imp_lib="../lib-msw/$(TARGET_OUTPUT_BASENAME).a" def_file="../lib-msw/$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj-msw/debug" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-m64" />
+					<Add option="-g" />
+					<Add option="-mthreads" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-D__MSWIN__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add directory="../depends-msw/wxwidgets/include" />
+					<Add directory="../depends-msw/bzip2" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxbase32ud.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_core.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_aui.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_propgrid.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_richtext.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_media.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32ud_stc.a" />
+					<Add library="../depends-msw/bzip2/lib/libbz2.a" />
+					<Add library="libwinmm" />
+				</Linker>
+			</Target>
+			<Target title="release_msw">
+				<Option platforms="Windows;" />
+				<Option output="../build-msw/sowerbase" imp_lib="../lib-msw/$(TARGET_OUTPUT_BASENAME)" def_file="../lib-msw/$(TARGET_OUTPUT_BASENAME)" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj-msw/release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-m64" />
+					<Add option="-mthreads" />
+					<Add option="-DDISABLEWXASSERTS" />
+					<Add option="-D__MSWIN__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add directory="../depends-msw/wxwidgets/include" />
+					<Add directory="../depends-msw/bzip2" />
+				</Compiler>
+				<Linker>
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxbase32u.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_core.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_aui.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_propgrid.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_richtext.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_media.a" />
+					<Add library="../depends-msw/wxwidgets/lib/libwxmsw32u_stc.a" />
+					<Add library="../depends-msw/bzip2/lib/libbz2.a" />
+					<Add library="libwinmm" />
+				</Linker>
+			</Target>
+			<Target title="release_osx">
+				<Option platforms="Mac;" />
+				<Option output="../build-osx/sowerbase" imp_lib="../lib-osx$(TARGET_OUTPUT_BASENAME)" def_file="../lib-osx/$(TARGET_OUTPUT_BASENAME)" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj-osx/release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-fPIC" />
+					<Add option="-pthread" />
+					<Add option="-fpermissive" />
+					<Add option="-D__OSX__" />
+					<Add option="-D__WXMAC__" />
+					<Add option="-D__WXOSX_COCOA__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add option="-DDISABLEWXASSERTS" />
+					<Add directory="../depends-osx/wxwidgets/include" />
+					<Add directory="../depends-osx/bzip2" />
+				</Compiler>
+				<Linker>
+					<Add library="../build-osx/libwx_baseu-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_core-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_aui-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_propgrid-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_richtext-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_media-3.2.0.dylib" />
+					<Add library="../depends-osx/bzip2/lib/libbz2.a" />
+				</Linker>
+			</Target>
+			<Target title="debug_linux">
+				<Option platforms="Unix;" />
+				<Option output="../lib/libsowerbase_d.so" prefix_auto="0" extension_auto="0" />
+				<Option object_output="../obj-linux/debug" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-fPIC" />
+					<Add option="-g" />
+					<Add option="-pthread" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --cflags`" />
+					<Add option="-fpermissive" />
+					<Add option="-D__linux__" />
+					<Add option="-D__WXGTK__" />
+					<Add option="-D__linuxdebug__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+				</Compiler>
+				<Linker>
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
+					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
+				</Linker>
+			</Target>
+			<Target title="release_linux">
+				<Option platforms="Unix;" />
+				<Option output="../lib/libsowerbase.so" prefix_auto="0" extension_auto="0" />
+				<Option object_output="../obj-linux/release" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-fPIC" />
+					<Add option="-pthread" />
+					<Add option="-fpermissive" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --cflags`" />
+					<Add option="-D__linux__" />
+					<Add option="-D__WXGTK__" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DwxUSE_UNICODE" />
+					<Add option="-DDISABLEWXASSERTS" />
+				</Compiler>
+				<Linker>
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
+					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-pipe" />
+			<Add option="-DBUILDSOWERBASE" />
+		</Compiler>
+		<Unit filename="../include/appi/appifa.h" />
+		<Unit filename="../include/array/cardarray.h" />
+		<Unit filename="../include/array/moduleitemarray.h" />
+		<Unit filename="../include/array/pointarray.h" />
+		<Unit filename="../include/array/referenceitemarray.h" />
+		<Unit filename="../include/array/stringarray.h" />
+		<Unit filename="../include/array/textrangearray.h" />
+		<Unit filename="../include/array/uintarray.h" />
+		<Unit filename="../include/av_media/audio.h" />
+		<Unit filename="../include/av_media/audiocontrol.h" />
+		<Unit filename="../include/av_media/mediadevice.h" />
+		<Unit filename="../include/bible/bibledatacontainers.h" />
+		<Unit filename="../include/bible/bookidentifier.h" />
+		<Unit filename="../include/bible/commentarymap.h" />
+		<Unit filename="../include/bible/referenceparser.h" />
+		<Unit filename="../include/bible/scripturemap.h" />
+		<Unit filename="../include/bible/standard_bible.h" />
+		<Unit filename="../include/controls/bookmarkslistctrl.h" />
+		<Unit filename="../include/controls/controls.h" />
+		<Unit filename="../include/controls/historylist.h" />
+		<Unit filename="../include/controls/librarylistctrl.h" />
+		<Unit filename="../include/controls/moduletreectrl.h" />
+		<Unit filename="../include/controls/stretchfitctrls.h" />
+		<Unit filename="../include/controls/thmltreectrl.h" />
+		<Unit filename="../include/controls/treectrlext.h" />
+		<Unit filename="../include/css/css_attributes.h" />
+		<Unit filename="../include/css/css_file.h" />
+		<Unit filename="../include/css/css_inliner.h" />
+		<Unit filename="../include/css/css_selector.h" />
+		<Unit filename="../include/css/css_units.h" />
+		<Unit filename="../include/dialogs/areasdlg.h" />
+		<Unit filename="../include/dialogs/carddlg.h" />
+		<Unit filename="../include/dialogs/configurationdlg.h" />
+		<Unit filename="../include/dialogs/geodlg.h" />
+		<Unit filename="../include/dialogs/interfacedlg.h" />
+		<Unit filename="../include/dialogs/mapsdlg.h" />
+		<Unit filename="../include/dialogs/preferencesdlg.h" />
+		<Unit filename="../include/filesys/bzcompression.h" />
+		<Unit filename="../include/filesys/file.h" />
+		<Unit filename="../include/filesys/recurse.h" />
+		<Unit filename="../include/filesys/streambuffer.h" />
+		<Unit filename="../include/framework/bookpanels.h" />
+		<Unit filename="../include/framework/dialog.h" />
+		<Unit filename="../include/framework/findpanel.h" />
+		<Unit filename="../include/framework/frame.h" />
+		<Unit filename="../include/framework/guidata.h" />
+		<Unit filename="../include/framework/guipanel.h" />
+		<Unit filename="../include/framework/librarypanels.h" />
+		<Unit filename="../include/framework/librarysearchpanels.h" />
+		<Unit filename="../include/framework/markuppanel.h" />
+		<Unit filename="../include/framework/menubar.h" />
+		<Unit filename="../include/framework/panel.h" />
+		<Unit filename="../include/framework/searchpanel.h" />
+		<Unit filename="../include/framework/splashscreen.h" />
+		<Unit filename="../include/framework/toolbar.h" />
+		<Unit filename="../include/framework/toolbook.h" />
+		<Unit filename="../include/framework/viewbook.h" />
+		<Unit filename="../include/geo/geolocation.h" />
+		<Unit filename="../include/html/html.h" />
+		<Unit filename="../include/html/html_anchor.h" />
+		<Unit filename="../include/html/html_attributes.h" />
+		<Unit filename="../include/html/html_color.h" />
+		<Unit filename="../include/html/html_css.h" />
+		<Unit filename="../include/html/html_encoded_char.h" />
+		<Unit filename="../include/html/html_imagemap.h" />
+		<Unit filename="../include/html/parserbase.h" />
+		<Unit filename="../include/imgwin/command.h" />
+		<Unit filename="../include/imgwin/geofind.h" />
+		<Unit filename="../include/imgwin/imageprint.h" />
+		<Unit filename="../include/imgwin/imagewindow.h" />
+		<Unit filename="../include/interface/imagewin/imagewindowinterface.h" />
+		<Unit filename="../include/interface/interface.h" />
+		<Unit filename="../include/interface/richtext/richtextinterface.h" />
+		<Unit filename="../include/language/language.h" />
+		<Unit filename="../include/module/autodefcommentary.h" />
+		<Unit filename="../include/module/autodefnumbered.h" />
+		<Unit filename="../include/module/autodefscripture.h" />
+		<Unit filename="../include/module/autodefterm.h" />
+		<Unit filename="../include/module/category.h" />
+		<Unit filename="../include/module/mediacontents.h" />
+		<Unit filename="../include/module/module.h" />
+		<Unit filename="../include/module/modulebase.h" />
+		<Unit filename="../include/module/moduleinterface.h" />
+		<Unit filename="../include/module/moduleloader.h" />
+		<Unit filename="../include/module/modulemanager.h" />
+		<Unit filename="../include/module/modulewriter.h" />
+		<Unit filename="../include/module/tableofcontents.h" />
+		<Unit filename="../include/module/thmlmodulewriter.h" />
+		<Unit filename="../include/module/transcryptor.h" />
+		<Unit filename="../include/plugin/plugin.h" />
+		<Unit filename="../include/plugin/pluginloader.h" />
+		<Unit filename="../include/richtext/attr/richtextattr.h" />
+		<Unit filename="../include/richtext/autodefbase.h" />
+		<Unit filename="../include/richtext/autodefwindow.h" />
+		<Unit filename="../include/richtext/findreplace.h" />
+		<Unit filename="../include/richtext/objects/horizontalrule.h" />
+		<Unit filename="../include/richtext/objects/paragraphlist.h" />
+		<Unit filename="../include/richtext/objects/richtexttablematrix.h" />
+		<Unit filename="../include/richtext/richtextctrlext.h" />
+		<Unit filename="../include/richtext/richview.h" />
+		<Unit filename="../include/sdf/datafile.h" />
+		<Unit filename="../include/sowerbase.h" />
+		<Unit filename="../include/string/string.h" />
+		<Unit filename="../include/string/stringcompare.h" />
+		<Unit filename="../include/string/stringpair.h" />
+		<Unit filename="../include/string/stringw.h" />
+		<Unit filename="../include/string/strparser.h" />
+		<Unit filename="../include/swguiml/swguimlparser.h" />
+		<Unit filename="../include/swopf/swopfparser.h" />
+		<Unit filename="../include/swprjml/swprjmlparser.h" />
+		<Unit filename="../include/thml/thml_css.h" />
+		<Unit filename="../include/thml/thml_elements.h" />
+		<Unit filename="../include/thml/thml_file.h" />
+		<Unit filename="../include/thml/thml_parser.h" />
+		<Unit filename="../include/thml/thml_utility.h" />
+		<Unit filename="../include/thml/thmlfilemanager.h" />
+		<Unit filename="../include/utility/geotrfilewriter.h" />
+		<Unit filename="../include/utility/sidfilewriter.h" />
+		<Unit filename="../src/appi/appifa.cpp" />
+		<Unit filename="../src/appi/bookmarks.cpp" />
+		<Unit filename="../src/appi/getset.cpp" />
+		<Unit filename="../src/appi/keys.cpp" />
+		<Unit filename="../src/appi/modules.cpp" />
+		<Unit filename="../src/appi/paths.cpp" />
+		<Unit filename="../src/appi/plugins.cpp" />
+		<Unit filename="../src/appi/stockimages.cpp" />
+		<Unit filename="../src/appi/stylesheet.cpp" />
+		<Unit filename="../src/appi/thmlfiles.cpp" />
+		<Unit filename="../src/array/cardarray.cpp" />
+		<Unit filename="../src/array/moduleitemarray.cpp" />
+		<Unit filename="../src/array/pointarray.cpp" />
+		<Unit filename="../src/array/referenceitemarray.cpp" />
+		<Unit filename="../src/array/stringarray.cpp" />
+		<Unit filename="../src/array/textrangearray.cpp" />
+		<Unit filename="../src/array/uintarray.cpp" />
+		<Unit filename="../src/av_media/audio.cpp" />
+		<Unit filename="../src/av_media/audiocontrol.cpp" />
+		<Unit filename="../src/av_media/mediadevice.cpp" />
+		<Unit filename="../src/bible/bibledatacontainers.cpp" />
+		<Unit filename="../src/bible/bookidentifier.cpp" />
+		<Unit filename="../src/bible/commentarymap.cpp" />
+		<Unit filename="../src/bible/referenceparser.cpp" />
+		<Unit filename="../src/bible/scripturemap.cpp" />
+		<Unit filename="../src/bible/standard_bible.cpp" />
+		<Unit filename="../src/controls/bookmarkslistctrl.cpp" />
+		<Unit filename="../src/controls/controls.cpp" />
+		<Unit filename="../src/controls/historylist.cpp" />
+		<Unit filename="../src/controls/librarylistctrl.cpp" />
+		<Unit filename="../src/controls/moduletreectrl.cpp" />
+		<Unit filename="../src/controls/stretchfitctrls.cpp" />
+		<Unit filename="../src/controls/thmltreectrl.cpp" />
+		<Unit filename="../src/controls/treectrlext.cpp" />
+		<Unit filename="../src/css/css_attributes.cpp" />
+		<Unit filename="../src/css/css_file.cpp" />
+		<Unit filename="../src/css/css_inliner.cpp" />
+		<Unit filename="../src/css/css_selector.cpp" />
+		<Unit filename="../src/css/css_units.cpp" />
+		<Unit filename="../src/dialogs/areasdlg.cpp" />
+		<Unit filename="../src/dialogs/carddlg.cpp" />
+		<Unit filename="../src/dialogs/configurationdlg.cpp" />
+		<Unit filename="../src/dialogs/geodlg.cpp" />
+		<Unit filename="../src/dialogs/interfacedlg.cpp" />
+		<Unit filename="../src/dialogs/mapsdlg.cpp" />
+		<Unit filename="../src/dialogs/preferencesdlg.cpp" />
+		<Unit filename="../src/filesys/bzcompression.cpp" />
+		<Unit filename="../src/filesys/file.cpp" />
+		<Unit filename="../src/filesys/recurse.cpp" />
+		<Unit filename="../src/filesys/streambuffer.cpp" />
+		<Unit filename="../src/framework/bookpanels.cpp" />
+		<Unit filename="../src/framework/dialog.cpp" />
+		<Unit filename="../src/framework/findpanel.cpp" />
+		<Unit filename="../src/framework/frame.cpp" />
+		<Unit filename="../src/framework/guidata.cpp" />
+		<Unit filename="../src/framework/guipanel.cpp" />
+		<Unit filename="../src/framework/librarypanels.cpp" />
+		<Unit filename="../src/framework/librarysearchpanels.cpp" />
+		<Unit filename="../src/framework/markuppanel.cpp" />
+		<Unit filename="../src/framework/menubar.cpp" />
+		<Unit filename="../src/framework/panel.cpp" />
+		<Unit filename="../src/framework/searchpanel.cpp" />
+		<Unit filename="../src/framework/splashscreen.cpp" />
+		<Unit filename="../src/framework/toolbar.cpp" />
+		<Unit filename="../src/framework/toolbook.cpp" />
+		<Unit filename="../src/framework/viewbook.cpp" />
+		<Unit filename="../src/geo/geolocation.cpp" />
+		<Unit filename="../src/html/html.cpp" />
+		<Unit filename="../src/html/html_anchor.cpp" />
+		<Unit filename="../src/html/html_attributes.cpp" />
+		<Unit filename="../src/html/html_color.cpp" />
+		<Unit filename="../src/html/html_css.cpp" />
+		<Unit filename="../src/html/html_encoded_char.cpp" />
+		<Unit filename="../src/html/html_imagemap.cpp" />
+		<Unit filename="../src/html/parserbase.cpp" />
+		<Unit filename="../src/imgwin/autodef.cpp" />
+		<Unit filename="../src/imgwin/command.cpp" />
+		<Unit filename="../src/imgwin/cursor.cpp" />
+		<Unit filename="../src/imgwin/dragdrop.cpp" />
+		<Unit filename="../src/imgwin/edit.cpp" />
+		<Unit filename="../src/imgwin/events.cpp" />
+		<Unit filename="../src/imgwin/geofind.cpp" />
+		<Unit filename="../src/imgwin/getset.cpp" />
+		<Unit filename="../src/imgwin/image.cpp" />
+		<Unit filename="../src/imgwin/imagedatawx.cpp" />
+		<Unit filename="../src/imgwin/imageprint.cpp" />
+		<Unit filename="../src/imgwin/imagewindow.cpp" />
+		<Unit filename="../src/imgwin/maps.cpp" />
+		<Unit filename="../src/imgwin/mousehover.cpp" />
+		<Unit filename="../src/imgwin/paint.cpp" />
+		<Unit filename="../src/imgwin/print.cpp" />
+		<Unit filename="../src/imgwin/scroll.cpp" />
+		<Unit filename="../src/imgwin/timer.cpp" />
+		<Unit filename="../src/imgwin/tips.cpp" />
+		<Unit filename="../src/imgwin/zoom.cpp" />
+		<Unit filename="../src/interface/imagewin/imagewindowinterface.cpp" />
+		<Unit filename="../src/interface/interface.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/audiovideomusic.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/basic.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/body.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/information.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/lists.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/style.cpp" />
+		<Unit filename="../src/interface/richtext/handlers/table.cpp" />
+		<Unit filename="../src/interface/richtext/richtextinterface.cpp" />
+		<Unit filename="../src/language/language.cpp" />
+		<Unit filename="../src/module/autodefcommentary.cpp" />
+		<Unit filename="../src/module/autodefnumbered.cpp" />
+		<Unit filename="../src/module/autodefscripture.cpp" />
+		<Unit filename="../src/module/autodefterm.cpp" />
+		<Unit filename="../src/module/category.cpp" />
+		<Unit filename="../src/module/mediacontents.cpp" />
+		<Unit filename="../src/module/module.cpp" />
+		<Unit filename="../src/module/modulebase.cpp" />
+		<Unit filename="../src/module/moduleinterface.cpp" />
+		<Unit filename="../src/module/moduleloader.cpp" />
+		<Unit filename="../src/module/modulemanager.cpp" />
+		<Unit filename="../src/module/modulemanager_ad.cpp" />
+		<Unit filename="../src/module/modulemanager_load.cpp" />
+		<Unit filename="../src/module/modulemanager_search.cpp" />
+		<Unit filename="../src/module/modulewriter.cpp" />
+		<Unit filename="../src/module/tableofcontents.cpp" />
+		<Unit filename="../src/module/thmlmodulewriter.cpp" />
+		<Unit filename="../src/module/transcryptor.cpp" />
+		<Unit filename="../src/plugin/plugin.cpp" />
+		<Unit filename="../src/plugin/pluginloader.cpp" />
+		<Unit filename="../src/richtext/anchor.cpp" />
+		<Unit filename="../src/richtext/attr/align.cpp" />
+		<Unit filename="../src/richtext/attr/border.cpp" />
+		<Unit filename="../src/richtext/attr/color.cpp" />
+		<Unit filename="../src/richtext/attr/float.cpp" />
+		<Unit filename="../src/richtext/attr/font.cpp" />
+		<Unit filename="../src/richtext/attr/heightwidth.cpp" />
+		<Unit filename="../src/richtext/attr/list.cpp" />
+		<Unit filename="../src/richtext/attr/margin.cpp" />
+		<Unit filename="../src/richtext/attr/padding.cpp" />
+		<Unit filename="../src/richtext/attr/richtextattr.cpp" />
+		<Unit filename="../src/richtext/attr/text.cpp" />
+		<Unit filename="../src/richtext/attr/whitespace.cpp" />
+		<Unit filename="../src/richtext/autodefbase.cpp" />
+		<Unit filename="../src/richtext/autodefwindow.cpp" />
+		<Unit filename="../src/richtext/binding.cpp" />
+		<Unit filename="../src/richtext/command.cpp" />
+		<Unit filename="../src/richtext/events.cpp" />
+		<Unit filename="../src/richtext/findreplace.cpp" />
+		<Unit filename="../src/richtext/objects/horizontalrule.cpp" />
+		<Unit filename="../src/richtext/objects/paragraphlist.cpp" />
+		<Unit filename="../src/richtext/objects/richtexttablematrix.cpp" />
+		<Unit filename="../src/richtext/objectwrite.cpp" />
+		<Unit filename="../src/richtext/richtextctrlext.cpp" />
+		<Unit filename="../src/richtext/richview.cpp" />
+		<Unit filename="../src/richtext/style.cpp" />
+		<Unit filename="../src/richtext/url.cpp" />
+		<Unit filename="../src/richtext/xmlwrite.cpp" />
+		<Unit filename="../src/sdf/datafile.cpp" />
+		<Unit filename="../src/sowerbase.cpp" />
+		<Unit filename="../src/string/string.cpp" />
+		<Unit filename="../src/string/stringcompare.cpp" />
+		<Unit filename="../src/string/stringpair.cpp" />
+		<Unit filename="../src/string/stringw.cpp" />
+		<Unit filename="../src/string/strparser.cpp" />
+		<Unit filename="../src/swguiml/swguimlparser.cpp" />
+		<Unit filename="../src/swopf/swopfparser.cpp" />
+		<Unit filename="../src/swprjml/swprjmlparser.cpp" />
+		<Unit filename="../src/thml/thml_css.cpp" />
+		<Unit filename="../src/thml/thml_elements.cpp" />
+		<Unit filename="../src/thml/thml_file.cpp" />
+		<Unit filename="../src/thml/thml_parser.cpp" />
+		<Unit filename="../src/thml/thml_utility.cpp" />
+		<Unit filename="../src/thml/thmlfilemanager.cpp" />
+		<Unit filename="../src/thml/thmlfilemanager_ad.cpp" />
+		<Unit filename="../src/thml/thmlfilemanager_load.cpp" />
+		<Unit filename="../src/thml/thmlfilemanager_search.cpp" />
+		<Unit filename="../src/utility/geotrfilewriter.cpp" />
+		<Unit filename="../src/utility/sidfilewriter.cpp" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="5" line="2" />
+				<doxyfile_project />
+				<doxyfile_build extract_all="1" />
+				<doxyfile_warnings warn_if_undocumented="1" />
+				<doxyfile_output />
+				<doxyfile_dot class_diagrams="1" />
+				<general />
+			</DoxyBlocks>
+			<lib_finder disable_auto="1">
+				<lib name="libbz2" />
+			</lib_finder>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,241 @@
+///////////////////////////////////////////////////////////////////
+// Name:        guidata.cpp
+// Purpose:     Data for menus, and tool bars.
+// Copyright:   David Reynolds
+// License:     Sower Applications License
+///////////////////////////////////////////////////////////////////
+
+#include "../../include/framework/guidata.h"
+
+static const SwGuiDataContainer MenuData [] =
+{
+    {SW_MENUID_UNKNOWN, SW_MENUID_UNKNOWN, "", L"", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_FILE, SW_MENUID_UNKNOWN, "SID_FILE", L"&File", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_EDIT, SW_MENUID_UNKNOWN, "SID_EDIT", L"&Edit", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_VIEW, SW_MENUID_UNKNOWN, "SID_VIEW", L"&View", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_NAVIGATION, SW_MENUID_UNKNOWN, "SID_NAVIGATION", L"&Navigation", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_FORMAT, SW_MENUID_UNKNOWN, "SID_FORMAT", L"F&ormat", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_PARAGRAPH, SW_MENUID_UNKNOWN, "SID_PARAGRAPH", L"Paragra&ph", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_LIST, SW_MENUID_UNKNOWN, "SID_LIST", L"&List", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_TABLE, SW_MENUID_UNKNOWN, "SID_TABLE", L"T&able", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_OBJECTS, SW_MENUID_UNKNOWN, "SID_OBJECTS", L"O&bjects", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_TOOLS, SW_MENUID_UNKNOWN, "SID_TOOLS", L"&Tools", "", wxITEM_NORMAL, SEP_NONE, 0},
+    {SW_MENUID_HELP, SW_MENUID_UNKNOWN, "SID_HELP", L"&Help", "", wxITEM_NORMAL, SEP_NONE, 0},
+
+    // SubMenus
+    {SW_MENUID_RECENTFILES, SW_MENUID_FILE, "SID_RECENTFILES", L"&Recent files...", "", wxITEM_NORMAL, SEP_NONE, 0}
+};
+
+static const SwGuiDataContainer GuiItemData [] =
+{
+    {SW_GUIID_UNKNOWN, SW_MENUID_UNKNOWN, "", L"", "", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_NEW, SW_MENUID_FILE, "SID_NEW", L"New\tCtrl-Shift-N", "SID_NEW", wxITEM_NORMAL, SEP_AFTER, wxNewId()},
+    {SW_GUIID_OPEN, SW_MENUID_FILE, "SID_OPEN", L"Open\tCtrl-O", "SID_OPEN", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_SAVE, SW_MENUID_FILE, "SID_SAVE", L"Save\tCtrl-S", "SID_SAVE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_SAVEAS, SW_MENUID_FILE, "SID_SAVEAS", L"Save as...\tCtrl-Shift-S", "", wxITEM_NORMAL, SEP_AFTER, wxNewId()},
+    {SW_GUIID_CLOSE, SW_MENUID_FILE, "SID_CLOSE", L"Close\tCtrl-W", "SID_CLOSE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_CLOSEALL, SW_MENUID_FILE, "SID_CLOSEALL", L"Close all\tCtrl-Shift-W", "", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_PRINT, SW_MENUID_FILE, "SID_PRINT", L"Print\tCtrl-P", "SID_PRINT", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_PRINTPREVIEW, SW_MENUID_FILE, "SID_PRINTPREVIEW", L"Print preview\tCtrl-Shift-P", "", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_QUIT, SW_MENUID_FILE, "SID_QUIT", L"Quit\tCtrl-Q", "", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_FILE1, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE2, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE3, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE4, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE5, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE6, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE7, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE8, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE9, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FILE10, SW_MENUID_RECENTFILES, "", L" ", "SID_BOOKPAGE2", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_BOOKMARKPAGE, SW_MENUID_EDIT, "SID_BOOKMARKPAGE", L"Bookmark page\tCtrl-B", "SID_BOOKMARK", wxITEM_NORMAL, SEP_AFTER, wxNewId()},
+    {SW_GUIID_FIND, SW_MENUID_EDIT, "SID_FIND", L"Find\tCtrl-F", "SID_FIND", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FINDNEXT, SW_MENUID_EDIT, "SID_FINDNEXT", L"Find next\tCtrl-Shift-F", "", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_REPLACE, SW_MENUID_EDIT, "SID_REPLACE", L"Replace\tCtrl-R", "SID_REPLACE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_CLEAR, SW_MENUID_EDIT, "SID_CLEAR", L"Clear\tCtrl-E", "SID_NEW", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_CUT, SW_MENUID_EDIT, "SID_CUT", L"Cut\tCtrl-X", "SID_CUT", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_COPY, SW_MENUID_EDIT, "SID_COPY", L"Copy\tCtrl-C", "SID_COPY", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_PASTE, SW_MENUID_EDIT, "SID_PASTE", L"Paste\tCtrl-V", "SID_PASTE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_UNDO, SW_MENUID_EDIT, "SID_UNDO", L"Undo\tCtrl-Z", "SID_UNDO", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_REDO, SW_MENUID_EDIT, "SID_REDO", L"Redo\tCtrl-Shift-Z", "SID_REDO", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_SELECTALL, SW_MENUID_EDIT, "SID_SELECTALL", L"Select all\tCtrl-A", "SID_SELECTALL", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_GEO, SW_MENUID_EDIT, "SID_GEO", L"&Geo", "SID_MAPPAGE", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_MAPS, SW_MENUID_EDIT, "SID_MAPS", L"&Maps", "SID_MAPPAGE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_AREAS, SW_MENUID_EDIT, "SID_AREAS", L"&Areas", "SID_MAPPAGE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_PROPERTIES, SW_MENUID_EDIT, "SID_PROPERTIES", L"&Properties", "SID_PROPERTIES", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_LIBRARYVIEW, SW_MENUID_VIEW, "SID_LIBRARY", L"&Library", "SID_LIBRARY", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_CONTENTSVIEW, SW_MENUID_VIEW, "SID_CONTENTS", L"&Contents", "SID_CONTENTS", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_SEARCHVIEW, SW_MENUID_VIEW, "SID_SEARCH", L"&Search", "SID_SEARCH", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FINDVIEW, SW_MENUID_VIEW, "SID_FIND", L"&Find", "SID_FIND", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_BOOKMARKSVIEW, SW_MENUID_VIEW, "SID_BOOKMARKS", L"&Bookmarks", "SID_BOOKMARK", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_HISTORYVIEW, SW_MENUID_VIEW, "SID_HISTORY", L"&History", "", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_ZOOMIN, SW_MENUID_VIEW, "SID_ZOOMIN", L"Zoom in\tCtrl-I", "SID_ZOOMIN", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_ZOOMOUT, SW_MENUID_VIEW, "SID_ZOOMOUT", L"Zoom out\tCtrl-O", "SID_ZOOMOUT", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_VIEWNORMAL, SW_MENUID_VIEW, "SID_VIEWNORMAL", L"View normal\tCtrl-Shift-N", "SID_VIEWNORMAL", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_CONTENTSUP, SW_MENUID_NAVIGATION, "SID_PREVIOUSINCONTENTS", L"Previous in contents"/*L"Previous in contents\tCtrl-Up"*/, "SID_PREVIOUSINCONTENTS", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_CONTENTSDOWN, SW_MENUID_NAVIGATION, "SID_NEXTINCONTENTS", L"Next in contents"/*L"Next in contents\tCtrl-Down"*/, "SID_NEXTINCONTENTS", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_BACKINHISTORY, SW_MENUID_NAVIGATION, "SID_BACKINHISTORY", L"Back in history", "SID_BACKINHISTORY", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_FORWARDINHISTORY, SW_MENUID_NAVIGATION, "SID_FORWARDINHISTORY", L"Forward in history", "SID_FORWARDINHISTORY", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_FONT, SW_MENUID_FORMAT, "SID_FONT", L"&Font", "SID_FONT", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_BOLD, SW_MENUID_FORMAT, "SID_BOLD", L"&Bold", "SID_BOLD", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_ITALIC, SW_MENUID_FORMAT, "SID_ITALIC", L"&Italic", "SID_ITALIC", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_UNDERLINE, SW_MENUID_FORMAT, "SID_UNDERLINE", L"&Underline", "SID_UNDERLINE", wxITEM_CHECK, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_STRIKETHROUGH, SW_MENUID_FORMAT, "SID_STRIKETHROUGH", L"&Strikethrough", "SID_STRIKETHROUGH", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_SUPERSCRIPT, SW_MENUID_FORMAT, "SID_SUPERSCRIPT", L"Su&perscript", "SID_SUPERSCRIPT", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_SUBSCRIPT, SW_MENUID_FORMAT, "SID_SUBSCRIPT", L"Su&bscript", "SID_SUBSCRIPT", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_COLOR, SW_MENUID_FORMAT, "SID_COLOR", L"Text &color", "SID_COLOR", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_BACKGROUNDCOLOR, SW_MENUID_FORMAT, "SID_BACKGROUNDCOLOR", L"B&ackground color", "SID_BACKGROUNDCOLOR", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_STYLE, SW_MENUID_FORMAT, "SID_STYLE", L"St&yle", "SID_EDITSTYLESHEET", wxITEM_NORMAL, SEP_BEFORE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_MARGINS, SW_MENUID_PARAGRAPH, "SID_MARGINS", L"M&argins", "SID_MARGINS", wxITEM_NORMAL, SEP_AFTER, wxNewId()},
+    {SW_GUIID_INDENTMORE, SW_MENUID_PARAGRAPH, "SID_INDENTMORE", L"Indent &more", "SID_INDENTMORE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_INDENTLESS, SW_MENUID_PARAGRAPH, "SID_INDENTLESS", L"Indent &less", "SID_INDENTLESS", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_ALIGNLEFT, SW_MENUID_PARAGRAPH, "SID_ALIGNLEFT", L"Align l&eft", "SID_ALIGNLEFT", wxITEM_CHECK, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_ALIGNCENTER, SW_MENUID_PARAGRAPH, "SID_ALIGNCENTER", L"Align &center", "SID_ALIGNCENTER", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_ALIGNRIGHT, SW_MENUID_PARAGRAPH, "SID_ALIGNRIGHT", L"Align &right", "SID_ALIGNRIGHT", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_SINGLESPACING, SW_MENUID_PARAGRAPH, "SID_SINGLESPACING", L"&Single line spacing", "SID_SINGLESPACING", wxITEM_CHECK, SEP_BEFORE, wxNewId()},
+    {SW_GUIID_DOUBLESPACING, SW_MENUID_PARAGRAPH, "SID_DOUBLESPACING", L"&Double line spacing", "SID_DOUBLESPACING", wxITEM_CHECK, SEP_NONE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_ALPHABETICLIST, SW_MENUID_LIST, "SID_ALPHABETICLIST", L"&Alphabetic list", "SID_ALPHABETICLIST", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_BULLETEDLIST, SW_MENUID_LIST, "SID_BULLETEDLIST", L"&Bulleted list", "SID_BULLETEDLIST", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_ROMANNUMERALSLIST, SW_MENUID_LIST, "SID_ROMANNUMERALSLIST", L"&Roman numerals list", "SID_ROMANNUMERALSLIST", wxITEM_CHECK, SEP_NONE, wxNewId()},
+    {SW_GUIID_DECIMALLIST, SW_MENUID_LIST, "SID_DECIMALLIST", L"&Decimal list", "SID_DECIMALLIST", wxITEM_CHECK, SEP_NONE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_INSERTTABLE, SW_MENUID_TABLE, "SID_INSERTTABLE", L"Insert &table", "SID_INSERTTABLE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_INSERTROW, SW_MENUID_TABLE, "SID_INSERTROW", L"Insert &row", "SID_INSERTROW", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_DELETEROW, SW_MENUID_TABLE, "SID_DELETEROW", L"Delete r&ow", "SID_DELETEROW", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_INSERTCOLUMN, SW_MENUID_TABLE, "SID_INSERTCOLUMN", L"Insert &column", "SID_INSERTCOLUMN", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_DELETECOLUMN, SW_MENUID_TABLE, "SID_DELETECOLUMN", L"Delete co&lumn", "SID_DELETECOLUMN", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+    /* Group */
+    {SW_GUIID_INSERTIMAGE, SW_MENUID_OBJECTS, "SID_INSERTIMAGE", L"Insert &image", "SID_INSERTIMAGE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_INSERTLINK, SW_MENUID_OBJECTS, "SID_INSERTLINK", L"Insert &link", "SID_INSERTLINK", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_INSERTANCHOR, SW_MENUID_OBJECTS, "SID_INSERTANCHOR", L"Insert &anchor", "SID_INSERTANCHOR", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_INSERTCONTROL, SW_MENUID_OBJECTS, "SID_INSERTCONTROL", L"Insert &control", "SID_INSERTCONTROL", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_INSERTHORIZONTALRULE, SW_MENUID_OBJECTS, "SID_INSERTHORIZONTALRULE", L"Insert &horizontal rule", "SID_INSERTHORIZONTALRULE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+
+    /* Group */
+    {SW_GUIID_HELPCONTENTS, SW_MENUID_HELP, "SID_HELPCONTENTS", L"Help &contents", "SID_HELPCONTENTS", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_ABOUT, SW_MENUID_HELP, "SID_ABOUT", L"&About...", "SID_ABOUT", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_PREFERENCES, SW_MENUID_HELP, "SID_PREFERENCES", L"&Preferences", "SID_PREFERENCES", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_CONFIGURATION, SW_MENUID_HELP, "SID_CONFIGURATION", L"Configuration", "SID_INFORMATION", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_SELECTINTERFACE, SW_MENUID_HELP, "SID_SELECTINTERFACE", L"Select &interface", "SID_SELECTINTERFACE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_SELECTLANGUAGE, SW_MENUID_HELP, "SID_SELECTLANGUAGE", L"Select &language", "SID_SELECTLANGUAGE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_SELECTTHEME, SW_MENUID_HELP, "SID_SELECTTHEME", L"Select &theme", "SID_SELECTTHEME", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_UPDATESOFTWARE, SW_MENUID_HELP, "SID_UPDATESOFTWARE", L"&Update software", "", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+    /* Players */
+    {SW_GUIID_PLAY, SW_MENUID_UNKNOWN, "SID_PLAY", L"Play", "SID_PLAY", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_PAUSE, SW_MENUID_UNKNOWN, "SID_PAUSE", L"Pause", "SID_PAUSE", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_STOP, SW_MENUID_UNKNOWN, "SID_STOP", L"Stop", "SID_STOP", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_REWIND, SW_MENUID_UNKNOWN, "SID_REWIND", L"Rewind", "SID_REWIND", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_FASTFORWARD, SW_MENUID_UNKNOWN, "SID_FASTFORWARD", L"Fast forward", "SID_FASTFORWARD", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_PREVIOUS, SW_MENUID_UNKNOWN, "SID_PREVIOUS", L"Previous", "SID_PREVIOUS", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+    {SW_GUIID_NEXT, SW_MENUID_UNKNOWN, "SID_NEXT", L"Next", "SID_NEXT", wxITEM_NORMAL, SEP_NONE, wxNewId()},
+
+    {SW_GUIID_DELETE, SW_MENUID_UNKNOWN, "SID_DELETE", L"Delete", "SID_CUT", wxITEM_NORMAL, SEP_NONE, wxNewId()}
+};
+
+swUI8 SwGuiData::FindMenu(swUI8 swid)
+{
+    for (swUI8 i = 0; i < N_SW_MENU_IDS; i ++)
+    {
+        if (MenuData[i].sw_guiid == swid)
+            return i;
+    }
+
+    return NODE_ID_INVALID_8;
+}
+
+const SwGuiDataContainer * SwGuiData::GetDataForMenuElement(swUI8 element)
+{
+    if (element >= N_SW_MENU_IDS)
+        return NULL;
+
+    return &MenuData[element];
+}
+
+const SwGuiDataContainer * SwGuiData::GetDataForMenuSwId(swUI8 swid)
+{
+    for (swUI8 i = 0; i < N_SW_MENU_IDS; i ++)
+    {
+        if (MenuData[i].sw_guiid == swid)
+            return &MenuData[i];
+    }
+
+    return NULL;
+}
+
+swUI8 SwGuiData::FindItemSwId(swUI8 swid)
+{
+    for (swUI8 i = 0; i < N_SW_GUIITEM_IDS; i ++)
+    {
+        if (GuiItemData[i].sw_guiid == swid)
+            return i;
+    }
+
+    return NODE_ID_INVALID_8;
+}
+
+swUI8 SwGuiData::FindItemWxId(int wxid)
+{
+    for (swUI8 i = 0; i < N_SW_GUIITEM_IDS; i ++)
+    {
+        if (GuiItemData[i].wx_id == wxid)
+            return i;
+    }
+
+    return NODE_ID_INVALID_8;
+}
+
+const SwGuiDataContainer * SwGuiData::GetDataForElement(swUI8 element)
+{
+    if (element >= N_SW_GUIITEM_IDS)
+        return NULL;
+
+    return &GuiItemData[element];
+}
+
+const SwGuiDataContainer * SwGuiData::GetDataForItemSwId(swUI8 swid)
+{
+    swUI8 element = SwGuiData::FindItemSwId(swid);
+
+    if (element == NODE_ID_INVALID_8)
+        return NULL;
+
+    return &GuiItemData[element];
+}
+
+const SwGuiDataContainer * SwGuiData::GetDataForItemWxId(int wxid)
+{
+    swUI8 element = FindItemWxId(wxid);
+
+    if (element == NODE_ID_INVALID_8)
+        return NULL;
+
+    return &GuiItemData[element];
+}
+
+bool SwGuiData::IsRecentFile(swUI8 swid)
+{
+    if (swid >= SW_GUIID_FILE1 && swid <= SW_GUIID_FILE10)
+        return true;
+
+    return false;
+}

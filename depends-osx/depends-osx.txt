@@ -1,0 +1,1 @@
+Libraries bzip2, and wxwidgets built for OSX should be placed in this directory.
