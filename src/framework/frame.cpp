@@ -1155,9 +1155,12 @@ void SwFrame::OnHelpContents(wxCommandEvent & event)
     path += PATH_SEP;
     #if defined __MSWIN__
     path += "SwHelp.exe";
+    #elif defined __OSX__
+    path += "SwHelp.app";
     #else
     path += "SwHelp";
     #endif
+
     wxExecute(path.GetArray());
 }
 

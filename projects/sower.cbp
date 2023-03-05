@@ -59,7 +59,7 @@
 			</Target>
 			<Target title="release_osx">
 				<Option platforms="Mac;" />
-				<Option output="../build-osx/Sower" prefix_auto="1" extension_auto="1" />
+				<Option output="../build-osx/Sower.app" prefix_auto="1" extension_auto="0" />
 				<Option working_dir="../build-osx" />
 				<Option object_output="../obj-osx/release" />
 				<Option type="0" />
@@ -85,11 +85,11 @@
 					<Add library="../build-osx/sowerbase.dylib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="install_name_tool -add_rpath @executable_path/. $exe_dir/Sower" />
-					<Add after="install_name_tool -change ../build-osx/sowerbase.dylib @executable_path/sowerbase.dylib $exe_dir/Sower" />
-					<Add after="install_name_tool -change @rpath/libwx_baseu-3.2.0.dylib @executable_path/libwx_baseu-3.2.0.dylib $exe_dir/Sower" />
-					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_core-3.2.0.dylib @executable_path/libwx_osx_cocoau_core-3.2.0.dylib $exe_dir/Sower" />
-					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_aui-3.2.0.dylib @executable_path/libwx_osx_cocoau_aui-3.2.0.dylib $exe_dir/Sower" />
+					<Add after="install_name_tool -add_rpath @executable_path/. $exe_dir/Sower.app" />
+					<Add after="install_name_tool -change ../build-osx/sowerbase.dylib @executable_path/sowerbase.dylib $exe_dir/Sower.app" />
+					<Add after="install_name_tool -change @rpath/libwx_baseu-3.2.0.dylib @executable_path/libwx_baseu-3.2.0.dylib $exe_dir/Sower.app" />
+					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_core-3.2.0.dylib @executable_path/libwx_osx_cocoau_core-3.2.0.dylib $exe_dir/Sower.app" />
+					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_aui-3.2.0.dylib @executable_path/libwx_osx_cocoau_aui-3.2.0.dylib $exe_dir/Sower.app" />
 				</ExtraCommands>
 			</Target>
 			<Target title="debug_linux">

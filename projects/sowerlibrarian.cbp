@@ -59,7 +59,7 @@
 			</Target>
 			<Target title="release_osx">
 				<Option platforms="Mac;" />
-				<Option output="../build-osx/SwLibrarian" prefix_auto="1" extension_auto="1" />
+				<Option output="../build-osx/SwLibrarian.app" prefix_auto="1" extension_auto="0" />
 				<Option object_output="../obj-osx/release" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -83,10 +83,10 @@
 					<Add library="../build-osx/sowerbase.dylib" />
 				</Linker>
 				<ExtraCommands>
-					<Add after="install_name_tool -add_rpath @executable_path/. $exe_dir/SwLibrarian" />
-					<Add after="install_name_tool -change ../build-osx/sowerbase.dylib @executable_path/sowerbase.dylib $exe_dir/SwLibrarian" />
-					<Add after="install_name_tool -change @rpath/libwx_baseu-3.2.0.dylib @executable_path/libwx_baseu-3.2.0.dylib $exe_dir/SwLibrarian" />
-					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_core-3.2.0.dylib @executable_path/libwx_osx_cocoau_core-3.2.0.dylib $exe_dir/SwLibrarian" />
+					<Add after="install_name_tool -add_rpath @executable_path/. $exe_dir/SwLibrarian.app" />
+					<Add after="install_name_tool -change ../build-osx/sowerbase.dylib @executable_path/sowerbase.dylib $exe_dir/SwLibrarian.app" />
+					<Add after="install_name_tool -change @rpath/libwx_baseu-3.2.0.dylib @executable_path/libwx_baseu-3.2.0.dylib $exe_dir/SwLibrarian.app" />
+					<Add after="install_name_tool -change @rpath/libwx_osx_cocoau_core-3.2.0.dylib @executable_path/libwx_osx_cocoau_core-3.2.0.dylib $exe_dir/SwLibrarian.app" />
 				</ExtraCommands>
 			</Target>
 			<Target title="debug_linux">

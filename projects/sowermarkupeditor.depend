@@ -8,10 +8,11 @@
 
 1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\rcdefs.h
 
-1677440954 source:e:\sower-apps\src\app\markupeditorapp.cpp
+1677990194 source:e:\sower-apps\src\app\markupeditorapp.cpp
 	"app/markupeditorapp.h"
 	"framework/markuppanel.h"
 	"appi/appifa.h"
+	<wx/taskbar.h>
 
 1677132626 e:\sower-apps\include\app\markupeditorapp.h
 	"framework/frame.h"
@@ -3887,4 +3888,25 @@
 	"wx/versioninfo.h"
 	"wx/textentry.h"
 	"wx/textctrl.h"
+
+1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\taskbar.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/msw/taskbar.h"
+	"wx/gtk/taskbar.h"
+	"wx/unix/taskbarx11.h"
+	"wx/osx/taskbarosx.h"
+	"wx/qt/taskbar.h"
+
+1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\taskbar.h
+	"wx/bmpbndl.h"
+	"wx/icon.h"
+
+1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\taskbar.h
+
+1663522730 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\taskbarx11.h
+
+1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\taskbarosx.h
+
+1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\taskbar.h
 
