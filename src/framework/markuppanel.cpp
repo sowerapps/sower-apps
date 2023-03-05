@@ -223,7 +223,7 @@ void SwMarkUpPanel::OnMouseHoverStart(wxStyledTextEvent& event)
         return;
     int startPos, endPos, offSet;
 
-    if (event.GetPosition() < 30)
+    if (event.GetPosition() <= 30)
     {
         offSet = event.GetPosition();
         startPos = 0;
@@ -260,7 +260,7 @@ void SwMarkUpPanel::OnMouseHoverStart(wxStyledTextEvent& event)
 
 int SwMarkUpPanel::ParseText(SwString & data, int nOffSet)
 {
-    if (nOffSet >= (int) data.Strlen())
+    if (nOffSet < 0 || nOffSet >= (int) data.Strlen())
         return 0;
 
     int nCnt = nOffSet;
@@ -369,7 +369,6 @@ bool SwMarkUpPanel::OnClose()
 
 bool SwMarkUpPanel::OnCut()
 {
-
     EditorStCtrl->Cut();
 
     return true;
