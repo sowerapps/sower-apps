@@ -33,7 +33,7 @@ SwElement SWPRJMLElementArray[N_SWPRJML_ELEMENTS] =
     {"verbatim", SWPRJML_VERBATIM, ELEMENT_TYPE_INLINE, WHITE_SPACE_NORMAL}
 };
 
-SwElementData SWPRJMLElementData[]
+SwElementData SWPRJMLElementData[] =
 {
     {"body", SWPRJML_BODY, ""},
     {"div1", SWPRJML_DIV1, "src=\"\" title=\"\" id=\"\""},

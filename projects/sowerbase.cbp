@@ -104,6 +104,7 @@
 					<Add library="../build-osx/libwx_osx_cocoau_propgrid-3.2.0.dylib" />
 					<Add library="../build-osx/libwx_osx_cocoau_richtext-3.2.0.dylib" />
 					<Add library="../build-osx/libwx_osx_cocoau_media-3.2.0.dylib" />
+					<Add library="../build-osx/libwx_osx_cocoau_stc-3.2.0.dylib" />
 					<Add library="../depends-osx/bzip2/lib/libbz2.a" />
 				</Linker>
 			</Target>

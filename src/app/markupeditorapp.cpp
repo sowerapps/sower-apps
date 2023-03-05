@@ -8,6 +8,7 @@
 #include "app/markupeditorapp.h"
 #include "framework/markuppanel.h"
 #include "appi/appifa.h"
+#include <wx/taskbar.h>
 
 IMPLEMENT_APP(SwMarkupEditorApp);
 
