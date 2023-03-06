@@ -128,7 +128,7 @@
 					<Add option="-DwxUSE_UNICODE" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=yes --libs base, xml, core, adv, aui, richtext, html, media, propgrid, stc`" />
 					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
 				</Linker>
 			</Target>
@@ -152,7 +152,7 @@
 					<Add option="-DDISABLEWXASSERTS" />
 				</Compiler>
 				<Linker>
-					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, xml, core, adv, aui, richtext, html, media, propgrid`" />
+					<Add option="`wx-config  --version=3.0 --static=no --unicode=yes --debug=no --libs base, xml, core, adv, aui, richtext, html, media, propgrid, stc`" />
 					<Add library="../../../../../../../usr/lib/x86_64-linux-gnu/libbz2.so" />
 				</Linker>
 			</Target>
