@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1677902978 source:e:\sower-apps\rc\resource.rc
+1677906578 source:e:\sower-apps\rc\resource.rc
 	"wx/msw/wx.rc"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\wx.rc
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\wx.rc
 	<windows.h>
 	"wx/msw/rcdefs.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\rcdefs.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\rcdefs.h
 
 1675566428 source:e:\sower-apps\src\app\thmlviewerapp.cpp
 	"app/thmlviewerapp.h"

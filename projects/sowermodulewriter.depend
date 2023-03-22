@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1677902978 source:e:\sower-apps\rc\resource-tools.rc
+1677906578 source:e:\sower-apps\rc\resource-tools.rc
 	"wx/msw/wx.rc"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\wx.rc
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\wx.rc
 	<windows.h>
 	"wx/msw/rcdefs.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\rcdefs.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\rcdefs.h
 
-1675566428 source:e:\sower-apps\src\app\sowermodulewriterapp.cpp
+1675570028 source:e:\sower-apps\src\app\sowermodulewriterapp.cpp
 	"app/sowermodulewriterapp.h"
 	"appi/appifa.h"
 	"module/category.h"
@@ -19,7 +19,7 @@
 	"bible/standard_bible.h"
 	<wx/taskbar.h>
 
-1666048934 e:\sower-apps\include\app\sowermodulewriterapp.h
+1666052534 e:\sower-apps\include\app\sowermodulewriterapp.h
 	"framework/dialog.h"
 	"module/thmlmodulewriter.h"
 	"array/cardarray.h"
@@ -32,12 +32,12 @@
 	<wx/stattext.h>
 	<wx/thread.h>
 
-1676912496 e:\sower-apps\include\framework\dialog.h
+1676916096 e:\sower-apps\include\framework\dialog.h
 	"../sowerbase.h"
 	"../../include/controls/controls.h"
 	<wx/dialog.h>
 
-1675544844 e:\sower-apps\include\sowerbase.h
+1675548444 e:\sower-apps\include\sowerbase.h
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -52,7 +52,7 @@
 	<wx/richtext/richtextbuffer.h>
 	<wx/snglinst.h>
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\app.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\app.h
 	"wx/event.h"
 	"wx/eventfilter.h"
 	"wx/build.h"
@@ -71,7 +71,7 @@
 	"wx/qt/app.h"
 	"wx/univ/theme.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\event.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\event.h
 	"wx/defs.h"
 	"wx/cpp.h"
 	"wx/object.h"
@@ -89,7 +89,7 @@
 	"wx/meta/convertible.h"
 	"wx/meta/removeref.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\defs.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\defs.h
 	"wx/msw/winundef.h"
 	"wx/platform.h"
 	"wx/version.h"
@@ -101,9 +101,9 @@
 	"wx/qt/defs.h"
 	"wx/features.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\winundef.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\winundef.h
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\platform.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\platform.h
 	<unistd.h>
 	<TargetConditionals.h>
 	<Availability.h>
@@ -117,22 +117,22 @@
 	<Availability.h>
 	"wx/chkconf.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\android\config_android.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\android\config_android.h
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\compiler.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\compiler.h
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\setup.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\setup.h
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\libraries.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\libraries.h
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\gccpriv.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\gccpriv.h
 	"wx/msw/winver.h"
 	<_mingw.h>
 	<w32api.h>
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\winver.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\winver.h
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\chkconf.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\chkconf.h
 	"wx/msw/chkconf.h"
 	"wx/gtk/chkconf.h"
 	"wx/gtk/chkconf.h"
@@ -144,51 +144,51 @@
 	"wx/unix/chkconf.h"
 	"wx/univ/chkconf.h"
 
-1663522762 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\chkconf.h
+1663526362 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\chkconf.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\chkconf.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\chkconf.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\chkconf.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\chkconf.h
 	"wx/osx/iphone/chkconf.h"
 	"wx/osx/cocoa/chkconf.h"
 
-1663522743 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\iphone\chkconf.h
+1663526343 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\iphone\chkconf.h
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\cocoa\chkconf.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\cocoa\chkconf.h
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\chkconf.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\chkconf.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\chkconf.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\chkconf.h
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\chkconf.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\chkconf.h
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\android\chkconf.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\android\chkconf.h
 
-1663522730 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\chkconf.h
+1663526330 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\chkconf.h
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\chkconf.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\chkconf.h
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\version.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\version.h
 	"wx/cpp.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\cpp.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\cpp.h
 	"wx/compiler.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\dlimpexp.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\dlimpexp.h
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\types.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\types.h
 	"wx/platform.h"
 	<sys/types.h>
 	<sys/types.h>
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\debug.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\debug.h
 	<assert.h>
 	<limits.h>
 	"wx/chartype.h"
 	"wx/cpp.h"
 	"wx/dlimpexp.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\chartype.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\chartype.h
 	"wx/types.h"
 	<sys/types.h>
 	<wchar.h>
@@ -201,24 +201,24 @@
 	<tchar.h>
 	<ctype.h>
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\defs.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\defs.h
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\features.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\features.h
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\object.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\object.h
 	"wx/memory.h"
 	"wx/xti.h"
 	"wx/rtti.h"
 	"wx/xti2.h"
 	"wx/msw/msvcrt.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\memory.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\memory.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/msgout.h"
 	<stddef.h>
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\string.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\string.h
 	"wx/defs.h"
 	<ctype.h>
 	<string.h>
@@ -238,7 +238,7 @@
 	"wx/iosfwrap.h"
 	"wx/crt.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\wxcrtbase.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\wxcrtbase.h
 	"wx/chartype.h"
 	<stdio.h>
 	<string.h>
@@ -247,7 +247,7 @@
 	<time.h>
 	<io.h>
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\strvararg.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\strvararg.h
 	"wx/platform.h"
 	"wx/cpp.h"
 	"wx/chartype.h"
@@ -260,28 +260,28 @@
 	"wx/stringimpl.h"
 	<string_view>
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\strconv.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\strconv.h
 	"wx/defs.h"
 	"wx/chartype.h"
 	"wx/buffer.h"
 	<stdlib.h>
 	"wx/fontenc.h"
 
-1663522708 e:\sower-apps\depends-msw\wxwidgets\include\wx\buffer.h
+1663526308 e:\sower-apps\depends-msw\wxwidgets\include\wx\buffer.h
 	"wx/defs.h"
 	"wx/wxcrtbase.h"
 	<stdlib.h>
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\fontenc.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\fontenc.h
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\unichar.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\unichar.h
 	"wx/defs.h"
 	"wx/chartype.h"
 	"wx/stringimpl.h"
 	<algorithm>
 	<utility>
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\stringimpl.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\stringimpl.h
 	"wx/defs.h"
 	"wx/chartype.h"
 	"wx/wxcrtbase.h"
@@ -290,43 +290,43 @@
 	<string>
 	"wx/afterstd.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\beforestd.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\beforestd.h
 
-1677916806 e:\sower-apps\include\string
+1677920406 e:\sower-apps\include\string
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\afterstd.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\afterstd.h
 	"wx/msw/winundef.h"
 
-1677916806 e:\sower-apps\include\utility
+1677920406 e:\sower-apps\include\utility
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\stringops.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\stringops.h
 	"wx/chartype.h"
 	"wx/stringimpl.h"
 	"wx/unichar.h"
 	"wx/buffer.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\tls.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\tls.h
 	"wx/defs.h"
 	"wx/msw/tls.h"
 	"wx/unix/tls.h"
 	<stdlib.h>
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\tls.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\tls.h
 	"wx/msw/wrapwin.h"
 	"wx/thread.h"
 	"wx/vector.h"
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\wrapwin.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\wrapwin.h
 	"wx/platform.h"
 	"wx/msw/winver.h"
 	<winsock2.h>
 	<windows.h>
 	"wx/msw/winundef.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\thread.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\thread.h
 	"wx/defs.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\vector.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\vector.h
 	"wx/defs.h"
 	<vector>
 	<algorithm>
@@ -338,58 +338,58 @@
 	<new>
 	"wx/afterstd.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\scopeguard.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\scopeguard.h
 	"wx/defs.h"
 	"wx/except.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\except.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\except.h
 	"wx/defs.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\movable.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\movable.h
 	"wx/meta/pod.h"
 	"wx/string.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\pod.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\pod.h
 	"wx/defs.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\if.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\if.h
 	"wx/defs.h"
 
-1663522730 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\tls.h
+1663526330 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\tls.h
 	<pthread.h>
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\iosfwrap.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\iosfwrap.h
 	<iosfwd>
 	"wx/msw/winundef.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\crt.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\crt.h
 	"wx/defs.h"
 	"wx/chartype.h"
 	"wx/wxcrt.h"
 	"wx/wxcrtvararg.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\wxcrt.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\wxcrt.h
 	"wx/wxcrtbase.h"
 	"wx/string.h"
 	<string.h>
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\wxcrtvararg.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\wxcrtvararg.h
 	"wx/wxcrt.h"
 	"wx/strvararg.h"
 	"wx/string.h"
 	<stdarg.h>
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\msgout.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\msgout.h
 	"wx/defs.h"
 	"wx/chartype.h"
 	"wx/strvararg.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\xti.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\xti.h
 	"wx/defs.h"
 	"wx/xtitypes.h"
 	"wx/xtihandler.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtitypes.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtitypes.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/hashmap.h"
@@ -399,7 +399,7 @@
 	"wx/log.h"
 	<typeinfo>
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\hashmap.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\hashmap.h
 	"wx/string.h"
 	"wx/wxcrt.h"
 	<unordered_map>
@@ -408,7 +408,7 @@
 	<hash_map>
 	<stddef.h>
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\arrstr.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\arrstr.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/dynarray.h"
@@ -417,13 +417,13 @@
 	<iterator>
 	"wx/afterstd.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\dynarray.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\dynarray.h
 	"wx/defs.h"
 	"wx/vector.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\flags.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\flags.h
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\intl.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\intl.h
 	"wx/defs.h"
 	"wx/localedefs.h"
 	"wx/string.h"
@@ -431,10 +431,10 @@
 	"wx/fontenc.h"
 	"wx/language.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\localedefs.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\localedefs.h
 	"wx/string.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\translation.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\translation.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/buffer.h"
@@ -443,17 +443,17 @@
 	"wx/strconv.h"
 	"wx/scopedptr.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\language.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\language.h
 	"wx/defs.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\scopedptr.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\scopedptr.h
 	"wx/defs.h"
 	"wx/checkeddelete.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\checkeddelete.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\checkeddelete.h
 	"wx/cpp.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\log.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\log.h
 	"wx/defs.h"
 	"wx/cpp.h"
 	"wx/string.h"
@@ -468,10 +468,10 @@
 	"wx/iosfwrap.h"
 	"wx/generic/logg.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\time.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\time.h
 	"wx/longlong.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\longlong.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\longlong.h
 	"wx/defs.h"
 	"wx/string.h"
 	<limits.h>
@@ -479,26 +479,26 @@
 	<limits>
 	"wx/strvararg.h"
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\logg.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\logg.h
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtihandler.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtihandler.h
 	"wx/defs.h"
 	"wx/xti.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\rtti.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\rtti.h
 	"wx/memory.h"
 	"wx/flags.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\xti2.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\xti2.h
 	"wx/xtiprop.h"
 	"wx/xtictor.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtiprop.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtiprop.h
 	"wx/defs.h"
 	"wx/xti.h"
 	"wx/any.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\any.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\any.h
 	"wx/defs.h"
 	<new>
 	"wx/string.h"
@@ -508,12 +508,12 @@
 	"wx/datetime.h"
 	"wx/variant.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\typeinfo.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\typeinfo.h
 	"wx/defs.h"
 	<typeinfo>
 	<string.h>
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\list.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\list.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
@@ -525,7 +525,7 @@
 	"wx/afterstd.h"
 	<iterator>
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\datetime.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\datetime.h
 	"wx/defs.h"
 	<time.h>
 	<limits.h>
@@ -533,10 +533,10 @@
 	"wx/anystr.h"
 	"wx/dynarray.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\anystr.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\anystr.h
 	"wx/string.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\variant.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\variant.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
@@ -548,28 +548,28 @@
 	"wx/iosfwrap.h"
 	"wx/any.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtictor.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\xtictor.h
 	"wx/defs.h"
 	"wx/xti.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\msvcrt.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\msvcrt.h
 	<stdlib.h>
 	<crtdbg.h>
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\clntdata.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\clntdata.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/hashmap.h"
 	"wx/object.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\math.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\math.h
 	"wx/defs.h"
 	<math.h>
 	<cmath>
 	<float.h>
 	<ieeefp.h>
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\gdicmn.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\gdicmn.h
 	"wx/defs.h"
 	"wx/list.h"
 	"wx/string.h"
@@ -577,7 +577,7 @@
 	"wx/hashmap.h"
 	"wx/math.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\cursor.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\cursor.h
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 	"wx/msw/gdiimage.h"
@@ -591,26 +591,26 @@
 	"wx/qt/cursor.h"
 	"wx/utils.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\gdiobj.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\gdiobj.h
 	"wx/object.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\gdiimage.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\gdiimage.h
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 	"wx/list.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\cursor.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\cursor.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\cursor.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\cursor.h
 	"wx/gdicmn.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\cursor.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\cursor.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\cursor.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\cursor.h
 	"wx/gdicmn.h"
 	"wx/image.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\image.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\image.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
@@ -630,14 +630,14 @@
 	"wx/imagxpm.h"
 	"wx/imagiff.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\stream.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\stream.h
 	"wx/defs.h"
 	<stdio.h>
 	"wx/object.h"
 	"wx/string.h"
 	"wx/filefn.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\filefn.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\filefn.h
 	"wx/list.h"
 	"wx/arrstr.h"
 	<time.h>
@@ -651,49 +651,49 @@
 	<fcntl.h>
 	<sys/types.h>
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagbmp.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagbmp.h
 	"wx/image.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagpng.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagpng.h
 	"wx/defs.h"
 	"wx/image.h"
 	"wx/versioninfo.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\versioninfo.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\versioninfo.h
 	"wx/string.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\imaggif.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\imaggif.h
 	"wx/image.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagpcx.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagpcx.h
 	"wx/image.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagjpeg.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagjpeg.h
 	"wx/defs.h"
 	"wx/image.h"
 	"wx/versioninfo.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagtga.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagtga.h
 	"wx/image.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagtiff.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagtiff.h
 	"wx/defs.h"
 	"wx/image.h"
 	"wx/versioninfo.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagpnm.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagpnm.h
 	"wx/image.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagxpm.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagxpm.h
 	"wx/image.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagiff.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\imagiff.h
 	"wx/image.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\cursor.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\cursor.h
 	"wx/colour.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\colour.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\colour.h
 	"wx/defs.h"
 	"wx/gdiobj.h"
 	"wx/variant.h"
@@ -706,23 +706,23 @@
 	"wx/osx/colour.h"
 	"wx/qt/colour.h"
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\colour.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\colour.h
 	"wx/object.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\colour.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\colour.h
 	"wx/object.h"
 	"wx/string.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\colour.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\colour.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\colour.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\colour.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/gdiobj.h"
 	"wx/palette.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\palette.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\palette.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/gdiobj.h"
@@ -732,53 +732,53 @@
 	"wx/osx/palette.h"
 	"wx/qt/palette.h"
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\palette.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\palette.h
 	"wx/gdiobj.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\palette.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\palette.h
 	"wx/list.h"
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\paletteg.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\paletteg.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\palette.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\palette.h
 	"wx/gdiobj.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\palette.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\palette.h
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\colour.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\colour.h
 	"wx/object.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\colour.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\colour.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/gdiobj.h"
 	"wx/palette.h"
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\colour.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\colour.h
 	"wx/osx/core/colour.h"
 
-1663522743 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\core\colour.h
+1663526343 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\core\colour.h
 	"wx/object.h"
 	"wx/string.h"
 	"wx/osx/core/cfref.h"
 
-1663522743 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\core\cfref.h
+1663526343 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\core\cfref.h
 	<unistd.h>
 	<Availability.h>
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\colour.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\colour.h
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\cursor.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\cursor.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\cursor.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\cursor.h
 	"wx/bitmap.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\bitmap.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\bitmap.h
 	"wx/string.h"
 	"wx/gdicmn.h"
 	"wx/colour.h"
@@ -794,37 +794,37 @@
 	"wx/qt/bitmap.h"
 	"wx/generic/mask.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\bitmap.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\bitmap.h
 	"wx/msw/gdiimage.h"
 	"wx/math.h"
 	"wx/palette.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\bitmap.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\bitmap.h
 	"wx/palette.h"
 	"wx/gdiobj.h"
 
-1663522734 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\bitmap.h
+1663526334 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\bitmap.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\bitmap.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\bitmap.h
 	"wx/palette.h"
 	"wx/gdiobj.h"
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\bitmap.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\bitmap.h
 	"wx/dfb/dfbptr.h"
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\dfbptr.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\dfbptr.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\bitmap.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\bitmap.h
 	"wx/palette.h"
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\bitmap.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\bitmap.h
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\mask.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\mask.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\cursor.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\cursor.h
 	"wx/image.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\utils.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\utils.h
 	"wx/object.h"
 	"wx/list.h"
 	"wx/filefn.h"
@@ -840,52 +840,52 @@
 	<unistd.h>
 	<stdio.h>
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\implicitconversion.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\implicitconversion.h
 	"wx/defs.h"
 	"wx/meta/if.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\mousestate.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\mousestate.h
 	"wx/gdicmn.h"
 	"wx/kbdstate.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\kbdstate.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\kbdstate.h
 	"wx/defs.h"
 
-1663522708 e:\sower-apps\depends-msw\wxwidgets\include\wx\platinfo.h
+1663526308 e:\sower-apps\depends-msw\wxwidgets\include\wx\platinfo.h
 	"wx/string.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\tracker.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\tracker.h
 	"wx/defs.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\convertible.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\convertible.h
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\removeref.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\removeref.h
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\eventfilter.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\eventfilter.h
 	"wx/defs.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\build.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\build.h
 	"wx/version.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\cmdargs.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\cmdargs.h
 	"wx/arrstr.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\init.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\init.h
 	"wx/defs.h"
 	"wx/chartype.h"
 	"wx/msw/init.h"
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\init.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\init.h
 	"wx/msw/wrapwin.h"
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\app.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\app.h
 	<signal.h>
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\app.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\app.h
 	"wx/event.h"
 	"wx/icon.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\icon.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\icon.h
 	"wx/iconloc.h"
 	"wx/msw/icon.h"
 	"wx/motif/icon.h"
@@ -898,36 +898,36 @@
 	"wx/generic/icon.h"
 	"wx/variant.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\iconloc.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\iconloc.h
 	"wx/string.h"
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\icon.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\icon.h
 	"wx/msw/gdiimage.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\icon.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\icon.h
 	"wx/bitmap.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\icon.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\icon.h
 	"wx/bitmap.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\app.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\app.h
 	"wx/event.h"
 	"wx/hashmap.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\app.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\app.h
 	"wx/dfb/dfbptr.h"
 	"wx/vidmode.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\vidmode.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\vidmode.h
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\app.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\app.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\app.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\app.h
 	"wx/frame.h"
 	"wx/icon.h"
 	"wx/strconv.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\frame.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\frame.h
 	"wx/toplevel.h"
 	"wx/statusbr.h"
 	"wx/univ/frame.h"
@@ -938,7 +938,7 @@
 	"wx/osx/frame.h"
 	"wx/qt/frame.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\toplevel.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\toplevel.h
 	"wx/nonownedwnd.h"
 	"wx/iconbndl.h"
 	"wx/weakref.h"
@@ -952,7 +952,7 @@
 	"wx/qt/toplevel.h"
 	"wx/univ/toplevel.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\nonownedwnd.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\nonownedwnd.h
 	"wx/window.h"
 	"wx/dfb/nonownedwnd.h"
 	"wx/gtk/nonownedwnd.h"
@@ -960,7 +960,7 @@
 	"wx/msw/nonownedwnd.h"
 	"wx/qt/nonownedwnd.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\window.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\window.h
 	"wx/event.h"
 	"wx/list.h"
 	"wx/cursor.h"
@@ -984,7 +984,7 @@
 	"wx/qt/window.h"
 	"wx/univ/window.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\font.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\font.h
 	"wx/defs.h"
 	"wx/fontenc.h"
 	"wx/gdiobj.h"
@@ -999,31 +999,31 @@
 	"wx/osx/font.h"
 	"wx/qt/font.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\font.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\font.h
 	"wx/gdicmn.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\font.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\font.h
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\font.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\font.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\font.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\font.h
 	"wx/hash.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\hash.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\hash.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/object.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\font.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\font.h
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\font.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\font.h
 	"wx/dfb/dfbptr.h"
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\font.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\font.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\font.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\font.h
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\region.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\region.h
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 	"wx/msw/region.h"
@@ -1034,37 +1034,37 @@
 	"wx/osx/region.h"
 	"wx/qt/region.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\region.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\region.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\region.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\region.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\region.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\region.h
 	"wx/list.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\region.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\region.h
 	"wx/list.h"
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\region.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\region.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\region.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\region.h
 	"wx/osx/carbon/region.h"
 	"wx/generic/region.h"
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\carbon\region.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\carbon\region.h
 	"wx/list.h"
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\region.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\region.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\region.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\region.h
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\validate.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\validate.h
 	"wx/defs.h"
 	"wx/event.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\windowid.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\windowid.h
 	"wx/defs.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\accel.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\accel.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/generic/accel.h"
@@ -1075,61 +1075,61 @@
 	"wx/osx/accel.h"
 	"wx/qt/accel.h"
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\accel.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\accel.h
 
-1663522762 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\accel.h
+1663526362 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\accel.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\accel.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\accel.h
 	"wx/object.h"
 	"wx/string.h"
 	"wx/event.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\accel.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\accel.h
 	"wx/generic/accel.h"
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\accel.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\accel.h
 	"wx/generic/accel.h"
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\accel.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\accel.h
 	"wx/string.h"
 	"wx/event.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\accel.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\accel.h
 	"wx/vector.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\access.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\access.h
 	"wx/defs.h"
 	"wx/variant.h"
 	"wx/msw/ole/access.h"
 
-1663522765 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\access.h
+1663526365 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\access.h
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\window.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\window.h
 	"wx/settings.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\settings.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\settings.h
 	"wx/colour.h"
 	"wx/font.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\window.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\window.h
 	"wx/region.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\window.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\window.h
 	"wx/dynarray.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\window.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\window.h
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\window.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\window.h
 	"wx/region.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\window.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\window.h
 	"wx/dfb/dfbptr.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\window.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\window.h
 	"wx/brush.h"
 	"wx/dc.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\brush.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\brush.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/gdiobj.h"
@@ -1142,35 +1142,35 @@
 	"wx/osx/brush.h"
 	"wx/qt/brush.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\brush.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\brush.h
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\brush.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\brush.h
 	"wx/gdiobj.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\brush.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\brush.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\brush.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\brush.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/gdiobj.h"
 	"wx/bitmap.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\brush.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\brush.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/gdiobj.h"
 	"wx/bitmap.h"
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\brush.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\brush.h
 	"wx/gdicmn.h"
 	"wx/gdiobj.h"
 	"wx/bitmap.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\brush.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\brush.h
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\dc.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\dc.h
 	"wx/object.h"
 	"wx/intl.h"
 	"wx/colour.h"
@@ -1185,7 +1185,7 @@
 	"wx/region.h"
 	"wx/affinematrix2d.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\pen.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\pen.h
 	"wx/gdiobj.h"
 	"wx/peninfobase.h"
 	"wx/msw/pen.h"
@@ -1196,72 +1196,72 @@
 	"wx/osx/pen.h"
 	"wx/qt/pen.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\peninfobase.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\peninfobase.h
 	"wx/bitmap.h"
 	"wx/colour.h"
 	"wx/gdicmn.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\pen.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\pen.h
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\pen.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\pen.h
 	"wx/gdicmn.h"
 	"wx/gdiobj.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\pen.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\pen.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\pen.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\pen.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\pen.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\pen.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\pen.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\pen.h
 	"wx/gdiobj.h"
 	"wx/colour.h"
 	"wx/bitmap.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\pen.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\pen.h
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\affinematrix2d.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\affinematrix2d.h
 	"wx/defs.h"
 	"wx/affinematrix2dbase.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\affinematrix2dbase.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\affinematrix2dbase.h
 	"wx/defs.h"
 	"wx/geometry.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\geometry.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\geometry.h
 	"wx/defs.h"
 	"wx/utils.h"
 	"wx/gdicmn.h"
 	"wx/math.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\window.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\window.h
 
-1663522735 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\window.h
+1663526335 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\window.h
 	"wx/bitmap.h"
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\nonownedwnd.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\nonownedwnd.h
 	"wx/window.h"
 	"wx/dfb/dfbptr.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\nonownedwnd.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\nonownedwnd.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\nonownedwnd.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\nonownedwnd.h
 	"wx/window.h"
 	"wx/graphics.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\graphics.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\graphics.h
 	"wx/defs.h"
 	"wx/affinematrix2d.h"
 	"wx/geometry.h"
@@ -1272,53 +1272,53 @@
 	"wx/peninfobase.h"
 	"wx/vector.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\nonownedwnd.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\nonownedwnd.h
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\nonownedwnd.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\nonownedwnd.h
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\iconbndl.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\iconbndl.h
 	"wx/gdiobj.h"
 	"wx/gdicmn.h"
 	"wx/icon.h"
 	"wx/dynarray.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\weakref.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\weakref.h
 	"wx/tracker.h"
 	"wx/meta/convertible.h"
 	"wx/meta/int2type.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\int2type.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\meta\int2type.h
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\toplevel.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\toplevel.h
 	"wx/weakref.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\toplevel.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\toplevel.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\toplevel.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\toplevel.h
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\toplevel.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\toplevel.h
 
-1663522729 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\toplevel.h
+1663526329 e:\sower-apps\depends-msw\wxwidgets\include\wx\dfb\toplevel.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\toplevel.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\toplevel.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\toplevel.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\toplevel.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\toplevel.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\toplevel.h
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\toplevel.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\toplevel.h
 	"wx/univ/inpcons.h"
 	"wx/univ/inphand.h"
 	"wx/icon.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\inpcons.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\inpcons.h
 	"wx/object.h"
 	"wx/event.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\inphand.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\inphand.h
 	"wx/univ/inpcons.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\statusbr.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\statusbr.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/list.h"
@@ -1330,7 +1330,7 @@
 	"wx/qt/statusbar.h"
 	"wx/generic/statusbr.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\control.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\control.h
 	"wx/defs.h"
 	"wx/window.h"
 	"wx/gdicmn.h"
@@ -1342,39 +1342,39 @@
 	"wx/osx/control.h"
 	"wx/qt/control.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\control.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\control.h
 	"wx/univ/inphand.h"
 	"wx/univ/inpcons.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\control.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\control.h
 	"wx/dynarray.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\control.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\control.h
 	"wx/window.h"
 	"wx/list.h"
 	"wx/validate.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\control.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\control.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\control.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\control.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/list.h"
 	"wx/window.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\control.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\control.h
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\control.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\control.h
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\statusbr.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\statusbr.h
 	"wx/univ/inpcons.h"
 	"wx/arrstr.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\statusbar.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\statusbar.h
 	"wx/vector.h"
 	"wx/tooltip.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\tooltip.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\tooltip.h
 	"wx/defs.h"
 	"wx/msw/tooltip.h"
 	"wx/gtk/tooltip.h"
@@ -1382,52 +1382,52 @@
 	"wx/osx/tooltip.h"
 	"wx/qt/tooltip.h"
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\tooltip.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\tooltip.h
 	"wx/object.h"
 	"wx/gdicmn.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\tooltip.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\tooltip.h
 	"wx/string.h"
 	"wx/object.h"
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\tooltip.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\tooltip.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/object.h"
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\tooltip.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\tooltip.h
 	"wx/string.h"
 	"wx/event.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\tooltip.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\tooltip.h
 	"wx/object.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\statusbr.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\statusbr.h
 	"wx/defs.h"
 	"wx/pen.h"
 	"wx/arrstr.h"
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\statusbr.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\statusbr.h
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\statusbar.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\statusbar.h
 	"wx/statusbr.h"
 
-1663522735 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\frame.h
+1663526335 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\frame.h
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\frame.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\frame.h
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\frame.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\frame.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\frame.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\frame.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\frame.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\frame.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\frame.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\frame.h
 	"wx/toolbar.h"
 	"wx/accel.h"
 	"wx/icon.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\toolbar.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\toolbar.h
 	"wx/defs.h"
 	"wx/tbarbase.h"
 	"wx/univ/toolbar.h"
@@ -1438,22 +1438,22 @@
 	"wx/osx/toolbar.h"
 	"wx/qt/toolbar.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\tbarbase.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\tbarbase.h
 	"wx/defs.h"
 	"wx/bitmap.h"
 	"wx/bmpbndl.h"
 	"wx/list.h"
 	"wx/control.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\bmpbndl.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\bmpbndl.h
 	"wx/bitmap.h"
 	"wx/object.h"
 	"wx/vector.h"
 
-1663522735 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\toolbar.h
+1663526335 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\toolbar.h
 	"wx/button.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\button.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\button.h
 	"wx/defs.h"
 	"wx/anybutton.h"
 	"wx/univ/button.h"
@@ -1464,7 +1464,7 @@
 	"wx/osx/button.h"
 	"wx/qt/button.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\anybutton.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\anybutton.h
 	"wx/defs.h"
 	"wx/bmpbndl.h"
 	"wx/control.h"
@@ -1474,91 +1474,91 @@
 	"wx/osx/anybutton.h"
 	"wx/qt/anybutton.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\anybutton.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\anybutton.h
 	"wx/univ/inphand.h"
 
-1663522762 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\anybutton.h
+1663526362 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\anybutton.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\anybutton.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\anybutton.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\anybutton.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\anybutton.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\anybutton.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\anybutton.h
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\button.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\button.h
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\button.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\button.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\button.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\button.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\button.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\button.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\button.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\button.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/list.h"
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\button.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\button.h
 	"wx/control.h"
 	"wx/gdicmn.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\button.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\button.h
 	"wx/control.h"
 	"wx/button.h"
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\toolbar.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\toolbar.h
 	"wx/dynarray.h"
 	"wx/imaglist.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\imaglist.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\imaglist.h
 	"wx/defs.h"
 	"wx/msw/imaglist.h"
 	"wx/generic/imaglist.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\imaglist.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\imaglist.h
 	"wx/bitmap.h"
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\imaglist.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\imaglist.h
 	"wx/bitmap.h"
 	"wx/gdicmn.h"
 	"wx/vector.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\toolbar.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\toolbar.h
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\toolbar.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\toolbar.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\toolbar.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\toolbar.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\toolbar.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\toolbar.h
 	"wx/tbarbase.h"
 	"wx/dynarray.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\toolbar.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\toolbar.h
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\frame.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\frame.h
 	"wx/frame.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\app.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\app.h
 	"wx/gdicmn.h"
 	"wx/event.h"
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\app.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\app.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/gdicmn.h"
 	"wx/event.h"
 
-1663522754 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\app.h
+1663526354 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\app.h
 	<wx/scopedarray.h>
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\scopedarray.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\scopedarray.h
 	"wx/defs.h"
 	"wx/checkeddelete.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\theme.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\theme.h
 	"wx/string.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\wx.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\wx.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/dynarray.h"
@@ -1640,12 +1640,12 @@
 	"wx/validate.h"
 	"wx/valtext.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\stopwatch.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\stopwatch.h
 	"wx/defs.h"
 	"wx/longlong.h"
 	"wx/time.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\timer.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\timer.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/longlong.h"
@@ -1653,44 +1653,44 @@
 	"wx/stopwatch.h"
 	"wx/utils.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\module.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\module.h
 	"wx/object.h"
 	"wx/vector.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\containr.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\containr.h
 	"wx/defs.h"
 	"wx/event.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\panel.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\panel.h
 	"wx/window.h"
 	"wx/containr.h"
 	"wx/univ/panel.h"
 	"wx/msw/panel.h"
 	"wx/generic/panelg.h"
 
-1663522737 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\panel.h
+1663526337 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\panel.h
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\panel.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\panel.h
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\panelg.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\panelg.h
 	"wx/bitmap.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcclient.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcclient.h
 	"wx/dc.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcmemory.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcmemory.h
 	"wx/dc.h"
 	"wx/bitmap.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcprint.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcprint.h
 	"wx/defs.h"
 	"wx/dc.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcscreen.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\dcscreen.h
 	"wx/defs.h"
 	"wx/dc.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\menuitem.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\menuitem.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/bmpbndl.h"
@@ -1704,36 +1704,36 @@
 	"wx/osx/menuitem.h"
 	"wx/qt/menuitem.h"
 
-1663522735 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\menuitem.h
+1663526335 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\menuitem.h
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\menuitem.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\menuitem.h
 	"wx/ownerdrw.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\ownerdrw.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\ownerdrw.h
 	"wx/defs.h"
 	"wx/font.h"
 	"wx/colour.h"
 	"wx/msw/ownerdrw.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ownerdrw.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ownerdrw.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\menuitem.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\menuitem.h
 	"wx/bitmap.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\menuitem.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\menuitem.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\menuitem.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\menuitem.h
 	"wx/bitmap.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\menuitem.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\menuitem.h
 	"wx/defs.h"
 	"wx/vector.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\menuitem.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\menuitem.h
 	"wx/menuitem.h"
 	"wx/bitmap.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\menu.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\menu.h
 	"wx/defs.h"
 	"wx/list.h"
 	"wx/window.h"
@@ -1746,30 +1746,30 @@
 	"wx/osx/menu.h"
 	"wx/qt/menu.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\menu.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\menu.h
 	"wx/accel.h"
 	"wx/dynarray.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\menu.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\menu.h
 	"wx/accel.h"
 	"wx/dynarray.h"
 	"wx/arrstr.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\menu.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\menu.h
 	"wx/colour.h"
 	"wx/font.h"
 	"wx/arrstr.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\menu.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\menu.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\menu.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\menu.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\menu.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\menu.h
 	"wx/arrstr.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\menu.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\menu.h
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\dialog.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\dialog.h
 	"wx/toplevel.h"
 	"wx/containr.h"
 	"wx/sharedptr.h"
@@ -1781,35 +1781,35 @@
 	"wx/osx/dialog.h"
 	"wx/qt/dialog.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\sharedptr.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\sharedptr.h
 	"wx/defs.h"
 	"wx/atomic.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\atomic.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\atomic.h
 	"wx/defs.h"
 	"wx/msw/wrapwin.h"
 	"libkern/OSAtomic.h"
 	<atomic.h>
 	"wx/thread.h"
 
-1663522737 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\dialog.h
+1663526337 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\dialog.h
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\dialog.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\dialog.h
 	"wx/panel.h"
 
-1663522768 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dialog.h
+1663526368 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dialog.h
 
-1663522734 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dialog.h
+1663526334 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dialog.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dialog.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dialog.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dialog.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dialog.h
 	"wx/panel.h"
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dialog.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dialog.h
 	"wx/dialog.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\msgdlg.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\msgdlg.h
 	"wx/defs.h"
 	"wx/dialog.h"
 	"wx/stockitem.h"
@@ -1820,26 +1820,26 @@
 	"wx/osx/msgdlg.h"
 	"wx/qt/msgdlg.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\stockitem.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\stockitem.h
 	"wx/defs.h"
 	"wx/chartype.h"
 	"wx/string.h"
 	"wx/accel.h"
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\msgdlgg.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\msgdlgg.h
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\msgdlg.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\msgdlg.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\msgdlg.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\msgdlg.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\msgdlg.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\msgdlg.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\msgdlg.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\msgdlg.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\msgdlg.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\msgdlg.h
 	"wx/msgdlg.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\dataobj.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\dataobj.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/bitmap.h"
@@ -1867,55 +1867,55 @@
 	"wx/osx/dataobj2.h"
 	"wx/qt/dataobj2.h"
 
-1663522765 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dataform.h
+1663526365 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dataform.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dataform.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dataform.h
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataform.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataform.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dataform.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dataform.h
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dataform.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dataform.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataform.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataform.h
 	"wx/osx/core/cfstring.h"
 
-1663522743 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\core\cfstring.h
+1663526343 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\core\cfstring.h
 	"wx/dlimpexp.h"
 	"wx/fontenc.h"
 	"wx/osx/core/cfref.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataform.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataform.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dataobj.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dataobj.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dataobj.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dataobj.h
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dataobj.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dataobj.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataobj.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataobj.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dataobj.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dataobj.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataobj.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataobj.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataobj.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataobj.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dataobj2.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dataobj2.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataobj2.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataobj2.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dataobj2.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dataobj2.h
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dataobj2.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dataobj2.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dataobj2.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dataobj2.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataobj2.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataobj2.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataobj2.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataobj2.h
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\ctrlsub.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\ctrlsub.h
 	"wx/defs.h"
 	"wx/arrstr.h"
 	"wx/control.h"
@@ -1924,18 +1924,18 @@
 	"wx/motif/ctrlsub.h"
 	"wx/qt/ctrlsub.h"
 
-1663522764 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ctrlsub.h
+1663526364 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ctrlsub.h
 
-1663522768 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\ctrlsub.h
+1663526368 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\ctrlsub.h
 	"wx/dynarray.h"
 	"wx/generic/ctrlsub.h"
 
-1663522747 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\ctrlsub.h
+1663526347 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\ctrlsub.h
 	"wx/dynarray.h"
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\ctrlsub.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\ctrlsub.h
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\bmpbuttn.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\bmpbuttn.h
 	"wx/defs.h"
 	"wx/button.h"
 	"wx/univ/bmpbuttn.h"
@@ -1946,30 +1946,30 @@
 	"wx/osx/bmpbuttn.h"
 	"wx/qt/bmpbuttn.h"
 
-1663522735 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\bmpbuttn.h
+1663526335 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\bmpbuttn.h
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\bmpbuttn.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\bmpbuttn.h
 	"wx/button.h"
 	"wx/bitmap.h"
 	"wx/brush.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\bmpbuttn.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\bmpbuttn.h
 	"wx/motif/bmpmotif.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\bmpmotif.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\bmpmotif.h
 	"wx/defs.h"
 	"wx/bitmap.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\bmpbuttn.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\bmpbuttn.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\bmpbuttn.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\bmpbuttn.h
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\bmpbuttn.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\bmpbuttn.h
 	"wx/button.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\bmpbuttn.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\bmpbuttn.h
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\checkbox.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\checkbox.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/checkbox.h"
@@ -1980,25 +1980,25 @@
 	"wx/osx/checkbox.h"
 	"wx/qt/checkbox.h"
 
-1663522737 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\checkbox.h
+1663526337 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\checkbox.h
 	"wx/button.h"
 
-1663522764 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\checkbox.h
+1663526364 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\checkbox.h
 	"wx/msw/ownerdrawnbutton.h"
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ownerdrawnbutton.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ownerdrawnbutton.h
 
-1663522768 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\checkbox.h
+1663526368 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\checkbox.h
 
-1663522734 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\checkbox.h
+1663526334 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\checkbox.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\checkbox.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\checkbox.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\checkbox.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\checkbox.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\checkbox.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\checkbox.h
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\checklst.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\checklst.h
 	"wx/defs.h"
 	"wx/listbox.h"
 	"wx/univ/checklst.h"
@@ -2009,7 +2009,7 @@
 	"wx/osx/checklst.h"
 	"wx/qt/checklst.h"
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\listbox.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\listbox.h
 	"wx/defs.h"
 	"wx/ctrlsub.h"
 	"wx/univ/listbox.h"
@@ -2020,12 +2020,12 @@
 	"wx/osx/listbox.h"
 	"wx/qt/listbox.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\listbox.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\listbox.h
 	"wx/scrolwin.h"
 	"wx/dynarray.h"
 	"wx/arrstr.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\scrolwin.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\scrolwin.h
 	"wx/control.h"
 	"wx/panel.h"
 	"wx/scrolbar.h"
@@ -2033,7 +2033,7 @@
 	"wx/gtk1/scrolwin.h"
 	"wx/generic/scrolwin.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\scrolbar.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\scrolbar.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/scrolbar.h"
@@ -2044,77 +2044,77 @@
 	"wx/osx/scrolbar.h"
 	"wx/qt/scrolbar.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\scrolbar.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\scrolbar.h
 	"wx/univ/scrarrow.h"
 	"wx/renderer.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\scrarrow.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\scrarrow.h
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\renderer.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\renderer.h
 	"wx/gdicmn.h"
 	"wx/colour.h"
 	"wx/font.h"
 	"wx/bitmap.h"
 	"wx/string.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\scrolbar.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\scrolbar.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\scrolbar.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\scrolbar.h
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\scrolbar.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\scrolbar.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\scrolbar.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\scrolbar.h
 	"wx/defs.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\scrolbar.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\scrolbar.h
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\scrolbar.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\scrolbar.h
 	"wx/scrolbar.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\scrolwin.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\scrolwin.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\scrolwin.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\scrolwin.h
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\scrolwin.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\scrolwin.h
 	"wx/recguard.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\recguard.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\recguard.h
 	"wx/defs.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\listbox.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\listbox.h
 	"wx/dynarray.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\listbox.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\listbox.h
 	"wx/ctrlsub.h"
 	"wx/clntdata.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\listbox.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\listbox.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\listbox.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\listbox.h
 	"wx/list.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\listbox.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\listbox.h
 	"wx/dynarray.h"
 	"wx/arrstr.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\listbox.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\listbox.h
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\checklst.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\checklst.h
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\checklst.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\checklst.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\checklst.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\checklst.h
 	"wx/listbox.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\checklst.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\checklst.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\checklst.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\checklst.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\checklst.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\checklst.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\checklst.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\checklst.h
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\choice.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\choice.h
 	"wx/defs.h"
 	"wx/ctrlsub.h"
 	"wx/univ/choice.h"
@@ -2125,10 +2125,10 @@
 	"wx/osx/choice.h"
 	"wx/qt/choice.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\choice.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\choice.h
 	"wx/combobox.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\combobox.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\combobox.h
 	"wx/defs.h"
 	"wx/textctrl.h"
 	"wx/ctrlsub.h"
@@ -2141,7 +2141,7 @@
 	"wx/osx/combobox.h"
 	"wx/qt/combobox.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\textctrl.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\textctrl.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/textentry.h"
@@ -2157,7 +2157,7 @@
 	"wx/osx/textctrl.h"
 	"wx/qt/textctrl.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\textentry.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\textentry.h
 	"wx/filefn.h"
 	"wx/gdicmn.h"
 	"wx/gtk/textentry.h"
@@ -2166,50 +2166,50 @@
 	"wx/motif/textentry.h"
 	"wx/qt/textentry.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\textentry.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\textentry.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\textentry.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\textentry.h
 	"wx/control.h"
 
-1663522762 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\textentry.h
+1663526362 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\textentry.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\textentry.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\textentry.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\textentry.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\textentry.h
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\ioswrap.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\ioswrap.h
 	"wx/beforestd.h"
 	<iostream>
 	"wx/afterstd.h"
 	"wx/msw/winundef.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\textctrl.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\textctrl.h
 	"wx/univ/textctrl.h"
 	"wx/scrolwin.h"
 	"wx/arrstr.h"
 
-1663522735 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\textctrl.h
+1663526335 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\textctrl.h
 	"wx/scrolwin.h"
 	"wx/univ/inphand.h"
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\textctrl.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\textctrl.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\textctrl.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\textctrl.h
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\textctrl.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\textctrl.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\textctrl.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\textctrl.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\textctrl.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\textctrl.h
 	"wx/control.h"
 	"wx/textctrl.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\textctrl.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\textctrl.h
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\combobox.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\combobox.h
 	"wx/combo.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\combo.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\combo.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/renderer.h"
@@ -2219,53 +2219,53 @@
 	"wx/msw/combo.h"
 	"wx/generic/combo.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\combo.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\combo.h
 	"wx/timer.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\combo.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\combo.h
 	"wx/containr.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\combobox.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\combobox.h
 	"wx/choice.h"
 	"wx/textentry.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\combobox.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\combobox.h
 	"wx/choice.h"
 	"wx/textentry.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\combobox.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\combobox.h
 	"wx/choice.h"
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\combobox.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\combobox.h
 	"wx/defs.h"
 	"wx/object.h"
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\combobox.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\combobox.h
 	"wx/containr.h"
 	"wx/choice.h"
 	"wx/textctrl.h"
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\combobox.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\combobox.h
 	"wx/choice.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\choice.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\choice.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\choice.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\choice.h
 	"wx/clntdata.h"
 	"wx/dynarray.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\choice.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\choice.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\choice.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\choice.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\choice.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\choice.h
 	"wx/control.h"
 	"wx/dynarray.h"
 	"wx/arrstr.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\choice.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\choice.h
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\stattext.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\stattext.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/stattext.h"
@@ -2276,25 +2276,25 @@
 	"wx/osx/stattext.h"
 	"wx/qt/stattext.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\stattext.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\stattext.h
 	"wx/generic/stattextg.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\stattextg.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\stattextg.h
 	"wx/stattext.h"
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\stattext.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\stattext.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\stattext.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\stattext.h
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\stattext.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\stattext.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\stattext.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\stattext.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\stattext.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\stattext.h
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\stattext.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\stattext.h
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\statbmp.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\statbmp.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/bmpbndl.h"
@@ -2307,30 +2307,30 @@
 	"wx/osx/statbmp.h"
 	"wx/qt/statbmp.h"
 
-1663522737 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\statbmp.h
+1663526337 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\statbmp.h
 	"wx/bitmap.h"
 
-1663522764 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\statbmp.h
+1663526364 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\statbmp.h
 	"wx/control.h"
 	"wx/icon.h"
 	"wx/bitmap.h"
 
-1663522768 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\statbmp.h
+1663526368 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\statbmp.h
 	"wx/motif/bmpmotif.h"
 	"wx/icon.h"
 
-1663522734 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\statbmp.h
+1663526334 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\statbmp.h
 	"wx/icon.h"
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\statbmp.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\statbmp.h
 	"wx/icon.h"
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\statbmp.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\statbmp.h
 	"wx/statbmp.h"
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\statbmp.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\statbmp.h
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\statbox.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\statbox.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/containr.h"
@@ -2342,26 +2342,26 @@
 	"wx/osx/statbox.h"
 	"wx/qt/statbox.h"
 
-1663522737 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\statbox.h
+1663526337 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\statbox.h
 
-1663522764 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\statbox.h
+1663526364 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\statbox.h
 	"wx/compositewin.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\compositewin.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\compositewin.h
 	"wx/window.h"
 	"wx/containr.h"
 
-1663522768 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\statbox.h
+1663526368 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\statbox.h
 
-1663522734 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\statbox.h
+1663526334 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\statbox.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\statbox.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\statbox.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\statbox.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\statbox.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\statbox.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\statbox.h
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\radiobox.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\radiobox.h
 	"wx/defs.h"
 	"wx/ctrlsub.h"
 	"wx/dynarray.h"
@@ -2373,30 +2373,30 @@
 	"wx/osx/radiobox.h"
 	"wx/qt/radiobox.h"
 
-1663522735 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\radiobox.h
+1663526335 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\radiobox.h
 	"wx/statbox.h"
 	"wx/dynarray.h"
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\radiobox.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\radiobox.h
 	"wx/statbox.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\radiobox.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\radiobox.h
 	"wx/dynarray.h"
 	"wx/arrstr.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\radiobox.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\radiobox.h
 	"wx/bitmap.h"
 	"wx/list.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\radiobox.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\radiobox.h
 	"wx/bitmap.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\radiobox.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\radiobox.h
 	"wx/containr.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\radiobox.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\radiobox.h
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\radiobut.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\radiobut.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/checkbox.h"
@@ -2408,22 +2408,22 @@
 	"wx/osx/radiobut.h"
 	"wx/qt/radiobut.h"
 
-1663522737 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\radiobut.h
+1663526337 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\radiobut.h
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\radiobut.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\radiobut.h
 	"wx/msw/ownerdrawnbutton.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\radiobut.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\radiobut.h
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\radiobut.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\radiobut.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\radiobut.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\radiobut.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\radiobut.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\radiobut.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\radiobut.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\radiobut.h
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\slider.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\slider.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/slider.h"
@@ -2434,28 +2434,28 @@
 	"wx/osx/slider.h"
 	"wx/qt/slider.h"
 
-1663522737 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\slider.h
+1663526337 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\slider.h
 	"wx/univ/scrthumb.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\scrthumb.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\scrthumb.h
 	"wx/timer.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\slider.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\slider.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\slider.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\slider.h
 	"wx/control.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\slider.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\slider.h
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\slider.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\slider.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\slider.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\slider.h
 	"wx/compositewin.h"
 	"wx/stattext.h"
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\slider.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\slider.h
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\gauge.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\gauge.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/univ/gauge.h"
@@ -2466,22 +2466,22 @@
 	"wx/osx/gauge.h"
 	"wx/qt/gauge.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\gauge.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\gauge.h
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\gauge.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\gauge.h
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\gauge.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\gauge.h
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\gauge.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\gauge.h
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\gauge.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\gauge.h
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\gauge.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\gauge.h
 	"wx/control.h"
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\gauge.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\gauge.h
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\dirdlg.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\dirdlg.h
 	"wx/defs.h"
 	"wx/dialog.h"
 	"wx/generic/dirdlgg.h"
@@ -2493,46 +2493,46 @@
 	"wx/generic/dirdlgg.h"
 	"wx/qt/dirdlg.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dirdlgg.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dirdlgg.h
 	"wx/dialog.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\dirdlg.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\dirdlg.h
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dirdlg.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dirdlg.h
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dirdlg.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dirdlg.h
 
-1663522754 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dirdlg.h
+1663526354 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dirdlg.h
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\layout.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\layout.h
 	"wx/object.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\sizer.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\sizer.h
 	"wx/defs.h"
 	"wx/window.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\choicdlg.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\choicdlg.h
 	"wx/defs.h"
 	"wx/generic/choicdgg.h"
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\choicdgg.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\choicdgg.h
 	"wx/dynarray.h"
 	"wx/dialog.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\textdlg.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\textdlg.h
 	"wx/generic/textdlgg.h"
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\textdlgg.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\textdlgg.h
 	"wx/defs.h"
 	"wx/dialog.h"
 	"wx/valtext.h"
 	"wx/textctrl.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\valtext.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\valtext.h
 	"wx/defs.h"
 	"wx/validate.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\filedlg.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\filedlg.h
 	"wx/defs.h"
 	"wx/dialog.h"
 	"wx/arrstr.h"
@@ -2544,7 +2544,7 @@
 	"wx/osx/filedlg.h"
 	"wx/qt/filedlg.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\filedlgg.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\filedlgg.h
 	"wx/listctrl.h"
 	"wx/datetime.h"
 	"wx/filefn.h"
@@ -2552,14 +2552,14 @@
 	"wx/filedlg.h"
 	"wx/generic/filectrlg.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\listctrl.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\listctrl.h
 	"wx/defs.h"
 	"wx/listbase.h"
 	"wx/msw/listctrl.h"
 	"wx/qt/listctrl.h"
 	"wx/generic/listctrl.h"
 
-1663522720 e:\sower-apps\depends-msw\wxwidgets\include\wx\listbase.h
+1663526320 e:\sower-apps\depends-msw\wxwidgets\include\wx\listbase.h
 	"wx/colour.h"
 	"wx/font.h"
 	"wx/gdicmn.h"
@@ -2569,56 +2569,56 @@
 	"wx/systhemectrl.h"
 	"wx/withimages.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\itemattr.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\itemattr.h
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\systhemectrl.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\systhemectrl.h
 	"wx/defs.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\withimages.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\withimages.h
 	"wx/defs.h"
 	"wx/bmpbndl.h"
 	"wx/icon.h"
 	"wx/imaglist.h"
 	"wx/vector.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\listctrl.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\listctrl.h
 	"wx/textctrl.h"
 	"wx/dynarray.h"
 	"wx/vector.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\listctrl.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\listctrl.h
 	"wx/textctrl.h"
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\listctrl.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\listctrl.h
 	"wx/containr.h"
 	"wx/scrolwin.h"
 	"wx/textctrl.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\artprov.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\artprov.h
 	"wx/string.h"
 	"wx/bitmap.h"
 	"wx/icon.h"
 	"wx/iconbndl.h"
 	"wx/bmpbndl.h"
 
-1663522747 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\filectrlg.h
+1663526347 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\filectrlg.h
 	"wx/containr.h"
 	"wx/listctrl.h"
 	"wx/filectrl.h"
 	"wx/filename.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\filectrl.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\filectrl.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/event.h"
 	"wx/gtk/filectrl.h"
 	"wx/generic/filectrlg.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\filectrl.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\filectrl.h
 	"wx/control.h"
 	"wx/filectrl.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\filename.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\filename.h
 	"wx/arrstr.h"
 	"wx/filefn.h"
 	"wx/datetime.h"
@@ -2626,31 +2626,31 @@
 	"wx/longlong.h"
 	"wx/file.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\file.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\file.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/filefn.h"
 	"wx/convauto.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\convauto.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\convauto.h
 	"wx/strconv.h"
 	"wx/fontenc.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\filedlg.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\filedlg.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\filedlg.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\filedlg.h
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\filedlg.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\filedlg.h
 	"wx/gtk/filectrl.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\filedlg.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\filedlg.h
 	"wx/generic/filedlgg.h"
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\filedlg.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\filedlg.h
 
-1663522754 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\filedlg.h
+1663526354 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\filedlg.h
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\mdi.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\mdi.h
 	"wx/defs.h"
 	"wx/frame.h"
 	"wx/menu.h"
@@ -2661,23 +2661,23 @@
 	"wx/osx/mdi.h"
 	"wx/qt/mdi.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\mdig.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\mdig.h
 	"wx/panel.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\mdi.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\mdi.h
 	"wx/frame.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\mdi.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\mdi.h
 	"wx/frame.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\mdi.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\mdi.h
 	"wx/frame.h"
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\mdi.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\mdi.h
 
-1663522754 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\mdi.h
+1663526354 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\mdi.h
 
-1663522727 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextbuffer.h
+1663526327 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextbuffer.h
 	"wx/defs.h"
 	"wx/list.h"
 	"wx/textctrl.h"
@@ -2689,23 +2689,23 @@
 	"wx/position.h"
 	"wx/dataobj.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\cmdproc.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\cmdproc.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/list.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\txtstrm.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\txtstrm.h
 	"wx/stream.h"
 	"wx/convauto.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\position.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\position.h
 	"wx/gdicmn.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\snglinst.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\snglinst.h
 	"wx/app.h"
 	"wx/utils.h"
 
-1662257550 e:\sower-apps\include\controls\controls.h
+1662261150 e:\sower-apps\include\controls\controls.h
 	"../string/string.h"
 	"../array/stringarray.h"
 	<wx/button.h>
@@ -2720,23 +2720,23 @@
 	<wx/stattext.h>
 	<wx/tglbtn.h>
 
-1676607722 e:\sower-apps\include\string\string.h
+1676611322 e:\sower-apps\include\string\string.h
 	"../sowerbase.h"
 	"stringw.h"
 
-1676607722 e:\sower-apps\include\string\stringw.h
+1676611322 e:\sower-apps\include\string\stringw.h
 	"../sowerbase.h"
 
-1674694242 e:\sower-apps\include\array\stringarray.h
+1674697842 e:\sower-apps\include\array\stringarray.h
 	"../string/string.h"
 	"../string/stringw.h"
 	"../string/stringpair.h"
 
-1674694242 e:\sower-apps\include\string\stringpair.h
+1674697842 e:\sower-apps\include\string\stringpair.h
 	"../sowerbase.h"
 	"string.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\dataview.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\dataview.h
 	"wx/defs.h"
 	"wx/textctrl.h"
 	"wx/headercol.h"
@@ -2757,10 +2757,10 @@
 	"wx/osx/dataview.h"
 	"wx/qt/dataview.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\headercol.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\headercol.h
 	"wx/bmpbndl.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\dnd.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\dnd.h
 	"wx/defs.h"
 	"wx/dataobj.h"
 	"wx/cursor.h"
@@ -2773,28 +2773,28 @@
 	"wx/osx/dnd.h"
 	"wx/qt/dnd.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dropsrc.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\dropsrc.h
 
-1663522765 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\droptgt.h
+1663526365 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\ole\droptgt.h
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dnd.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\dnd.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/dataobj.h"
 	"wx/cursor.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dnd.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\dnd.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
 	"wx/dataobj.h"
 	"wx/cursor.h"
 
-1663522730 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dnd.h
+1663526330 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dnd.h
 	"wx/icon.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dnd.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\dnd.h
 	"wx/object.h"
 	"wx/string.h"
 	"wx/dataobj.h"
@@ -2802,7 +2802,7 @@
 	"wx/icon.h"
 	"wx/gdicmn.h"
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dnd.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dnd.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/string.h"
@@ -2810,11 +2810,11 @@
 	"wx/dataobj.h"
 	"wx/cursor.h"
 
-1663522754 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dnd.h
+1663526354 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dnd.h
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\itemid.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\itemid.h
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\dvrenderers.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\dvrenderers.h
 	"wx/gtk/dvrenderer.h"
 	"wx/osx/dvrenderer.h"
 	"wx/qt/dvrenderer.h"
@@ -2824,23 +2824,23 @@
 	"wx/osx/dvrenderers.h"
 	"wx/qt/dvrenderers.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dvrenderer.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dvrenderer.h
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dvrenderer.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dvrenderer.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dvrenderer.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dvrenderer.h
 
-1663522747 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dvrenderer.h
+1663526347 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dvrenderer.h
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dvrenderers.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dvrenderers.h
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dvrenderers.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dvrenderers.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dvrenderers.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dvrenderers.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dvrenderers.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dvrenderers.h
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dataview.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\dataview.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/compositewin.h"
@@ -2850,14 +2850,14 @@
 	"wx/vector.h"
 	"wx/access.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataview.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\dataview.h
 	"wx/list.h"
 
-1663522739 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataview.h
+1663526339 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\dataview.h
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataview.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\dataview.h
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\tglbtn.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\tglbtn.h
 	"wx/defs.h"
 	"wx/event.h"
 	"wx/anybutton.h"
@@ -2869,29 +2869,29 @@
 	"wx/osx/tglbtn.h"
 	"wx/qt/tglbtn.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\tglbtn.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\tglbtn.h
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\tglbtn.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\tglbtn.h
 	"wx/bmpbndl.h"
 
-1663522733 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\tglbtn.h
+1663526333 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\tglbtn.h
 	"wx/bmpbndl.h"
 
-1663522751 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\tglbtn.h
+1663526351 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\tglbtn.h
 	"wx/bitmap.h"
 
-1663522767 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\tglbtn.h
+1663526367 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\tglbtn.h
 	"wx/checkbox.h"
 
-1663522742 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\tglbtn.h
+1663526342 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\tglbtn.h
 
-1663522757 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\tglbtn.h
+1663526357 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\tglbtn.h
 	"wx/tglbtn.h"
 
-1662257550 e:\sower-apps\include\module\thmlmodulewriter.h
+1662261150 e:\sower-apps\include\module\thmlmodulewriter.h
 	"../module/modulewriter.h"
 
-1662257550 e:\sower-apps\include\module\modulewriter.h
+1662261150 e:\sower-apps\include\module\modulewriter.h
 	"modulebase.h"
 	"module.h"
 	"autodefcommentary.h"
@@ -2904,18 +2904,18 @@
 	"../bible/scripturemap.h"
 	"../bible/commentarymap.h"
 
-1665108702 e:\sower-apps\include\module\modulebase.h
+1665112302 e:\sower-apps\include\module\modulebase.h
 	"../string/string.h"
 	<wx/treebase.h>
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\treebase.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\treebase.h
 	"wx/defs.h"
 	"wx/window.h"
 	"wx/event.h"
 	"wx/dynarray.h"
 	"wx/itemid.h"
 
-1662257548 e:\sower-apps\include\module\module.h
+1662261148 e:\sower-apps\include\module\module.h
 	"../module/modulebase.h"
 	"../bible/scripturemap.h"
 	"autodefcommentary.h"
@@ -2928,28 +2928,28 @@
 	"../filesys/recurse.h"
 	"../array/moduleitemarray.h"
 
-1662257544 e:\sower-apps\include\bible\scripturemap.h
+1662261144 e:\sower-apps\include\bible\scripturemap.h
 	"bibledatacontainers.h"
 
-1662257544 e:\sower-apps\include\bible\bibledatacontainers.h
+1662261144 e:\sower-apps\include\bible\bibledatacontainers.h
 	"../sowerbase.h"
 	"../string/string.h"
 	"../module/modulebase.h"
 
-1662257550 e:\sower-apps\include\module\autodefcommentary.h
+1662261150 e:\sower-apps\include\module\autodefcommentary.h
 	"../module/modulebase.h"
 	"../string/string.h"
 	"../module/moduleinterface.h"
 	"../bible/commentarymap.h"
 
-1662257546 e:\sower-apps\include\module\moduleinterface.h
+1662261146 e:\sower-apps\include\module\moduleinterface.h
 	"../module/modulebase.h"
 	<stdio.h>
 
-1662257546 e:\sower-apps\include\bible\commentarymap.h
+1662261146 e:\sower-apps\include\bible\commentarymap.h
 	"bibledatacontainers.h"
 
-1662257544 e:\sower-apps\include\module\autodefterm.h
+1662261144 e:\sower-apps\include\module\autodefterm.h
 	"../module/modulebase.h"
 	"../string/stringw.h"
 	"../array/stringarray.h"
@@ -2958,38 +2958,38 @@
 	"../module/moduleinterface.h"
 	<wx/listctrl.h>
 
-1675968132 e:\sower-apps\include\string\strparser.h
+1675971732 e:\sower-apps\include\string\strparser.h
 	"string.h"
 	"stringw.h"
 	"../array/uintarray.h"
 
-1662257550 e:\sower-apps\include\array\uintarray.h
+1662261150 e:\sower-apps\include\array\uintarray.h
 	"../sowerbase.h"
 
-1662257544 e:\sower-apps\include\module\autodefnumbered.h
+1662261144 e:\sower-apps\include\module\autodefnumbered.h
 	"../module/modulebase.h"
 	"../module/moduleinterface.h"
 	"../string/string.h"
 	<wx/listctrl.h>
 
-1662257546 e:\sower-apps\include\module\autodefscripture.h
+1662261146 e:\sower-apps\include\module\autodefscripture.h
 	"../module/modulebase.h"
 	"../string/string.h"
 	"../module/moduleinterface.h"
 	"../bible/scripturemap.h"
 
-1662257548 e:\sower-apps\include\module\tableofcontents.h
+1662261148 e:\sower-apps\include\module\tableofcontents.h
 	"../module/modulebase.h"
 	"../module/moduleinterface.h"
 	"../module/autodefterm.h"
 	"../string/string.h"
 	"category.h"
 
-1664066448 e:\sower-apps\include\module\category.h
+1664070048 e:\sower-apps\include\module\category.h
 	"../sowerbase.h"
 	"../array/uintarray.h"
 
-1662257544 e:\sower-apps\include\module\mediacontents.h
+1662261144 e:\sower-apps\include\module\mediacontents.h
 	"../module/modulebase.h"
 	"../module/moduleinterface.h"
 	"../module/autodefterm.h"
@@ -2998,10 +2998,10 @@
 	"../filesys/streambuffer.h"
 	"../html/html_imagemap.h"
 
-1662257548 e:\sower-apps\include\filesys\streambuffer.h
+1662261148 e:\sower-apps\include\filesys\streambuffer.h
 	"../sowerbase.h"
 
-1664925444 e:\sower-apps\include\html\html_imagemap.h
+1664929044 e:\sower-apps\include\html\html_imagemap.h
 	"../sowerbase.h"
 	"../string/string.h"
 	"../array/pointarray.h"
@@ -3009,34 +3009,34 @@
 	"../geo/geolocation.h"
 	<wx/listctrl.h>
 
-1662257550 e:\sower-apps\include\array\pointarray.h
+1662261150 e:\sower-apps\include\array\pointarray.h
 	"../sowerbase.h"
 
-1662257550 e:\sower-apps\include\geo\geolocation.h
+1662261150 e:\sower-apps\include\geo\geolocation.h
 	"../sowerbase.h"
 	"../../include/string/string.h"
 	<wx/choice.h>
 	<wx/listctrl.h>
 
-1662257544 e:\sower-apps\include\string\stringcompare.h
+1662261144 e:\sower-apps\include\string\stringcompare.h
 	"../sowerbase.h"
 	"string.h"
 	"stringw.h"
 
-1662257544 e:\sower-apps\include\filesys\recurse.h
+1662261144 e:\sower-apps\include\filesys\recurse.h
 	"../sowerbase.h"
 
-1662257548 e:\sower-apps\include\array\moduleitemarray.h
+1662261148 e:\sower-apps\include\array\moduleitemarray.h
 	"../sowerbase.h"
 	"../module/modulebase.h"
 
-1662257546 e:\sower-apps\include\css\css_inliner.h
+1662261146 e:\sower-apps\include\css\css_inliner.h
 	"../thml/thml_parser.h"
 	"../thml/thml_css.h"
 	"css_file.h"
 	"css_attributes.h"
 
-1676003752 e:\sower-apps\include\thml\thml_parser.h
+1676007352 e:\sower-apps\include\thml\thml_parser.h
 	<wx/choice.h>
 	<wx/richtext/richtextctrl.h>
 	<wx/listctrl.h>
@@ -3051,7 +3051,7 @@
 	<wx/gauge.h>
 	"../array/stringarray.h"
 
-1663522727 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextctrl.h
+1663526327 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextctrl.h
 	"wx/richtext/richtextbuffer.h"
 	"wx/scrolwin.h"
 	"wx/caret.h"
@@ -3059,55 +3059,55 @@
 	"wx/textctrl.h"
 	"wx/dnd.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\caret.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\caret.h
 	"wx/defs.h"
 	"wx/gdicmn.h"
 	"wx/msw/caret.h"
 	"wx/generic/caret.h"
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\caret.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\caret.h
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\caret.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\caret.h
 	"wx/timer.h"
 	"wx/dc.h"
 	"wx/overlay.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\overlay.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\overlay.h
 	"wx/defs.h"
 
-1676848164 e:\sower-apps\include\html\html.h
+1676851764 e:\sower-apps\include\html\html.h
 	"../sowerbase.h"
 	"../string/string.h"
 
-1662257550 e:\sower-apps\include\css\css_units.h
+1662261150 e:\sower-apps\include\css\css_units.h
 	"../sowerbase.h"
 	<wx/choice.h>
 	<wx/richtext/richtextbuffer.h>
 
-1662257548 e:\sower-apps\include\html\html_color.h
+1662261148 e:\sower-apps\include\html\html_color.h
 	"../sowerbase.h"
 	<wx/choice.h>
 
-1677001976 e:\sower-apps\include\thml\thml_elements.h
+1677005576 e:\sower-apps\include\thml\thml_elements.h
 	"../html/html.h"
 	<wx/listctrl.h>
 
-1665195880 e:\sower-apps\include\filesys\file.h
+1665199480 e:\sower-apps\include\filesys\file.h
 	"../../include/string/string.h"
 	<share.h>
 
-1662257548 e:\sower-apps\include\thml\thml_css.h
+1662261148 e:\sower-apps\include\thml\thml_css.h
 	"../sowerbase.h"
 	"../string/string.h"
 	"../thml/thml_parser.h"
 	"../css/css_attributes.h"
 
-1662257548 e:\sower-apps\include\css\css_attributes.h
+1662261148 e:\sower-apps\include\css\css_attributes.h
 	"../../include/html/html.h"
 	"../array/uintarray.h"
 	"../array/stringarray.h"
 
-1662257550 e:\sower-apps\include\css\css_file.h
+1662261150 e:\sower-apps\include\css\css_file.h
 	<wx/richtext/richtextctrl.h>
 	"../html/html.h"
 	"../thml/thml_parser.h"
@@ -3115,39 +3115,39 @@
 	"css_selector.h"
 	"css_attributes.h"
 
-1664066448 e:\sower-apps\include\css\css_selector.h
+1664070048 e:\sower-apps\include\css\css_selector.h
 	"../../include/html/html.h"
 	<stdlib.h>
 	<malloc.h>
 
-1664066448 e:\sower-apps\include\array\cardarray.h
+1664070048 e:\sower-apps\include\array\cardarray.h
 	"../sowerbase.h"
 	"../module/modulebase.h"
 
-1663522723 e:\sower-apps\depends-msw\wxwidgets\include\wx\filepicker.h
+1663526323 e:\sower-apps\depends-msw\wxwidgets\include\wx\filepicker.h
 	"wx/defs.h"
 	"wx/pickerbase.h"
 	"wx/filename.h"
 	"wx/gtk/filepicker.h"
 	"wx/generic/filepickerg.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\pickerbase.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\pickerbase.h
 	"wx/control.h"
 	"wx/sizer.h"
 	"wx/containr.h"
 
-1663522734 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\filepicker.h
+1663526334 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\filepicker.h
 	"wx/generic/filepickerg.h"
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\filepickerg.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\filepickerg.h
 	"wx/button.h"
 	"wx/filedlg.h"
 	"wx/dirdlg.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\gbsizer.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\gbsizer.h
 	"wx/sizer.h"
 
-1676911864 e:\sower-apps\include\appi\appifa.h
+1676915464 e:\sower-apps\include\appi\appifa.h
 	"../sdf/datafile.h"
 	"../framework/toolbar.h"
 	"../framework/frame.h"
@@ -3171,7 +3171,7 @@
 	"../filesys/recurse.h"
 	"../../include/av_media/audio.h"
 
-1662257550 e:\sower-apps\include\sdf\datafile.h
+1662261150 e:\sower-apps\include\sdf\datafile.h
 	"../thml/thml_parser.h"
 	"../string/stringw.h"
 	<wx/choice.h>
@@ -3179,7 +3179,7 @@
 	<wx/dataview.h>
 	<wx/propgrid/propgrid.h>
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgrid.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgrid.h
 	"wx/defs.h"
 	"wx/scrolwin.h"
 	"wx/recguard.h"
@@ -3188,7 +3188,7 @@
 	"wx/propgrid/propgridiface.h"
 	"wx/propgrid/props.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\property.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\property.h
 	"wx/defs.h"
 	"wx/propgrid/propgriddefs.h"
 	"wx/bitmap.h"
@@ -3196,35 +3196,35 @@
 	"wx/font.h"
 	"wx/validate.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgriddefs.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgriddefs.h
 	"wx/defs.h"
 	"wx/colour.h"
 	"wx/hashset.h"
 	<numeric>
 	"wx/tokenzr.h"
 
-1663522722 e:\sower-apps\depends-msw\wxwidgets\include\wx\hashset.h
+1663526322 e:\sower-apps\depends-msw\wxwidgets\include\wx\hashset.h
 	"wx/hashmap.h"
 	<unordered_set>
 	<tr1/unordered_set>
 	<ext/hash_set>
 	<hash_set>
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\tokenzr.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\tokenzr.h
 	"wx/object.h"
 	"wx/string.h"
 	"wx/arrstr.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgridiface.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgridiface.h
 	"wx/defs.h"
 	"wx/propgrid/property.h"
 	"wx/propgrid/propgridpagestate.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgridpagestate.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\propgridpagestate.h
 	"wx/defs.h"
 	"wx/propgrid/property.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\props.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\propgrid\props.h
 	"wx/defs.h"
 	"wx/propgrid/property.h"
 	"wx/filename.h"
@@ -3234,11 +3234,11 @@
 	"wx/bmpbuttn.h"
 	"wx/editlbox.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\editlbox.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\editlbox.h
 	"wx/defs.h"
 	"wx/panel.h"
 
-1674283252 e:\sower-apps\include\framework\toolbar.h
+1674286852 e:\sower-apps\include\framework\toolbar.h
 	"../sowerbase.h"
 	"guidata.h"
 	"frame.h"
@@ -3246,20 +3246,21 @@
 	<wx/aui/auibar.h>
 	<wx/toolbar.h>
 
-1662257544 e:\sower-apps\include\framework\guidata.h
+1662261144 e:\sower-apps\include\framework\guidata.h
 	"../sowerbase.h"
 
-1677128022 e:\sower-apps\include\framework\frame.h
+1679358434 e:\sower-apps\include\framework\frame.h
 	"../sowerbase.h"
 	"toolbar.h"
 	"menubar.h"
 	"guipanel.h"
 	"toolbook.h"
+	"../controls/controls.h"
 	<wx/frame.h>
 	<wx/aui/framemanager.h>
 	<wx/timer.h>
 
-1662257546 e:\sower-apps\include\framework\menubar.h
+1662261146 e:\sower-apps\include\framework\menubar.h
 	"../sowerbase.h"
 	"guidata.h"
 	"frame.h"
@@ -3267,7 +3268,7 @@
 	"../plugin/plugin.h"
 	<wx/menu.h>
 
-1676945664 e:\sower-apps\include\richtext\richtextctrlext.h
+1676949264 e:\sower-apps\include\richtext\richtextctrlext.h
 	"../sowerbase.h"
 	<wx/richtext/richtextctrl.h>
 	<wx/richtext/richtextprint.h>
@@ -3278,23 +3279,23 @@
 	"objects/paragraphlist.h"
 	"../css/css_file.h"
 
-1663522728 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextprint.h
+1663526328 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextprint.h
 	"wx/defs.h"
 	"wx/richtext/richtextbuffer.h"
 	"wx/print.h"
 	"wx/printdlg.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\print.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\print.h
 	"wx/defs.h"
 	"wx/msw/printwin.h"
 	"wx/osx/printmac.h"
 	"wx/qt/printqt.h"
 	"wx/generic/printps.h"
 
-1663522762 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\printwin.h
+1663526362 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\printwin.h
 	"wx/prntbase.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\prntbase.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\prntbase.h
 	"wx/defs.h"
 	"wx/event.h"
 	"wx/cmndata.h"
@@ -3304,64 +3305,64 @@
 	"wx/frame.h"
 	"wx/dc.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\cmndata.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\cmndata.h
 	"wx/defs.h"
 	"wx/gdicmn.h"
 	"wx/stream.h"
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\printmac.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\printmac.h
 	"wx/prntbase.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\printqt.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\printqt.h
 	"wx/prntbase.h"
 
-1663522746 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\printps.h
+1663526346 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\printps.h
 	"wx/prntbase.h"
 
-1663522724 e:\sower-apps\depends-msw\wxwidgets\include\wx\printdlg.h
+1663526324 e:\sower-apps\depends-msw\wxwidgets\include\wx\printdlg.h
 	"wx/defs.h"
 	"wx/event.h"
 	"wx/dialog.h"
 	"wx/intl.h"
 	"wx/cmndata.h"
 
-1662257548 e:\sower-apps\include\html\html_anchor.h
+1662261148 e:\sower-apps\include\html\html_anchor.h
 	"../sowerbase.h"
 
-1662257546 e:\sower-apps\include\richtext\objects\horizontalrule.h
+1662261146 e:\sower-apps\include\richtext\objects\horizontalrule.h
 	"../../sowerbase.h"
 	<wx/richtext/richtextbuffer.h>
 	<wx/richtext/richtextxml.h>
 
-1663522727 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextxml.h
+1663526327 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextxml.h
 	"wx/hashmap.h"
 	"wx/richtext/richtextbuffer.h"
 	"wx/richtext/richtextstyles.h"
 
-1663522727 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextstyles.h
+1663526327 e:\sower-apps\depends-msw\wxwidgets\include\wx\richtext\richtextstyles.h
 	"wx/defs.h"
 	"wx/richtext/richtextbuffer.h"
 	"wx/htmllbox.h"
 	"wx/combo.h"
 	"wx/choice.h"
 
-1663522708 e:\sower-apps\depends-msw\wxwidgets\include\wx\htmllbox.h
+1663526308 e:\sower-apps\depends-msw\wxwidgets\include\wx\htmllbox.h
 	"wx/defs.h"
 	"wx/vlbox.h"
 	"wx/html/htmlwin.h"
 	"wx/ctrlsub.h"
 	"wx/filesys.h"
 
-1663522717 e:\sower-apps\depends-msw\wxwidgets\include\wx\vlbox.h
+1663526317 e:\sower-apps\depends-msw\wxwidgets\include\wx\vlbox.h
 	"wx/vscroll.h"
 	"wx/bitmap.h"
 
-1663522711 e:\sower-apps\depends-msw\wxwidgets\include\wx\vscroll.h
+1663526311 e:\sower-apps\depends-msw\wxwidgets\include\wx\vscroll.h
 	"wx/panel.h"
 	"wx/position.h"
 	"wx/scrolwin.h"
 
-1663522727 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlwin.h
+1663526327 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlwin.h
 	"wx/defs.h"
 	"wx/window.h"
 	"wx/scrolwin.h"
@@ -3374,52 +3375,52 @@
 	"wx/filename.h"
 	"wx/bmpbndl.h"
 
-1663522719 e:\sower-apps\depends-msw\wxwidgets\include\wx\config.h
+1663526319 e:\sower-apps\depends-msw\wxwidgets\include\wx\config.h
 	"wx/confbase.h"
 	"wx/msw/regconf.h"
 	"wx/fileconf.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\confbase.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\confbase.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/object.h"
 	"wx/base64.h"
 
-1663522715 e:\sower-apps\depends-msw\wxwidgets\include\wx\base64.h
+1663526315 e:\sower-apps\depends-msw\wxwidgets\include\wx\base64.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/buffer.h"
 
-1663522763 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\regconf.h
+1663526363 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\regconf.h
 	"wx/defs.h"
 	"wx/msw/registry.h"
 	"wx/object.h"
 	"wx/confbase.h"
 	"wx/buffer.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\registry.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\registry.h
 	"wx/defs.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\fileconf.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\fileconf.h
 	"wx/defs.h"
 	"wx/textfile.h"
 	"wx/string.h"
 	"wx/confbase.h"
 	"wx/filename.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\textfile.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\textfile.h
 	"wx/defs.h"
 	"wx/textbuf.h"
 	"wx/file.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\textbuf.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\textbuf.h
 	"wx/defs.h"
 	"wx/arrstr.h"
 	"wx/convauto.h"
 	"wx/string.h"
 	"wx/dynarray.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\winpars.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\winpars.h
 	"wx/defs.h"
 	"wx/module.h"
 	"wx/font.h"
@@ -3427,7 +3428,7 @@
 	"wx/html/htmlcell.h"
 	"wx/encconv.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlpars.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlpars.h
 	"wx/defs.h"
 	"wx/html/htmltag.h"
 	"wx/filesys.h"
@@ -3436,51 +3437,51 @@
 	"wx/vector.h"
 	"wx/fontenc.h"
 
-1663522727 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmltag.h
+1663526327 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmltag.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/arrstr.h"
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\filesys.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\filesys.h
 	"wx/defs.h"
 	"wx/stream.h"
 	"wx/datetime.h"
 	"wx/filename.h"
 	"wx/hashmap.h"
 
-1663522727 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlcell.h
+1663526327 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlcell.h
 	"wx/defs.h"
 	"wx/html/htmltag.h"
 	"wx/html/htmldefs.h"
 	"wx/window.h"
 	"wx/brush.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmldefs.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmldefs.h
 	"wx/defs.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\encconv.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\encconv.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/fontenc.h"
 	"wx/dynarray.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlfilt.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmlfilt.h
 	"wx/defs.h"
 	"wx/filesys.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\mstream.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\mstream.h
 	"wx/defs.h"
 	"wx/stream.h"
 
-1662257548 e:\sower-apps\include\richtext\objects\paragraphlist.h
+1662261148 e:\sower-apps\include\richtext\objects\paragraphlist.h
 	"../../sowerbase.h"
 	"../../html/parserbase.h"
 	<wx/richtext/richtextctrl.h>
 
-1662257550 e:\sower-apps\include\html\parserbase.h
+1662261150 e:\sower-apps\include\html\parserbase.h
 	"../sowerbase.h"
 
-1664899544 e:\sower-apps\include\plugin\plugin.h
+1664903144 e:\sower-apps\include\plugin\plugin.h
 	"../sowerbase.h"
 	"../appi/appifa.h"
 	"../framework/panel.h"
@@ -3489,7 +3490,7 @@
 	<wx/dynlib.h>
 	<wx/simplebook.h>
 
-1664066448 e:\sower-apps\include\framework\panel.h
+1664070048 e:\sower-apps\include\framework\panel.h
 	"../sowerbase.h"
 	"menubar.h"
 	"toolbar.h"
@@ -3511,14 +3512,14 @@
 	<wx/textctrl.h>
 	<wx/wrapsizer.h>
 
-1677038910 e:\sower-apps\include\framework\toolbook.h
+1677042510 e:\sower-apps\include\framework\toolbook.h
 	"panel.h"
 	"toolbar.h"
 	"menubar.h"
 	<wx/notebook.h>
 	<wx/aui/auibook.h>
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\notebook.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\notebook.h
 	"wx/defs.h"
 	"wx/bookctrl.h"
 	"wx/univ/notebook.h"
@@ -3529,7 +3530,7 @@
 	"wx/osx/notebook.h"
 	"wx/qt/notebook.h"
 
-1663522712 e:\sower-apps\depends-msw\wxwidgets\include\wx\bookctrl.h
+1663526312 e:\sower-apps\depends-msw\wxwidgets\include\wx\bookctrl.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/vector.h"
@@ -3537,41 +3538,41 @@
 	"wx/notebook.h"
 	"wx/choicebk.h"
 
-1663522721 e:\sower-apps\depends-msw\wxwidgets\include\wx\choicebk.h
+1663526321 e:\sower-apps\depends-msw\wxwidgets\include\wx\choicebk.h
 	"wx/defs.h"
 	"wx/bookctrl.h"
 	"wx/choice.h"
 	"wx/containr.h"
 
-1663522736 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\notebook.h
+1663526336 e:\sower-apps\depends-msw\wxwidgets\include\wx\univ\notebook.h
 	"wx/arrstr.h"
 
-1663522759 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\notebook.h
+1663526359 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\notebook.h
 	"wx/control.h"
 
-1663522745 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\notebook.h
+1663526345 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\notebook.h
 	"wx/event.h"
 	"wx/control.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\notebook.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\notebook.h
 	"wx/list.h"
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\notebook.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\notebook.h
 	"wx/list.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\notebook.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\notebook.h
 	"wx/event.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\notebook.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\notebook.h
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\auibook.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\auibook.h
 	"wx/defs.h"
 	"wx/aui/tabart.h"
 	"wx/aui/framemanager.h"
 	"wx/bookctrl.h"
 	"wx/containr.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabart.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabart.h
 	"wx/defs.h"
 	"wx/colour.h"
 	"wx/gdicmn.h"
@@ -3582,14 +3583,14 @@
 	"wx/aui/tabartgtk.h"
 	"wx/aui/tabartmsw.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabartgtk.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabartgtk.h
 	"wx/defs.h"
 	"wx/aui/tabart.h"
 	"wx/gdicmn.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabartmsw.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabartmsw.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\framemanager.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\framemanager.h
 	"wx/defs.h"
 	"wx/dynarray.h"
 	"wx/gdicmn.h"
@@ -3598,16 +3599,16 @@
 	"wx/sizer.h"
 	"wx/bmpbndl.h"
 
-1664066448 e:\sower-apps\include\controls\treectrlext.h
+1664070048 e:\sower-apps\include\controls\treectrlext.h
 	"historylist.h"
 	<wx/treectrl.h>
 
-1662257550 e:\sower-apps\include\controls\historylist.h
+1662261150 e:\sower-apps\include\controls\historylist.h
 	"../sowerbase.h"
 	"../controls/controls.h"
 	<wx/treebase.h>
 
-1663522710 e:\sower-apps\depends-msw\wxwidgets\include\wx\treectrl.h
+1663526310 e:\sower-apps\depends-msw\wxwidgets\include\wx\treectrl.h
 	"wx/defs.h"
 	"wx/control.h"
 	"wx/treebase.h"
@@ -3618,28 +3619,28 @@
 	"wx/msw/treectrl.h"
 	"wx/qt/treectrl.h"
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\treectlg.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\treectlg.h
 	"wx/brush.h"
 	"wx/pen.h"
 	"wx/scrolwin.h"
 
-1663522758 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\treectrl.h
+1663526358 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\treectrl.h
 	"wx/textctrl.h"
 	"wx/dynarray.h"
 	"wx/treebase.h"
 	"wx/hashmap.h"
 
-1663522754 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\treectrl.h
+1663526354 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\treectrl.h
 
-1663522708 e:\sower-apps\depends-msw\wxwidgets\include\wx\sashwin.h
+1663526308 e:\sower-apps\depends-msw\wxwidgets\include\wx\sashwin.h
 	"wx/generic/sashwin.h"
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\sashwin.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\sashwin.h
 	"wx/defs.h"
 	"wx/window.h"
 	"wx/string.h"
 
-1663522748 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\aui.h
+1663526348 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\aui.h
 	"wx/aui/framemanager.h"
 	"wx/aui/dockart.h"
 	"wx/aui/floatpane.h"
@@ -3647,20 +3648,20 @@
 	"wx/aui/auibook.h"
 	"wx/aui/tabmdi.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\dockart.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\dockart.h
 	"wx/defs.h"
 	"wx/pen.h"
 	"wx/brush.h"
 	"wx/bmpbndl.h"
 	"wx/colour.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\floatpane.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\floatpane.h
 	"wx/defs.h"
 	"wx/weakref.h"
 	"wx/minifram.h"
 	"wx/frame.h"
 
-1663522713 e:\sower-apps\depends-msw\wxwidgets\include\wx\minifram.h
+1663526313 e:\sower-apps\depends-msw\wxwidgets\include\wx\minifram.h
 	"wx/defs.h"
 	"wx/msw/minifram.h"
 	"wx/motif/minifram.h"
@@ -3671,31 +3672,31 @@
 	"wx/qt/minifram.h"
 	"wx/frame.h"
 
-1663522760 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\minifram.h
+1663526360 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\minifram.h
 	"wx/frame.h"
 
-1663522766 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\minifram.h
+1663526366 e:\sower-apps\depends-msw\wxwidgets\include\wx\motif\minifram.h
 	"wx/frame.h"
 
-1663522731 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\minifram.h
+1663526331 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\minifram.h
 	"wx/bitmap.h"
 	"wx/frame.h"
 
-1663522750 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\minifram.h
+1663526350 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk1\minifram.h
 	"wx/defs.h"
 	"wx/object.h"
 	"wx/frame.h"
 
-1663522725 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\minifram.h
+1663526325 e:\sower-apps\depends-msw\wxwidgets\include\wx\x11\minifram.h
 	"wx/frame.h"
 
-1663522740 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\minifram.h
+1663526340 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\minifram.h
 	"wx/frame.h"
 
-1663522755 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\minifram.h
+1663526355 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\minifram.h
 	"wx/frame.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\auibar.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\auibar.h
 	"wx/defs.h"
 	"wx/bmpbndl.h"
 	"wx/control.h"
@@ -3703,9 +3704,9 @@
 	"wx/pen.h"
 	"wx/aui/barartmsw.h"
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\barartmsw.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\barartmsw.h
 
-1663522749 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabmdi.h
+1663526349 e:\sower-apps\depends-msw\wxwidgets\include\wx\aui\tabmdi.h
 	"wx/frame.h"
 	"wx/panel.h"
 	"wx/notebook.h"
@@ -3713,34 +3714,34 @@
 	"wx/mdi.h"
 	"wx/aui/auibook.h"
 
-1663522709 e:\sower-apps\depends-msw\wxwidgets\include\wx\splitter.h
+1663526309 e:\sower-apps\depends-msw\wxwidgets\include\wx\splitter.h
 	"wx/event.h"
 	"wx/generic/splitter.h"
 
-1663522744 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\splitter.h
+1663526344 e:\sower-apps\depends-msw\wxwidgets\include\wx\generic\splitter.h
 	"wx/window.h"
 	"wx/containr.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\wrapsizer.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\wrapsizer.h
 	"wx/sizer.h"
 
-1673404110 e:\sower-apps\include\av_media\mediadevice.h
+1673407710 e:\sower-apps\include\av_media\mediadevice.h
 	"../sowerbase.h"
 	"../module/module.h"
 
-1663522718 e:\sower-apps\depends-msw\wxwidgets\include\wx\dynlib.h
+1663526318 e:\sower-apps\depends-msw\wxwidgets\include\wx\dynlib.h
 	"wx/defs.h"
 	"wx/string.h"
 	"wx/dynarray.h"
 	<dlfcn.h>
 	<CodeFragments.h>
 
-1663522714 e:\sower-apps\depends-msw\wxwidgets\include\wx\simplebook.h
+1663526314 e:\sower-apps\depends-msw\wxwidgets\include\wx\simplebook.h
 	"wx/bookctrl.h"
 	"wx/containr.h"
 	"wx/vector.h"
 
-1664066448 e:\sower-apps\include\framework\guipanel.h
+1664070048 e:\sower-apps\include\framework\guipanel.h
 	"../sowerbase.h"
 	"../module/modulebase.h"
 	"panel.h"
@@ -3749,43 +3750,43 @@
 	"toolbar.h"
 	<wx/aui/framemanager.h>
 
-1662257548 e:\sower-apps\include\module\modulemanager.h
+1662261148 e:\sower-apps\include\module\modulemanager.h
 	"../module/module.h"
 	"../array/stringarray.h"
 	"../array/uintarray.h"
 	"../array/cardarray.h"
 	"../filesys/streambuffer.h"
 
-1664066448 e:\sower-apps\include\thml\thmlfilemanager.h
+1664070048 e:\sower-apps\include\thml\thmlfilemanager.h
 	"thml_file.h"
 	"../string/stringcompare.h"
 	"../array/uintarray.h"
 
-1662257546 e:\sower-apps\include\thml\thml_file.h
+1662261146 e:\sower-apps\include\thml\thml_file.h
 	"../sowerbase.h"
 	"../module/modulebase.h"
 	"../css/css_inliner.h"
 	"../filesys/recurse.h"
 	<wx/treebase.h>
 
-1662257544 e:\sower-apps\include\controls\moduletreectrl.h
+1662261144 e:\sower-apps\include\controls\moduletreectrl.h
 	"treectrlext.h"
 	"../module/tableofcontents.h"
 	"../controls/controls.h"
 	"../string/stringcompare.h"
 
-1662257544 e:\sower-apps\include\controls\thmltreectrl.h
+1662261144 e:\sower-apps\include\controls\thmltreectrl.h
 	"treectrlext.h"
 	"../string/stringcompare.h"
 	"../thml/thml_file.h"
 
-1662257550 e:\sower-apps\include\bible\bookidentifier.h
+1662261150 e:\sower-apps\include\bible\bookidentifier.h
 	"../bible/bookidentifier.h"
 	"../string/string.h"
 	"../sdf/datafile.h"
 	"../module/moduleinterface.h"
 
-1663522726 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmprint.h
+1663526326 e:\sower-apps\depends-msw\wxwidgets\include\wx\html\htmprint.h
 	"wx/defs.h"
 	"wx/html/htmlcell.h"
 	"wx/html/winpars.h"
@@ -3795,7 +3796,7 @@
 	"wx/vector.h"
 	<limits.h>
 
-1673675756 e:\sower-apps\include\interface\richtext\richtextinterface.h
+1673679356 e:\sower-apps\include\interface\richtext\richtextinterface.h
 	"../interface.h"
 	"../../richtext/richtextctrlext.h"
 	"../../richtext/attr/richtextattr.h"
@@ -3803,26 +3804,26 @@
 	"../../html/html_imagemap.h"
 	"../../string/stringw.h"
 
-1662257548 e:\sower-apps\include\interface\interface.h
+1662261148 e:\sower-apps\include\interface\interface.h
 	"../css/css_inliner.h"
 	"../css/css_attributes.h"
 	"../css/css_file.h"
 
-1662257550 e:\sower-apps\include\richtext\attr\richtextattr.h
+1662261150 e:\sower-apps\include\richtext\attr\richtextattr.h
 	"../../sowerbase.h"
 	<wx/richtext/richtextbuffer.h>
 	<wx/richtext/richtextctrl.h>
 	"../../css/css_attributes.h"
 	"../../css/css_units.h"
 
-1662257546 e:\sower-apps\include\richtext\objects\richtexttablematrix.h
+1662261146 e:\sower-apps\include\richtext\objects\richtexttablematrix.h
 	"../richtextctrlext.h"
 
-1662257550 e:\sower-apps\include\interface\imagewin\imagewindowinterface.h
+1662261150 e:\sower-apps\include\interface\imagewin\imagewindowinterface.h
 	"../interface.h"
 	"../../imgwin/imagewindow.h"
 
-1664912710 e:\sower-apps\include\imgwin\imagewindow.h
+1664916310 e:\sower-apps\include\imgwin\imagewindow.h
 	"../sowerbase.h"
 	"../string/string.h"
 	"../string/stringw.h"
@@ -3837,32 +3838,32 @@
 	"imageprint.h"
 	<wx/cmdproc.h>
 
-1662257544 e:\sower-apps\include\richtext\autodefwindow.h
+1662261144 e:\sower-apps\include\richtext\autodefwindow.h
 	"../sowerbase.h"
 	"richtextctrlext.h"
 	"autodefbase.h"
 	"../framework/menubar.h"
 
-1677292912 e:\sower-apps\include\richtext\autodefbase.h
+1677296512 e:\sower-apps\include\richtext\autodefbase.h
 	"richtextctrlext.h"
 	"../controls/thmltreectrl.h"
 
-1662257546 e:\sower-apps\include\imgwin\imageprint.h
+1662261146 e:\sower-apps\include\imgwin\imageprint.h
 	"imagewindow.h"
 	<wx/print.h>
 
-1674017256 e:\sower-apps\include\av_media\audio.h
+1674020856 e:\sower-apps\include\av_media\audio.h
 	"../sowerbase.h"
 	"../av_media/mediadevice.h"
 
-1676237594 e:\sower-apps\include\thml\thml_utility.h
+1676241194 e:\sower-apps\include\thml\thml_utility.h
 	"../../include/html/html.h"
 	"../../include/bible/bibledatacontainers.h"
 
-1662257544 e:\sower-apps\include\filesys\bzcompression.h
+1662261144 e:\sower-apps\include\filesys\bzcompression.h
 	"../sowerbase.h"
 
-1665107908 e:\sower-apps\include\dialogs\carddlg.h
+1665111508 e:\sower-apps\include\dialogs\carddlg.h
 	"../framework/dialog.h"
 	"../controls/stretchfitctrls.h"
 	"../module/modulebase.h"
@@ -3877,17 +3878,17 @@
 	<wx/textctrl.h>
 	<wx/listctrl.h>
 
-1662257548 e:\sower-apps\include\controls\stretchfitctrls.h
+1662261148 e:\sower-apps\include\controls\stretchfitctrls.h
 	"../sowerbase.h"
 	<wx/filepicker.h>
 	<wx/gauge.h>
 	<wx/textctrl.h>
 
-1675963434 e:\sower-apps\include\bible\standard_bible.h
+1675967034 e:\sower-apps\include\bible\standard_bible.h
 	"../string/string.h"
 	"../bible/bookidentifier.h"
 
-1663522716 e:\sower-apps\depends-msw\wxwidgets\include\wx\taskbar.h
+1663526316 e:\sower-apps\depends-msw\wxwidgets\include\wx\taskbar.h
 	"wx/defs.h"
 	"wx/event.h"
 	"wx/msw/taskbar.h"
@@ -3896,15 +3897,15 @@
 	"wx/osx/taskbarosx.h"
 	"wx/qt/taskbar.h"
 
-1663522761 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\taskbar.h
+1663526361 e:\sower-apps\depends-msw\wxwidgets\include\wx\msw\taskbar.h
 	"wx/bmpbndl.h"
 	"wx/icon.h"
 
-1663522732 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\taskbar.h
+1663526332 e:\sower-apps\depends-msw\wxwidgets\include\wx\gtk\taskbar.h
 
-1663522730 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\taskbarx11.h
+1663526330 e:\sower-apps\depends-msw\wxwidgets\include\wx\unix\taskbarx11.h
 
-1663522741 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\taskbarosx.h
+1663526341 e:\sower-apps\depends-msw\wxwidgets\include\wx\osx\taskbarosx.h
 
-1663522756 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\taskbar.h
+1663526356 e:\sower-apps\depends-msw\wxwidgets\include\wx\qt\taskbar.h
 

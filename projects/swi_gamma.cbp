@@ -7,6 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="debug_msw">
+				<Option platforms="Windows;" />
 				<Option output="../build-msw-debug/plugins/Sower/swi_gamma_d" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../obj-msw/debug/plugins/Sower/" />
 				<Option type="3" />
@@ -33,6 +34,7 @@
 				</Linker>
 			</Target>
 			<Target title="release_msw">
+				<Option platforms="Windows;" />
 				<Option output="../build-msw/plugins/Sower/swi_gamma" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../obj-msw/release/plugins/Sower/" />
 				<Option type="3" />
@@ -58,6 +60,7 @@
 				</Linker>
 			</Target>
 			<Target title="release_osx">
+				<Option platforms="Mac;" />
 				<Option output="../build-osx/plugins/Sower/swi_gamma" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../obj-osx/release/plugins/Sower/" />
 				<Option type="3" />
